@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://reason-oie.googlecode.com/svn"
+   revision="80"
+   last-author="arnab.dutta@gmail.com"
+   url="https://reason-oie.googlecode.com/svn/trunk/reasoning-OIE/src/code/dws/utils"
+   uuid="e7952d70-17fb-c739-96eb-f61dbd1427f4"
+   committed-rev="75"
+   kind="dir"
+   committed-date="2014-02-11T16:55:12.214647Z"/>
+<entry
+   name="CodeTimer.java"
+   checksum="f13c88856f66da1d2b1ed197c014409b"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-21T10:53:57.000000Z"
+   committed-rev="75"
+   kind="file"
+   committed-date="2014-02-11T16:55:12.214000Z"/>
+<entry
+   name="Constants.java"
+   checksum="95ce05091500c74ed9425e532b8ac106"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-02-07T07:59:18.000000Z"
+   committed-rev="75"
+   kind="file"
+   committed-date="2014-02-11T16:55:12.214000Z"/>
+<entry
+   name="FileUtil.java"
+   checksum="32740b018dbfcbbca342ed4ac7c3383d"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-07-16T15:28:31.000000Z"
+   committed-rev="4"
+   kind="file"
+   committed-date="2013-07-16T15:43:52.609000Z"/>
+<entry
+   name="Utilities.java"
+   checksum="02eb0d16ed68c28e7b11471b650476cd"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-13T16:07:14.000000Z"
+   committed-rev="52"
+   kind="file"
+   committed-date="2013-11-13T18:38:41.547000Z"/>
+</wc-entries>
