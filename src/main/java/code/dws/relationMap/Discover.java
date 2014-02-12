@@ -53,15 +53,6 @@ public class Discover
         Matcher matcher = null;
         Pattern pattern = Pattern.compile("sameAs\\((.*?)\\)");
 
-        // File writeFile =
-        // new File(Constants.sample_dumps + predicate
-        // + ((needInverse) ? "/invPropertyPaths.log" : "/propertyPaths.log"));
-        //
-        // File writeFile =
-        // new File(Discover.class.getResource(
-        // Constants.sample_dumps + predicate + ((needInverse) ? "/invPropertyPaths.log" : "/propertyPaths.log"))
-        // .toURI());
-
         File tempFile =
             File.createTempFile(Constants.sample_dumps + predicate
                 + ((needInverse) ? "/invPropertyPaths.log" : "/propertyPaths.log"), null);
