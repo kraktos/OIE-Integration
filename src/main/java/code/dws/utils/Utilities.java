@@ -23,7 +23,10 @@ import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import code.dws.relationMap.Discover;
 
 /**
  * All different kinds of utility methods are placed here
@@ -32,6 +35,8 @@ import org.apache.log4j.Logger;
  */
 public class Utilities
 {
+    public final static Logger logger = LoggerFactory.getLogger(Utilities.class);
+
     public static HashSet<String> dict = new HashSet<String>();
 
     public static int countGlbl = 10;
@@ -39,7 +44,6 @@ public class Utilities
     public static Set<String> set = new TreeSet<String>();
 
     // define Logger
-    static Logger logger = Logger.getLogger(Utilities.class.getName());
 
     static Set<Long> UNIQUE_PROPERTIES = new HashSet<Long>();
 
@@ -96,7 +100,7 @@ public class Utilities
     {
         Iterator< ? > it = set.iterator();
         while (it.hasNext()) {
-            logger.info(it.next());
+            logger.info(it.next().toString());
         }
     }
 
@@ -161,7 +165,7 @@ public class Utilities
     public static void printList(List< ? > resultList)
     {
         for (int listCounter = 0; listCounter < resultList.size(); listCounter++) {
-            logger.info(resultList.get(listCounter));
+            logger.info(resultList.get(listCounter).toString());
         }
     }
 

@@ -4,17 +4,17 @@
 
 package code.dws.relationMap;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,11 +37,17 @@ public class Discover
 
     static Map<String, String> SAMEAS_MAP = new HashMap<String, String>();
 
-    private static void createPropertyPaths(File mappingFile, List<ArrayList<String>> propertyPaths, double hops,
+    private static void createPropertyPaths(String mappingFile, List<ArrayList<String>> propertyPaths, double hops,
         String predicate, boolean needInverse) throws IOException, URISyntaxException
     {
 
-        BufferedReader tupleReader = new BufferedReader(new FileReader(mappingFile));
+        Scanner scan;
+
+        InputStream is = Discover.class.getResourceAsStream(mappingFile);
+
+        scan = new Scanner(is, "UTF-8");
+
+        // BufferedReader tupleReader = new BufferedReader(new Fileinp(is));
 
         String line;
 
@@ -59,7 +65,9 @@ public class Discover
 
         BufferedWriter propPathWriter = new BufferedWriter(new FileWriter(tempFile));
 
-        while ((line = tupleReader.readLine()) != null) {
+        while (scan.hasNextLine()) {
+
+            line = scan.nextLine();
             matcher = pattern.matcher(line);
 
             while (matcher.find()) {
@@ -70,9 +78,14 @@ public class Discover
         }
 
         pattern = Pattern.compile("propAsst\\((.*?)\\)");
-        tupleReader = new BufferedReader(new FileReader(mappingFile));
+        // tupleReader = new BufferedReader(new FileReader(is));
+        is = Discover.class.getResourceAsStream(mappingFile);
 
-        while ((line = tupleReader.readLine()) != null) {
+        scan = new Scanner(is, "UTF-8");
+
+        while (scan.hasNextLine()) {
+            line = scan.nextLine();
+
             matcher = pattern.matcher(line);
 
             while (matcher.find()) {
@@ -161,12 +174,6 @@ public class Discover
 
         String mappingFile = "/output/ds_" + predicate + "/outT3_IT6.db";
 
-        File file = new File(Discover.class.getResource(mappingFile).toURI());
-
-        log.info("reading form file = " + file);
-
-        createPropertyPaths(file, propertyPaths, hops, predicate, mode);
-
+        createPropertyPaths(mappingFile, propertyPaths, hops, predicate, mode);
     }
-
 }
