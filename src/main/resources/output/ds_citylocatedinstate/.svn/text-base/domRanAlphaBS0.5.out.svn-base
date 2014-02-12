@@ -1,0 +1,18 @@
+
+======  DOMAIN PREFERENCE ================================
+http://dbpedia.org/ontology/City	(1548.4375,	0.8442952562704471)
+http://dbpedia.org/ontology/Town	(1220.4375,	0.665451199563795)
+http://dbpedia.org/ontology/Village	(1149.9375,	0.6270106324972737)
+http://dbpedia.org/ontology/Settlement	(1117.9375,	0.6095624318429662)
+http://dbpedia.org/ontology/AdministrativeRegion	(663.4375,	0.3617434569247546)
+http://dbpedia.org/ontology/Country	(590.4375,	0.3219397491821156)
+http://dbpedia.org/ontology/Building	(301.1875,	0.164224372955289)
+UNTYPED	(84.0,	0.04580152671755725)
+http://dbpedia.org/ontology/MusicFestival	(4.0,	0.0021810250817884407)
+http://dbpedia.org/ontology/Currency	(1.0,	5.452562704471102E-4)
+======  RANGE PREFERENCE ================================
+http://dbpedia.org/ontology/AdministrativeRegion	(1959.5,	0.9773067331670823)
+http://dbpedia.org/ontology/Settlement	(560.25,	0.279426433915212)
+http://dbpedia.org/ontology/Road	(260.125,	0.12973815461346633)
+http://dbpedia.org/ontology/University	(4.75,	0.002369077306733167)
+UNTYPED	(3.0,	0.0014962593516209476)

@@ -2,22 +2,22 @@ package code.dws.relationMap;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import code.dws.utils.MapUtils;
 
 //import ca.pfv.spmf.test.MainTestFPGrowth_saveToMemory;
 
@@ -31,22 +31,19 @@ public class ConvertToIds
 
     public final static Logger log = LoggerFactory.getLogger(ConvertToIds.class);
 
-    static String fileName = null;
-
-    static String pred = null;
-
     private static Map<String, Integer> occurancePositionMap = new HashMap<String, Integer>();
 
     private static String[] finalPositions = null;
 
-    public static void main(String[] args) throws FileNotFoundException, IOException
+    public static void main(String[] args) throws FileNotFoundException, IOException, URISyntaxException
     {
 
-        fileName = "resource/output/ds_" + args[0] + "/propertyPaths.log";
-        pred = args[0];
-        processInputFile(fileName);
+        String fileName = "/output/ds_" + args[0] + "/propertyPaths.log";
+        String pred = args[0];
 
-        log.debug("File Name {} and property {}", fileName, pred);
+        log.info("File Name {} and property {}", fileName, pred);
+
+        analysePropertyPaths(fileName);
 
         // MainTestFPGrowth_saveToMemory.setTest(occurancePositionMap);
         // MainTestFPGrowth_saveToMemory.main(new String[] {
@@ -58,14 +55,17 @@ public class ConvertToIds
      * iterate the file and get the maximum possible postion of all the items
      * 
      * @param fileName
+     * @throws URISyntaxException
      */
-    private static void processInputFile(String fileName)
+    private static void analysePropertyPaths(String fileName) throws URISyntaxException
     {
 
         ArrayList<ArrayList<String>> file = new ArrayList<ArrayList<String>>();
 
         try {
-            BufferedReader tupleReader = new BufferedReader(new FileReader(fileName));
+            File fileTmp = new File(Discover.class.getResource(fileName).toURI());
+
+            BufferedReader tupleReader = new BufferedReader(new FileReader(fileTmp));
 
             String line;
             while ((line = tupleReader.readLine()) != null) {
@@ -131,8 +131,8 @@ public class ConvertToIds
     private static void updatePositions(ArrayList<ArrayList<String>> file)
     {
 
-        occurancePositionMap = sortByValue(occurancePositionMap);
-        // System.out.println(occurancePositionMap);
+        occurancePositionMap = MapUtils.sortByValue(occurancePositionMap);
+        log.info(occurancePositionMap.toString());
 
         finalPositions = new String[occurancePositionMap.size()];
 
@@ -184,26 +184,6 @@ public class ConvertToIds
             if (!finalPositions[position].equals(word))
                 checkAndAdd(position + 1, word);
         }
-    }
-
-    static Map<String, Integer> sortByValue(Map<String, Integer> map)
-    {
-        List list = new LinkedList(map.entrySet());
-        Collections.sort(list, new Comparator()
-        {
-            public int compare(Object o1, Object o2)
-            {
-                return ((Comparable) ((Map.Entry) (o1)).getValue()).compareTo(((Map.Entry) (o2)).getValue());
-            }
-        });
-
-        Map result = new LinkedHashMap();
-        for (Iterator it = list.iterator(); it.hasNext();) {
-            Map.Entry entry = (Map.Entry) it.next();
-
-            result.put(entry.getKey(), (Integer) entry.getValue());
-        }
-        return result;
     }
 
 }

@@ -4,8 +4,6 @@
 
 package code.dws.utils;
 
-//import code.dws.experiment.ExperimentAutomation;
-
 /**
  * This class stores a set of constants required for the application
  * 

@@ -1,0 +1,2867 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dws/OIE#"
+     xml:base="http://dws/OIE"
+     xmlns:Instance="http://dws/OIE#Instance/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Predicate="http://dws/OIE#Predicate/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:resource="http://dbpedia.org/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://dws/OIE#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dws/OIE#Predicate/citylocatedinstate -->
+
+    <owl:ObjectProperty rdf:about="http://dws/OIE#Predicate/citylocatedinstate"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/AdministrativeRegion -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/AdministrativeRegion"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Building -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Building"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/City -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/City"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Country -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Country"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Currency -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Currency"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MusicFestival -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MusicFestival"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Settlement -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Settlement"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Town -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Town"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/UNTYPED -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/UNTYPED"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/University -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/University"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Village -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Village"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Absaraka%2C_North_Dakota -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Absaraka%2C_North_Dakota">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/absaraka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Acoma_Pueblo -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Acoma_Pueblo">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Building"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/acoma"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Adin%2C_California -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Adin%2C_California">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/adin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alabama -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alabama">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alabama"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alamo_Heights%2C_Texas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alamo_Heights%2C_Texas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Town"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alamo_heights"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alaska -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alaska">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alaska"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alaska_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Albrightsville%2C_Pennsylvania -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Albrightsville%2C_Pennsylvania">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/albrightsville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Aldie%2C_Virginia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Aldie%2C_Virginia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Village"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aldie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alford%2C_Lincolnshire -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alford%2C_Lincolnshire">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alford"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Aloha -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Aloha">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aloha"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Aniak%2C_Alaska -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Aniak%2C_Alaska">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aniak"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Apopka%2C_Florida -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Apopka%2C_Florida">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/apopka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Arkadelphia%2C_Arkansas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Arkadelphia%2C_Arkansas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arkadelphia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Arkansas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Arkansas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arkansas"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arkansas_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arkansas_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Asotin_County%2C_Washington -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Asotin_County%2C_Washington">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/asotin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Atascadero%2C_California -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Atascadero%2C_California">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/atascadero"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Auberry%2C_California -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Auberry%2C_California">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/auberry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Auburn_Hills%2C_Michigan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Auburn_Hills%2C_Michigan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/auburn_hills"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Baltimore -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Baltimore">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Barbourville%2C_Kentucky -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Barbourville%2C_Kentucky">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/barbourville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Belchertown%2C_Massachusetts -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Belchertown%2C_Massachusetts">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Town"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/belchertown"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Belleville%2C_Ontario -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Belleville%2C_Ontario">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/belleville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Beverly%2C_Massachusetts -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Beverly%2C_Massachusetts">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/beverly"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bremen -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bremen">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Town"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bremen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/California -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/California">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/california"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/california_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/california_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/california_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/california_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/california_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/california_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/california_8"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/california_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cantons_of_France -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cantons_of_France">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cape_Girardeau%2C_Missouri -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cape_Girardeau%2C_Missouri">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cape_girardeau"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chaffee_County%2C_Colorado -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chaffee_County%2C_Colorado">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chaffee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chicago_Ridge%2C_Illinois -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chicago_Ridge%2C_Illinois">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Village"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chicago_ridge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Childress%2C_Texas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Childress%2C_Texas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/childress"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Clarendon_Hills%2C_Illinois -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Clarendon_Hills%2C_Illinois">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Village"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/clarendon_hills"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Clearfield_County%2C_Pennsylvania -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Clearfield_County%2C_Pennsylvania">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/clearfield"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Coachella_Valley_Music_and_Arts_Festival -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Coachella_Valley_Music_and_Arts_Festival">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicFestival"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/coachella"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cokeville%2C_Wyoming -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cokeville%2C_Wyoming">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Town"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cokeville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Collinsville%2C_Illinois -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Collinsville%2C_Illinois">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/collinsville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Colorado -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Colorado">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/colorado"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Connecticut -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Connecticut">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/connecticut"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/connecticut_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/connecticut_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Conway%2C_Arkansas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Conway%2C_Arkansas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/conway"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Corona_del_Mar%2C_Newport_Beach -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Corona_del_Mar%2C_Newport_Beach">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/corona_del_mar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cortland_County%2C_New_York -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cortland_County%2C_New_York">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cortland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cottage_Lake%2C_Washington -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cottage_Lake%2C_Washington">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cottage_lake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Covington%2C_Kentucky -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Covington%2C_Kentucky">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/covington"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Crystal -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Crystal">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/crystal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/DuBois%2C_Pennsylvania -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/DuBois%2C_Pennsylvania">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dubois"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/East_Grand_Forks%2C_Minnesota -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/East_Grand_Forks%2C_Minnesota">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/east_grand_forks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/East_Greenwich%2C_Rhode_Island -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/East_Greenwich%2C_Rhode_Island">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Town"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/east_greenwich"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/East_Orange%2C_New_Jersey -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/East_Orange%2C_New_Jersey">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/east_orange"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/East_Peoria%2C_Illinois -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/East_Peoria%2C_Illinois">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/east_peoria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Englewood%2C_New_Jersey -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Englewood%2C_New_Jersey">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/englewood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ennis -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ennis">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Town"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ennis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ettrick%2C_Scotland -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ettrick%2C_Scotland">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ettrick"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Florida -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Florida">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/florida"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/florida_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/florida_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/florida_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/florida_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fort_Mitchell%2C_Kentucky -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fort_Mitchell%2C_Kentucky">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fort_mitchell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fort_Worth%2C_Texas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fort_Worth%2C_Texas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fort_worth"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fountain_Valley%2C_California -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fountain_Valley%2C_California">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fountain_valley"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fulton_County%2C_New_York -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fulton_County%2C_New_York">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fulton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Geography_of_India -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Geography_of_India">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/area"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Georgia_%28U.S._state%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Georgia_%28U.S._state%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/georgia"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/georgia_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hartsville%2C_South_Carolina -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hartsville%2C_South_Carolina">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Town"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hartsville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hawaii -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hawaii">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hawaii"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hope -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hope">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hope"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Illinois -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Illinois">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/illinois"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/illinois_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/illinois_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/illinois_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/illinois_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Indiana -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Indiana">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Iowa -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Iowa">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iowa"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iowa_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kansas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kansas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kansas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kelso%2C_Scottish_Borders -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kelso%2C_Scottish_Borders">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kelso"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kenton_County%2C_Kentucky -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kenton_County%2C_Kentucky">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kenton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kentucky -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kentucky">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kentucky"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kentucky_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kentucky_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kirkwood%2C_Missouri -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kirkwood%2C_Missouri">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kirkwood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kokomo%2C_Indiana -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kokomo%2C_Indiana">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kokomo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kuching -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kuching">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kuching"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lafayette%2C_Louisiana -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lafayette%2C_Louisiana">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lafayette"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lake_Forest%2C_Illinois -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lake_Forest%2C_Illinois">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lake_forest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Le_Mars%2C_Iowa -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Le_Mars%2C_Iowa">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/le_mars"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Leawood%2C_Kansas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Leawood%2C_Kansas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/leawood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Logansport%2C_Indiana -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Logansport%2C_Indiana">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/logansport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Louisiana -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Louisiana">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/louisiana"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/louisiana_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lubbock%2C_Texas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lubbock%2C_Texas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lubbock"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lyon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lyon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lyon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Makawao%2C_Hawaii -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Makawao%2C_Hawaii">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/makawao"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Maryland -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Maryland">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/maryland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Marysville%2C_California -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Marysville%2C_California">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/marysville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Maryville%2C_Tennessee -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Maryville%2C_Tennessee">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/maryville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Massachusetts -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Massachusetts">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/massachusetts"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/massachusetts_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/massachusetts_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mechanicsville%2C_Virginia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mechanicsville%2C_Virginia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mechanicsville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Michigan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Michigan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/michigan"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/michigan_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Michigan_City%2C_Indiana -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Michigan_City%2C_Indiana">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/michigan_city"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Midland%2C_Texas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Midland%2C_Texas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/midland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Minnesota -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Minnesota">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minnesota"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minnesota_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minnesota_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mississippi -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mississippi">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mississippi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Missouri -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Missouri">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/missouri"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/missouri_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/missouri_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Murray%2C_Utah -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Murray%2C_Utah">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/murray"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/National_Register_of_Historic_Places_listings_in_Bartow_County%2C_Georgia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/National_Register_of_Historic_Places_listings_in_Bartow_County%2C_Georgia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bartow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nevada -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nevada">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nevada"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nevada_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_Hampshire -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_Hampshire">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_hampshire"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_Jersey -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_Jersey">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_Mexico -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_Mexico">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_mexico"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_mexico_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_Ulm%2C_Minnesota -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_Ulm%2C_Minnesota">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_ulm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_York -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_York">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/North_Carolina -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/North_Carolina">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/North_Dakota -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/North_Dakota">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/north_dakota"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/North_Miami_Beach%2C_Florida -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/North_Miami_Beach%2C_Florida">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/north_miami_beach"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Northwest_Missouri_State_University -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Northwest_Missouri_State_University">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/University"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/northwest_missouri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Norwich -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Norwich">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/norwich"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Orangeburg%2C_South_Carolina -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Orangeburg%2C_South_Carolina">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/orangeburg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Oregon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Oregon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/oregon"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/oregon_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Orl%C3%A9ans -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Orl%C3%A9ans">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/orleans"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Palm_Bay%2C_Florida -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Palm_Bay%2C_Florida">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/palm_bay"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pea_Ridge%2C_Arkansas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pea_Ridge%2C_Arkansas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pea_ridge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pennsylvania -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pennsylvania">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pennsylvania"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pennsylvania_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pound_sterling -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pound_sterling">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Currency"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sterling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Redding%2C_California -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Redding%2C_California">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/redding"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rhode_Island -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rhode_Island">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rhode_island"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rhode_island_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/River_Falls%2C_Wisconsin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/River_Falls%2C_Wisconsin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/river_falls"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rockford%2C_Illinois -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rockford%2C_Illinois">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rockford"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rockingham_County%2C_New_Hampshire -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rockingham_County%2C_New_Hampshire">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rockingham"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sarawak -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sarawak">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sarawak"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Scottsboro%2C_Alabama -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Scottsboro%2C_Alabama">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/scottsboro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Senatobia%2C_Mississippi -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Senatobia%2C_Mississippi">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/senatobia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Seymour%2C_Victoria -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Seymour%2C_Victoria">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/seymour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Shreveport%2C_Louisiana -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Shreveport%2C_Louisiana">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/shreveport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Silver_Springs%2C_Florida -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Silver_Springs%2C_Florida">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/silver_springs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Solana_Beach%2C_California -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Solana_Beach%2C_California">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/solana_beach"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/South_Carolina -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/South_Carolina">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/south_carolina"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/south_carolina_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/South_Kingstown%2C_Rhode_Island -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/South_Kingstown%2C_Rhode_Island">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Town"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/south_kingstown"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sumner_County%2C_Tennessee -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sumner_County%2C_Tennessee">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sumner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sylmar%2C_Los_Angeles -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sylmar%2C_Los_Angeles">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sylmar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tennessee -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tennessee">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tennessee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Texas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Texas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/texas"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/texas_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/texas_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/texas_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/texas_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Torrance%2C_California -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Torrance%2C_California">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/torrance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tualatin%2C_Oregon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tualatin%2C_Oregon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tualatin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Union_%28American_Civil_War%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Union_%28American_Civil_War%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/union"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Urbandale%2C_Iowa -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Urbandale%2C_Iowa">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/urbandale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Utah -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Utah">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/utah"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/utah_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vermont -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vermont">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/vermont"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vineyard_Haven%2C_Massachusetts -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vineyard_Haven%2C_Massachusetts">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/vineyard_haven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Virg%C3%ADnia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Virg%C3%ADnia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/virginia"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/virginia_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/virginia_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/virginia_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Washington_%28state%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Washington_%28state%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/washington"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/washington_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/washington_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/washington_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/washington_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/West_Springfield%2C_Massachusetts -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/West_Springfield%2C_Massachusetts">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/west_springfield"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/West_Virginia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/West_Virginia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/west_virginia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Wilmington%2C_Delaware -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wilmington%2C_Delaware">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wilmington"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Wisconsin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wisconsin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wisconsin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Wyoming -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wyoming">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wyoming"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/absaraka -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/absaraka">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/north_dakota"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/acoma -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/acoma">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/new_mexico_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/adin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/adin">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/california_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alabama -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alabama"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/alamo_heights -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alamo_heights">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/texas_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alaska -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alaska"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/alaska_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alaska_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/albrightsville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/albrightsville">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/pennsylvania"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/aldie -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aldie">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/virginia_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alford -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alford">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/florida_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/aloha -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aloha">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/oregon_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/aniak -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aniak">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/alaska"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/apopka -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/apopka">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/florida_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/area -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/area">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/pennsylvania_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arkadelphia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arkadelphia">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/arkansas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arkansas -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arkansas"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/arkansas_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arkansas_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/arkansas_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arkansas_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/asotin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/asotin">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/washington"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/atascadero -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/atascadero">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/california_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/auberry -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/auberry">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/california_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/auburn_hills -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/auburn_hills">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/michigan_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/maryland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/barbourville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/barbourville">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/kentucky_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bartow -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bartow">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/georgia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/belchertown -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/belchertown">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/massachusetts_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/belleville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/belleville">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/illinois_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/beverly -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/beverly">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/new_jersey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bremen -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bremen">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/georgia_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/california -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/california"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/california_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/california_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/california_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/california_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/california_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/california_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/california_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/california_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/california_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/california_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/california_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/california_7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/california_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/california_8"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/california_9 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/california_9"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canton -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canton">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/michigan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cape_girardeau -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cape_girardeau">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/missouri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chaffee -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chaffee">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/colorado"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chicago_ridge -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chicago_ridge">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/illinois_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/childress -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/childress">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/texas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/clarendon_hills -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/clarendon_hills">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/illinois_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/clearfield -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/clearfield">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/utah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/coachella -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/coachella">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/california_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cokeville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cokeville">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/wyoming"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/collinsville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/collinsville">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/virginia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/colorado -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/colorado"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/connecticut -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/connecticut"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/connecticut_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/connecticut_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/connecticut_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/connecticut_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/conway -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/conway">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/arkansas_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/corona_del_mar -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/corona_del_mar">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/california_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cortland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cortland">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/new_york"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cottage_lake -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cottage_lake">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/washington_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/covington -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/covington">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/louisiana_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/crystal -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/crystal">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/minnesota_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dubois -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dubois">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/indiana_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/east_grand_forks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/east_grand_forks">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/minnesota_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/east_greenwich -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/east_greenwich">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/rhode_island"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/east_orange -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/east_orange">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/new_jersey_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/east_peoria -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/east_peoria">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/illinois_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/englewood -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/englewood">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/florida_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ennis -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ennis">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/texas_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ettrick -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ettrick">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/virginia_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/florida -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/florida"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/florida_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/florida_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/florida_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/florida_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/florida_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/florida_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/florida_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/florida_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/fort_mitchell -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fort_mitchell">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/kentucky_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fort_worth -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fort_worth">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/texas_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fountain_valley -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fountain_valley">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/california_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fulton -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fulton">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/missouri_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/georgia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/georgia"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/georgia_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/georgia_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hartsville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hartsville">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/south_carolina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hawaii -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hawaii"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hope -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hope">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/arkansas_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/illinois -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/illinois"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/illinois_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/illinois_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/illinois_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/illinois_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/illinois_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/illinois_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/illinois_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/illinois_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iowa -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iowa"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iowa_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iowa_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kansas -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kansas"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kelso -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kelso">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/washington_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kenton -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kenton">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/kentucky"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kentucky -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kentucky"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kentucky_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kentucky_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kentucky_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kentucky_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kirkwood -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kirkwood">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/missouri_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kokomo -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kokomo">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/indiana_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kuching -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kuching">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/sarawak"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/lafayette -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lafayette">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/indiana_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/lake_forest -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lake_forest">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/california_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/le_mars -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/le_mars">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/iowa_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/leawood -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/leawood">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/kansas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/logansport -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/logansport">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/indiana"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/louisiana -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/louisiana"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/louisiana_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/louisiana_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/lubbock -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lubbock">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/texas_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/lyon -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lyon">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/nevada_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/makawao -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/makawao">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/hawaii"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/maryland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/maryland"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/marysville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/marysville">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/washington_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/maryville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/maryville">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/northwest_missouri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/massachusetts -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/massachusetts"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/massachusetts_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/massachusetts_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/massachusetts_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/massachusetts_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mechanicsville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mechanicsville">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/virginia_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/michigan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/michigan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/michigan_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/michigan_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/michigan_city -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/michigan_city">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/indiana_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/midland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/midland">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/washington_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/minnesota -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minnesota"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/minnesota_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minnesota_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/minnesota_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minnesota_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mississippi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mississippi"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/missouri -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/missouri"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/missouri_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/missouri_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/missouri_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/missouri_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/murray -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/murray">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/utah_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nevada -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nevada"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nevada_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nevada_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_hampshire -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_hampshire"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_mexico -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_mexico"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_mexico_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_mexico_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_ulm -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_ulm">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/minnesota"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/north_dakota -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/north_dakota"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/north_miami_beach -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/north_miami_beach">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/florida"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/northwest_missouri -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/northwest_missouri"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/norwich -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/norwich">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/connecticut"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/orangeburg -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/orangeburg">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/south_carolina_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/oregon -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/oregon"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/oregon_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/oregon_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/orleans -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/orleans">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/vermont"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/palm_bay -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/palm_bay">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/florida_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pea_ridge -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pea_ridge">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/west_virginia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pennsylvania -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pennsylvania"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pennsylvania_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pennsylvania_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/redding -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/redding">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/connecticut_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rhode_island -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rhode_island"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/rhode_island_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rhode_island_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/river_falls -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/river_falls">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/wisconsin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rockford -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rockford">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/illinois"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rockingham -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rockingham">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/new_hampshire"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sarawak -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sarawak"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/scottsboro -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/scottsboro">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/alabama"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/senatobia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/senatobia">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/mississippi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/seymour -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/seymour">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/connecticut_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/shreveport -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/shreveport">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/louisiana"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/silver_springs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/silver_springs">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/nevada"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/solana_beach -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/solana_beach">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/california_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/south_carolina -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/south_carolina"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/south_carolina_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/south_carolina_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/south_kingstown -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/south_kingstown">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/rhode_island_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sterling -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sterling">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/alaska_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sumner -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sumner">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/tennessee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sylmar -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sylmar">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/california"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tennessee -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tennessee"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/texas -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/texas"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/texas_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/texas_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/texas_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/texas_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/texas_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/texas_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/texas_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/texas_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/torrance -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/torrance">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/new_mexico"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tualatin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tualatin">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/oregon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/union -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/union">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/new_jersey_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/urbandale -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/urbandale">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/iowa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/utah -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/utah"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/utah_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/utah_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/vermont -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/vermont"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/vineyard_haven -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/vineyard_haven">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/massachusetts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/virginia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/virginia"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/virginia_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/virginia_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/virginia_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/virginia_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/virginia_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/virginia_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/washington -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/washington"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/washington_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/washington_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/washington_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/washington_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/washington_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/washington_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/washington_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/washington_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/west_springfield -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/west_springfield">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/massachusetts_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/west_virginia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/west_virginia"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/wilmington -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wilmington">
+        <Predicate:citylocatedinstate rdf:resource="http://dws/OIE#Instance/nc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/wisconsin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wisconsin"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/wyoming -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wyoming"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+

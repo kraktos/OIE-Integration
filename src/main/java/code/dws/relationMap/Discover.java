@@ -53,12 +53,20 @@ public class Discover
         Matcher matcher = null;
         Pattern pattern = Pattern.compile("sameAs\\((.*?)\\)");
 
-        File writeFile =
-            new File(Discover.class.getResource(
-                Constants.sample_dumps + predicate + ((needInverse) ? "/invPropertyPaths.log" : "/propertyPaths.log"))
-                .toURI());
+        // File writeFile =
+        // new File(Constants.sample_dumps + predicate
+        // + ((needInverse) ? "/invPropertyPaths.log" : "/propertyPaths.log"));
+        //
+        // File writeFile =
+        // new File(Discover.class.getResource(
+        // Constants.sample_dumps + predicate + ((needInverse) ? "/invPropertyPaths.log" : "/propertyPaths.log"))
+        // .toURI());
 
-        BufferedWriter propPathWriter = new BufferedWriter(new FileWriter(writeFile));
+        File tempFile =
+            File.createTempFile(Constants.sample_dumps + predicate
+                + ((needInverse) ? "/invPropertyPaths.log" : "/propertyPaths.log"), null);
+
+        BufferedWriter propPathWriter = new BufferedWriter(new FileWriter(tempFile));
 
         while ((line = tupleReader.readLine()) != null) {
             matcher = pattern.matcher(line);
@@ -106,6 +114,7 @@ public class Discover
         }
 
         propPathWriter.close();
+        tempFile.deleteOnExit();
     }
 
     private static ArrayList<String> doGraphExploration(String dbSubj, String dbObj, double hops)
@@ -167,7 +176,6 @@ public class Discover
 
         createPropertyPaths(file, propertyPaths, hops, predicate, mode);
 
-        // create a collection of possible property mappings
     }
 
 }

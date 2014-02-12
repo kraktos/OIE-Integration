@@ -1,0 +1,3167 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dws/OIE#"
+     xml:base="http://dws/OIE"
+     xmlns:Instance="http://dws/OIE#Instance/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Predicate="http://dws/OIE#Predicate/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:resource="http://dbpedia.org/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:resource2="http://dbpedia.org/resource/%3"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://dws/OIE#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dws/OIE#Predicate/bookwriter -->
+
+    <owl:ObjectProperty rdf:about="http://dws/OIE#Predicate/bookwriter"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Album -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Album"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Artist -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Artist"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Book -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Book"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/BritishRoyalty -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/BritishRoyalty"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/City -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/City"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/ComicsCharacter -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/ComicsCharacter"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/FictionalCharacter -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/FictionalCharacter"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Film -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Film"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MusicGenre -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MusicGenre"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/OfficeHolder -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/OfficeHolder"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Person"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Philosopher -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Philosopher"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Play -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Play"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/PopulatedPlace -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/PopulatedPlace"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Scientist -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Scientist"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Settlement -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Settlement"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/TelevisionShow -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/TelevisionShow"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Town -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Town"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/UNTYPED -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/UNTYPED"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Writer -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Writer"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/WrittenWork -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/WrittenWork"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/%3F -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/%3F">
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_desert_called_peace"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_fatal_waltz"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_killing_night"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/all_the_king_s_men"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arrow_s_flight"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/assassin_s_quest"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/grimms_fairy_tales"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/magic_s_pawn"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/n20_000_leagues_under_the_sea"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/p_c__cast"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/patricia_a__mckillip"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/riddle_master"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/storm_breaking"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_convert"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_night_born"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Case_of_Conscience -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Case_of_Conscience">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_case_of_conscience"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Cup_of_Tea -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Cup_of_Tea">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/WrittenWork"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_cup_of_tea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Day_No_Pigs_Would_Die -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Day_No_Pigs_Would_Die">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_day_no_pigs_would_die"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Game_of_Thrones -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Game_of_Thrones">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_game_of_thrones"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_History_of_God -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_History_of_God">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_history_of_god"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Kiss_of_Shadows -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Kiss_of_Shadows">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_kiss_of_shadows"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Little_Princess -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Little_Princess">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_little_princess"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Million_Little_Pieces -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Million_Little_Pieces">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_million_little_pieces"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Streetcar_Named_Desire_%28play%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Streetcar_Named_Desire_%28play%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Play"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/streetcar_named_desire"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Tale_of_Two_Cities -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Tale_of_Two_Cities">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_tale_of_two_cities"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Time_for_Dancing -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Time_for_Dancing">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_time_for_dancing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Adventures_of_Huckleberry_Finn -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Adventures_of_Huckleberry_Finn">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/adventures_of_huckleberry_finn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alan_Hollinghurst -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alan_Hollinghurst">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alan_hollinghurst"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alan_Paton -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alan_Paton">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alan_paton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Albert_Camus -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Albert_Camus">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Philosopher"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/albert_camus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alice_%28TV_series%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alice_%28TV_series%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/TelevisionShow"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Amy_Ephron -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Amy_Ephron">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/amy_ephron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Andrew_Clements -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Andrew_Clements">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/andrew_clements"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Angels_%26_Demons -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Angels_%26_Demons">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/angels_and_demons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Annals_%28Tacitus%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Annals_%28Tacitus%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/annals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Anne_Tyler -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Anne_Tyler">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Artist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/anne_tyler"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Anthony_Trollope -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Anthony_Trollope">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/anthony_trollope"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Arthur_Miller -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Arthur_Miller">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arthur_miller"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/At_First_Sight -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/At_First_Sight">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/at_first_sight"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ballard%2C_Seattle -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ballard%2C_Seattle">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ballard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Barchester_Towers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Barchester_Towers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/barchester_towers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Barrie -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Barrie">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/barrie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bereavement_benefit -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bereavement_benefit">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/death_benefits"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bible -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bible">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bible"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Billy_Budd -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Billy_Budd">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/billy_budd"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Breathing_Lessons -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Breathing_Lessons">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/breathing_lessons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bruce_Sterling -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bruce_Sterling">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bruce_sterling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/C._S._Lewis -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/C._S._Lewis">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cs_lewis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Carlos_Ruiz_Zaf%C3%B3n -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Carlos_Ruiz_Zaf%C3%B3n">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/carlos_ruiz_zafon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Catalysis -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Catalysis">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/catalyst"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Charles_Dickens -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Charles_Dickens">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/charles_dickens"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dickens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Charles_Kingsley -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Charles_Kingsley">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/charles_kingsley"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/China_Mi%C3%A9ville -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/China_Mi%C3%A9ville">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/china_mieville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chris_Crutcher -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chris_Crutcher">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chris_crutcher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Circus_of_the_Damned -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Circus_of_the_Damned">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/circus_of_the_damned"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Crash_%282004_film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Crash_%282004_film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/crash"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cry%2C_the_Beloved_Country -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cry%2C_the_Beloved_Country">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cry_the_beloved_country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cyrano_de_Bergerac_%28play%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cyrano_de_Bergerac_%28play%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Play"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cyrano_de_bergerac"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/D._H._Lawrence -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/D._H._Lawrence">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/d__h__lawrence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dan_Brown -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dan_Brown">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dan_brown"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dan_brown_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dante_Alighieri -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dante_Alighieri">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dashiell_Hammett -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dashiell_Hammett">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dashiell_hammett"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Davida_Wills_Hurwin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Davida_Wills_Hurwin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/davida_wills_hurwin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Death_Comes_for_the_Archbishop -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Death_Comes_for_the_Archbishop">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/death_comes_for_the_archbishop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Death_of_a_Salesman -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Death_of_a_Salesman">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Play"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/death_of_a_salesman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Diana_Gabaldon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Diana_Gabaldon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/diana_gabaldon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Don_Quixote -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Don_Quixote">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/don_quixote"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/E._M._Forster -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/E._M._Forster">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/e__m__forster"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Earthfall -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Earthfall">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/earthfall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Edmond_Rostand -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Edmond_Rostand">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rostand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fever_Pitch_%282005_film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fever_Pitch_%282005_film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fever_pitch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Finnegans_Wake -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Finnegans_Wake">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/finnegans_wake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Frances_Hodgson_Burnett -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Frances_Hodgson_Burnett">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/frances_hodgson_burnett"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Frank_Norris -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Frank_Norris">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/frank_norris"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Frindle -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Frindle">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/frindle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fyodor_Dostoyevsky -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fyodor_Dostoyevsky">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dostoevsky"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gaiman%2C_Chubut -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Gaiman%2C_Chubut">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Town"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gaiman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/George_R._R._Martin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/George_R._R._Martin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/george_r__r__martin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gospel_music -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Gospel_music">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicGenre"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gospel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Guerrilla_warfare -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Guerrilla_warfare">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/guerrillas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/H._G._Wells -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/H._G._Wells">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hg_wells"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Henry_James -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Henry_James">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/henry_james"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/henry_james_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Herman_Melville -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Herman_Melville">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/herman_melville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hiroshima -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hiroshima">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hiroshima"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Howard_Pyle -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Howard_Pyle">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Artist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/howard_pyle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Howards_End_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Howards_End_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/howards_end"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Imperialism -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Imperialism">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/imperialism"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Into_Thin_Air -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Into_Thin_Air">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/into_thin_air"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Iron_Council -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Iron_Council">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iron_council"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/J._G._Ballard -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/J._G._Ballard">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jg_ballard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jack_London -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jack_London">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jack_london"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/James_Blish -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/James_Blish">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/james_blish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/James_Frey -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/James_Frey">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/james_frey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/James_Joyce -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/James_Joyce">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/james_joyce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/James_Redfield -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/James_Redfield">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/james_redfield"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/John%2C_King_of_England -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/John%2C_King_of_England">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/BritishRoyalty"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/king_john"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/John_Hersey -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/John_Hersey">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/john_hersey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/John_Updike -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/John_Updike">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/john_updike"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/john_updike_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jon_Krakauer -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jon_Krakauer">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jon_krakauer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jonathan_King -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jonathan_King">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jonathon_king"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jules_Verne -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jules_Verne">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jules_verne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Karen_Armstrong -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Karen_Armstrong">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/karen_armstrong"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kon-Tiki -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kon-Tiki">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kon_tiki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Laozi -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Laozi">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Philosopher"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lao_tzu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Larry_McMurtry -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Larry_McMurtry">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/larry_mcmurtry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Laurell_K._Hamilton -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Laurell_K._Hamilton">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/laurell_k__hamilton"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/laurell_k__hamilton_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/laurell_k__hamilton_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/laurell_k__hamilton_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Laurie_Halse_Anderson -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Laurie_Halse_Anderson">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/laurie_halse_anderson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lewis_Carroll -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lewis_Carroll">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lewis_carroll"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Life_of_Pi_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Life_of_Pi_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/life_of_pi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lonesome_Dove -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lonesome_Dove">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lonesome_dove"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Main_Street -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Main_Street">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/main_street"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Maneki-neko -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Maneki-neko">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/maneki_neko"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/McTeague -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/McTeague">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mcteague"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mercedes_Lackey -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mercedes_Lackey">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mercedes_lackey"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mercedes_lackey_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mercedes_lackey_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Michael_Ondaatje -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Michael_Ondaatje">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/michael_ondaatje"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Miguel_de_Cervantes -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Miguel_de_Cervantes">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cervantes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Millennium_People -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Millennium_People">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Album"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/millennium_people"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Murasaki_Shikibu -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Murasaki_Shikibu">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/murasaki_shikibu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Muriel_Spark -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Muriel_Spark">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/muriel_spark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Narcissus_in_Chains -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Narcissus_in_Chains">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/narcissus_in_chains"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nicholas_Sparks -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nicholas_Sparks">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nicholas_sparks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nick_Hornby -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nick_Hornby">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nick_hornby"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Night -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Night">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/night"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Orson_Scott_Card -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Orson_Scott_Card">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/orson_scott_card"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Peter_Ackroyd -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Peter_Ackroyd">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/peter_ackroyd"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Peter_Pan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Peter_Pan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/FictionalCharacter"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/peter_pan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Quicker_Than_the_Eye -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Quicker_Than_the_Eye">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/quicker_than_the_eye"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rabbit_at_Rest -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rabbit_at_Rest">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rabbit_at_rest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ray_Bradbury -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ray_Bradbury">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ray_bradbury"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Real_World%2FRoad_Rules_Challenge%3A_The_Inferno -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Real_World%2FRoad_Rules_Challenge%3A_The_Inferno">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/TelevisionShow"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_inferno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rick_Warren -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rick_Warren">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rick_warren"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Robert_Newton_Peck -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Robert_Newton_Peck">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Artist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/robert_newton_peck"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Robert_Penn_Warren -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Robert_Penn_Warren">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/robert_penn_warren"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Robin_Hobb -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Robin_Hobb">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/robin_hobb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Romeo_and_Juliet -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Romeo_and_Juliet">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/romeo_and_juliet"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/romeo_and_juliet_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sandman_%28Marvel_Comics%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sandman_%28Marvel_Comics%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ComicsCharacter"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sandman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Saul_Bellow -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Saul_Bellow">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/saul_bellow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Seduced_by_Moonlight -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Seduced_by_Moonlight">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/seduced_by_moonlight"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sigmund_Freud -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sigmund_Freud">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Scientist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sigmund_freud"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Simon_Ings -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Simon_Ings">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Artist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/simon_ings"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sinclair_Lewis -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sinclair_Lewis">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sinclair_lewis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Solomon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Solomon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/BritishRoyalty"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/king_solomon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Stranger_%28comics%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Stranger_%28comics%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ComicsCharacter"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/stranger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/TWAIN -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/TWAIN">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/twain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tacitus -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tacitus">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tacitus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tao_Te_Ching -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tao_Te_Ching">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tao_te_ching"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tasha_Alexander -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tasha_Alexander">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tasha_alexander"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tennessee_Williams -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tennessee_Williams">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tennessee_williams"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Terrorism -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Terrorism">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/terrorist"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Terry_Pratchett -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Terry_Pratchett">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/terry_pratchett"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Adventures_of_Augie_March -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Adventures_of_Augie_March">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_adventures_of_augie_march"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Adventures_of_Robin_Hood_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Adventures_of_Robin_Hood_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_adventures_of_robin_hood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Brothers_Grimm_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Brothers_Grimm_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_brothers_grimm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Brothers_Karamazov -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Brothers_Karamazov">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/brothers_karamazov"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Celestine_Prophecy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Celestine_Prophecy">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_celestine_prophecy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Chronicles_of_Narnia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Chronicles_of_Narnia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/narnia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Colour_of_Magic -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Colour_of_Magic">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_colour_of_magic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Da_Vinci_Code -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Da_Vinci_Code">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/da_vinci_code"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_English_Patient_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_English_Patient_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_english_patient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Fiery_Cross_%28novel%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Fiery_Cross_%28novel%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_fiery_cross"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Folding_Star -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Folding_Star">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_folding_star"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_House_of_Doctor_Dee -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_House_of_Doctor_Dee">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_house_of_doctor_dee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Interpretation_of_Dreams -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Interpretation_of_Dreams">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_interpretation_of_dreams"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Merchant_of_Venice -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Merchant_of_Venice">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Play"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_merchant_of_venice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Pickwick_Papers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Pickwick_Papers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pickwick_papers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Prime_of_Miss_Jean_Brodie_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Prime_of_Miss_Jean_Brodie_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_prime_of_miss_jean_brodie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Purpose_Driven_Life -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Purpose_Driven_Life">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_purpose_driven_life"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Shadow_of_the_Wind -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Shadow_of_the_Wind">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_shadow_of_the_wind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Sledding_Hill -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Sledding_Hill">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_sledding_hill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Tale_of_Genji -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Tale_of_Genji">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_tale_of_genji"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Thin_Man_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Thin_Man_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_thin_man"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Turn_of_the_Screw -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Turn_of_the_Screw">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_turn_of_the_screw"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Water-Babies%2C_A_Fairy_Tale_for_a_Land_Baby -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Water-Babies%2C_A_Fairy_Tale_for_a_Land_Baby">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_water_babies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Thomas_Hardy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Thomas_Hardy">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/thomas_hardy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Thomas_Perry_%28author%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Thomas_Perry_%28author%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/thomas_perry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Thor_Heyerdahl -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Thor_Heyerdahl">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Scientist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/thor_heyerdahl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Time_travel -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Time_travel">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/time_machine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tom_Kratman -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tom_Kratman">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tom_kratman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Under_the_Greenwood_Tree -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Under_the_Greenwood_Tree">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/under_the_greenwood_tree"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/V._S._Naipaul -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/V._S._Naipaul">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/v__s__naipaul"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vathek -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vathek">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/vathek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vladimir_Lenin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vladimir_Lenin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lenin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Willa_Cather -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Willa_Cather">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/willa_cather"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/William_Shakespeare -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/William_Shakespeare">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/shakespeare"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/shakespeare_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/shakespeare_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/william_shakespeare"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/William_Thomas_Beckford -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/William_Thomas_Beckford">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/william_beckford"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Women_in_Love_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Women_in_Love_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/women_in_love"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Yann_Martel -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Yann_Martel">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Writer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/yann_martel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_case_of_conscience -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_case_of_conscience">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/james_blish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_cup_of_tea -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_cup_of_tea">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/amy_ephron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_day_no_pigs_would_die -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_day_no_pigs_would_die">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/robert_newton_peck"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_desert_called_peace -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_desert_called_peace">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/tom_kratman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_fatal_waltz -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_fatal_waltz">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/tasha_alexander"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_game_of_thrones -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_game_of_thrones">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/george_r__r__martin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_history_of_god -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_history_of_god">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/karen_armstrong"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_killing_night -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_killing_night">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/jonathon_king"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_kiss_of_shadows -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_kiss_of_shadows">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/laurell_k__hamilton_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_little_princess -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_little_princess">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/frances_hodgson_burnett"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_million_little_pieces -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_million_little_pieces">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/james_frey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_tale_of_two_cities -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_tale_of_two_cities">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/charles_dickens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_time_for_dancing -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_time_for_dancing">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/davida_wills_hurwin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/adventures_of_huckleberry_finn -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/adventures_of_huckleberry_finn">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/twain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alan_hollinghurst -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alan_hollinghurst"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/alan_paton -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alan_paton"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/albert_camus -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/albert_camus"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/alice -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alice">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/lewis_carroll"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/all_the_king_s_men -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/all_the_king_s_men">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/robert_penn_warren"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/amy_ephron -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/amy_ephron"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/andrew_clements -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/andrew_clements"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/angels_and_demons -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/angels_and_demons">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/dan_brown"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/annals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/annals">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/tacitus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/anne_tyler -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/anne_tyler"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/anthony_trollope -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/anthony_trollope"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/arrow_s_flight -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arrow_s_flight">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/mercedes_lackey_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arthur_miller -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arthur_miller"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/assassin_s_quest -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/assassin_s_quest">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/robin_hobb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/at_first_sight -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/at_first_sight">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/nicholas_sparks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ballard -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ballard"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/barchester_towers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/barchester_towers">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/anthony_trollope"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/barrie -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/barrie"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bible -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bible">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/king_solomon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/billy_budd -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/billy_budd">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/herman_melville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/breathing_lessons -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/breathing_lessons">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/anne_tyler"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/brothers_karamazov -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/brothers_karamazov">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/dostoevsky"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bruce_sterling -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bruce_sterling"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/carlos_ruiz_zafon -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/carlos_ruiz_zafon"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/catalyst -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/catalyst">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/laurie_halse_anderson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cervantes -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cervantes"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/charles_dickens -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/charles_dickens"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/charles_kingsley -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/charles_kingsley"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/china_mieville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/china_mieville"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chris_crutcher -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chris_crutcher"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/circus_of_the_damned -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/circus_of_the_damned">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/laurell_k__hamilton_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/crash -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/crash">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/ballard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cry_the_beloved_country -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cry_the_beloved_country">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/alan_paton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cs_lewis -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cs_lewis"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cyrano_de_bergerac -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cyrano_de_bergerac">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/rostand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/d__h__lawrence -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/d__h__lawrence"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/da_vinci_code -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/da_vinci_code">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/dan_brown_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dan_brown -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dan_brown"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dan_brown_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dan_brown_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dante -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dante"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dashiell_hammett -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dashiell_hammett"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/davida_wills_hurwin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/davida_wills_hurwin"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/death_benefits -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/death_benefits">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/thomas_perry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/death_comes_for_the_archbishop -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/death_comes_for_the_archbishop">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/willa_cather"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/death_of_a_salesman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/death_of_a_salesman">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/arthur_miller"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/diana_gabaldon -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/diana_gabaldon"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dickens -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dickens"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/don_quixote -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/don_quixote">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/cervantes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dostoevsky -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dostoevsky"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/e__m__forster -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/e__m__forster"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/earthfall -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/earthfall">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/orson_scott_card"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fever_pitch -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fever_pitch">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/nick_hornby"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/finnegans_wake -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/finnegans_wake">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/james_joyce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/frances_hodgson_burnett -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/frances_hodgson_burnett"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/frank_norris -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/frank_norris"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/frindle -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/frindle">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/andrew_clements"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/gaiman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gaiman"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/george_r__r__martin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/george_r__r__martin"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/gospel -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gospel">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/henry_james_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/grimms_fairy_tales -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/grimms_fairy_tales">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/the_brothers_grimm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/guerrillas -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/guerrillas">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/v__s__naipaul"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/henry_james -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/henry_james"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/henry_james_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/henry_james_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/herman_melville -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/herman_melville"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hg_wells -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hg_wells"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hiroshima -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hiroshima">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/john_hersey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/howard_pyle -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/howard_pyle"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/howards_end -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/howards_end">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/e__m__forster"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/imperialism -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/imperialism">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/lenin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/into_thin_air -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/into_thin_air">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/jon_krakauer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/iron_council -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iron_council">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/china_mieville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jack_london -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jack_london"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/james_blish -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/james_blish"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/james_frey -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/james_frey"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/james_joyce -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/james_joyce"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/james_redfield -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/james_redfield"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/jg_ballard -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jg_ballard"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/john_hersey -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/john_hersey"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/john_updike -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/john_updike"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/john_updike_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/john_updike_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/jon_krakauer -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jon_krakauer"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/jonathon_king -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jonathon_king"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/jules_verne -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jules_verne"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/karen_armstrong -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/karen_armstrong"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/king_john -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/king_john">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/shakespeare"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/king_solomon -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/king_solomon"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kon_tiki -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kon_tiki">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/thor_heyerdahl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/lao_tzu -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lao_tzu"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/larry_mcmurtry -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/larry_mcmurtry"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/laurell_k__hamilton -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/laurell_k__hamilton"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/laurell_k__hamilton_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/laurell_k__hamilton_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/laurell_k__hamilton_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/laurell_k__hamilton_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/laurell_k__hamilton_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/laurell_k__hamilton_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/laurie_halse_anderson -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/laurie_halse_anderson"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/lenin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lenin"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/lewis_carroll -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lewis_carroll"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/life_of_pi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/life_of_pi">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/yann_martel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/lonesome_dove -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lonesome_dove">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/larry_mcmurtry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/magic_s_pawn -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/magic_s_pawn">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/mercedes_lackey_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/main_street -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/main_street">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/sinclair_lewis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/maneki_neko -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/maneki_neko">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/bruce_sterling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mcteague -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mcteague">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/frank_norris"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mercedes_lackey -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mercedes_lackey"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mercedes_lackey_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mercedes_lackey_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mercedes_lackey_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mercedes_lackey_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/michael_ondaatje -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/michael_ondaatje"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/millennium_people -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/millennium_people">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/jg_ballard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/murasaki_shikibu -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/murasaki_shikibu"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/muriel_spark -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/muriel_spark"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/n20_000_leagues_under_the_sea -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/n20_000_leagues_under_the_sea">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/jules_verne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/narcissus_in_chains -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/narcissus_in_chains">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/laurell_k__hamilton_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/narnia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/narnia">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/cs_lewis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nicholas_sparks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nicholas_sparks"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nick_hornby -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nick_hornby"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/night -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/night">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/p_c__cast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/orson_scott_card -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/orson_scott_card"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/p_c__cast -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/p_c__cast"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/patricia_a__mckillip -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/patricia_a__mckillip"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/peter_ackroyd -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/peter_ackroyd"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/peter_pan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/peter_pan">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/barrie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pickwick_papers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pickwick_papers">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/dickens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/quicker_than_the_eye -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/quicker_than_the_eye">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/ray_bradbury"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rabbit_at_rest -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rabbit_at_rest">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/john_updike_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ray_bradbury -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ray_bradbury"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/rick_warren -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rick_warren"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/riddle_master -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/riddle_master">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/patricia_a__mckillip"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/robert_newton_peck -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/robert_newton_peck"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/robert_penn_warren -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/robert_penn_warren"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/robin_hobb -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/robin_hobb"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/romeo_and_juliet -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/romeo_and_juliet">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/william_shakespeare"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/romeo_and_juliet_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/romeo_and_juliet_2">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/shakespeare_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rostand -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rostand"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sandman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sandman">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/gaiman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/saul_bellow -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/saul_bellow"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/seduced_by_moonlight -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/seduced_by_moonlight">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/laurell_k__hamilton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/shakespeare -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/shakespeare"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/shakespeare_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/shakespeare_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/shakespeare_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/shakespeare_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sigmund_freud -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sigmund_freud"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/simon_ings -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/simon_ings"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sinclair_lewis -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sinclair_lewis"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/storm_breaking -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/storm_breaking">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/mercedes_lackey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/stranger -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/stranger">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/albert_camus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/streetcar_named_desire -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/streetcar_named_desire">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/tennessee_williams"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tacitus -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tacitus"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tao_te_ching -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tao_te_ching">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/lao_tzu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tasha_alexander -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tasha_alexander"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tennessee_williams -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tennessee_williams"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/terrorist -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/terrorist">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/john_updike"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/terry_pratchett -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/terry_pratchett"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_adventures_of_augie_march -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_adventures_of_augie_march">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/saul_bellow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_adventures_of_robin_hood -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_adventures_of_robin_hood">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/howard_pyle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_brothers_grimm -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_brothers_grimm"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_celestine_prophecy -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_celestine_prophecy">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/james_redfield"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_colour_of_magic -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_colour_of_magic">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/terry_pratchett"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_convert -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_convert">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/simon_ings"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_english_patient -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_english_patient">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/michael_ondaatje"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_fiery_cross -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_fiery_cross">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/diana_gabaldon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_folding_star -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_folding_star">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/alan_hollinghurst"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_house_of_doctor_dee -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_house_of_doctor_dee">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/peter_ackroyd"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_inferno -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_inferno">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/dante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_interpretation_of_dreams -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_interpretation_of_dreams">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/sigmund_freud"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_merchant_of_venice -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_merchant_of_venice">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/shakespeare_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_night_born -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_night_born">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/jack_london"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_prime_of_miss_jean_brodie -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_prime_of_miss_jean_brodie">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/muriel_spark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_purpose_driven_life -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_purpose_driven_life">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/rick_warren"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_shadow_of_the_wind -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_shadow_of_the_wind">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/carlos_ruiz_zafon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_sledding_hill -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_sledding_hill">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/chris_crutcher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_tale_of_genji -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_tale_of_genji">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/murasaki_shikibu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_thin_man -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_thin_man">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/dashiell_hammett"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_turn_of_the_screw -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_turn_of_the_screw">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/henry_james"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_water_babies -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_water_babies">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/charles_kingsley"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/thomas_hardy -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/thomas_hardy"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/thomas_perry -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/thomas_perry"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/thor_heyerdahl -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/thor_heyerdahl"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/time_machine -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/time_machine">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/hg_wells"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tom_kratman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tom_kratman"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/twain -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/twain"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/under_the_greenwood_tree -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/under_the_greenwood_tree">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/thomas_hardy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/v__s__naipaul -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/v__s__naipaul"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/vathek -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/vathek">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/william_beckford"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/willa_cather -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/willa_cather"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/william_beckford -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/william_beckford"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/william_shakespeare -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/william_shakespeare"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/women_in_love -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/women_in_love">
+        <Predicate:bookwriter rdf:resource="http://dws/OIE#Instance/d__h__lawrence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/yann_martel -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/yann_martel"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+

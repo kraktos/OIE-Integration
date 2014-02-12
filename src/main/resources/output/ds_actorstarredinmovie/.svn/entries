@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://reason-oie.googlecode.com/svn"
+   name=""
+   revision="80"
+   last-author="arnab.dutta@gmail.com"
+   url="https://reason-oie.googlecode.com/svn/trunk/reasoning-OIE/resource/output/ds_actorstarredinmovie"
+   committed-rev="78"
+   kind="dir"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="AllEvidence.db"
+   checksum="fde3db5f539bba0299ceb657c4ac0d3d"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:48:18.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="AllEvidence_T1.db"
+   checksum="77dd6fd2556fb565a1ae00338ba45001"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:48:18.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="KDEEvidenceAll.db"
+   checksum="be6d09d784b734d438666c5062744caf"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-22T14:27:36.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="NELLTripleConfidences.actorstarredinmovie.csv"
+   checksum="30bb7f590374b49da13ff4e3042883b0"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:48:22.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="PreferenceBuilder_I.java"
+   checksum="5ca91a65d33166231536c0f841abd414"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-09-25T09:25:34.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="data.owl"
+   checksum="4e40695c23c5ec0cb17bf8156ea0516e"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:04.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="differentFrom.dbpedia.top1.db"
+   checksum="9cf0bc9e1f2dee1279b55e9221f33b3d"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-10T20:54:52.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="differentFrom.dbpedia.top2.db"
+   checksum="cc8063fbda31cc812290d89670b0f478"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-10T20:55:24.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="differentFrom.dbpedia.top3.db"
+   checksum="fc07230b5026d5935efcde907cd6a57c"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-10T20:56:04.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.0.true.out"
+   checksum="6a7e76fc670ad0fac03d3f1104c70001"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T20:17:11.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.1.false.out"
+   checksum="ee3f51d3dc9eef4c6f13599e9e8dc1eb"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-12T17:08:48.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.125.false.out"
+   checksum="afe67237d77483e468c3290e653cdd1b"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-10T21:00:59.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.125.true.out"
+   checksum="afe67237d77483e468c3290e653cdd1b"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T21:09:36.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.25.false.out"
+   checksum="73367a96b734e333dba70abd4748a052"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-12T12:42:44.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.25.true.out"
+   checksum="73367a96b734e333dba70abd4748a052"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T22:01:04.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.3.out"
+   checksum="bef466597b36e75feede86b1a228d3c1"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-28T20:49:30.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.375.false.out"
+   checksum="ba5e2172553df3ae1cc5d68918dd8e71"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-12T14:16:47.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.375.true.out"
+   checksum="ba5e2172553df3ae1cc5d68918dd8e71"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T22:53:27.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.5.false.out"
+   checksum="a474221487978d681897104e2248a4de"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T13:07:03.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.5.out"
+   checksum="912d24415fb3b09388c80c12903e6d14"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-30T10:56:47.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.5.true.out"
+   checksum="a474221487978d681897104e2248a4de"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:18.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.625.false.out"
+   checksum="aa4be5e050074aafeddf5e873ac16110"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-14T13:49:26.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.625.true.out"
+   checksum="aa4be5e050074aafeddf5e873ac16110"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T23:46:03.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.7.out"
+   checksum="1a81a3e6c3b867f173e0b74cf1585ff6"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-28T11:30:59.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.75.true.out"
+   checksum="e8447eca208a9e372e9e6cfd040c6384"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-10T06:31:23.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.8.out"
+   checksum="eada468c11eaefcb9cf87b4ef1efb760"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-24T13:10:13.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.875.true.out"
+   checksum="1bc657f5df3806be85f2811352ada3b0"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-10T07:36:36.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.9.out"
+   checksum="614df45b54f6a907b51affdad912d854"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-29T08:01:17.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha0.95.false.out"
+   checksum="382b1922e830385a0e5c5c49683b52e7"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-12T17:34:03.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlpha1.0.true.out"
+   checksum="ccd346e36b409dd60f7a7d87fb78d6af"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-10T09:09:55.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.0.true.out"
+   checksum="9d6f52b25eef4f3c99f956c9c2dc5b54"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T20:19:27.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.1.false.out"
+   checksum="cdc0bcc64df8250b8fbc25840e709d40"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-12T17:09:09.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.125.false.out"
+   checksum="1bff236bd85e51e674bd315eb4f9ae65"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-10T21:03:16.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.125.true.out"
+   checksum="8f76781445a3eafe293fe940026f56d3"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T21:11:50.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.25.false.out"
+   checksum="dd51edb51df8ea1b2747d1436a815389"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-12T12:43:05.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.25.true.out"
+   checksum="2003f489fd86c6ca562765fbcb785aff"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T22:03:18.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.375.false.out"
+   checksum="ad50bb06d5e5cbe2629ecdfec2d421a2"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-12T14:17:10.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.375.true.out"
+   checksum="d4945b419f8c6d5b59b85afad0289b90"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T22:55:41.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.5.false.out"
+   checksum="98bf6402fb8a230cd4b0a8bdcb0ba420"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-12T11:52:47.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.5.out"
+   checksum="41a261615b7f32d624843fa222390216"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-30T12:46:41.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.5.true.out"
+   checksum="8915d85293f850fd3cc4de319a03344b"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:51:34.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.625.false.out"
+   checksum="bb5f359c5a3ae5eeab82f675cbf55bb5"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-14T13:49:46.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.625.true.out"
+   checksum="21e466340daffc064d890517796fe0b3"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T23:48:12.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.75.true.out"
+   checksum="7b61f67b54a4884cca811492aa042025"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-10T06:33:23.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.875.true.out"
+   checksum="66282df0b534c122e767008397b84d4d"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-10T07:38:43.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.9.out"
+   checksum="77419495ccc37f6153f086a2451e11a3"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-29T18:55:17.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS0.95.false.out"
+   checksum="95519a39cc383da825bdcb2275e00fda"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-12T17:34:23.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanAlphaBS1.0.true.out"
+   checksum="a0c30f7a28b148953a5f04848f39aeb1"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-10T09:12:09.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanEvid.db"
+   checksum="08afcc3e20d404fed03292ac7affc785"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-09-25T10:28:09.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanEvidence.db"
+   checksum="2c3b560f67ffd1b747a327967a135e8b"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:18.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanEvidenceBS.db"
+   checksum="1d4d0dc30af88d4ceb8c0d64615b2e29"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:51:34.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanEvidence_A1.db"
+   checksum="2c3b560f67ffd1b747a327967a135e8b"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:44.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanEvidence_A2.db"
+   checksum="10aada1e6e11f012b829fd8127b71fdd"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:50:19.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanEvidence_A3.db"
+   checksum="e522a15a41b47dfb82f9f69048b774a6"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:50:51.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="domRanEvidence_A4.db"
+   checksum="1d4d0dc30af88d4ceb8c0d64615b2e29"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:51:57.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="evidence (copy).db"
+   checksum="e1710c6bd708e325c63bc711d20ecbbf"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-09-19T12:51:05.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="evidence.db"
+   checksum="9e6e7532bcce1523112f19c3d62ba362"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-28T07:45:38.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="evidenceT1_IT1.db"
+   checksum="b1d517043751d6e6ff1f84986ff50289"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-18T15:34:41.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="evidenceT2.db"
+   checksum="8ed7df1cb7938d1520ea4f3fbf2aef68"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-31T14:54:40.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="evidenceT3.db"
+   checksum="188a4389d004203b67cafc54e0ab722c"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-15T16:44:08.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="evidenceT3_IT2.db"
+   checksum="b74674bc53eece4fb498a51a7eb044e3"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:18.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="goldBL_actorstarredinmovie.tsv"
+   checksum="9c84f8c0eb5dae4aa9292def4eb58556"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:48:22.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="goldEvidencePostFixed.db"
+   checksum="53042b2c15a8c3fe8177dce1769c6cd3"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:04.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="goldEvidencePostFixedAll.db"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:48:07.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="isOfType.dbpedia.top1.db"
+   checksum="043357f44065889f51a3ff3f44942528"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:06.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="isOfType.dbpedia.top2.db"
+   checksum="7d05caeea269eafa4edb0bfceab04a87"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:06.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="isOfType.dbpedia.top3.db"
+   checksum="96eefd829e90ab43725822380fc4f1dd"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:09.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="isOfTypeConf.nell.db"
+   checksum="8013156701462b10777da41364791508"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:04.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="out.db"
+   checksum="93cf597e84b804f08c48465d8ad5bda5"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:51:57.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outAll_1.db"
+   checksum="7ac99b7ec01072738c36ac3626b1f437"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-15T16:44:31.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outAll_2.db"
+   checksum="e2ac4e8f31546c428b46f09d86c51513"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-15T16:45:02.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outAll_IT1.db"
+   checksum="07557985ce605898d91edd0f117b98eb"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-18T15:34:46.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outAll_IT2.db"
+   checksum="edf2610d2c079c11c16a4e56e0d7bc35"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:44.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outAll_IT3.db"
+   checksum="6081b3cdce8b83253f6e6d478d62f4fc"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:50:19.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outAll_IT4.db"
+   checksum="93cf597e84b804f08c48465d8ad5bda5"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:50:51.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outAll_IT5.db"
+   checksum="93cf597e84b804f08c48465d8ad5bda5"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:51:25.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outAll_IT6.db"
+   checksum="93cf597e84b804f08c48465d8ad5bda5"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:51:57.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outT1_IT1.db"
+   checksum="af3f9c06d0e3d86a267aefb1c2e1ce3b"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-18T15:34:43.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outT2.db"
+   checksum="7b5624683ac8209785d18f291ce216f7"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-30T12:44:46.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outT3.bs.db"
+   checksum="990912452a982435f7006c6bbafa02f2"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-15T16:44:50.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outT3.db"
+   checksum="e511b659cd69edcb1f69cc178964910a"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-15T16:44:18.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outT3_IT2.db"
+   checksum="7521e7b740aa2de414d362fdc0852cef"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:31.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outT3_IT3.db"
+   checksum="db99b71fd222219172f5e48f6ff40403"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:50:07.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outT3_IT4.db"
+   checksum="db99b71fd222219172f5e48f6ff40403"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:50:39.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outT3_IT5.db"
+   checksum="db99b71fd222219172f5e48f6ff40403"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:51:12.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="outT3_IT6.db"
+   checksum="db99b71fd222219172f5e48f6ff40403"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:51:45.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="propAsstConf.nell.db"
+   checksum="7ff2e7f2ba1cc8d134d0384bca6e00fd"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:09.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="sameAsConf.nell-dbpedia-top1.db"
+   checksum="ffa8021828474b05d747b7f17babbd9b"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:06.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="sameAsConf.nell-dbpedia-top1.test.db"
+   checksum="915222d26c78409e06321afa343f82c5"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-18T09:16:58.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="sameAsConf.nell-dbpedia-top2.db"
+   checksum="7f76ec366826ed70b95e0536333a1383"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:06.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="sameAsConf.nell-dbpedia-top3.db"
+   checksum="650d7422d17520ade6b2cf9cf1850b88"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:09.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="sameAsLinksPrior.tsv"
+   checksum="033cf1cc8b983f007b8cdec5ba246d8f"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:05.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="sourceType.db"
+   checksum="a2a3a3ced52d6b07fff5acc454a34770"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2014-01-29T18:49:09.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+<entry
+   name="tbox.db"
+   checksum="9057f27e3ff95fadb1aa6c55be3fd0e0"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-08-07T13:38:22.000000Z"
+   committed-rev="78"
+   kind="file"
+   committed-date="2014-02-11T17:29:40.466000Z"/>
+</wc-entries>

@@ -1,0 +1,12 @@
+
+======  DOMAIN PREFERENCE ================================
+http://dbpedia.org/ontology/Weapon	(4.0,	1.0)
+http://dbpedia.org/ontology/Device	(3.6,	0.9)
+======  RANGE PREFERENCE ================================
+http://dbpedia.org/ontology/Country	(474.0,	0.9854469854469855)
+http://dbpedia.org/ontology/PopulatedPlace	(442.4,	0.9197505197505197)
+http://dbpedia.org/ontology/Place	(385.52,	0.8014968814968815)
+http://dbpedia.org/ontology/OfficeHolder	(6.0,	0.012474012474012475)
+http://dbpedia.org/ontology/Person	(5.6000000000000005,	0.011642411642411643)
+http://dbpedia.org/ontology/Agent	(4.880000000000001,	0.010145530145530147)
+http://dbpedia.org/ontology/Language	(1.0,	0.002079002079002079)

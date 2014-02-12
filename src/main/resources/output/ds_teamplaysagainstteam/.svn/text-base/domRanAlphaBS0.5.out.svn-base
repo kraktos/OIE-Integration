@@ -1,0 +1,16 @@
+
+======  DOMAIN PREFERENCE ================================
+http://dbpedia.org/ontology/SoccerClub	(1037.8125,	0.8520628078817734)
+http://dbpedia.org/ontology/AmericanFootballTeam	(617.3125,	0.5068247126436781)
+http://dbpedia.org/ontology/HockeyTeam	(609.8125,	0.5006670771756979)
+http://dbpedia.org/ontology/University	(366.5625,	0.3009544334975369)
+UNTYPED	(74.0,	0.060755336617405585)
+http://dbpedia.org/ontology/Country	(29.75,	0.02442528735632184)
+http://dbpedia.org/ontology/TelevisionSeason	(0.5,	4.1050903119868636E-4)
+======  RANGE PREFERENCE ================================
+http://dbpedia.org/ontology/SoccerClub	(1028.5625,	0.8486489273927392)
+http://dbpedia.org/ontology/AmericanFootballTeam	(615.0625,	0.507477310231023)
+http://dbpedia.org/ontology/HockeyTeam	(605.5625,	0.49963902640264024)
+http://dbpedia.org/ontology/University	(367.3125,	0.3030631188118812)
+UNTYPED	(72.0,	0.0594059405940594)
+http://dbpedia.org/ontology/MilitaryConflict	(15.0,	0.012376237623762377)

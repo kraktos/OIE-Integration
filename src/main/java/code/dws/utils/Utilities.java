@@ -54,10 +54,10 @@ public class Utilities
      * 
      * @param map
      */
-    public static void printMap(Map<?, ?> map)
+    public static void printMap(Map< ? , ? > map)
     {
-        for (Iterator<?> it = map.entrySet().iterator(); it.hasNext();) {
-            Map.Entry<?, ?> entry = (Entry<?, ?>) it.next();
+        for (Iterator< ? > it = map.entrySet().iterator(); it.hasNext();) {
+            Map.Entry< ? , ? > entry = (Entry< ? , ? >) it.next();
             Object key = entry.getKey();
             Object value = entry.getValue();
             logger.info(key + "  " + value);
@@ -92,9 +92,9 @@ public class Utilities
      * 
      * @param set
      */
-    public static void printSet(final Set<?> set)
+    public static void printSet(final Set< ? > set)
     {
-        Iterator<?> it = set.iterator();
+        Iterator< ? > it = set.iterator();
         while (it.hasNext()) {
             logger.info(it.next());
         }
@@ -107,14 +107,13 @@ public class Utilities
      * @param targetFilePath putput file location
      * @throws IOException
      */
-    public static void writeSetToFile(Set<String> SET_DBPEDIA_TERMS, String targetFilePath)
-            throws IOException
+    public static void writeSetToFile(Set<String> SET_DBPEDIA_TERMS, String targetFilePath) throws IOException
     {
 
         FileWriter fstream = new FileWriter(targetFilePath);
         BufferedWriter out = new BufferedWriter(fstream);
 
-        Iterator<?> it = SET_DBPEDIA_TERMS.iterator();
+        Iterator< ? > it = SET_DBPEDIA_TERMS.iterator();
         while (it.hasNext()) {
             FileUtil.writeToFlatFile(out, it.next() + "\n");
         }
@@ -147,8 +146,7 @@ public class Utilities
     {
         long end = System.currentTimeMillis();
         long execTime = end - start;
-        logger.debug(message + " "
-                + String.format("%02d ms", TimeUnit.MILLISECONDS.toMillis(execTime)));
+        logger.debug(message + " " + String.format("%02d ms", TimeUnit.MILLISECONDS.toMillis(execTime)));
     }
 
     /**
@@ -160,7 +158,7 @@ public class Utilities
         return start;
     }
 
-    public static void printList(List<?> resultList)
+    public static void printList(List< ? > resultList)
     {
         for (int listCounter = 0; listCounter < resultList.size(); listCounter++) {
             logger.info(resultList.get(listCounter));
@@ -227,12 +225,14 @@ public class Utilities
         return s;
     }
 
-    public static String cleanse(String arg) {
+    public static String cleanse(String arg)
+    {
         arg = arg.substring(arg.lastIndexOf(":") + 1, arg.length());
         return arg.toLowerCase();
     }
 
-    public static String removeStopWords(String originalWord) {
+    public static String removeStopWords(String originalWord)
+    {
         StringBuffer retVal = new StringBuffer();
         String[] arrWords = originalWord.split(" ");
         for (String word : arrWords) {
@@ -250,7 +250,8 @@ public class Utilities
      * @param arg
      * @return
      */
-    public static String characterToUTF8(String arg) {
+    public static String characterToUTF8(String arg)
+    {
         try {
             return URLEncoder.encode(arg, "UTF-8");
         } catch (UnsupportedEncodingException e) {
@@ -265,7 +266,8 @@ public class Utilities
      * @param arg
      * @return
      */
-    public static String utf8ToCharacter(String arg) {
+    public static String utf8ToCharacter(String arg)
+    {
         try {
             return URLDecoder.decode(arg, "UTF-8");
         } catch (UnsupportedEncodingException e) {
@@ -281,7 +283,8 @@ public class Utilities
      * @param prob
      * @return
      */
-    public static double convertProbabilityToWeight(double prob) {
+    public static double convertProbabilityToWeight(double prob)
+    {
         if (Constants.USE_LOGIT_FUNC) {
             // smoothing
             if (prob >= 1)
@@ -294,38 +297,40 @@ public class Utilities
             return prob;
     }
 
-//    public static Map sortByValue(Map map) {
-//        List list = new LinkedList(map.entrySet());
-//        Collections.sort(list, new Comparator() {
-//            public int compare(Object o2, Object o1) {
-//                return ((Comparable) ((Map.Entry) (o1)).getValue())
-//                        .compareTo(((Map.Entry) (o2)).getValue());
-//            }
-//        });
-//
-//        Map result = new LinkedHashMap();
-//        for (Iterator it = list.iterator(); it.hasNext();) {
-//            Map.Entry entry = (Map.Entry) it.next();
-//            result.put(entry.getKey(), entry.getValue());
-//        }
-//        return result;
-//    }
+    // public static Map sortByValue(Map map) {
+    // List list = new LinkedList(map.entrySet());
+    // Collections.sort(list, new Comparator() {
+    // public int compare(Object o2, Object o1) {
+    // return ((Comparable) ((Map.Entry) (o1)).getValue())
+    // .compareTo(((Map.Entry) (o2)).getValue());
+    // }
+    // });
+    //
+    // Map result = new LinkedHashMap();
+    // for (Iterator it = list.iterator(); it.hasNext();) {
+    // Map.Entry entry = (Map.Entry) it.next();
+    // result.put(entry.getKey(), entry.getValue());
+    // }
+    // return result;
+    // }
 
     // ***************************************************************
     /**
-     * removes the DBpedia header uri information and cleanes the concept from
-     * any special character by converting it to to UTF-8
+     * removes the DBpedia header uri information and cleanes the concept from any special character by converting it to
+     * to UTF-8
      * 
      * @param arg
      * @return
      */
-    public static String cleanDBpediaURI(String arg) {
-        return arg.replaceAll(Constants.DBPEDIA_PREDICATE_NS, "").replaceAll(
-                Constants.DBPEDIA_INSTANCE_NS, "").replaceAll("\"", ""); // TODO
+    public static String cleanDBpediaURI(String arg)
+    {
+        return arg.replaceAll(Constants.DBPEDIA_PREDICATE_NS, "").replaceAll(Constants.DBPEDIA_INSTANCE_NS, "")
+            .replaceAll("\"", ""); // TODO
         // replaceAll(":_", "__")
     }
 
-    public static String cleanForMLNPresentation(String arg) {
+    public static String cleanForMLNPresentation(String arg)
+    {
         arg = arg.replaceAll("(", "[");
         arg = arg.replaceAll(")", "]");
         arg = arg.replaceAll("&", "~26");
@@ -333,7 +338,8 @@ public class Utilities
         return arg;
     }
 
-    public static String cleanTerms(String arg) {
+    public static String cleanTerms(String arg)
+    {
         arg = arg.replaceAll("\"", "").trim();
         arg = arg.replaceAll("http://dbpedia.org/resource/", "");
         return arg;

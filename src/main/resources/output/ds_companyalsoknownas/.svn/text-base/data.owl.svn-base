@@ -1,0 +1,2663 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dws/OIE#"
+     xml:base="http://dws/OIE"
+     xmlns:Instance="http://dws/OIE#Instance/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Predicate="http://dws/OIE#Predicate/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:resource="http://dbpedia.org/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:resource2="http://dbpedia.org/resource/%3"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://dws/OIE#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dws/OIE#Predicate/companyalsoknownas -->
+
+    <owl:ObjectProperty rdf:about="http://dws/OIE#Predicate/companyalsoknownas"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Automobile -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Automobile"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Band -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Band"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/BaseballLeague -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/BaseballLeague"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/BroadcastNetwork -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/BroadcastNetwork"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/ChemicalCompound -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/ChemicalCompound"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Company -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Company"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/GovernmentAgency -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/GovernmentAgency"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/InformationAppliance -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/InformationAppliance"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Language -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Language"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Mammal -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Mammal"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MusicGenre -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MusicGenre"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MusicalArtist -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MusicalArtist"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Newspaper -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Newspaper"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Organisation -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Organisation"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Person"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/PoliticalParty -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/PoliticalParty"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/RadioStation -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/RadioStation"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/RecordLabel -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/RecordLabel"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Settlement -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Settlement"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Software -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Software"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/TelevisionStation -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/TelevisionStation"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/UNTYPED -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/UNTYPED"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/University -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/University"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Website -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Website"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Work -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Work"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/%3F -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/%3F">
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aluminum_corp_of_china_ads"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/automatic_data_proc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bb_t"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chubb_corp"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/d_r_horton"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/deere_and_co"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dell001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dell001_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/emc_corp"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/emc_corp_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fidelity_management_and_resarch_co_"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fmr_corp_"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/goldman_sachs001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hk_disneyland"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/home_depot_inc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ibm_corp_"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ibm_corp__2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ibm_corp__3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ibm_corp__4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ibm_corp__5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ibm_corp__6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ibm_corp__7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/intc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/intc_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/j_p__morgan_chase"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kohl_s_corp"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/konica_minolta_holding_inc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/krispy_kreme_doughnuts_inc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/low_prices"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lowe_s_cos"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mastercard_inc_a"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mbia_inc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mf_global_llc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_public_radio001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_times_a"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/polo_ralph_lauren_a"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/procter___gamble"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/qualcomm_inc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/salesforce_com"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sbc_communications_inc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sbc_communications_inc_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/teva_pharm_indus_adr"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/under_armour_a"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_parcel_b"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wal_mart_stores"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wal_mart_stores_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/AMR_Corporation -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/AMR_Corporation">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/amr_corp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Acura_RL -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Acura_RL">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Automobile"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Adenosine_diphosphate -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Adenosine_diphosphate">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChemicalCompound"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/adp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Admiral_%28United_States%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Admiral_%28United_States%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/adm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Advanced_Micro_Devices -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Advanced_Micro_Devices">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/advanced_micro_devices"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/advanced_micro_devices_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/amd"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/amd_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alcoa -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alcoa">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alcoa_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Amazon.com -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Amazon.com">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/amazon"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/amazon_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/American_International_Group -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/American_International_Group">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aig"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aig_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/american_international_group"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/american_international_group_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/American_football_positions -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/American_football_positions">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/slb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Apple_Inc. -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Apple_Inc.">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aapl"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aapl_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aapl_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/apple"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/apple_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/apple_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/apple_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/apple_computer_inc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/apple_computer_inc_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Apple_Store -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Apple_Store">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/apple_store"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Archer_Daniels_Midland -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Archer_Daniels_Midland">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/archer_daniels_midland_company"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Atlantic_Records -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Atlantic_Records">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RecordLabel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/atlantic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Automated_Clearing_House -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Automated_Clearing_House">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ach"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/BBC -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/BBC">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bbc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/british_broadcasting_corporation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/BMW -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/BMW">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bmw"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/CNN -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/CNN">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/TelevisionStation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cnn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cat -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cat">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Caterpillar_Inc. -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Caterpillar_Inc.">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/caterpillar_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chlorine -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chlorine">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chrysler -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chrysler">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chrysler"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chrysler_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chrysler_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cisco_Systems -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cisco_Systems">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cisco_systems"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cisco_systems_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Colgate-Palmolive -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Colgate-Palmolive">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/colgate_palmolive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Corpus_Scriptorum_Christianorum_Orientalium -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Corpus_Scriptorum_Christianorum_Orientalium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/csco"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/csco_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/csco_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Covidien -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Covidien">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/covidien"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tyco_healthcare"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Customer_relationship_management -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Customer_relationship_management">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/crm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/DHI_Water_%26_Environment -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/DHI_Water_%26_Environment">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dhi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Defender_%28association_football%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Defender_%28association_football%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Defensive_end -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Defensive_end">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/de"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dell -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dell">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Denso -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Denso">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/denso"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nippondenso"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/DirecTV -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/DirecTV">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/directv"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_directv_group"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Downtown_Disney_%28Walt_Disney_World%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Downtown_Disney_%28Walt_Disney_World%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/downtown_disney"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/EBay -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/EBay">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ebay"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ebay_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ebay_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ebay_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/El_%28deity%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/El_%28deity%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/el"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/EnergySolutions -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/EnergySolutions">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/energysolutions"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/envirocare_of_utah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Est%C3%A9e_Lauder_Companies -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Est%C3%A9e_Lauder_Companies">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/estee_lauder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/FO_%28complexity%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/FO_%28complexity%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/FedEx -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/FedEx">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/federal_express"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fedex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fortune_Brands -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fortune_Brands">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fortune_brands"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fox_Broadcasting_Company -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fox_Broadcasting_Company">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/BroadcastNetwork"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fox"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/General_Electric -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/General_Electric">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/InformationAppliance"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ge"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ge_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/general_electric"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/general_electric_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/General_Motors -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/General_Motors">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/general_motors"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gm"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gm_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Giant_slalom -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Giant_slalom">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Henry_Draper_Catalogue -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Henry_Draper_Catalogue">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hd"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hewlett-Packard -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hewlett-Packard">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hewlett_packard"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hewlett_packard_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hong_Kong_Disneyland -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hong_Kong_Disneyland">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_disneyland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Horsepower -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Horsepower">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hp"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hp_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hyundai -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hyundai">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hyundai"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/IBM -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/IBM">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/international_business_machines"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/international_business_machines_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Intel -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Intel">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/intel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Internet_forum -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Internet_forum">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/forum"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Johnson_Johnson -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Johnson_Johnson">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Work"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/johnson___johnson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Juntos_Podemos_M%C3%A1s -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Juntos_Podemos_M%C3%A1s">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/PoliticalParty"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jpm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/KSS_%28company%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/KSS_%28company%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kss"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Konica_Minolta -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Konica_Minolta">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/konica_minolta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/MBI -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/MBI">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mbi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/MF_Global -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/MF_Global">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mf_global"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Master_of_Arts -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Master_of_Arts">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/University"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ma"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mer_%28operating_system%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mer_%28operating_system%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Merrill_Lynch -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Merrill_Lynch">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/merrill_lynch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/MetLife -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/MetLife">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/metlife_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Metropolitan_Opera -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Metropolitan_Opera">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Organisation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/met"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Microsoft -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Microsoft">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/microsoft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Minor_League_Baseball -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Minor_League_Baseball">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/BaseballLeague"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mitsubishi -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mitsubishi">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mitsubishi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/NEC -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/NEC">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nec"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nec_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/NPR -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/NPR">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/BroadcastNetwork"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/npr"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/National_Weather_Service -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/National_Weather_Service">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/GovernmentAgency"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nws"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nws_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/News_Corporation -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/News_Corporation">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/news_corp"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/news_corp_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nintendo_Wi-Fi_Connection -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nintendo_Wi-Fi_Connection">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wfc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nissan_Motor_Company -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nissan_Motor_Company">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nissan"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nissan_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nissan_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Oracle_Corporation -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Oracle_Corporation">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/oracle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Paleogene -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Paleogene">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/PowerPC -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/PowerPC">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicGenre"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/powerpc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Radio_frequency -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Radio_frequency">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Regions_Financial_Corporation -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Regions_Financial_Corporation">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/regions_financial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Royal_Caribbean_Cruises_Ltd. -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Royal_Caribbean_Cruises_Ltd.">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rccl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Royal_Caribbean_International -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Royal_Caribbean_International">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/royal_caribbean_international"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Samsung -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Samsung">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/samsung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Samsung_Electronics -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Samsung_Electronics">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/samsung_electronics"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/samsung_electronics_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Schlumberger -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Schlumberger">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/schlumberger_limited"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/schlumberger_ltd"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Silicon_Graphics -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Silicon_Graphics">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sgi"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/silicon_graphics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sun -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sun">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sun"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sun_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sun_Newspapers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sun_Newspapers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sun_newspapers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Symantec -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Symantec">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/symantec"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/symantec_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/symantec_corporation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/TGT_%28group%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/TGT_%28group%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Band"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tgt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Target_Corporation -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Target_Corporation">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/target_corp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Teva_Pharmaceutical_Industries -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Teva_Pharmaceutical_Industries">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/teva"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Inquirer -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Inquirer">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Website"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_inquirer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_New_York_Times -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_New_York_Times">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Newspaper"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nyt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Philadelphia_Inquirer -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Philadelphia_Inquirer">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Newspaper"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/philadelphia_inquirer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Sports_Network -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Sports_Network">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/TelevisionStation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tsn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_WB_Television_Network -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_WB_Television_Network">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/BroadcastNetwork"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Toyama_Television -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Toyama_Television">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/TelevisionStation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bbt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tricolour_Flame -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tricolour_Flame">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/PoliticalParty"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/msft_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tyson_Foods -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tyson_Foods">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tyson_foods"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ua_%28singer%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ua_%28singer%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicalArtist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ua"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/United_Parcel_Service -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/United_Parcel_Service">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ups_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/WFMI -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/WFMI">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RadioStation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wfmi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/WMT_%28AM%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/WMT_%28AM%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RadioStation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wmt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Wachovia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wachovia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wachovia_corp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Warner_Music_Group -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Warner_Music_Group">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/warner_music"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Wells_Fargo -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wells_Fargo">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wells_fargo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Whole_Foods_Market -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Whole_Foods_Market">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/whole_foods_market"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Yem_language -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Yem_language">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Language"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jnj"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/aa -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aa"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/aapl -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aapl"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/aapl_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aapl_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/aapl_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aapl_3">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/apple_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ach -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ach"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/adm -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/adm"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/adp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/adp"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/advanced_micro_devices -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/advanced_micro_devices"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/advanced_micro_devices_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/advanced_micro_devices_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/amd_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/aig -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aig">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/american_international_group"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/aig_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aig_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/alcoa_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alcoa_inc">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/aa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/aluminum_corp_of_china_ads -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aluminum_corp_of_china_ads">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/ach"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/amazon -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/amazon">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/dell001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/amazon_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/amazon_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/sun_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/amd -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/amd">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/advanced_micro_devices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/amd_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/amd_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/american_international_group -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/american_international_group"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/american_international_group_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/american_international_group_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/aig_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/amr_corp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/amr_corp">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/krispy_kreme_doughnuts_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/apple -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/apple">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/aapl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/apple_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/apple_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/apple_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/apple_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/apple_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/apple_4">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/apple_computer_inc_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/apple_computer_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/apple_computer_inc">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/aapl_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/apple_computer_inc_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/apple_computer_inc_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/apple_store -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/apple_store">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/apple_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/archer_daniels_midland_company -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/archer_daniels_midland_company">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/adm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/atlantic -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/atlantic"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/automatic_data_proc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/automatic_data_proc">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/adp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bb_t -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bb_t">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/bbt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bbc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bbc">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/british_broadcasting_corporation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bbt -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bbt"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bmw -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bmw">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/chrysler_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/british_broadcasting_corporation -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/british_broadcasting_corporation"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cat -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cat"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/caterpillar_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/caterpillar_inc">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/cat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cb -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cb"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chrysler -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chrysler">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/mitsubishi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chrysler_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chrysler_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/nissan_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chrysler_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chrysler_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chubb_corp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chubb_corp">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/cb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cisco_systems -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cisco_systems">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/csco_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cisco_systems_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cisco_systems_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cl -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cl"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cnn -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cnn">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/fox"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/colgate_palmolive -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/colgate_palmolive">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/cl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/covidien -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/covidien"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/crm -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/crm"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/csco -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/csco">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/oracle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/csco_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/csco_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/csco_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/csco_3">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/cisco_systems_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/d_r_horton -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/d_r_horton">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/dhi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/de -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/de"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/deere_and_co -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/deere_and_co">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/de"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dell -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dell">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/dell001_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dell001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dell001"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dell001_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dell001_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/denso -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/denso">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/nippondenso"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dhi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dhi"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/directv -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/directv">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/the_directv_group"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/downtown_disney -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/downtown_disney"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ebay -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ebay">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/ebay_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ebay_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ebay_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/sbc_communications_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ebay_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ebay_3">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/qualcomm_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ebay_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ebay_inc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/el -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/el"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/emc_corp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/emc_corp">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/schlumberger_ltd"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/emc_corp_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/emc_corp_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/sbc_communications_inc_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/energysolutions -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/energysolutions">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/envirocare_of_utah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/envirocare_of_utah -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/envirocare_of_utah"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/estee_lauder -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/estee_lauder">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/el"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/federal_express -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/federal_express"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/fedex -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fedex">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/federal_express"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fidelity_management_and_resarch_co_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fidelity_management_and_resarch_co_"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/fmr_corp_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fmr_corp_">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/fidelity_management_and_resarch_co_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fo -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fo"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/fortune_brands -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fortune_brands">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/fo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/forum -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/forum">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/downtown_disney"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fox -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fox"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ge -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ge">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/general_electric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ge_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ge_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/general_electric -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/general_electric"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/general_electric_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/general_electric_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/ge_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/general_motors -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/general_motors"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/gm -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gm">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/symantec"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/gm_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gm_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/general_motors"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/goldman_sachs001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/goldman_sachs001">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/gs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/gs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gs"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hd -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hd">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/home_depot_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hewlett_packard -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hewlett_packard">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/hp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hewlett_packard_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hewlett_packard_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hk_disneyland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hk_disneyland"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/home_depot_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/home_depot_inc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_disneyland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_disneyland">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/hk_disneyland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hp"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hp_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hp_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/hewlett_packard_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hyundai -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hyundai">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/samsung_electronics_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ibm_corp_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ibm_corp_"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ibm_corp__2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ibm_corp__2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/ibm_corp__3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ibm_corp__3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ibm_corp__3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ibm_corp__4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ibm_corp__4">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/international_business_machines"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ibm_corp__5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ibm_corp__5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ibm_corp__6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ibm_corp__6">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/ibm_corp__7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ibm_corp__7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ibm_corp__7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/intc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/intc">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/wal_mart_stores_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/intc_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/intc_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/intel -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/intel">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/intc_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/international_business_machines -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/international_business_machines"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/international_business_machines_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/international_business_machines_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/ibm_corp__5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/j_p__morgan_chase -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/j_p__morgan_chase">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/jpm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jnj -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jnj"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/johnson___johnson -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/johnson___johnson">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/jnj"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jpm -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jpm"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kohl_s_corp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kohl_s_corp">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/kss"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/konica_minolta -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/konica_minolta">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/konica_minolta_holding_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/konica_minolta_holding_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/konica_minolta_holding_inc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/krispy_kreme_doughnuts_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/krispy_kreme_doughnuts_inc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kss -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kss"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/low_prices -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/low_prices"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/lowe_s_cos -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lowe_s_cos">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/low_prices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ma -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ma"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mastercard_inc_a -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mastercard_inc_a">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/ma"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mbi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mbi"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mbia_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mbia_inc">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/mbi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mer -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mer"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/merrill_lynch -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/merrill_lynch">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/mer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/met -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/met"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/metlife_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/metlife_inc">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/met"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mf_global -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mf_global">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/mf_global_llc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mf_global_llc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mf_global_llc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/microsoft -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/microsoft">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/msft_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mitsubishi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mitsubishi"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/msft_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/msft_"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_public_radio001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_public_radio001"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nec -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nec"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nec_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nec_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/nissan_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_times_a -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_times_a">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/nyt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/news_corp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/news_corp"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/news_corp_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/news_corp_">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/nws"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nippondenso -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nippondenso"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nissan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nissan">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/nec"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nissan_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nissan_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nissan_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nissan_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/npr -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/npr">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/national_public_radio001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nws -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nws"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nws_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nws_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/news_corp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nyt -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nyt"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/oracle -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/oracle"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pg -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pg"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/philadelphia_inquirer -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/philadelphia_inquirer">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/the_inquirer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/polo_ralph_lauren_a -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/polo_ralph_lauren_a">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/rl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/powerpc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/powerpc">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/ibm_corp_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/procter___gamble -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/procter___gamble">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/pg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/qualcomm_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/qualcomm_inc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/rccl -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rccl"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/regions_financial -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/regions_financial">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/rf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rf -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rf"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/rl -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rl"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/royal_caribbean_international -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/royal_caribbean_international">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/rccl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/salesforce_com -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/salesforce_com">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/crm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/samsung -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/samsung">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/samsung_electronics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/samsung_electronics -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/samsung_electronics"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/samsung_electronics_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/samsung_electronics_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sbc_communications_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sbc_communications_inc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sbc_communications_inc_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sbc_communications_inc_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/schlumberger_limited -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/schlumberger_limited">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/slb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/schlumberger_ltd -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/schlumberger_ltd"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sgi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sgi">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/silicon_graphics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/silicon_graphics -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/silicon_graphics"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/slb -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/slb"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sun -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sun">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/sun_newspapers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sun_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sun_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sun_newspapers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sun_newspapers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/symantec -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/symantec"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/symantec_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/symantec_2">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/symantec_corporation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/symantec_corporation -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/symantec_corporation"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/target_corp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/target_corp">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/tgt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/teva -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/teva"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/teva_pharm_indus_adr -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/teva_pharm_indus_adr">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/teva"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tgt -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tgt"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_directv_group -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_directv_group"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_inquirer -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_inquirer"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tsn -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tsn"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tyco_healthcare -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tyco_healthcare">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/covidien"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tyson_foods -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tyson_foods">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/tsn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ua -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ua"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/under_armour_a -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/under_armour_a">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/ua"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_parcel_b -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_parcel_b">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/ups_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ups_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ups_"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/wachovia_corp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wachovia_corp">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/wb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/wal_mart_stores -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wal_mart_stores">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/wmt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/wal_mart_stores_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wal_mart_stores_inc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/warner_music -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/warner_music">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/atlantic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/wb -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wb"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/wells_fargo -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wells_fargo">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/wfc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/wfc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wfc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/wfmi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wfmi"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/whole_foods_market -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/whole_foods_market">
+        <Predicate:companyalsoknownas rdf:resource="http://dws/OIE#Instance/wfmi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/wmt -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wmt"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+

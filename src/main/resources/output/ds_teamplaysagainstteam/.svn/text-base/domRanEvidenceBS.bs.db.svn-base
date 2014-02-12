@@ -1,0 +1,15 @@
+1.75087243617 !isOfType("DBP#ontology/SoccerClub",ds) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(ds, ns, f) v sameAs(ds,ns) 
+0.02730054608 !isOfType("DBP#ontology/AmericanFootballTeam",ds) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(ds, ns, f) v sameAs(ds,ns) 
+0.00266831029 !isOfType("DBP#ontology/HockeyTeam",ds) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(ds, ns, f) v sameAs(ds,ns) 
+-0.84275705868 !isOfType("DBP#ontology/University",ds) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(ds, ns, f) v sameAs(ds,ns) 
+-2.73822107874 !isOfType("UNTYPED",ds) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(ds, ns, f) v sameAs(ds,ns) 
+-3.68740778350 !isOfType("DBP#ontology/Country",ds) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(ds, ns, f) v sameAs(ds,ns) 
+-7.79770203552 !isOfType("DBP#ontology/TelevisionSeason",ds) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(ds, ns, f) v sameAs(ds,ns) 
+
+
+1.72404346533 !isOfType("DBP#ontology/SoccerClub",do) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(do, no, ff) v sameAs(do,no)  
+0.02991147086 !isOfType("DBP#ontology/AmericanFootballTeam",do) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(do, no, ff) v sameAs(do,no)  
+-0.00144389464 !isOfType("DBP#ontology/HockeyTeam",do) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(do, no, ff) v sameAs(do,no)  
+-0.83275375210 !isOfType("DBP#ontology/University",do) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(do, no, ff) v sameAs(do,no)  
+-2.76211742237 !isOfType("UNTYPED",do) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(do, no, ff) v sameAs(do,no)  
+-4.37952350446 !isOfType("DBP#ontology/MilitaryConflict",do) v !propAsstConf(P, ns, no, ccc) v !sameAsConf(do, no, ff) v sameAs(do,no)  

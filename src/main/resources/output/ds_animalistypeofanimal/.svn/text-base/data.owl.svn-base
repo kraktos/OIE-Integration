@@ -1,0 +1,2637 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dws/OIE#"
+     xml:base="http://dws/OIE"
+     xmlns:Instance="http://dws/OIE#Instance/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Predicate="http://dws/OIE#Predicate/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:resource="http://dbpedia.org/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:resource2="http://dbpedia.org/resource/%3"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://dws/OIE#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dws/OIE#Predicate/animalistypeofanimal -->
+
+    <owl:ObjectProperty rdf:about="http://dws/OIE#Predicate/animalistypeofanimal"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Animal -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Animal"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Arachnid -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Arachnid"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Band -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Band"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Bird -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Bird"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Crustacean -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Crustacean"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Eukaryote -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Eukaryote"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/FictionalCharacter -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/FictionalCharacter"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Fish -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Fish"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Insect -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Insect"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Mammal -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Mammal"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Mollusca -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Mollusca"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MusicGenre -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MusicGenre"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Person"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/RecordLabel -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/RecordLabel"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/RugbyClub -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/RugbyClub"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Settlement -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Settlement"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerClub -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/SoccerClub"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/UNTYPED -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/UNTYPED"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/%3F -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/%3F">
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals001_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals001_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dog001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/family_pets"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pets001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/small_animals"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/small_animals_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/small_animals_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/small_insects"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alligator -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alligator">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alligator"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alligators"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Animal -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Animal">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Animal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_10"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_11"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_12"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_13"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_14"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_15"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_16"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_17"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_18"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_19"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_20"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_21"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_22"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_23"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_8"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/animals_9"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/beasts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ant -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ant">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Insect"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ants"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Antelope -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Antelope">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/antelopes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Apodemus -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Apodemus">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/field_mice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Badger -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Badger">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/badgers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bat -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bat">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bear -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bear">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bear"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Beaver -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Beaver">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/beaver"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/beavers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Big_cat -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Big_cat">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/big_cats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bird -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bird">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicGenre"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_10"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_11"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_12"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_8"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/birds_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Black-and-white_colobus -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Black-and-white_colobus">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/colobus_monkeys"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bobcat -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bobcat">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bobcats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bugs_Bunny -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bugs_Bunny">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/FictionalCharacter"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bugs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bumblebee -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bumblebee">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Insect"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bumble_bees"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Burro -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Burro">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/burros"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Canary_Islands -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Canary_Islands">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canaries"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Canidae -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Canidae">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canids"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Carnivore -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Carnivore">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Animal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/carnivores"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cat -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cat">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cats"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cats_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cats_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cats_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cats_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cattle -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cattle">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cattle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chicken -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chicken">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chipmunk -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chipmunk">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chipmunks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Clam -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Clam">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mollusca"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/clams"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cnidaria -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cnidaria">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Animal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cnidarians"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Columbidae -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Columbidae">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/doves"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cougar -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cougar">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cougar"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mountain_lions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Crayfish -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Crayfish">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Crustacean"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/crayfish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Deer -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Deer">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/deer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Detroit_Tigers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Detroit_Tigers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tigers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dog -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dog">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dog"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dogs"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dogs_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dogs_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dogs_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dogs_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Domestic_pig -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Domestic_pig">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hogs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dromedary -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dromedary">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Eukaryote"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dromedaries"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Eagles_%28band%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Eagles_%28band%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Band"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/eagles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Earwig -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Earwig">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Insect"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/earwigs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Egret -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Egret">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/egrets"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Elephant -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Elephant">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/elephants"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Elk -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Elk">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/elk"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/elk_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ferret -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ferret">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ferrets"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ferrets_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fish -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fish">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fishes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fur -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fur">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/furbearers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Game_fish -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Game_fish">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/game_fish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Goat -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Goat">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/goats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gray_wolf -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Gray_wolf">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wolves"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Grazing -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Grazing">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/grazers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Guinea_pig -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Guinea_pig">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/guinea_pigs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hare -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hare">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hares"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Herbivore -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Herbivore">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Animal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/herbivores"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Herd -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Herd">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/herd_animals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hippopotamus -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hippopotamus">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hippo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Horse -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Horse">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/horses"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Human -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Human">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Eukaryote"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/humans"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Insect -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Insect">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RecordLabel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/insects"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/insects_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Invertebrate -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Invertebrate">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/invertebrates"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/invertebrates_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jaguar -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jaguar">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jaguars"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Killer_whale -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Killer_whale">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/killer_whales"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kitten -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kitten">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kittens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kudu -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kudu">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kudu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Legendary_creature -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Legendary_creature">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/creatures"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/creatures_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/creatures_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/creatures_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/creatures_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/creatures_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/creatures_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/creatures_8"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/creatures_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Leopard -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Leopard">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/leopards"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lion -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lion">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/List_of_birds_of_Nicaragua -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/List_of_birds_of_Nicaragua">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bird_species"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Livestock -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Livestock">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/farm_animals"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/livestock"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/livestock_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/livestock_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Loon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Loon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Animal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/loons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lycaon_pictus -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lycaon_pictus">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wild_dogs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mammal -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mammal">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mammals"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mammals_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mammals_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mammals_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mammals_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mammals_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/small_mammals"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/small_mammals_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Megafauna -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Megafauna">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/large_animals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Miami_Marlins -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Miami_Marlins">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/marlins"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mouse -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mouse">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nightjar -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nightjar">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nightjars"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Organism -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Organism">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/organisms"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ospreys_%28rugby_team%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ospreys_%28rugby_team%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RugbyClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ospreys"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pest_%28organism%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pest_%28organism%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pests"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Petrel -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Petrel">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/petrels"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pheasant -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pheasant">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pheasants"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pig -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pig">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pigs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Polar_bear -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Polar_bear">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/polar_bears"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Predation -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Predation">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/predators"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/predators_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/predators_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/predators_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/predators_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/predators_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/predators_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/prey_animals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Primate -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Primate">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/primates"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Quail -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Quail">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/quail"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rabbit -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rabbit">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rabbits"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Raccoon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Raccoon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/racoons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rat -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rat">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Reindeer -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Reindeer">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/caribou"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Reptile -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Reptile">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/reptiles"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/reptiles_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/reptiles_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rodent -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rodent">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Animal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rodents"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ruminant -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ruminant">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ruminants"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sea_anemone -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sea_anemone">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Animal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sea_anemones"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sea_urchin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sea_urchin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Animal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sea_urchins"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Seabird -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Seabird">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/seabirds"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Shark -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Shark">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Fish"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sharks"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sharks_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sheep -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sheep">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sheep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Songbird -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Songbird">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/songbirds"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/songbirds_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sparrow -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sparrow">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RecordLabel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sparrows"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Spider -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Spider">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Arachnid"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/spider"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/spiders"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Squirrel -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Squirrel">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/squirrels"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/St._Louis_Cardinals -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/St._Louis_Cardinals">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cardinals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Stage_%28stratigraphy%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Stage_%28stratigraphy%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/stages"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Starling -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Starling">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/starlings"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Stingray -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Stingray">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Fish"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/stingrays"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tampa_Bay_Rays -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tampa_Bay_Rays">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rays"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tit_%28bird%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tit_%28bird%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chickadees"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Toucan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Toucan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/toucans"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Turkey_%28bird%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Turkey_%28bird%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/turkeys"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ungulate -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ungulate">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ungulates"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Water_bird -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Water_bird">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/water_birds"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/waterbirds"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Widow -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Widow">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/widow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Zebra -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Zebra">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Mammal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/zebras"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alligator -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alligator">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals001_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alligators -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alligators">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/creatures_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals001"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals001_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals001_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals001_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals001_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_10 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_10"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_11 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_11"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_12 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_12"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_13 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_13"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_14 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_14"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_15 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_15"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_16 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_16">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/ferrets_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_17 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_17"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_18 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_18">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/turkeys"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_19 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_19"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_20 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_20"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_21 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_21"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_22 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_22"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_23 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_23"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_8"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/animals_9 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/animals_9"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/antelopes -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/antelopes"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ants -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ants"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/badgers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/badgers">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bats -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bats">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/birds_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bear -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bear">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/predators_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/beasts -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/beasts">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/birds_10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/beaver -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/beaver">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/furbearers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/beavers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/beavers">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/big_cats -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/big_cats">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/cats_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bird_species -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bird_species"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds001">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/prey_animals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_10 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_10"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_11 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_11"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_12 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_12">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/reptiles_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_8"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/birds_9 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/birds_9">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/pests"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bobcats -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bobcats">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bugs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bugs">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/spiders"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bumble_bees -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bumble_bees">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/insects_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/burros -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/burros">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_13"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/canaries -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canaries">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/birds_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/canids -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canids">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cardinals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cardinals">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/birds"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/caribou -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/caribou">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/carnivores -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/carnivores">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/dogs_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cats -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cats"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cats_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cats_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cats_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cats_3">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/dogs_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cats_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cats_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cats_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cats_5">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/family_pets"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cattle -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cattle">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/ruminants"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chickadees -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chickadees">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/songbirds"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chipmunks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chipmunks">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/mammals_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/clams -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/clams">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/invertebrates"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cnidarians -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cnidarians"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/colobus_monkeys -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/colobus_monkeys">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/primates"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cougar -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cougar">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_20"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/crayfish -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/crayfish">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/creatures -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/creatures"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/creatures_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/creatures_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/creatures_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/creatures_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/creatures_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/creatures_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/creatures_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/creatures_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/creatures_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/creatures_6">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/mice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/creatures_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/creatures_7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/creatures_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/creatures_8"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/creatures_9 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/creatures_9">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/rabbits"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/deer -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/deer">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/ungulates"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dog -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dog"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dog001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dog001">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dogs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dogs"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dogs_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dogs_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dogs_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dogs_3">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/dog"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dogs_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dogs_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dogs_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dogs_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/doves -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/doves">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/birds_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dromedaries -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dromedaries">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_14"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/eagles -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/eagles">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/predators_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/earwigs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/earwigs">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/creatures_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/egrets -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/egrets">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/waterbirds"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/elephants -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/elephants">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/creatures"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/elk -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/elk">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/large_animals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/elk_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/elk_2">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/herbivores"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/family_pets -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/family_pets"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/farm_animals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/farm_animals"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ferrets -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ferrets">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/small_animals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ferrets_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ferrets_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/field_mice -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/field_mice">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/rodents"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fishes -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fishes"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/furbearers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/furbearers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/game_fish -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/game_fish"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/goats -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/goats">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/herd_animals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/grazers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/grazers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/guinea_pigs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/guinea_pigs">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/small_mammals_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hares -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hares">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/mammals_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hens -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hens">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/herbivores -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/herbivores"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/herd_animals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/herd_animals"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hippo -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hippo">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals001_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hogs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hogs">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/livestock"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/horses -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/horses">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/farm_animals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/humans -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/humans">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/livestock_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/insects -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/insects"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/insects_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/insects_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/invertebrates -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/invertebrates"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/invertebrates_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/invertebrates_2">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_22"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jaguars -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jaguars">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/mammals_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/killer_whales -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/killer_whales">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/mammals_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kittens -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kittens">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kudu -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kudu">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/antelopes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/large_animals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/large_animals"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/leopards -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/leopards">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/cats_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/lions -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lions">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/creatures_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/livestock -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/livestock"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/livestock_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/livestock_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/livestock_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/livestock_3">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_23"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/loons -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/loons">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/water_birds"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mammals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mammals">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/cats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mammals_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mammals_2">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/dogs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mammals_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mammals_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mammals_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mammals_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mammals_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mammals_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mammals_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mammals_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/marlins -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/marlins">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/game_fish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mice -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mice"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mountain_lions -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mountain_lions">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/predators_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nightjars -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nightjars">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/birds_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/organisms -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/organisms"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ospreys -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ospreys">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/birds_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pests -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pests"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/petrels -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/petrels">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/birds_11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pets001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pets001">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/creatures_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pheasants -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pheasants">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_17"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pigs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pigs">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/small_animals_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/polar_bears -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/polar_bears">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/creatures_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/predators -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/predators"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/predators_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/predators_2">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/organisms"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/predators_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/predators_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/predators_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/predators_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/predators_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/predators_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/predators_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/predators_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/predators_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/predators_7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/prey_animals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/prey_animals"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/primates -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/primates"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/quail -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/quail">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/bird_species"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rabbits -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rabbits"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/racoons -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/racoons">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rats -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rats">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_19"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rays -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rays"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/reptiles -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/reptiles">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/birds_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/reptiles_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/reptiles_2">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/predators_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/reptiles_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/reptiles_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/rodents -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rodents"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ruminants -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ruminants"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sea_anemones -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sea_anemones">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/cnidarians"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sea_urchins -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sea_urchins">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/seabirds -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/seabirds">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/birds_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sharks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sharks">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sharks_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sharks_2">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/fishes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sheep -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sheep">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/grazers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/small_animals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/small_animals"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/small_animals_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/small_animals_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/small_animals_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/small_animals_3">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/dogs_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/small_insects -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/small_insects">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/ants"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/small_mammals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/small_mammals"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/small_mammals_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/small_mammals_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/songbirds -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/songbirds"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/songbirds_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/songbirds_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sparrows -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sparrows">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/songbirds_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/spider -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/spider"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/spiders -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/spiders"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/squirrels -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/squirrels">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/small_mammals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/stages -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/stages">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/insects"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/starlings -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/starlings">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/stingrays -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/stingrays">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/rays"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tigers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tigers">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_21"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/toucans -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/toucans">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/animals_12"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/turkeys -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/turkeys"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ungulates -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ungulates"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/water_birds -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/water_birds"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/waterbirds -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/waterbirds"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/widow -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/widow">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/spider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/wild_dogs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wild_dogs">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/predators_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/wolves -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wolves">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/predators"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/zebras -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/zebras">
+        <Predicate:animalistypeofanimal rdf:resource="http://dws/OIE#Instance/creatures_8"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+

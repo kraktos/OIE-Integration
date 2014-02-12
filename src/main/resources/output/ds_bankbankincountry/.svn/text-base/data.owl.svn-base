@@ -1,0 +1,2409 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dws/OIE#"
+     xml:base="http://dws/OIE"
+     xmlns:Instance="http://dws/OIE#Instance/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Predicate="http://dws/OIE#Predicate/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:resource="http://dbpedia.org/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:resource2="http://dbpedia.org/resource/%3"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://dws/OIE#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dws/OIE#Predicate/bankbankincountry -->
+
+    <owl:ObjectProperty rdf:about="http://dws/OIE#Predicate/bankbankincountry"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Company -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Company"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Country -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Country"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Island -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Island"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Organisation -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Organisation"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Person"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/PoliticalParty -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/PoliticalParty"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerClub -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/SoccerClub"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/UNTYPED -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/UNTYPED"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/%3F -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/%3F">
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/barclays_india"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/citibank_n_a"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/doha_bank"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/first_american_bank"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/first_leasing_company_of_india"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indusind_bank_ltd"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/j_p__morgan_chase"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jammu___kashmir_bank_ltd"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/karur_vysya_bank_limited"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kotak_mahindra"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/u_s_"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/u_s__2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/u_s__government"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/uk__ireland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/ABN_AMRO -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/ABN_AMRO">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/abn_amro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/ASB_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/ASB_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/asb_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Allahabad_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Allahabad_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/allahabad_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alpha -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alpha">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alpha"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/American_Express -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/American_Express">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/american_express_bank_ltd"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Azerbaijan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Azerbaijan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/azerbaijan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bahrain -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bahrain">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bahrain"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bahrain_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bangkok_Bank_F.C. -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bangkok_Bank_F.C.">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bangkok_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bank_of_America -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bank_of_America">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bank_of_america"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bank_of_Baroda -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bank_of_Baroda">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bank_of_baroda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bank_of_India -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bank_of_India">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bank_of_india"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bank_of_Montreal -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bank_of_Montreal">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bmo_bank_of_montreal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bank_of_Punjab -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bank_of_Punjab">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bank_of_punjab"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bank_of_Rajasthan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bank_of_Rajasthan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bank_of_rajasthan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Barclays -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Barclays">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/barclays"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/barclays_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/barclays_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/barclays_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/barclays_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/barclays_bank_plc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Batting_%28cricket%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Batting_%28cricket%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rhb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bermuda -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bermuda">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bermuda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Botswana -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Botswana">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/botswana"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Brazil -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Brazil">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/brazil"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Brunei -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Brunei">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/brunei"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cambodia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cambodia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cambodia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Canada -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Canada">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canada"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canada_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canada_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canada_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canada_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canada_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canada_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canada_8"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canada_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cayman_Islands -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cayman_Islands">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cayman_islands"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Central_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Central_bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/central_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/China_Construction_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/China_Construction_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/china_construction_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Citibank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Citibank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/citibank"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/citibank_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/citibank_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Citigroup -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Citigroup">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/citi"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/citi_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/citigroup"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Citizenship -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Citizenship">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/citizens"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/citizens_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/citizens_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Commonwealth_of_Nations -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Commonwealth_of_Nations">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/commonwealth"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/commonwealth_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/commonwealth_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Corporation_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Corporation_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/corporation_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dena_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dena_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dena_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Denmark -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Denmark">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/denmark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Deutsche_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Deutsche_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/deutsche_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dhanlaxmi_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dhanlaxmi_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dhanalakshmi_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Federal_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Federal_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/federal_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/First_National -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/First_National">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/first_national"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/France -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/France">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/france"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Greece -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Greece">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/greece"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/greece_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/greece_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/HBOS -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/HBOS">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hbos"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/HSBC -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/HSBC">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_10"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_11"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_12"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_13"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_8"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hsbc_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hang_Seng_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hang_Seng_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hang_seng_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hang_Seng_Index -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hang_Seng_Index">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hang_seng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hong_Kong -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hong_Kong">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hungary -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hungary">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hungary"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hungary_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/ICICI_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/ICICI_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/icici"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/IDBI_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/IDBI_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/idbi_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Index_of_economics_articles -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Index_of_economics_articles">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/index"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/India -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/India">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_10"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_11"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_12"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_13"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_14"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_15"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_16"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_17"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_18"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_19"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_20"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_21"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_22"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_23"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_24"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_25"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_26"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_27"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_28"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_29"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_30"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_31"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_32"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_8"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Iran -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Iran">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ireland -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ireland">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Island"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ireland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Japan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Japan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/japan"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/japan_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jyske_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jyske_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jyske_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kazakhstan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kazakhstan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kazakhstan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kyrgyzstan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kyrgyzstan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kyrgyzstan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Liberia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Liberia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/liberia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Malaysia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Malaysia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/malaysia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Malta -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Malta">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/malta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Maybank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Maybank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/maybank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Morgan_Stanley -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Morgan_Stanley">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/morgan_stanley"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/National_Party_of_Australia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/National_Party_of_Australia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/PoliticalParty"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_10"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_11"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_12"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_13"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_14"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_15"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_8"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Netherlands_Antilles -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Netherlands_Antilles">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/netherland_antilles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_Zealand -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_Zealand">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_zealand"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_zealand_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_zealand_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nigeria -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nigeria">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nigeria"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nigeria_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Panama -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Panama">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/panama"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Philippine_National_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Philippine_National_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pnb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Poland -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Poland">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/poland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Political_divisions_of_the_United_States -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Political_divisions_of_the_United_States">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Organisation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/state"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Punjab_National_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Punjab_National_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/punjab_national_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Qatar -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Qatar">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/qatar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Royal_Bank_of_Canada -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Royal_Bank_of_Canada">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rbc_financial_group"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/royal_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Royal_family -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Royal_family">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/royal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/royal_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/royal_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Singapore -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Singapore">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/singapore"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/singapore_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Slovenia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Slovenia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/slovenia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Somalia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Somalia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/somalia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/South_Africa -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/South_Africa">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/south_africa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Standard_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Standard_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/standard_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Standard_Chartered -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Standard_Chartered">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/standard_chartered"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/State_Bank_of_India -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/State_Bank_of_India">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sbi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Switzerland -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Switzerland">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/switzerland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Syndicate_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Syndicate_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/syndicate_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Teachta_D%C3%A1la -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Teachta_D%C3%A1la">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/td"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Thailand -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Thailand">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/thailand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Turkey -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Turkey">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/turkey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/United_Kingdom -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/United_Kingdom">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_kingdom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/United_States -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/United_States">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states_of_america"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states_of_america_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Uzbekistan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Uzbekistan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/uzbekistan"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/uzbekistan_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vijaya_Bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vijaya_Bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/vijaya_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/abn_amro -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/abn_amro">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/netherland_antilles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/allahabad_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/allahabad_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_19"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alpha -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alpha">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/greece"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/american_express_bank_ltd -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/american_express_bank_ltd">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_29"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/asb_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/asb_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/new_zealand_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/azerbaijan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/azerbaijan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bahrain -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bahrain"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bahrain_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bahrain_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bangkok_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bangkok_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/thailand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bank_of_america -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bank_of_america">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_30"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bank_of_baroda -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bank_of_baroda">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_12"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bank_of_india -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bank_of_india">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bank_of_punjab -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bank_of_punjab">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_28"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bank_of_rajasthan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bank_of_rajasthan">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_32"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/barclays -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/barclays">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/france"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/barclays_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/barclays_2">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/botswana"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/barclays_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/barclays_3">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/u_s_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/barclays_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/barclays_4">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_26"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/barclays_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/barclays_5">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/canada_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/barclays_bank_plc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/barclays_bank_plc">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_20"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/barclays_india -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/barclays_india">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bermuda -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bermuda"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bmo_bank_of_montreal -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bmo_bank_of_montreal">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/canada_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/botswana -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/botswana"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/brazil -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/brazil"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/brunei -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/brunei"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cambodia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cambodia"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canada -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canada"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canada_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canada_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canada_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canada_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canada_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canada_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canada_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canada_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canada_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canada_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canada_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canada_7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canada_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canada_8"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canada_9 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canada_9"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cayman_islands -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cayman_islands"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/central_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/central_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/japan_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/china_construction_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/china_construction_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/citi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/citi">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/canada_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/citi_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/citi_2">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_25"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/citibank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/citibank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/bahrain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/citibank_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/citibank_2">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/hungary_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/citibank_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/citibank_3">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/citibank_n_a -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/citibank_n_a">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/citigroup -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/citigroup">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/u_s__government"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/citizens -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/citizens">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/united_states_of_america_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/citizens_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/citizens_2">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/u_s__2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/citizens_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/citizens_3">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/canada_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/commonwealth -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/commonwealth">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/new_zealand_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/commonwealth_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/commonwealth_2">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/nigeria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/commonwealth_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/commonwealth_3">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/malta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/corporation_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/corporation_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_24"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dena_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dena_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/denmark -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/denmark"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/deutsche_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/deutsche_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_17"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dhanalakshmi_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dhanalakshmi_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_21"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/doha_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/doha_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/qatar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/federal_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/federal_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_14"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/first_american_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/first_american_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/nigeria_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/first_leasing_company_of_india -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/first_leasing_company_of_india">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/first_national -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/first_national">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/south_africa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/france -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/france"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/greece -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/greece"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/greece_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/greece_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/greece_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/greece_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hang_seng -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hang_seng">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hang_seng_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hang_seng_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hbos -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hbos">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/uk__ireland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/panama"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_10 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_10">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/united_kingdom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_11 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_11">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/singapore_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_12 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_12">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/united_states_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_13 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_13">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/bahrain_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_2">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/japan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_3">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/cayman_islands"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_4">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/bermuda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_5">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/united_states_of_america"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_6">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/brunei"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_7">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_8">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/brazil"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hsbc_9 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hsbc_9">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/greece_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hungary -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hungary"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hungary_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hungary_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/icici -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/icici">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/idbi_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/idbi_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_23"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/index -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/index">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/india -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_10 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_10"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_11 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_11"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_12 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_12"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_13 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_13"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_14 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_14"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_15 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_15"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_16 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_16"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_17 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_17"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_18 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_18"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_19 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_19"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_20 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_20"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_21 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_21"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_22 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_22"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_23 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_23"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_24 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_24"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_25 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_25"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_26 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_26"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_27 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_27"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_28 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_28"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_29 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_29"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_30 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_30"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_31 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_31"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_32 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_32"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_8"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_9 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_9"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/indusind_bank_ltd -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indusind_bank_ltd">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ireland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ireland"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/j_p__morgan_chase -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/j_p__morgan_chase">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/united_states"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jammu___kashmir_bank_ltd -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jammu___kashmir_bank_ltd">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/japan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/japan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/japan_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/japan_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/jyske_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jyske_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/denmark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/karur_vysya_bank_limited -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/karur_vysya_bank_limited">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_18"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kazakhstan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kazakhstan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kotak_mahindra -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kotak_mahindra">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_16"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kyrgyzstan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kyrgyzstan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/liberia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/liberia"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/malaysia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/malaysia"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/malta -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/malta"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/maybank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/maybank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/singapore"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/morgan_stanley -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/morgan_stanley">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_27"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/kazakhstan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_10 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_10">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/iran"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_11 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_11">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/azerbaijan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_12 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_12">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/greece_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_13 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_13">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/cambodia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_14 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_14">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/somalia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_15 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_15">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/slovenia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_2">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/canada"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_3">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/hungary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_4">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/turkey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_5">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/liberia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_6">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/uzbekistan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_7">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/kyrgyzstan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_8">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/poland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_9 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_9">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/switzerland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/netherland_antilles -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/netherland_antilles"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_zealand -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_zealand"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_zealand_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_zealand_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_zealand_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_zealand_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nigeria -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nigeria"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nigeria_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nigeria_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/panama -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/panama"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pnb -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pnb">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/poland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/poland"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/punjab_national_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/punjab_national_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_13"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/qatar -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/qatar"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/rbc_financial_group -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rbc_financial_group">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/canada_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rhb -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rhb">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/malaysia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/royal -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/royal">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/new_zealand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/royal_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/royal_2">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/ireland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/royal_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/royal_3">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/canada_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/royal_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/royal_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/canada_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sbi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sbi">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_31"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/singapore -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/singapore"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/singapore_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/singapore_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/slovenia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/slovenia"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/somalia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/somalia"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/south_africa -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/south_africa"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/standard_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/standard_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/standard_chartered -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/standard_chartered">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/state -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/state">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/uzbekistan_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/switzerland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/switzerland"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/syndicate_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/syndicate_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_22"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/td -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/td">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/canada_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/thailand -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/thailand"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/turkey -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/turkey"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/u_s_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/u_s_"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/u_s__2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/u_s__2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/u_s__government -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/u_s__government"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/uk__ireland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/uk__ireland"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_kingdom -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_kingdom"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states_of_america -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states_of_america"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states_of_america_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states_of_america_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/uzbekistan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/uzbekistan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/uzbekistan_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/uzbekistan_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/vijaya_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/vijaya_bank">
+        <Predicate:bankbankincountry rdf:resource="http://dws/OIE#Instance/india_10"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+

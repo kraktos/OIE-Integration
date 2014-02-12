@@ -1,0 +1,3227 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dws/OIE#"
+     xml:base="http://dws/OIE"
+     xmlns:Instance="http://dws/OIE#Instance/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Predicate="http://dws/OIE#Predicate/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:resource="http://dbpedia.org/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:resource2="http://dbpedia.org/resource/%3"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://dws/OIE#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dws/OIE#Predicate/actorstarredinmovie -->
+
+    <owl:ObjectProperty rdf:about="http://dws/OIE#Predicate/actorstarredinmovie"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Album -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Album"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Band -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Band"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Bodybuilder -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Bodybuilder"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Book -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Book"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/City -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/City"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Comedian -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Comedian"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/ComicsCharacter -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/ComicsCharacter"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/FictionalCharacter -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/FictionalCharacter"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Film -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Film"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Holiday -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Holiday"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Magazine -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Magazine"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MusicGenre -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MusicGenre"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MusicalArtist -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MusicalArtist"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/OfficeHolder -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/OfficeHolder"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Person"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/PopulatedPlace -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/PopulatedPlace"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Ship -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Ship"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerPlayer -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/SoccerPlayer"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/TelevisionEpisode -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/TelevisionEpisode"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/TelevisionShow -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/TelevisionShow"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/TelevisionStation -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/TelevisionStation"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Theatre -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Theatre"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/UNTYPED -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/UNTYPED"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/%3F -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/%3F">
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/adam_west_and_burt_ward"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/guess_who_s_coming_to_dinner"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/n2001_a_space_odyssey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/A_Few_Good_Men -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/A_Few_Good_Men">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/a_few_good_men"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Aaron_Eckhart -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Aaron_Eckhart">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/aaron_eckhart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Adam_Sandler -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Adam_Sandler">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/adam_sandler"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Al_Pacino -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Al_Pacino">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/al_pacino"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alan_Arkin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alan_Arkin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alan_arkin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alien_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alien_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alien"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/American_Beauty_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/American_Beauty_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/american_beauty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Andy_Ferrell -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Andy_Ferrell">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ferrell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Annie_Hall -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Annie_Hall">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/annie_hall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Arnold_Schwarzenegger -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Arnold_Schwarzenegger">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arnold_schwarzenegger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Batman -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Batman">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ComicsCharacter"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/batman"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/batman_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Batman_Returns -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Batman_Returns">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/batman_returns"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ben_Affleck -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ben_Affleck">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ben_affleck"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ben_affleck_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ben_Stiller -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ben_Stiller">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ben_stiller"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bennett_Miller -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bennett_Miller">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bennett_miller"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Billy_Madison -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Billy_Madison">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/billy_madison"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Billy_Zane -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Billy_Zane">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/billy_zane"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Blade -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Blade">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/blade"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Blades_of_Glory -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Blades_of_Glory">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/blades_of_glory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Blow_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Blow_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/blow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bonnie_and_Clyde_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bonnie_and_Clyde_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bonnie_and_clyde"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Brad_Pitt -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Brad_Pitt">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/brad_pitt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Brenda_Blethyn -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Brenda_Blethyn">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/brenda_blethyn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bruce_Willis -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bruce_Willis">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bruce_willis"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bruce_willis_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Capote_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Capote_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/capote"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Casablanca -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Casablanca">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/casablanca"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Castaway -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Castaway">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/castaway"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cate_Blanchett -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cate_Blanchett">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cate_blanchett"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Charlie_Chaplin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Charlie_Chaplin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/charlie_chaplin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Charlie_Sheen -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Charlie_Sheen">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/charlie_sheen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cher -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cher">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicalArtist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chris_Pine -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chris_Pine">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chris_pine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chris_Tucker -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chris_Tucker">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Comedian"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chris_tucker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Christian_Bale -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Christian_Bale">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/christian_bale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Christopher_Reeve -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Christopher_Reeve">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/christopher_reeve"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Christopher_Walken -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Christopher_Walken">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/christopher_walken"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Clint_Eastwood -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Clint_Eastwood">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/clint_eastwood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Collateral_%28finance%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Collateral_%28finance%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/collateral"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/collateral_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Computer_network -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Computer_network">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/network"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Contact_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Contact_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/contact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cool_Hand_Luke -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cool_Hand_Luke">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cool_hand_luke"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dead_Poets_Society -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dead_Poets_Society">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dead_poets_society"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dean_Cain -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dean_Cain">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dean_cain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Demolition_Man_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Demolition_Man_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/demolition_man"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Diane_Keaton -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Diane_Keaton">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/diane_keaton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Don_Cheadle -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Don_Cheadle">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/don_cheadle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dracula -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dracula">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Book"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dracula"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Easy_Rider -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Easy_Rider">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/easy_rider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Edward_Norton -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Edward_Norton">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/edward_norton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ellen_Page -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ellen_Page">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ellen_page"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ernest_Borgnine -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ernest_Borgnine">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ernest_borgnine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Evan_Almighty -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Evan_Almighty">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/evan_almighty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fatal_Attraction -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fatal_Attraction">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fatal_attraction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fay_Wray -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fay_Wray">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fay_wray"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Faye_Dunaway -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Faye_Dunaway">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/faye_dunaway"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Forest_Whitaker -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Forest_Whitaker">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/forest_whitaker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fred_Claus -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fred_Claus">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fred_claus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gary_Cooper -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Gary_Cooper">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gary_cooper"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gary_cooper_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gary_Lockwood -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Gary_Lockwood">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gary_lockwood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gene_Hackman -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Gene_Hackman">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gene_hackman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Geoffrey_Rush -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Geoffrey_Rush">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/geoffrey_rush"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ghost_Rider_%28comics%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ghost_Rider_%28comics%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ComicsCharacter"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ghost_rider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Glenn_Close -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Glenn_Close">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/glenn_close"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Goodfellas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Goodfellas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/goodfellas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Half_Nelson_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Half_Nelson_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/half_nelson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Halloween -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Halloween">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Holiday"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/halloween"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hannah_Montana -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hannah_Montana">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/TelevisionShow"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hannah_montana"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hard_Candy_%28Madonna_album%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hard_Candy_%28Madonna_album%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Album"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hard_candy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Harrison_Ford -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Harrison_Ford">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/harrison_ford"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Helen_Hunt -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Helen_Hunt">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/helen_hunt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/High_Noon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/High_Noon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/high_noon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Holly_Hunter -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Holly_Hunter">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/holly_hunter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hoosiers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hoosiers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hoosiers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hostage -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hostage">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hostage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hot_Shots_%28The_Wire%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hot_Shots_%28The_Wire%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/TelevisionEpisode"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hot_shots"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hotel_Rwanda -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hotel_Rwanda">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hotel_rwanda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hulk_%28comics%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hulk_%28comics%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ComicsCharacter"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hulk"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hulk_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Humphrey_Bogart -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Humphrey_Bogart">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/humphrey_bogart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/James_Stewart -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/James_Stewart">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jimmy_stewart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jamie_Foxx -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jamie_Foxx">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Comedian"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jamie_foxx"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jodie_Foster -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jodie_Foster">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jodie_foster"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jodie_foster_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jodie_foster_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/John_Carpenter -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/John_Carpenter">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/john_carpenter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/John_Carradine -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/John_Carradine">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/john_carradine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/John_Travolta -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/John_Travolta">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/john_travolta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Johnny_Depp -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Johnny_Depp">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/johnny_depp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jon_Voight -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jon_Voight">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jon_voight"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Josh_Duhamel -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Josh_Duhamel">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/josh_duhamel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Judi_Dench -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Judi_Dench">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/judi_dench"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kate_Beckinsale -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kate_Beckinsale">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kate_beckinsale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Katharine_Hepburn -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Katharine_Hepburn">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/katharine_hepburn"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/katharine_hepburn_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/King_Kong -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/King_Kong">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/FictionalCharacter"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/king_kong"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/king_kong_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kurt_Russell -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kurt_Russell">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kurt_russell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Laurence_Olivier -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Laurence_Olivier">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/laurence_olivier"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Life_%28magazine%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Life_%28magazine%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Magazine"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/life"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Little_Miss_Sunshine -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Little_Miss_Sunshine">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/little_miss_sunshine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lou_Ferrigno -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lou_Ferrigno">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bodybuilder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lou_ferrigno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Luke_Wilson -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Luke_Wilson">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/luke_wilson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Marty_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Marty_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/marty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Meet_the_Parents -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Meet_the_Parents">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/meet_the_parents"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Meg_Ryan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Meg_Ryan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/meg_ryan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mel_Brooks -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mel_Brooks">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Comedian"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mel_brooks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mel_Gibson -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mel_Gibson">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mel_gibson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Michelle_Pfeiffer -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Michelle_Pfeiffer">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/michelle_pfeiffer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mickey_Rourke -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mickey_Rourke">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mickey_rourke"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Midnight_Cowboy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Midnight_Cowboy">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/midnight_cowboy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Miley_Cyrus -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Miley_Cyrus">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicalArtist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/miley_cyrus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Miracle -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Miracle">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Band"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/miracle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Modern_Times_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Modern_Times_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/modern_times"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Moonstruck -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Moonstruck">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/moonstruck"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Morgan_Freeman -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Morgan_Freeman">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/morgan_freeman"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/morgan_freeman_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Morning_glory -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Morning_glory">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/morning_glory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Moulin_Rouge -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Moulin_Rouge">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Theatre"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/moulin_rouge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Naomi_Watts -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Naomi_Watts">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/naomi_watts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nicolas_Cage -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nicolas_Cage">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nicolas_cage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nicole_Kidman -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nicole_Kidman">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nicole_kidman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Notes_on_a_Scandal_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Notes_on_a_Scandal_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/notes_on_a_scandal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/notes_on_a_scandal_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Office_Space -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Office_Space">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/office_space"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Old_School_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Old_School_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/old_school"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Oliver_Stone -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Oliver_Stone">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/oliver_stone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Patrick_Swayze -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Patrick_Swayze">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/patrick_swayze"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Paul_Newman -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Paul_Newman">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/paul_newman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pearl_Harbor -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pearl_Harbor">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pearl_harbor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Peter_Fonda -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Peter_Fonda">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/peter_fonda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Peter_Jackson -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Peter_Jackson">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/peter_jackson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Places_in_the_Heart -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Places_in_the_Heart">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/places_in_the_heart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Platoon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Platoon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/platoon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Point_Break -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Point_Break">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/point_break"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pulp_Fiction -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pulp_Fiction">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pulp_fiction"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pulp_fiction_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pulp_fiction_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pulp_fiction_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ray_Liotta -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ray_Liotta">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ray_liotta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rear_Window -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rear_Window">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rear_window"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rebecca_%281940_film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rebecca_%281940_film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rebecca"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Reese_Witherspoon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Reese_Witherspoon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/reese_witherspoon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ridley_Scott -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ridley_Scott">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ridley_scott"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Robert_Rodriguez -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Robert_Rodriguez">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/robert_rodriguez"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Robin_Williams -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Robin_Williams">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Comedian"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/robin_williams"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ron_Livingston -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ron_Livingston">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ron_livingston"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rush_hour -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rush_hour">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rush_hour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ryan_Gosling -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ryan_Gosling">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ryan_gosling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sally_Field -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sally_Field">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sally_field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sam_Mendes -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sam_Mendes">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sam_mendes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Samuel_L._Jackson -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Samuel_L._Jackson">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/samuel_l__jackson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Saving_Grace_%28TV_series%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Saving_Grace_%28TV_series%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/TelevisionShow"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/saving_grace"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Scarface_%28rapper%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Scarface_%28rapper%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicalArtist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/scarface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sergeant_York -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sergeant_York">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sergeant_york"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Seven_Network -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Seven_Network">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/TelevisionStation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/seven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Shine_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Shine_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/shine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Signs_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Signs_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/signs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sin_City_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sin_City_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sin_city"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sin_city_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Smokin%27_Aces -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Smokin%27_Aces">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/smokin__aces"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Snatch_%28weightlifting%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Snatch_%28weightlifting%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/snatch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Snow_Angels_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Snow_Angels_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/snow_angels"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Spaceballs -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Spaceballs">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/spaceballs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Star_Trek -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Star_Trek">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Ship"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/star_trek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Steve_Carell -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Steve_Carell">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/steve_carell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sunset_Boulevard -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sunset_Boulevard">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sunset_boulevard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Superman -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Superman">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ComicsCharacter"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/superman"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/superman_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sylvester_Stallone -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sylvester_Stallone">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sylvester_stallone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Terminator_%28franchise%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Terminator_%28franchise%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/terminator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Dark_Knight_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Dark_Knight_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_dark_knight"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Last_King_of_Scotland_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Last_King_of_Scotland_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_last_king_of_scotland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Piano -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Piano">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_piano"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Ring_%28magazine%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Ring_%28magazine%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Magazine"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_ring"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Shawshank_Redemption -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Shawshank_Redemption">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/shawshank_redemption"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Silence_of_the_Lambs_%28film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Silence_of_the_Lambs_%28film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/silence_of_the_lambs"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/the_silence_of_the_lambs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Titanic_%281997_film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Titanic_%281997_film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/titanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tom_Cruise -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tom_Cruise">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tom_cruise"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tom_cruise_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tom_Hanks -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tom_Hanks">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tom_hanks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Transformers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Transformers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicGenre"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/transformers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/True_Romance -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/True_Romance">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/true_romance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Twister_%281996_film%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Twister_%281996_film%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/twister"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Uma_Thurman -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Uma_Thurman">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/uma_thurman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Unforgiven -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Unforgiven">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/unforgiven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vince_Vaughn -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vince_Vaughn">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/vince_vaughn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Walk_the_Line -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Walk_the_Line">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/walk_the_line"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Warren_Beatty -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Warren_Beatty">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/warren_beatty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Wesley_Snipes -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wesley_Snipes">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wesley_snipes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/William_Holden -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/William_Holden">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/william_holden"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Working_Girl -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Working_Girl">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/working_girl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/a_few_good_men -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/a_few_good_men"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/aaron_eckhart -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/aaron_eckhart">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/the_dark_knight"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/adam_sandler -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/adam_sandler">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/billy_madison"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/adam_west_and_burt_ward -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/adam_west_and_burt_ward">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/batman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/al_pacino -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/al_pacino">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/scarface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alan_arkin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alan_arkin">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/little_miss_sunshine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alien -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alien"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/american_beauty -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/american_beauty"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/annie_hall -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/annie_hall"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/arnold_schwarzenegger -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arnold_schwarzenegger">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/terminator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/batman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/batman"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/batman_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/batman_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/batman_returns -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/batman_returns"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ben_affleck -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ben_affleck">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/pearl_harbor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ben_affleck_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ben_affleck_2">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/smokin__aces"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ben_stiller -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ben_stiller">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/meet_the_parents"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bennett_miller -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bennett_miller">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/capote"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/billy_madison -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/billy_madison"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/billy_zane -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/billy_zane">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/titanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/blade -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/blade"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/blades_of_glory -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/blades_of_glory"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/blow -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/blow"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bonnie_and_clyde -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bonnie_and_clyde"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/brad_pitt -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/brad_pitt">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/snatch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/brenda_blethyn -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/brenda_blethyn">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/saving_grace"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bruce_willis -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bruce_willis">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/pulp_fiction_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bruce_willis_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bruce_willis_2">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/hostage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/capote -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/capote"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/casablanca -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/casablanca"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/castaway -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/castaway"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cate_blanchett -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cate_blanchett">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/notes_on_a_scandal_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/charlie_chaplin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/charlie_chaplin">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/modern_times"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/charlie_sheen -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/charlie_sheen">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/hot_shots"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cher -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cher">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/moonstruck"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chris_pine -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chris_pine">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/star_trek"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chris_tucker -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chris_tucker">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/rush_hour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/christian_bale -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/christian_bale">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/batman_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/christopher_reeve -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/christopher_reeve">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/superman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/christopher_walken -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/christopher_walken">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/true_romance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/clint_eastwood -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/clint_eastwood">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/unforgiven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/collateral -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/collateral"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/collateral_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/collateral_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/contact -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/contact"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cool_hand_luke -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cool_hand_luke"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dead_poets_society -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dead_poets_society"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dean_cain -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dean_cain">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/superman_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/demolition_man -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/demolition_man"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/diane_keaton -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/diane_keaton">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/annie_hall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/don_cheadle -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/don_cheadle">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/hotel_rwanda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dracula -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dracula"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/easy_rider -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/easy_rider"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/edward_norton -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/edward_norton">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/hulk_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ellen_page -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ellen_page">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/hard_candy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ernest_borgnine -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ernest_borgnine">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/marty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/evan_almighty -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/evan_almighty"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/fatal_attraction -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fatal_attraction"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/fay_wray -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fay_wray">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/king_kong_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/faye_dunaway -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/faye_dunaway">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/network"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ferrell -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ferrell">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/blades_of_glory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/forest_whitaker -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/forest_whitaker">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/the_last_king_of_scotland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fred_claus -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fred_claus"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/gary_cooper -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gary_cooper">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/high_noon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/gary_cooper_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gary_cooper_2">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/sergeant_york"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/gary_lockwood -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gary_lockwood">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/n2001_a_space_odyssey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/gene_hackman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gene_hackman">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/hoosiers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/geoffrey_rush -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/geoffrey_rush">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/shine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ghost_rider -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ghost_rider"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/glenn_close -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/glenn_close">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/fatal_attraction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/goodfellas -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/goodfellas"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/guess_who_s_coming_to_dinner -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/guess_who_s_coming_to_dinner"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/half_nelson -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/half_nelson"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/halloween -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/halloween"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hannah_montana -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hannah_montana"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hard_candy -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hard_candy"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/harrison_ford -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/harrison_ford">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/working_girl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/helen_hunt -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/helen_hunt">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/twister"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/high_noon -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/high_noon"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/holly_hunter -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/holly_hunter">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/the_piano"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hoosiers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hoosiers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hostage -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hostage"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hot_shots -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hot_shots"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hotel_rwanda -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hotel_rwanda"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hulk -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hulk"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hulk_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hulk_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/humphrey_bogart -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/humphrey_bogart">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/casablanca"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jamie_foxx -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jamie_foxx">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/collateral"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jimmy_stewart -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jimmy_stewart">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/rear_window"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jodie_foster -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jodie_foster">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/contact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jodie_foster_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jodie_foster_2">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/the_silence_of_the_lambs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jodie_foster_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jodie_foster_3">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/silence_of_the_lambs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/john_carpenter -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/john_carpenter">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/halloween"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/john_carradine -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/john_carradine">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/dracula"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/john_travolta -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/john_travolta">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/pulp_fiction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/johnny_depp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/johnny_depp">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/blow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jon_voight -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jon_voight">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/midnight_cowboy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/josh_duhamel -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/josh_duhamel">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/transformers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/judi_dench -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/judi_dench">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/notes_on_a_scandal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kate_beckinsale -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kate_beckinsale">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/snow_angels"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/katharine_hepburn -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/katharine_hepburn">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/morning_glory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/katharine_hepburn_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/katharine_hepburn_2">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/guess_who_s_coming_to_dinner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/king_kong -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/king_kong"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/king_kong_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/king_kong_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kurt_russell -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kurt_russell">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/miracle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/laurence_olivier -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/laurence_olivier">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/rebecca"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/life -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/life"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/little_miss_sunshine -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/little_miss_sunshine"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/lou_ferrigno -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lou_ferrigno">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/hulk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/luke_wilson -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/luke_wilson">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/old_school"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/marty -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/marty"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/meet_the_parents -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/meet_the_parents"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/meg_ryan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/meg_ryan">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/life"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mel_brooks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mel_brooks">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/spaceballs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mel_gibson -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mel_gibson">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/signs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/michelle_pfeiffer -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/michelle_pfeiffer">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/batman_returns"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mickey_rourke -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mickey_rourke">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/sin_city"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/midnight_cowboy -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/midnight_cowboy"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/miley_cyrus -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/miley_cyrus">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/hannah_montana"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/miracle -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/miracle"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/modern_times -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/modern_times"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/moonstruck -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/moonstruck"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/morgan_freeman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/morgan_freeman">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/seven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/morgan_freeman_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/morgan_freeman_2">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/shawshank_redemption"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/morning_glory -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/morning_glory"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/moulin_rouge -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/moulin_rouge"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/n2001_a_space_odyssey -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/n2001_a_space_odyssey"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/naomi_watts -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/naomi_watts">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/the_ring"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/network -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/network"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nicolas_cage -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nicolas_cage">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/ghost_rider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nicole_kidman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nicole_kidman">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/moulin_rouge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/notes_on_a_scandal -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/notes_on_a_scandal"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/notes_on_a_scandal_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/notes_on_a_scandal_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/office_space -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/office_space"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/old_school -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/old_school"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/oliver_stone -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/oliver_stone">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/platoon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/patrick_swayze -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/patrick_swayze">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/point_break"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/paul_newman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/paul_newman">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/cool_hand_luke"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pearl_harbor -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pearl_harbor"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/peter_fonda -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/peter_fonda">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/easy_rider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/peter_jackson -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/peter_jackson">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/king_kong"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/places_in_the_heart -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/places_in_the_heart"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/platoon -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/platoon"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/point_break -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/point_break"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pulp_fiction -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pulp_fiction"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pulp_fiction_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pulp_fiction_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pulp_fiction_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pulp_fiction_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pulp_fiction_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pulp_fiction_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ray_liotta -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ray_liotta">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/goodfellas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rear_window -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rear_window"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/rebecca -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rebecca"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/reese_witherspoon -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/reese_witherspoon">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/walk_the_line"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ridley_scott -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ridley_scott">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/alien"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/robert_rodriguez -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/robert_rodriguez">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/sin_city_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/robin_williams -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/robin_williams">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/dead_poets_society"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ron_livingston -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ron_livingston">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/office_space"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rush_hour -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rush_hour"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ryan_gosling -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ryan_gosling">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/half_nelson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sally_field -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sally_field">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/places_in_the_heart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sam_mendes -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sam_mendes">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/american_beauty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/samuel_l__jackson -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/samuel_l__jackson">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/pulp_fiction_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/saving_grace -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/saving_grace"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/scarface -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/scarface"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sergeant_york -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sergeant_york"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/seven -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/seven"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/shawshank_redemption -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/shawshank_redemption"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/shine -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/shine"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/signs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/signs"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/silence_of_the_lambs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/silence_of_the_lambs"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sin_city -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sin_city"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sin_city_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sin_city_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/smokin__aces -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/smokin__aces"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/snatch -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/snatch"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/snow_angels -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/snow_angels"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/spaceballs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/spaceballs"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/star_trek -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/star_trek"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/steve_carell -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/steve_carell">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/evan_almighty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sunset_boulevard -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sunset_boulevard"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/superman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/superman"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/superman_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/superman_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sylvester_stallone -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sylvester_stallone">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/demolition_man"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/terminator -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/terminator"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_dark_knight -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_dark_knight"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_last_king_of_scotland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_last_king_of_scotland"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_piano -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_piano"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_ring -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_ring"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/the_silence_of_the_lambs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/the_silence_of_the_lambs"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/titanic -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/titanic"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tom_cruise -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tom_cruise">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/a_few_good_men"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tom_cruise_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tom_cruise_2">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/collateral_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tom_hanks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tom_hanks">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/castaway"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/transformers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/transformers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/true_romance -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/true_romance"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/twister -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/twister"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/uma_thurman -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/uma_thurman">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/pulp_fiction_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/unforgiven -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/unforgiven"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/vince_vaughn -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/vince_vaughn">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/fred_claus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/walk_the_line -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/walk_the_line"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/warren_beatty -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/warren_beatty">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/bonnie_and_clyde"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/wesley_snipes -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wesley_snipes">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/blade"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/william_holden -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/william_holden">
+        <Predicate:actorstarredinmovie rdf:resource="http://dws/OIE#Instance/sunset_boulevard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/working_girl -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/working_girl"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+

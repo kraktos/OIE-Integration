@@ -1,0 +1,46 @@
+
+
+sameAsConf
+isOfType
+propAsstConf
+isOfTypeDomConf
+isOfTypeRanConf
+
+
+Precision: 0.822
+Recall:    0.831
+F1:        0.826
+
+
+
+******* After Debugging *********** 
+
+
+// minimal preferences added
+ Gold vs Algorithm: 
+Precision: 0.893
+Recall:    0.820
+F1:        0.855
+
+
+
+
+// with all preferences added
+ Gold vs Algorithm:  sameasconf removed
+Precision: 0.839
+Recall:    0.825
+F1:        0.832
+
+
+
+ Gold vs Algorithm:  sameas conf added
+Precision: 0.843
+Recall:    0.852
+F1:        0.848
+
+
+ Gold vs Algorithm: 
+Precision: 0.838
+Recall:    0.847
+F1:        0.842
+

@@ -1,0 +1,2361 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dws/OIE#"
+     xml:base="http://dws/OIE"
+     xmlns:Instance="http://dws/OIE#Instance/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Predicate="http://dws/OIE#Predicate/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:resource="http://dbpedia.org/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:resource2="http://dbpedia.org/resource/%3"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://dws/OIE#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dws/OIE#Predicate/teamplaysagainstteam -->
+
+    <owl:ObjectProperty rdf:about="http://dws/OIE#Predicate/teamplaysagainstteam"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/AmericanFootballTeam -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/AmericanFootballTeam"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Bird -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Bird"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/City -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/City"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Country -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Country"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/HockeyTeam -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/HockeyTeam"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Insect -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Insect"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MilitaryConflict -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MilitaryConflict"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MusicGenre -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MusicGenre"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/RugbyClub -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/RugbyClub"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerClub -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/SoccerClub"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/UNTYPED -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/UNTYPED"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/University -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/University"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/%3F -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/%3F">
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hartford_hawks_1"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hartford_hawks_1_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hartford_hawks_1_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hartford_hawks_1_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hartford_hawks_1_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_pa_indians"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_pa_indians_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_pa_indians_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_pa_indians_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_pa_indians_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_pa_indians_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minesota_twins"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Atlanta_Braves -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Atlanta_Braves">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/atlanta_braves"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Baltimore_Orioles -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Baltimore_Orioles">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_orioles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Baltimore_Ravens -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Baltimore_Ravens">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_ravens"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_ravens_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_ravens_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_ravens_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_ravens_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_ravens_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_ravens_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_ravens_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Boston_Red_Sox -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Boston_Red_Sox">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/boston_redsox"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/red_sox"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/red_sox_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/red_sox_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/red_sox_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/red_sox_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Brazil -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Brazil">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/brazil"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Brooklyn_Nets -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Brooklyn_Nets">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_nets"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_nets_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_nets_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_nets_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_nets_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_nets_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_nets_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bucks_County_Community_College -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bucks_County_Community_College">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/University"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bucks_county_community_college"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bulls_%28rugby_union%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bulls_%28rugby_union%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RugbyClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bulls"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bulls_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bulls_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Carolina_Hurricanes -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Carolina_Hurricanes">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/HockeyTeam"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/carolina_hurricanes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Carolina_Panthers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Carolina_Panthers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/carolina_panthers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Case_Western_Reserve_University -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Case_Western_Reserve_University">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/University"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/case_western_reserve_spartans"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cavalier -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cavalier">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cavaliers"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cavaliers_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cavaliers_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chicago_Bears -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chicago_Bears">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chicago_bears"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chicago_bears_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chicago_bears_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chicago_Cubs -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chicago_Cubs">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chicago_cubs"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chicago_cubs_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cubs"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cubs_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cubs_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chicago_White_Sox -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chicago_White_Sox">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chicago_white_sox"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/white_sox"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/white_sox_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/white_sox_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cincinnati -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cincinnati">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cincinnati"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cincinnati_Bengals -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cincinnati_Bengals">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cincinnati_bengals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cincinnati_Reds -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cincinnati_Reds">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cincinnati_reds"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cleveland_Browns -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cleveland_Browns">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cleveland_browns"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cleveland_Cavaliers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cleveland_Cavaliers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cleveland_cavaliers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cleveland_Indians -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cleveland_Indians">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cleveland_indians"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Colorado_Avalanche -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Colorado_Avalanche">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/HockeyTeam"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/colorado_avalanche"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Colorado_Rockies -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Colorado_Rockies">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/colorado_rockies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dallas_Cowboys -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dallas_Cowboys">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dallas_cowboys"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dallas_Mavericks -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dallas_Mavericks">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dallas_mavericks"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dallas_mavericks_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dallas_mavericks_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mavericks"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mavericks_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mavericks_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Denver_Nuggets -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Denver_Nuggets">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuggets"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuggets_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Detroit_Lions -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Detroit_Lions">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/detroit_lions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Detroit_Red_Wings -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Detroit_Red_Wings">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/HockeyTeam"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/red_wings"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/red_wings_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Detroit_Tigers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Detroit_Tigers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/detroit_tigers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Golden_State_Warriors -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Golden_State_Warriors">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/golden_state_warriors"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/golden_state_warriors_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Green_Bay_Packers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Green_Bay_Packers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AmericanFootballTeam"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/green_bay_packers"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/green_bay_packers_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hornet -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hornet">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Insect"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hornets"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hornets_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Houston_Rockets -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Houston_Rockets">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/houston_rockets"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/houston_rockets_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Indiana_Pacers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Indiana_Pacers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_pacers"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_pacers_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indiana_pacers_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Indianapolis_Colts -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Indianapolis_Colts">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_colts"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_colts_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/baltimore_colts_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Italy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Italy">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/italy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jazz -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jazz">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicGenre"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jazz"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kansas_City_Chiefs -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kansas_City_Chiefs">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kansas_city_chiefs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/List_of_state_highway_spurs_in_Texas -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/List_of_state_highway_spurs_in_Texas">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/spurs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Los_Angeles_Dodgers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Los_Angeles_Dodgers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Magic_%28paranormal%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Magic_%28paranormal%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/magic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Miami_Dolphins -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Miami_Dolphins">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/miami_dolphins"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Miami_Heat -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Miami_Heat">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/miami_heat"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/miami_heat_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/miami_heat_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/miami_heat_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Miami_Marlins -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Miami_Marlins">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/florida_marlins"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/florida_marlins_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Milwaukee_Brewers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Milwaukee_Brewers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/milwaukee_brewers"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/milwaukee_brewers_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Milwaukee_Bucks -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Milwaukee_Bucks">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/milwaukee_bucks"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/milwaukee_bucks_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Minnesota_Timberwolves -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Minnesota_Timberwolves">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minnesota_timberwolves"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minnesota_timberwolves_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minnesota_timberwolves_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minnesota_timberwolves_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Minnesota_Twins -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Minnesota_Twins">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minnesota_twins"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minnesota_twins_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Minnesota_Vikings -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Minnesota_Vikings">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/minnesota_vikings"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Montreal_Expos -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Montreal_Expos">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/montreal_expos"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_England_Patriots -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_England_Patriots">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AmericanFootballTeam"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_england_patriots"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_england_patriots_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_england_patriots_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_england_patriots_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_england_patriots_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_england_patriots_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_Jersey_Devils -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_Jersey_Devils">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/HockeyTeam"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_devils"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_devils_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_jersey_devils_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_York_Islanders -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_York_Islanders">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/HockeyTeam"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_islanders"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_York_Jets -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_York_Jets">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_jets"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_jets_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_jets_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_jets_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_jets_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_York_Mets -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_York_Mets">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_mets"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_mets_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_mets_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_York_Red_Bulls -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_York_Red_Bulls">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_red_bulls"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_red_bulls_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_red_bulls_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/red_bulls"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_York_Yankees -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_York_Yankees">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/yankees"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/North_Carolina_Central_Eagles_men%27s_basketball -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/North_Carolina_Central_Eagles_men%27s_basketball">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/University"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nccu_eagles"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nccu_eagles_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nccu_eagles_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nccu_eagles_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Oakland_Athletics -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Oakland_Athletics">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/oakland_as"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Oakland_Raiders -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Oakland_Raiders">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/oakland_raiders"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/oakland_raiders_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/oakland_raiders_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ohio_State_Buckeyes -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ohio_State_Buckeyes">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ohio_state_buckeyes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Penguin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Penguin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Bird"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/penguins"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Philadelphia_76ers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Philadelphia_76ers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sixers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Philadelphia_Eagles -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Philadelphia_Eagles">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/philadelphia_eagles"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/philadelphia_eagles_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Philadelphia_Phillies -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Philadelphia_Phillies">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/philadelphia_phillies"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/phillies"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/phillies_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/phillies_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/phillies_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Piracy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Piracy">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MilitaryConflict"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pirates"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pirates_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Piston -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Piston">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pistons"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pistons_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pistons_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pittsburgh_Steelers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pittsburgh_Steelers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AmericanFootballTeam"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pittsburgh_steelers"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pittsburgh_steelers_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Real_Salt_Lake -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Real_Salt_Lake">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/real_salt_lake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/San_Antonio_Spurs -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/San_Antonio_Spurs">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/san_antonio_spurs"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/san_antonio_spurs_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/san_antonio_spurs_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/San_Diego_Chargers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/San_Diego_Chargers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/san_diego_chargers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Seattle_Seahawks -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Seattle_Seahawks">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/seattle_seahawks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tampa%2C_Florida -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tampa%2C_Florida">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tampa"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tampa_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tampa_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tampa_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tampa_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tampa_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tampa_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tampa_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tennessee_Titans -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tennessee_Titans">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tennessee_titans"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tennessee_titans_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Toronto_Raptors -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Toronto_Raptors">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/toronto_raptors"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/University_of_California%2C_Los_Angeles -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/University_of_California%2C_Los_Angeles">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/University"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ucla"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ucla_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ucla_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/University_of_North_Carolina_at_Pembroke -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/University_of_North_Carolina_at_Pembroke">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/University"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/unc_pembroke_braves"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/unc_pembroke_braves_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/University_of_Southern_California -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/University_of_Southern_California">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/University"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/usc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Washington_Nationals -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Washington_Nationals">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/washington_nationals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Washington_Redskins -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Washington_Redskins">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/washington_redskins"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/washington_redskins_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/atlanta_braves -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/atlanta_braves">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/yankees"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_colts -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_colts"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_colts_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_colts_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_colts_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_colts_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_orioles -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_orioles"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_ravens -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_ravens">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_york_red_bulls"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_ravens_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_ravens_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_ravens_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_ravens_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_ravens_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_ravens_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_ravens_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_ravens_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_ravens_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_ravens_6">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/chicago_bears"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_ravens_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_ravens_7">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/philadelphia_eagles_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/baltimore_ravens_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/baltimore_ravens_8">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/dallas_cowboys"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/boston_redsox -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/boston_redsox">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/tampa_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/brazil -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/brazil"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bucks_county_community_college -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bucks_county_community_college">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_jersey_nets_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bulls -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bulls"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bulls_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bulls_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bulls_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bulls_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/carolina_hurricanes -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/carolina_hurricanes">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_jersey_devils_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/carolina_panthers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/carolina_panthers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/case_western_reserve_spartans -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/case_western_reserve_spartans"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cavaliers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cavaliers">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_jersey_nets_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cavaliers_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cavaliers_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/pistons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cavaliers_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cavaliers_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chicago_bears -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chicago_bears"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chicago_bears_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chicago_bears_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/kansas_city_chiefs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chicago_bears_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chicago_bears_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chicago_cubs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chicago_cubs"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chicago_cubs_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chicago_cubs_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chicago_white_sox -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chicago_white_sox">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/chicago_cubs_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cincinnati -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cincinnati">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/baltimore_ravens_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cincinnati_bengals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cincinnati_bengals">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_england_patriots_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cincinnati_reds -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cincinnati_reds"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cleveland_browns -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cleveland_browns">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/green_bay_packers_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cleveland_cavaliers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cleveland_cavaliers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cleveland_indians -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cleveland_indians"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/colorado_avalanche -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/colorado_avalanche">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/red_wings"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/colorado_rockies -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/colorado_rockies">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/red_sox_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cubs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cubs">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/white_sox"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cubs_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cubs_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/milwaukee_brewers_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cubs_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cubs_3">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/montreal_expos"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dallas_cowboys -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dallas_cowboys"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dallas_mavericks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dallas_mavericks">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dallas_mavericks_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dallas_mavericks_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/bulls_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dallas_mavericks_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dallas_mavericks_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/detroit_lions -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/detroit_lions">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/green_bay_packers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/detroit_tigers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/detroit_tigers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/florida_marlins -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/florida_marlins">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_york_mets"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/florida_marlins_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/florida_marlins_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/golden_state_warriors -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/golden_state_warriors"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/golden_state_warriors_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/golden_state_warriors_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/green_bay_packers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/green_bay_packers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/green_bay_packers_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/green_bay_packers_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hartford_hawks_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hartford_hawks_1">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/bulls_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hartford_hawks_1_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hartford_hawks_1_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/golden_state_warriors"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hartford_hawks_1_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hartford_hawks_1_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hartford_hawks_1_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hartford_hawks_1_4">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_jersey_nets_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hartford_hawks_1_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hartford_hawks_1_5">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/red_wings_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hornets -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hornets">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/minnesota_timberwolves_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hornets_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hornets_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/spurs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/houston_rockets -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/houston_rockets"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/houston_rockets_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/houston_rockets_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_pa_indians -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_pa_indians">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/tampa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_pa_indians_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_pa_indians_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_pa_indians_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_pa_indians_3">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/red_sox"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_pa_indians_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_pa_indians_4">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/cincinnati_reds"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_pa_indians_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_pa_indians_5">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/florida_marlins_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_pa_indians_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_pa_indians_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_pacers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_pacers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_pacers_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_pacers_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_jersey_nets_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/indiana_pacers_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indiana_pacers_3">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/italy -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/italy">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/brazil"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jazz -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jazz">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_jersey_nets_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kansas_city_chiefs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kansas_city_chiefs"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/los_angeles_dodgers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/los_angeles_dodgers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/los_angeles_dodgers_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/los_angeles_dodgers_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/los_angeles_dodgers_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/los_angeles_dodgers_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/los_angeles_dodgers_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/los_angeles_dodgers_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/los_angeles_dodgers_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/los_angeles_dodgers_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/los_angeles_dodgers_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/los_angeles_dodgers_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/los_angeles_dodgers_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/los_angeles_dodgers_7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/magic -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/magic">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/hartford_hawks_1_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mavericks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mavericks">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/indiana_pacers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mavericks_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mavericks_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/golden_state_warriors_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mavericks_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mavericks_3">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/houston_rockets"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/miami_dolphins -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/miami_dolphins">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/baltimore_colts_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/miami_heat -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/miami_heat">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_jersey_nets"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/miami_heat_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/miami_heat_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/miami_heat_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/miami_heat_3">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/cavaliers_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/miami_heat_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/miami_heat_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/milwaukee_brewers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/milwaukee_brewers">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/phillies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/milwaukee_brewers_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/milwaukee_brewers_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/milwaukee_bucks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/milwaukee_bucks">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/minnesota_timberwolves"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/milwaukee_bucks_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/milwaukee_bucks_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/minesota_twins -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minesota_twins">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/baltimore_orioles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/minnesota_timberwolves -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minnesota_timberwolves"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/minnesota_timberwolves_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minnesota_timberwolves_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/milwaukee_bucks_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/minnesota_timberwolves_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minnesota_timberwolves_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/minnesota_timberwolves_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minnesota_timberwolves_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/minnesota_twins -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minnesota_twins">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/unc_pembroke_braves_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/minnesota_twins_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minnesota_twins_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/indiana_pa_indians_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/minnesota_vikings -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/minnesota_vikings">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/chicago_bears_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/montreal_expos -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/montreal_expos"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nccu_eagles -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nccu_eagles"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nccu_eagles_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nccu_eagles_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nccu_eagles_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nccu_eagles_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nccu_eagles_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nccu_eagles_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_england_patriots -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_england_patriots">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/tennessee_titans"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_england_patriots_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_england_patriots_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/baltimore_ravens_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_england_patriots_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_england_patriots_3">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/carolina_panthers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_england_patriots_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_england_patriots_4">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/nccu_eagles_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_england_patriots_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_england_patriots_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_england_patriots_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_england_patriots_6">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/san_diego_chargers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_devils -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_devils">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/indiana_pa_indians_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_devils_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_devils_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/ucla_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_devils_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_devils_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_nets -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_nets"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_nets_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_nets_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_nets_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_nets_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_nets_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_nets_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_nets_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_nets_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_nets_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_nets_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_jersey_nets_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_jersey_nets_7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_islanders -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_islanders">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/tampa_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_jets -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_jets">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/nccu_eagles_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_jets_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_jets_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_jets_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_jets_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_jets_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_jets_4">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_york_red_bulls_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_jets_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_jets_5">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/baltimore_colts_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_mets -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_mets"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_mets_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_mets_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_mets_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_mets_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_red_bulls -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_red_bulls"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_red_bulls_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_red_bulls_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/tennessee_titans_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_red_bulls_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_red_bulls_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuggets -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuggets">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/bulls"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuggets_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuggets_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/dallas_mavericks_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/oakland_as -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/oakland_as"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/oakland_raiders -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/oakland_raiders"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/oakland_raiders_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/oakland_raiders_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/baltimore_colts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/oakland_raiders_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/oakland_raiders_3">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_york_jets_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ohio_state_buckeyes -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ohio_state_buckeyes">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/case_western_reserve_spartans"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/penguins -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/penguins"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/philadelphia_eagles -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/philadelphia_eagles">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_york_jets_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/philadelphia_eagles_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/philadelphia_eagles_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/philadelphia_phillies -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/philadelphia_phillies">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/pirates"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/phillies -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/phillies"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/phillies_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/phillies_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/phillies_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/phillies_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/phillies_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/phillies_4">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_york_mets_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pirates -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pirates"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pirates_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pirates_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/cleveland_indians"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pistons -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pistons"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pistons_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pistons_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/miami_heat_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pistons_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pistons_3">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/minnesota_timberwolves_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pittsburgh_steelers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pittsburgh_steelers">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/oakland_raiders"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/pittsburgh_steelers_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pittsburgh_steelers_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/baltimore_ravens_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/real_salt_lake -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/real_salt_lake">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/red_bulls"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/red_bulls -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/red_bulls"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/red_sox -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/red_sox"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/red_sox_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/red_sox_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/tampa_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/red_sox_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/red_sox_3">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/oakland_as"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/red_sox_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/red_sox_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/red_sox_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/red_sox_5">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/white_sox_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/red_wings -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/red_wings"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/red_wings_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/red_wings_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/san_antonio_spurs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/san_antonio_spurs">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/cleveland_cavaliers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/san_antonio_spurs_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/san_antonio_spurs_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/san_antonio_spurs_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/san_antonio_spurs_3">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_jersey_nets_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/san_diego_chargers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/san_diego_chargers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/seattle_seahawks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/seattle_seahawks"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sixers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sixers">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/spurs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/spurs"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tampa -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tampa"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tampa_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tampa_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tampa_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tampa_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tampa_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tampa_4">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/phillies_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tampa_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tampa_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tampa_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tampa_6">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/detroit_tigers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tampa_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tampa_7">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/nccu_eagles_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tampa_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tampa_8">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/seattle_seahawks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tennessee_titans -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tennessee_titans"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tennessee_titans_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tennessee_titans_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/toronto_raptors -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/toronto_raptors">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/los_angeles_dodgers_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ucla -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ucla">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/penguins"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ucla_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ucla_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ucla_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ucla_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/unc_pembroke_braves -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/unc_pembroke_braves">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/new_york_mets_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/unc_pembroke_braves_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/unc_pembroke_braves_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/usc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/usc">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/ucla_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/washington_nationals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/washington_nationals">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/phillies_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/washington_redskins -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/washington_redskins">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/nccu_eagles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/washington_redskins_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/washington_redskins_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/baltimore_ravens_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/white_sox -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/white_sox"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/white_sox_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/white_sox_2">
+        <Predicate:teamplaysagainstteam rdf:resource="http://dws/OIE#Instance/chicago_cubs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/white_sox_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/white_sox_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/yankees -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/yankees"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+

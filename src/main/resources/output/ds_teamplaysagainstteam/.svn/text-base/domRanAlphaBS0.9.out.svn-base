@@ -1,0 +1,23 @@
+
+======  DOMAIN PREFERENCE ================================
+http://dbpedia.org/ontology/SoccerClub	(1147.5261000000003,	0.8861205405405408)
+http://dbpedia.org/ontology/AmericanFootballTeam	(1063.4261000000001,	0.8211784555984557)
+http://dbpedia.org/ontology/HockeyTeam	(1061.9261000000001,	0.8200201544401545)
+http://dbpedia.org/ontology/University	(973.0761000000002,	0.751410115830116)
+http://dbpedia.org/ontology/City	(77.94000000000001,	0.060185328185328194)
+UNTYPED	(74.0,	0.05714285714285714)
+http://dbpedia.org/ontology/Country	(67.27000000000001,	0.051945945945945954)
+http://dbpedia.org/ontology/Insect	(19.700000000000003,	0.015212355212355215)
+http://dbpedia.org/ontology/MusicGenre	(6.0,	0.004633204633204633)
+http://dbpedia.org/ontology/TelevisionSeason	(0.9,	6.949806949806949E-4)
+======  RANGE PREFERENCE ================================
+http://dbpedia.org/ontology/SoccerClub	(1140.7561,	0.860948)
+http://dbpedia.org/ontology/AmericanFootballTeam	(1058.0561000000002,	0.7985329056603775)
+http://dbpedia.org/ontology/HockeyTeam	(1056.1561000000002,	0.7970989433962266)
+http://dbpedia.org/ontology/RugbyClub	(1052.9561,	0.7946838490566038)
+http://dbpedia.org/ontology/University	(968.7861000000001,	0.7311593207547171)
+http://dbpedia.org/ontology/City	(74.13,	0.05594716981132075)
+UNTYPED	(72.0,	0.05433962264150943)
+http://dbpedia.org/ontology/Country	(64.03,	0.04832452830188679)
+http://dbpedia.org/ontology/Bird	(22.8,	0.01720754716981132)
+http://dbpedia.org/ontology/MilitaryConflict	(15.0,	0.011320754716981131)

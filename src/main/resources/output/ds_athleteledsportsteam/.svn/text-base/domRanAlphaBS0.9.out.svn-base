@@ -1,0 +1,21 @@
+
+======  DOMAIN PREFERENCE ================================
+http://dbpedia.org/ontology/BasketballPlayer	(261.59,	0.9409712230215826)
+http://dbpedia.org/ontology/AmericanFootballPlayer	(255.61999999999998,	0.9194964028776977)
+http://dbpedia.org/ontology/BaseballPlayer	(253.59,	0.9121942446043165)
+http://dbpedia.org/ontology/IceHockeyPlayer	(247.29,	0.8895323741007194)
+http://dbpedia.org/ontology/NascarDriver	(246.88,	0.8880575539568345)
+http://dbpedia.org/ontology/RugbyPlayer	(246.79,	0.8877338129496403)
+http://dbpedia.org/ontology/CollegeCoach	(222.76200000000003,	0.8013021582733814)
+http://dbpedia.org/ontology/Band	(200.48680000000002,	0.7211755395683453)
+UNTYPED	(1.0,	0.0035971223021582736)
+======  RANGE PREFERENCE ================================
+http://dbpedia.org/ontology/SoccerClub	(250.6,	0.885512367491166)
+http://dbpedia.org/ontology/AmericanFootballTeam	(229.9,	0.8123674911660778)
+http://dbpedia.org/ontology/RugbyClub	(229.29999999999998,	0.8102473498233215)
+http://dbpedia.org/ontology/HockeyTeam	(229.1,	0.8095406360424028)
+http://dbpedia.org/ontology/University	(208.45000000000002,	0.7365724381625443)
+http://dbpedia.org/ontology/City	(16.9,	0.059717314487632504)
+http://dbpedia.org/ontology/Country	(13.96,	0.04932862190812721)
+UNTYPED	(9.0,	0.03180212014134275)
+http://dbpedia.org/ontology/MilitaryConflict	(2.0,	0.007067137809187279)

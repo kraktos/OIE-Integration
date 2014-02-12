@@ -1,0 +1,16 @@
+
+======  DOMAIN PREFERENCE ================================
+UNTYPED	(178.0,	0.9834254143646409)
+http://dbpedia.org/ontology/Weapon	(2.0,	0.011049723756906077)
+http://dbpedia.org/ontology/SoccerClub	(1.0,	0.0055248618784530384)
+======  RANGE PREFERENCE ================================
+http://dbpedia.org/ontology/Country	(168.0,	0.9438202247191011)
+http://dbpedia.org/ontology/PopulatedPlace	(151.6,	0.851685393258427)
+UNTYPED	(5.0,	0.028089887640449437)
+http://dbpedia.org/ontology/OfficeHolder	(3.6290000000000004,	0.020387640449438204)
+http://dbpedia.org/ontology/School	(3.6200000000000006,	0.020337078651685395)
+http://dbpedia.org/ontology/Organisation	(3.4300000000000006,	0.019269662921348317)
+http://dbpedia.org/ontology/TelevisionStation	(3.4300000000000006,	0.019269662921348317)
+http://dbpedia.org/ontology/SoccerLeague	(3.4300000000000006,	0.019269662921348317)
+http://dbpedia.org/ontology/Language	(1.0,	0.0056179775280898875)
+http://dbpedia.org/ontology/VideoGame	(0.0,	0.0)

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+cat propAsstConf.nell.db sameAsConf.nell-dbpedia-top1.db isOfTypeConf.nell.db isOfType.dbpedia.top1.db differentFrom.dbpedia.top1.db > abox.nell.dbpedia.db
+cat abox.nell.dbpedia.db tbox.db ranConf.nell.dbpedia.db domConf.nell.dbpedia.db > evidence.top1.db
+
+
+#cat propAsstConf.nell.db sameAsConf.nell-dbpedia-top2.db isOfTypeConf.nell.db isOfType.dbpedia.top2.db differentFrom.dbpedia.top2.db > abox.nell.dbpedia.db
+#cat abox.nell.dbpedia.db tbox.db  ranConf.nell.dbpedia.db domConf.nell.dbpedia.db > evidence.top2.db
+
+
+#cat propAsstConf.nell.db sameAsConf.nell-dbpedia-top3.db isOfTypeConf.nell.db isOfType.dbpedia.top3.db differentFrom.dbpedia.top3.db > abox.nell.dbpedia.db
+#cat abox.nell.dbpedia.db tbox.db ranConf.nell.dbpedia.db domConf.nell.dbpedia.db > evidence.top3.db
+

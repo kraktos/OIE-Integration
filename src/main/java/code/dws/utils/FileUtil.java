@@ -1,4 +1,3 @@
-
 package code.dws.utils;
 
 import java.io.BufferedReader;
@@ -7,10 +6,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Random;
 import java.util.Scanner;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import code.dws.relationMap.Discover;
 
 /**
  * Class to peform IO operations
@@ -20,7 +21,7 @@ import org.apache.log4j.Logger;
 public class FileUtil
 {
 
-    static Logger logger = Logger.getLogger(FileUtil.class.getName());
+    public final static Logger logger = LoggerFactory.getLogger(Discover.class);
 
     /**
      * Writes a piece of text to a writer object
@@ -146,10 +147,8 @@ public class FileUtil
         }
     }
 
-    
-
-
-    public static boolean shouldFlip(String predicate) {
+    public static boolean shouldFlip(String predicate)
+    {
         File file = new File(Constants.PREDICATE_FREQ_FILEPATH);
         Scanner sc;
         try {

@@ -1,0 +1,23 @@
+
+======  DOMAIN PREFERENCE ================================
+http://dbpedia.org/ontology/City	(6177.745600000001,	0.9893891095451636)
+http://dbpedia.org/ontology/Town	(6048.945600000001,	0.9687613068545805)
+http://dbpedia.org/ontology/Village	(6020.745600000001,	0.9642449711723257)
+http://dbpedia.org/ontology/Settlement	(6008.145600000001,	0.9622270339525946)
+http://dbpedia.org/ontology/AdministrativeRegion	(5534.545600000001,	0.8863782190903269)
+http://dbpedia.org/ontology/PopulatedPlace	(5512.945600000001,	0.8829188981422167)
+http://dbpedia.org/ontology/Building	(4760.881600000001,	0.7624730301089047)
+http://dbpedia.org/ontology/ArchitecturalStructure	(4759.921600000001,	0.7623192825112108)
+http://dbpedia.org/ontology/Place	(4757.865600000001,	0.7619900064061501)
+http://dbpedia.org/ontology/MusicFestival	(11.200000000000001,	0.0017937219730941706)
+http://dbpedia.org/ontology/Event	(10.8,	0.001729660474055093)
+http://dbpedia.org/ontology/Currency	(1.0,	1.6015374759769378E-4)
+======  RANGE PREFERENCE ================================
+http://dbpedia.org/ontology/AdministrativeRegion	(5925.0,	0.9959657085224407)
+http://dbpedia.org/ontology/Settlement	(5553.2,	0.9334678097159186)
+http://dbpedia.org/ontology/PopulatedPlace	(5541.2,	0.9314506639771389)
+http://dbpedia.org/ontology/Place	(4828.76,	0.8116927214657926)
+http://dbpedia.org/ontology/University	(14.880000000000003,	0.0025012607160867376)
+http://dbpedia.org/ontology/EducationalInstitution	(14.480000000000002,	0.0024340225247940833)
+http://dbpedia.org/ontology/Organisation	(13.760000000000002,	0.0023129937804673055)
+http://dbpedia.org/ontology/Agent	(11.808000000000002,	0.001984871406959153)

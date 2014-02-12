@@ -1,0 +1,3213 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dws/OIE#"
+     xml:base="http://dws/OIE"
+     xmlns:Instance="http://dws/OIE#Instance/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Predicate="http://dws/OIE#Predicate/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:resource="http://dbpedia.org/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:resource2="http://dbpedia.org/resource/%3"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://dws/OIE#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dws/OIE#Predicate/personleadsorganization -->
+
+    <owl:ObjectProperty rdf:about="http://dws/OIE#Predicate/personleadsorganization"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/AdministrativeRegion -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/AdministrativeRegion"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Agent -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Agent"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Airline -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Airline"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/AmericanFootballPlayer -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/AmericanFootballPlayer"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/AmericanFootballTeam -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/AmericanFootballTeam"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Athlete -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Athlete"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/BaseballPlayer -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/BaseballPlayer"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/BasketballPlayer -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/BasketballPlayer"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/BroadcastNetwork -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/BroadcastNetwork"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/ChristianBishop -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/ChristianBishop"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/City -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/City"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Company -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Company"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Congressman -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Congressman"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Continent -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Continent"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Country -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Country"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Criminal -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Criminal"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/FictionalCharacter -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/FictionalCharacter"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/InformationAppliance -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/InformationAppliance"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Language -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Language"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Magazine -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Magazine"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MilitaryPerson -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MilitaryPerson"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MilitaryUnit -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MilitaryUnit"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/MusicalArtist -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/MusicalArtist"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Newspaper -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Newspaper"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Non-ProfitOrganisation -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Non-ProfitOrganisation"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/OfficeHolder -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/OfficeHolder"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Organisation -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Organisation"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Person"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/PoliticalParty -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/PoliticalParty"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Politician -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Politician"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/President -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/President"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/RaceHorse -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/RaceHorse"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/RecordLabel -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/RecordLabel"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Scientist -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Scientist"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Senator -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Senator"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Settlement -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Settlement"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerClub -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/SoccerClub"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerPlayer -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/SoccerPlayer"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Software -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Software"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/UNTYPED -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/UNTYPED"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/University -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/University"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/WorldHeritageSite -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/WorldHeritageSite"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/%3F -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/%3F">
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/al_avila"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/central_theoretical_council"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chinese_national_shooting_team"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/clive_davis001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/daniel_miller001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/eckhard_cordes"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/frank_walter_steinmeier"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gary_m__rodkin"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/george_f__colony"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/home_depot_inc"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/inc__microsoft"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jean_marie_messier"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jim_clark001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jobs001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/levon_ter_petrosyan"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mercedes_car_group"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mike_s__zafirovski"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/miller002"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/national_assembly__na__of_vietnam"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nbc_tv001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nbc_tv001_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/netscape_com"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/niklas_zennstr_m"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/richard001"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/robert_coury"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ronald_kolka"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sony_computer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/stanley_o_neal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wolfgang_mayrhuber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/AMR_Corporation -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/AMR_Corporation">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/amr_corp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Abigail_Johnson -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Abigail_Johnson">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/abigail_johnson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Adbusters -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Adbusters">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Non-ProfitOrganisation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/adbusters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Air_Canada -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Air_Canada">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Airline"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/air_canada"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alan_Greenspan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alan_Greenspan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/greenspan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alcatel-Lucent -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alcatel-Lucent">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alcatel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alex_Sink -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alex_Sink">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Politician"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alex_sink"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Alexy_II_of_Moscow -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Alexy_II_of_Moscow">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChristianBishop"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/alexy_ii"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/American_Broadcasting_Company -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/American_Broadcasting_Company">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/BroadcastNetwork"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/abc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Amway -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Amway">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/amway"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Andrew_N._Liveris -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Andrew_N._Liveris">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/andrew_liveris"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Anna_Wintour -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Anna_Wintour">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/anna_wintour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Archbishop_Christodoulos_of_Athens -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Archbishop_Christodoulos_of_Athens">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChristianBishop"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/archbishop_christodoulos"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Armenia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Armenia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/armenia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Autonomy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Autonomy">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/autonomy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ben_Verwaayen -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ben_Verwaayen">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ben_verwaayen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Betfair -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Betfair">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/betfair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bill_%28law%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bill_%28law%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bill_Gertz -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bill_Gertz">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bill_gertz"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Blank_%28horse%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Blank_%28horse%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RaceHorse"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/blank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bob_Iger -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bob_Iger">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/robert_iger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bob_Stevens_%28basketball%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bob_Stevens_%28basketball%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bob_stevens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bob_Wright -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bob_Wright">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bob_wright"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/British_Airways -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/British_Airways">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Airline"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/british_airways"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Carol_Bartz -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Carol_Bartz">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/carol_bartz"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Casablanca -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Casablanca">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/casablanca"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Central_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Central_bank">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/central_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Charlie_Ergen -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Charlie_Ergen">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/charlie_ergen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chew_Choon_Seng -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chew_Choon_Seng">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chew_choon_seng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chrysler -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chrysler">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chrysler"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chrysler_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chua_Sock_Koong -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chua_Sock_Koong">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/chua_sock_koong"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Clayton_Richard -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Clayton_Richard">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/BaseballPlayer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/richard"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/richard_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/ConAgra_Foods -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/ConAgra_Foods">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/conagra"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cuba -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cuba">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cuba"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dan_Rooney -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dan_Rooney">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dan_rooney"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Daniel_Vasella -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Daniel_Vasella">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/daniel_vasella"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/David_Cole_%28record_producer%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/David_Cole_%28record_producer%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MusicalArtist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/david_cole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/David_Levy_%28Israeli_politician%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/David_Levy_%28Israeli_politician%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/david_levy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/David_Yu -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/David_Yu">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/david_yu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/David_Zinczenko -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/David_Zinczenko">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/david_zinczenko"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Def_Jam_Recordings -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Def_Jam_Recordings">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RecordLabel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/def_jam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dell -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dell">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Delphi -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Delphi">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/WorldHeritageSite"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/delphi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Detroit_Tigers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Detroit_Tigers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tigers"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tigers_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Don_Banks -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Don_Banks">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/don_banks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Dow_Chemical_Company -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Dow_Chemical_Company">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/dow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/EBay -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/EBay">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ebay"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/EchoStar -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/EchoStar">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/echostar_communications"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Enron -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Enron">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/enron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Europe -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Europe">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Continent"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/europe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fannie_Mae -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fannie_Mae">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fannie_mae"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fidel_Castro -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fidel_Castro">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fidel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fidel_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fidelity_Investments -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fidelity_Investments">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fidelity_investments"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Florida -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Florida">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AdministrativeRegion"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/florida"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ford_Motor_Company -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ford_Motor_Company">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ford_motor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Forrester_Research -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Forrester_Research">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/forrester_research"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Franklin_Raines -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Franklin_Raines">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/franklin_raines"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/General_Electric -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/General_Electric">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/InformationAppliance"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/George_Westinghouse -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/George_Westinghouse">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Scientist"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/george_westinghouse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gerard_Arpey -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Gerard_Arpey">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gerard_arpey"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/gerard_arpey_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/German_language -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/German_language">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Language"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/german"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Google -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Google">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/google"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Greek_Orthodox_Church -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Greek_Orthodox_Church">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/greek_orthodox_church"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Harvard_University -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Harvard_University">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/University"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/harvard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Health -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Health">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/health"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Henry_Cisneros -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Henry_Cisneros">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/henry_cisneros"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Henry_Luce -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Henry_Luce">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Agent"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/henry_luce"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/henry_luce_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/henry_luce_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Henry_McKinnell -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Henry_McKinnell">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/henry_mckinnell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hindalco_Industries -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hindalco_Industries">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hindalco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hulu -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hulu">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hulu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/IDEO -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/IDEO">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ideo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/International_Hydropower_Association -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/International_Hydropower_Association">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Organisation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/international_hydropower_association"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/J_Records -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/J_Records">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RecordLabel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/j_records"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/James_Goodnight -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/James_Goodnight">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/james_goodnight"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jason_Kilar -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jason_Kilar">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jason_kilar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jeffrey_R._Immelt -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jeffrey_R._Immelt">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jeffrey_immelt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/John_Deere -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/John_Deere">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/deere"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/John_Donahoe -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/John_Donahoe">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/john_donahoe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/John_Fleming_%28U.S._politician%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/John_Fleming_%28U.S._politician%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Congressman"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/john_fleming"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/John_McCain -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/John_McCain">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Senator"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mccain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kalle_Lasn -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kalle_Lasn">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kalle_lasn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ken_Kutaragi -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ken_Kutaragi">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ken_kutaragi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ken_Livingstone -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ken_Livingstone">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ken_livingstone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kenneth_Lay -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kenneth_Lay">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Criminal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ken_lay"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kevin_Ellison_%28footballer%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kevin_Ellison_%28footballer%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerPlayer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ellison"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kumar_Mangalam_Birla -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kumar_Mangalam_Birla">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kumar_birla"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Linda_McMahon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Linda_McMahon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/linda_mcmahon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/List_of_Desperate_Housewives_characters -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/List_of_Desperate_Housewives_characters">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sam_allen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lockheed_Martin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lockheed_Martin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lockheed_martin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/London -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/London">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/london"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Lufthansa -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Lufthansa">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Airline"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/lufthansa_airlines"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Macworld -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Macworld">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Magazine"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/macworld"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mathematical_Reviews -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mathematical_Reviews">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mr_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Maui_Land_%26_Pineapple_Company -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Maui_Land_%26_Pineapple_Company">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/maui_land_and_pineapple"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Merrill_Lynch -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Merrill_Lynch">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/merrill_lynch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Microsoft -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Microsoft">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/microsoft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mike_Lynch_%28sportscaster%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mike_Lynch_%28sportscaster%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mike_lynch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Montie_Brewer -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Montie_Brewer">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/montie_brewer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mute_Records -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mute_Records">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RecordLabel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mute"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Mylan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Mylan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mylan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Natarajan_Chandrasekaran -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Natarajan_Chandrasekaran">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/n_chandrasekaran"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/NeXT -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/NeXT">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/next"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Neil_Bogart -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Neil_Bogart">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/neil_bogart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/New_England_Revolution -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/New_England_Revolution">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_england_revolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nguyen_Phu_Trong -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nguyen_Phu_Trong">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/President"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nguyen_phu_trong"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nortel -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nortel">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nortel_networks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Novartis -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Novartis">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/novartis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Oil -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Oil">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/oil"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Opera_Company_of_Boston -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Opera_Company_of_Boston">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/opera_company_of_boston"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Oracle_Corporation -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Oracle_Corporation">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/oracle_corp_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Paul_Allen -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Paul_Allen">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/paul_allen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/People_%28magazine%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/People_%28magazine%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Magazine"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/people"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pfizer -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pfizer">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pfizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Pittsburgh_Steelers -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Pittsburgh_Steelers">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AmericanFootballTeam"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/pittsburgh_steelers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Randy_Smith_%28basketball%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Randy_Smith_%28basketball%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/BasketballPlayer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/randy_smith"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ratan_Tata -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ratan_Tata">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ratan_tata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Richard_DeVos -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Richard_DeVos">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rich_devos"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Richard_Fain -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Richard_Fain">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AmericanFootballPlayer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/richard_fain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Richard_Taylor_%28general%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Richard_Taylor_%28general%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MilitaryPerson"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/richard_taylor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Robert_Mugabe -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Robert_Mugabe">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/mugabe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Royal_Caribbean_Cruises_Ltd. -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Royal_Caribbean_Cruises_Ltd.">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rccl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Russell_Simmons -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Russell_Simmons">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/russell_simmons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Russian_Orthodox_Church -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Russian_Orthodox_Church">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/ChristianBishop"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/russian_orthodox_church"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/San_Antonio -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/San_Antonio">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/City"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/san_antonio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sarah_Caldwell -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sarah_Caldwell">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sarah_caldwell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sergey_Brin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sergey_Brin">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sergey_brin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/SingTel -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/SingTel">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/singtel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Singapore_Airlines -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Singapore_Airlines">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Airline"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/singapore_airlines"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Skype -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Skype">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Software"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/skype"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Special_Air_Service -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Special_Air_Service">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/MilitaryUnit"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sports_Illustrated -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sports_Illustrated">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Magazine"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sports_illustrated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Steve_Smith_%28American_Dad%21%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Steve_Smith_%28American_Dad%21%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/FictionalCharacter"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/steve"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Subramaniam_Ramadorai -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Subramaniam_Ramadorai">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/s_ramadorai"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/T._Boone_Pickens -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/T._Boone_Pickens">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/boone_pickens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tata_Consultancy_Services -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tata_Consultancy_Services">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tata_consultancy_services"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tata_consultancy_services_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tata_Motors -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tata_Motors">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Teach_For_America -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Teach_For_America">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Non-ProfitOrganisation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/teach_for_america"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_New_York_Review_of_Books -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_New_York_Review_of_Books">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Magazine"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/new_york_review_of_books"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/The_Washington_Times -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/The_Washington_Times">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Newspaper"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/washington_times"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tim_Brown_%28American_football%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tim_Brown_%28American_football%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/AmericanFootballPlayer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tim_brown"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Time%E2%80%93Life -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Time%E2%80%93Life">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/time_life"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Time_%28magazine%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Time_%28magazine%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Magazine"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/time"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Tommy_Lasorda -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Tommy_Lasorda">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/BaseballPlayer"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/tommy_lasorda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Trong_Gewog -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Trong_Gewog">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Settlement"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/trong"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Turner_Sports -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Turner_Sports">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Agent"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/turner_sports"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/United_States -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/United_States">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/american"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/United_States_Senate_Committee_on_Indian_Affairs -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/United_States_Senate_Committee_on_Indian_Affairs">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/indian_affairs_committee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Virgin_Records -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Virgin_Records">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/RecordLabel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/virgin"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/virgin_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vittorio_Colao -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vittorio_Colao">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/vittorio_colao"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vivendi -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vivendi">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/vivendi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vodafone -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vodafone">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/vodafone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Vogue_%28magazine%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Vogue_%28magazine%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Magazine"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/vogue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/WWE -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/WWE">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/world_wrestling_entertainment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Walmart -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Walmart">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/walmart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Wendy_Kopp -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Wendy_Kopp">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/wendy_kopp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Westinghouse_Electric_%281886%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Westinghouse_Electric_%281886%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/westinghouse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/William_Clay_Ford%2C_Jr. -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/William_Clay_Ford%2C_Jr.">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bill_ford"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/William_Walton -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/William_Walton">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/william_walton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Xu_Haifeng -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Xu_Haifeng">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Athlete"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/xu_haifeng"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Yahoo%21 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Yahoo%21">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/yahoo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Zimbabwe_African_National_Union -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Zimbabwe_African_National_Union">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/PoliticalParty"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/zanu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Zucker -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Zucker">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/zucker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/abc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/abc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/abigail_johnson -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/abigail_johnson">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/fidelity_investments"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/adbusters -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/adbusters"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/air_canada -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/air_canada"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/al_avila -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/al_avila">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/tigers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alcatel -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alcatel"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/alex_sink -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alex_sink">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/florida"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/alexy_ii -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/alexy_ii">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/russian_orthodox_church"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/american -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/american"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/amr_corp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/amr_corp"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/amway -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/amway"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/andrew_liveris -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/andrew_liveris">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/dow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/anna_wintour -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/anna_wintour">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/vogue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/archbishop_christodoulos -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/archbishop_christodoulos">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/greek_orthodox_church"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/armenia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/armenia"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/autonomy -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/autonomy"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ben_verwaayen -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ben_verwaayen">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/alcatel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/betfair -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/betfair"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/bill -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bill">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/harvard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bill_ford -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bill_ford">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/ford_motor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bill_gertz -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bill_gertz">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/washington_times"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/blank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/blank">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/home_depot_inc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bob_stevens -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bob_stevens">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/lockheed_martin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bob_wright -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bob_wright">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/nbc_tv001_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/boone_pickens -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/boone_pickens">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/oil"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/british_airways -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/british_airways"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/carol_bartz -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/carol_bartz">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/yahoo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/casablanca -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/casablanca"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/central_bank -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/central_bank"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/central_theoretical_council -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/central_theoretical_council"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/charlie_ergen -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/charlie_ergen">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/echostar_communications"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chew_choon_seng -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chew_choon_seng">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/singapore_airlines"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/chinese_national_shooting_team -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chinese_national_shooting_team"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chrysler -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chrysler"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chrysler_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chrysler_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/chua_sock_koong -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/chua_sock_koong">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/singtel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/clive_davis001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/clive_davis001">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/j_records"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/conagra -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/conagra"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cuba -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cuba"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dan_rooney -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dan_rooney">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/pittsburgh_steelers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/daniel_miller001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/daniel_miller001">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/mute"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/daniel_vasella -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/daniel_vasella">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/novartis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/david_cole -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/david_cole">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/maui_land_and_pineapple"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/david_levy -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/david_levy">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/turner_sports"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/david_yu -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/david_yu">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/betfair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/david_zinczenko -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/david_zinczenko">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/health"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/deere -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/deere"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/def_jam -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/def_jam"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/dell -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dell">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/people"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/delphi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/delphi"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/don_banks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/don_banks">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/sports_illustrated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/dow -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/dow"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ebay -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ebay"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/echostar_communications -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/echostar_communications"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/eckhard_cordes -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/eckhard_cordes">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/mercedes_car_group"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ellison -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ellison">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/oracle_corp_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/enron -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/enron"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/europe -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/europe"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/fannie_mae -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fannie_mae"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/fidel -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fidel">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/cuba"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fidel_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fidel_2">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/new_england_revolution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fidelity_investments -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fidelity_investments"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/florida -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/florida"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ford_motor -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ford_motor"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/forrester_research -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/forrester_research"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/frank_walter_steinmeier -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/frank_walter_steinmeier">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/german"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/franklin_raines -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/franklin_raines">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/fannie_mae"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/gary_m__rodkin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gary_m__rodkin">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/conagra"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ge -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ge"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/george_f__colony -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/george_f__colony">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/forrester_research"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/george_westinghouse -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/george_westinghouse">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/westinghouse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/gerard_arpey -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gerard_arpey">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/american"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/gerard_arpey_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/gerard_arpey_2">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/amr_corp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/german -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/german"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/google -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/google"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/greek_orthodox_church -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/greek_orthodox_church"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/greenspan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/greenspan">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/central_bank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/harvard -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/harvard"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/health -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/health"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/henry_cisneros -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/henry_cisneros">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/san_antonio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/henry_luce -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/henry_luce">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/time_life"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/henry_luce_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/henry_luce_2">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/time"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/henry_luce_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/henry_luce_3">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/new_york_review_of_books"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/henry_mckinnell -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/henry_mckinnell">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/pfizer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hindalco -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hindalco"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/home_depot_inc -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/home_depot_inc"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hulu -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hulu"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ideo -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ideo"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/inc__microsoft -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/inc__microsoft"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/indian_affairs_committee -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/indian_affairs_committee"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/international_hydropower_association -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/international_hydropower_association"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/j_records -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/j_records"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/james_goodnight -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/james_goodnight">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/sas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jason_kilar -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jason_kilar">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/hulu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jean_marie_messier -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jean_marie_messier">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/vivendi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jeffrey_immelt -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jeffrey_immelt">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/ge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jim_clark001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jim_clark001">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/netscape_com"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/jobs001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jobs001">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/next"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/john_donahoe -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/john_donahoe">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/ebay"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/john_fleming -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/john_fleming">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/europe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kalle_lasn -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kalle_lasn">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/adbusters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ken_kutaragi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ken_kutaragi">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/sony_computer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ken_lay -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ken_lay">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/enron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ken_livingstone -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ken_livingstone">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/london"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/kumar_birla -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kumar_birla">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/hindalco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/levon_ter_petrosyan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/levon_ter_petrosyan">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/armenia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/linda_mcmahon -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/linda_mcmahon">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/world_wrestling_entertainment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/lockheed_martin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lockheed_martin"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/london -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/london"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/lufthansa_airlines -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/lufthansa_airlines"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/macworld -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/macworld"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/maui_land_and_pineapple -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/maui_land_and_pineapple"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mccain -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mccain">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/indian_affairs_committee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mercedes_car_group -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mercedes_car_group"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/merrill_lynch -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/merrill_lynch"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/microsoft -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/microsoft"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mike_lynch -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mike_lynch">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/autonomy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mike_s__zafirovski -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mike_s__zafirovski">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/nortel_networks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/miller002 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/miller002">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/delphi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/montie_brewer -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/montie_brewer">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/air_canada"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mr_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mr_">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/microsoft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mugabe -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mugabe">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/zanu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/mute -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mute"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/mylan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/mylan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/n_chandrasekaran -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/n_chandrasekaran">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/tata_consultancy_services_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/national_assembly__na__of_vietnam -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/national_assembly__na__of_vietnam"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nbc_tv001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nbc_tv001"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nbc_tv001_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nbc_tv001_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/neil_bogart -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/neil_bogart">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/casablanca"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/netscape_com -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/netscape_com"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_england_revolution -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_england_revolution"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/new_york_review_of_books -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/new_york_review_of_books"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/next -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/next"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nguyen_phu_trong -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nguyen_phu_trong">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/national_assembly__na__of_vietnam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/niklas_zennstr_m -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/niklas_zennstr_m">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/skype"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nortel_networks -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nortel_networks"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/novartis -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/novartis"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/oil -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/oil"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/opera_company_of_boston -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/opera_company_of_boston"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/oracle_corp_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/oracle_corp_"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/paul_allen -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/paul_allen">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/inc__microsoft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/people -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/people"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pfizer -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pfizer"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/pittsburgh_steelers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/pittsburgh_steelers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/randy_smith -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/randy_smith">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/tigers_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ratan_tata -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ratan_tata">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/tata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rccl -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rccl"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/rich_devos -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rich_devos">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/amway"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/richard -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/richard">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/british_airways"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/richard001 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/richard001">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/virgin_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/richard_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/richard_2">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/virgin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/richard_fain -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/richard_fain">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/rccl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/richard_taylor -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/richard_taylor">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/international_hydropower_association"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/robert_coury -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/robert_coury">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/mylan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/robert_iger -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/robert_iger">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/abc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ronald_kolka -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ronald_kolka">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/chrysler_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/russell_simmons -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/russell_simmons">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/def_jam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/russian_orthodox_church -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/russian_orthodox_church"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/s_ramadorai -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/s_ramadorai">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/tata_consultancy_services"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sam_allen -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sam_allen">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/deere"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/san_antonio -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/san_antonio"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sarah_caldwell -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sarah_caldwell">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/opera_company_of_boston"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sas -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sas"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sergey_brin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sergey_brin">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/google"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/singapore_airlines -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/singapore_airlines"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/singtel -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/singtel"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/skype -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/skype"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sony_computer -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sony_computer"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/sports_illustrated -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sports_illustrated"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/stanley_o_neal -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/stanley_o_neal">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/merrill_lynch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/steve -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/steve">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/macworld"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/tata -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tata"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tata_consultancy_services -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tata_consultancy_services"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tata_consultancy_services_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tata_consultancy_services_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/teach_for_america -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/teach_for_america"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tigers -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tigers"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tigers_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tigers_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tim_brown -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tim_brown">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/ideo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/time -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/time"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/time_life -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/time_life"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/tommy_lasorda -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/tommy_lasorda">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/chrysler"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/trong -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/trong">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/central_theoretical_council"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/turner_sports -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/turner_sports"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/virgin -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/virgin"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/virgin_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/virgin_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/vittorio_colao -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/vittorio_colao">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/vodafone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/vivendi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/vivendi"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/vodafone -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/vodafone"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/vogue -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/vogue"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/walmart -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/walmart"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/washington_times -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/washington_times"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/wendy_kopp -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wendy_kopp">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/teach_for_america"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/westinghouse -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/westinghouse"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/william_walton -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/william_walton">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/walmart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/wolfgang_mayrhuber -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/wolfgang_mayrhuber">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/lufthansa_airlines"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/world_wrestling_entertainment -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/world_wrestling_entertainment"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/xu_haifeng -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/xu_haifeng">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/chinese_national_shooting_team"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/yahoo -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/yahoo"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/zanu -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/zanu"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/zucker -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/zucker">
+        <Predicate:personleadsorganization rdf:resource="http://dws/OIE#Instance/nbc_tv001"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+

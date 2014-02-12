@@ -1,0 +1,2239 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dws/OIE#"
+     xml:base="http://dws/OIE"
+     xmlns:Instance="http://dws/OIE#Instance/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Predicate="http://dws/OIE#Predicate/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:resource="http://dbpedia.org/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:resource2="http://dbpedia.org/resource/%3"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://dws/OIE#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dws/OIE#Predicate/weaponmadeincountry -->
+
+    <owl:ObjectProperty rdf:about="http://dws/OIE#Predicate/weaponmadeincountry"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Country -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Country"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Language -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Language"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/OfficeHolder -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/OfficeHolder"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Organisation -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Organisation"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/PopulatedPlace -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/PopulatedPlace"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/School -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/School"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerClub -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/SoccerClub"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/UNTYPED -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/UNTYPED"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Weapon -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Weapon"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/%3F -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/%3F">
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_iran"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/missle"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/n1964_china"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuclear_weapons_capability"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/u_s_"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/u_s__2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/u_s__3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/uk__ireland"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapon_capabilities"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Afghanistan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Afghanistan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/afghanistan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Al-Qaeda -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Al-Qaeda">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/School"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/al_qaeda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Algeria -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Algeria">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/algeria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Arab_states -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Arab_states">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arab_countries"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Argentina -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Argentina">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/argentina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Arsenal -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Arsenal">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/SoccerClub"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arsenals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ballistic_missile -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ballistic_missile">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ballistic_missile"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Belgium -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Belgium">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/belgium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Biological_warfare -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Biological_warfare">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/biological_weapons"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/biological_weapons_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bomb -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bomb">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bomb"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bomb_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bomb_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bomb_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bomb_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bomb_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bombs"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bombs_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bombs_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bombs_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bombs_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bombs_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bow_and_arrow -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bow_and_arrow">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/bows"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Brazil -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Brazil">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/brazil"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/brazil_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Canada -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Canada">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/canada"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cannon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cannon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cannons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cluster_munition -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cluster_munition">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cluster_bombs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Coat_of_arms -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Coat_of_arms">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arms"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arms_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arms_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arms_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arms_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arms_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arms_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/arms_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cuba -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cuba">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/cuba"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Egypt -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Egypt">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/egypt"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/egypt_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/England -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/England">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/england"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Explosive_material -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Explosive_material">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/explosives"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/France -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/France">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/france"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/france_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/france_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Fuel -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Fuel">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fuel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/fuel_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Germany -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Germany">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/germany"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/germany_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gun -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Gun">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/guns"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/guns_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/guns_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/guns_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/guns_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hong_Kong -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hong_Kong">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/hong_kong_sar_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/India -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/India">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/india_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Intercontinental_ballistic_missile -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Intercontinental_ballistic_missile">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/icbm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Iran -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Iran">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_10"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_11"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_8"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iran_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Iraq -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Iraq">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iraqi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Islamic_republic -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Islamic_republic">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/islamic_regime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Israel -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Israel">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/_israel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/israel"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/israel_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/israel_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/israel_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Japan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Japan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/japan"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/japan_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/japan_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Jewish_state -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Jewish_state">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/jewish_state"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Katana -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Katana">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Weapon"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/samurai_swords"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kazakhstan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kazakhstan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kazakhstan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kim_Jong-il -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kim_Jong-il">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/kim_jong_il"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Knife -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Knife">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/knives"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/knives_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/knives_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Land_mine -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Land_mine">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/landmines"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Military_technology -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Military_technology">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_technology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Muslim_world -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Muslim_world">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/islamic_countries"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/muslim_country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/North_Korea -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/North_Korea">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/north_korea"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/north_korea_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/north_korea_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/north_korea_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/north_korea_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nuclear_weapon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nuclear_weapon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuclear_arms"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuclear_arms_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuclear_arms_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuclear_arsenal"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuclear_warheads"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuclear_warheads_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuclear_weapons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Nuclear_weapons_delivery -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Nuclear_weapons_delivery">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/nuclear_missile"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Peripheral -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Peripheral">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/devices"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/devices_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Politics_of_Iran -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Politics_of_Iran">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iranian_regime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Politics_of_Iraq -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Politics_of_Iraq">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Organisation"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/iraqi_government"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rifle -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rifle">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rifle"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rifle_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rifle_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rifles"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rifles_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rifles_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Rocket -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Rocket">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/rockets"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Russia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Russia">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/russia"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/russia_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/russia_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/russia_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/russia_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/russia_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Russian_language -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Russian_language">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Language"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/russian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Shell_%28projectile%29 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Shell_%28projectile%29">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/artillery_shells"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Shotgun -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Shotgun">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/shotgun"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/shotguns"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sinai_Peninsula -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sinai_Peninsula">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/sinai"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/South_Korea -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/South_Korea">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/s_korea"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/s_korea_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/s_korea_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/s_korea_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Soviet_Union -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Soviet_Union">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/soviet_union"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/soviet_union_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/soviet_union_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/soviet_union_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ussr"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ussr_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Space -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Space">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/space"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Spain -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Spain">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/spain"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/spain_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sword -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sword">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/swords"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Syria -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Syria">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/syria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Taiwan -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Taiwan">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/taiwan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Ukraine -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Ukraine">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ukraine"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/ukraine_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/United_States -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/United_States">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/u_s_a_"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/u_s_a__2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states_of_america"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/united_states_of_america_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Warhead -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Warhead">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/warheads"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/warheads_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/warheads_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/warheads_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Weapon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Weapon">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/UNTYPED"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weaponry"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_10"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_11"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_12"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_13"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_14"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_15"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_16"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_17"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_18"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_19"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_2"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_20"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_21"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_22"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_23"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_24"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_25"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_26"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_27"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_28"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_3"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_4"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_5"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_6"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_7"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_8"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/weapons_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Western_world -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Western_world">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+        <owl:sameAs rdf:resource="http://dws/OIE#Instance/western_countries"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/_israel -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/_israel"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/afghanistan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/afghanistan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/al_qaeda -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/al_qaeda"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/algeria -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/algeria"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/arab_countries -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arab_countries"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/argentina -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/argentina"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/arms -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arms">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/israel_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arms_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arms_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/ussr"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arms_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arms_3">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/india_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arms_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arms_4">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/ukraine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arms_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arms_5">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/syria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arms_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arms_6">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/afghanistan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arms_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arms_7">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/sinai"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arms_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arms_8">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/russia_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/arsenals -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/arsenals">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/north_korea_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/artillery_shells -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/artillery_shells">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/israel_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/ballistic_missile -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ballistic_missile">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/s_korea_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/belgium -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/belgium"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/biological_weapons -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/biological_weapons">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/soviet_union"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/biological_weapons_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/biological_weapons_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/cuba"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bomb -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bomb">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/india_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bomb_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bomb_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bomb_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bomb_3">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/u_s__2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bomb_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bomb_4">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/n1964_china"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bomb_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bomb_5">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/ussr_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bomb_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bomb_6">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/russia_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bombs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bombs">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/russia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bombs_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bombs_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/u_s_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bombs_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bombs_3">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/north_korea_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bombs_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bombs_4">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/united_states"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bombs_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bombs_5">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/_israel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bombs_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bombs_6">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/israel_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/bows -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/bows">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/brazil_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/brazil -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/brazil"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/brazil_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/brazil_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/canada -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/canada"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/cannons -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cannons">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/united_states_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cluster_bombs -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cluster_bombs">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/united_states_of_america"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/cuba -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/cuba"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/devices -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/devices">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/devices_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/devices_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/india_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/egypt -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/egypt"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/egypt_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/egypt_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/england -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/england"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/explosives -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/explosives">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/egypt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/france -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/france"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/france_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/france_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/france_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/france_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/fuel -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fuel">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/india"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/fuel_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/fuel_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/germany -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/germany"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/germany_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/germany_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/guns -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/guns">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/japan_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/guns_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/guns_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/united_states_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/guns_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/guns_3">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/guns_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/guns_4">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/spain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/guns_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/guns_5">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/u_s_a_"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/hong_kong_sar_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/hong_kong_sar_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/icbm -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/icbm">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/s_korea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/india -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/india_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/india_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_10 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_10"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_11 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_11"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_7"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_8"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_9 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_9"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iran_iran -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iran_iran"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iranian_regime -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iranian_regime"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iraqi -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iraqi"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/iraqi_government -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/iraqi_government"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/islamic_countries -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/islamic_countries"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/islamic_regime -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/islamic_regime"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/israel -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/israel"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/israel_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/israel_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/israel_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/israel_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/israel_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/israel_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/japan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/japan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/japan_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/japan_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/japan_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/japan_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/jewish_state -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/jewish_state"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kazakhstan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kazakhstan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/kim_jong_il -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/kim_jong_il"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/knives -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/knives">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/germany"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/knives_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/knives_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/united_states_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/knives_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/knives_3">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/france_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/landmines -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/landmines">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/missle -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/missle">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/s_korea_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/muslim_country -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/muslim_country"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/n1964_china -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/n1964_china"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/north_korea -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/north_korea"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/north_korea_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/north_korea_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/north_korea_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/north_korea_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/north_korea_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/north_korea_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/north_korea_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/north_korea_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuclear_arms -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuclear_arms">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/russia_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuclear_arms_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuclear_arms_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuclear_arms_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuclear_arms_3">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/soviet_union_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuclear_arsenal -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuclear_arsenal">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuclear_missile -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuclear_missile">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/s_korea_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuclear_warheads -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuclear_warheads">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuclear_warheads_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuclear_warheads_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/russia_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuclear_weapons -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuclear_weapons">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/nuclear_weapons_capability -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/nuclear_weapons_capability">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rifle -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rifle">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/canada"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rifle_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rifle_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/germany_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rifle_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rifle_3">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rifles -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rifles">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/england"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rifles_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rifles_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/hong_kong_sar_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rifles_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rifles_3">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/france_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/rockets -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/rockets">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/egypt_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/russia -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/russia"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/russia_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/russia_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/russia_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/russia_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/russia_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/russia_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/russia_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/russia_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/russia_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/russia_6"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/russian -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/russian"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/s_korea -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/s_korea"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/s_korea_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/s_korea_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/s_korea_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/s_korea_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/s_korea_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/s_korea_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/samurai_swords -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/samurai_swords">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/japan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/shotgun -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/shotgun">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/spain_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/shotguns -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/shotguns">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/belgium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/sinai -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/sinai"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/soviet_union -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/soviet_union"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/soviet_union_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/soviet_union_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/soviet_union_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/soviet_union_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/soviet_union_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/soviet_union_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/space -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/space">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/soviet_union_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/spain -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/spain"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/spain_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/spain_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/swords -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/swords">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/japan_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/syria -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/syria"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/taiwan -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/taiwan"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/u_s_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/u_s_"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/u_s__2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/u_s__2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/u_s__3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/u_s__3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/u_s_a_ -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/u_s_a_"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/u_s_a__2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/u_s_a__2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/uk__ireland -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/uk__ireland"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ukraine -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ukraine"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ukraine_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ukraine_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states_3"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states_4"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states_5"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states_of_america -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states_of_america"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/united_states_of_america_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/united_states_of_america_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ussr -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ussr"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/ussr_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/ussr_2"/>
+    
+
+
+    <!-- http://dws/OIE#Instance/warheads -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/warheads">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/north_korea_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/warheads_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/warheads_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/warheads_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/warheads_3">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/u_s__3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/warheads_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/warheads_4">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/russia_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapon_capabilities -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapon_capabilities">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weaponry -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weaponry">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/arab_countries"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_10 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_10">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/uk__ireland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_11 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_11">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/muslim_country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_12 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_12">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/north_korea_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_13 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_13">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/algeria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_14 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_14">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/united_states_of_america_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_15 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_15">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/u_s_a__2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_16 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_16">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/brazil"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_17 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_17">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/al_qaeda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_18 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_18">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/france"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_19 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_19">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/united_states_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_2">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/jewish_state"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_20 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_20">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/argentina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_21 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_21">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/soviet_union_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_22 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_22">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/islamic_regime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_23 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_23">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iranian_regime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_24 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_24">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/kim_jong_il"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_25 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_25">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_26 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_26">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iraqi_government"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_27 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_27">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/ukraine_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_28 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_28">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iraqi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_3">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/western_countries"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_4 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_4">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/israel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_5 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_5">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/taiwan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_6 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_6">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/iran_iran"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_7 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_7">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/islamic_countries"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_8 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_8">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/kazakhstan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_9 -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_9">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/russian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/weapons_technology -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/weapons_technology">
+        <Predicate:weaponmadeincountry rdf:resource="http://dws/OIE#Instance/north_korea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dws/OIE#Instance/western_countries -->
+
+    <owl:NamedIndividual rdf:about="http://dws/OIE#Instance/western_countries"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+
