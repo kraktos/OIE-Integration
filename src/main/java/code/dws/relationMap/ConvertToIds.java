@@ -22,7 +22,7 @@ import code.dws.utils.MapUtils;
 //import ca.pfv.spmf.test.MainTestFPGrowth_saveToMemory;
 
 /**
- * class to convert a set of patterns for the predicates to ids.
+ * class to convert a set of patterns for the predicates to ids. Is dependent on the output of Discover.java
  * 
  * @author Arnab Dutta
  */
