@@ -30,5 +30,6 @@ a .git folder should be created there after cloning
 /home/user/Workspaces/Projects/OIE-Integration in this case
 
 5. open command prompt and cd to /home/user/Workspaces/Projects/OIE-Integration and run the command
-  mvn clean compile assembly:single install
+
+mvn clean compile assembly:single install
 
