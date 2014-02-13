@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://reason-oie.googlecode.com/svn"
+   revision="80"
+   last-author="arnab.dutta@gmail.com"
+   url="https://reason-oie.googlecode.com/svn/trunk/reasoning-OIE/src/code/dws/bootstrap"
+   uuid="e7952d70-17fb-c739-96eb-f61dbd1427f4"
+   committed-rev="56"
+   kind="dir"
+   committed-date="2013-11-19T15:57:29.283303Z"/>
+<entry
+   name="BootStrapMethod.java"
+   checksum="55308f8d05691fe7bc214d9a26cb2547"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-18T12:31:51.000000Z"
+   committed-rev="56"
+   kind="file"
+   committed-date="2013-11-19T15:57:29.283000Z"/>
+</wc-entries>

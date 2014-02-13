@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://reason-oie.googlecode.com/svn"
+   name=""
+   revision="80"
+   last-author="arnab.dutta@gmail.com"
+   url="https://reason-oie.googlecode.com/svn/trunk/reasoning-OIE/src/code/dws/ontology/axioms"
+   uuid="e7952d70-17fb-c739-96eb-f61dbd1427f4"
+   committed-rev="15"
+   kind="dir"
+   committed-date="2013-08-16T15:38:34.445662Z"/>
+<entry
+   name="Axiom.java"
+   checksum="f80db7e3eba8b083e28790a735595e4d"
+   last-author="arnab.dutta@gmail.com"
+   committed-rev="10"
+   text-time="2013-08-01T08:52:17.000000Z"
+   kind="file"
+   committed-date="2013-08-01T11:44:32.390000Z"/>
+<entry
+   name="AxiomCreator.java"
+   checksum="8269dfa00537c3eed7f0fefda9c8cdc0"
+   last-author="arnab.dutta@gmail.com"
+   committed-rev="15"
+   text-time="2013-08-16T15:00:50.000000Z"
+   kind="file"
+   committed-date="2013-08-16T15:38:34.445000Z"/>
+</wc-entries>

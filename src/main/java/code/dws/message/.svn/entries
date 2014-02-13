@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://reason-oie.googlecode.com/svn"
+   name=""
+   revision="80"
+   last-author="arnab.dutta@gmail.com"
+   url="https://reason-oie.googlecode.com/svn/trunk/reasoning-OIE/src/code/dws/message"
+   uuid="e7952d70-17fb-c739-96eb-f61dbd1427f4"
+   committed-rev="6"
+   kind="dir"
+   committed-date="2013-07-18T11:25:58.184178Z"/>
+<entry
+   name="Messages.java"
+   checksum="4c5242ef4ee18e6589b5e9970ab4b432"
+   last-author="arnab.dutta@gmail.com"
+   committed-rev="6"
+   text-time="2013-07-18T09:43:38.000000Z"
+   kind="file"
+   committed-date="2013-07-18T11:25:58.184000Z"/>
+<entry
+   name="messages.properties"
+   checksum="84ede0187d2d6ea4eb21ab6d46417276"
+   last-author="arnab.dutta@gmail.com"
+   committed-rev="4"
+   text-time="2013-04-24T09:27:32.000000Z"
+   kind="file"
+   committed-date="2013-07-16T15:43:52.609000Z"/>
+</wc-entries>

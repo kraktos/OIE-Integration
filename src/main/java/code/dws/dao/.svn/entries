@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://reason-oie.googlecode.com/svn"
+   name=""
+   revision="80"
+   last-author="arnab.dutta@gmail.com"
+   url="https://reason-oie.googlecode.com/svn/trunk/reasoning-OIE/src/code/dws/dao"
+   uuid="e7952d70-17fb-c739-96eb-f61dbd1427f4"
+   committed-rev="31"
+   kind="dir"
+   committed-date="2013-10-24T08:47:07.156908Z"/>
+<entry
+   name="FreeFormFactDao.java"
+   checksum="503092cf41ebc39d273d3757bb596c43"
+   last-author="arnab.dutta@gmail.com"
+   committed-rev="4"
+   text-time="2013-07-16T15:35:04.000000Z"
+   kind="file"
+   committed-date="2013-07-16T15:43:52.609000Z"/>
+<entry
+   name="GenericTreeNode.java"
+   checksum="705f200a994a0c2f07b182537aba626b"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-10-23T13:37:34.000000Z"
+   committed-rev="31"
+   kind="file"
+   committed-date="2013-10-24T08:47:07.156000Z"/>
+<entry
+   name="Pair.java"
+   checksum="1394659c2e987b6b74af7a95cfc4af1a"
+   last-author="arnab.dutta@gmail.com"
+   committed-rev="4"
+   text-time="2013-07-16T15:43:08.000000Z"
+   kind="file"
+   committed-date="2013-07-16T15:43:52.609000Z"/>
+<entry
+   name="ResultDAO.java"
+   checksum="8c132a7b4cc0408bb43a137534c03557"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-08-16T14:59:38.000000Z"
+   committed-rev="15"
+   kind="file"
+   committed-date="2013-08-16T15:38:34.445000Z"/>
+<entry
+   name="SuggestedFactDAO.java"
+   checksum="4b29ae0c125ddeab8189181283233efb"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-08-16T15:00:36.000000Z"
+   committed-rev="15"
+   kind="file"
+   committed-date="2013-08-16T15:38:34.445000Z"/>
+</wc-entries>

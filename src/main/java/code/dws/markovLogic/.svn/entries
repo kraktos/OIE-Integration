@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://reason-oie.googlecode.com/svn"
+   revision="80"
+   last-author="arnab.dutta@gmail.com"
+   url="https://reason-oie.googlecode.com/svn/trunk/reasoning-OIE/src/code/dws/markovLogic"
+   uuid="e7952d70-17fb-c739-96eb-f61dbd1427f4"
+   committed-rev="75"
+   kind="dir"
+   committed-date="2014-02-11T16:55:12.214647Z"/>
+<entry
+   name="EvidenceBuilder.java"
+   checksum="b258ac599459ce66f5703801f3a2be15"
+   last-author="arnab.dutta@gmail.com"
+   committed-rev="75"
+   text-time="2014-01-16T09:32:40.000000Z"
+   kind="file"
+   committed-date="2014-02-11T16:55:12.214000Z"/>
+<entry
+   name="MLNFileGenerator.java"
+   checksum="cf9fb10f1228fe87512a53b475fcdb09"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-12-09T15:26:49.000000Z"
+   committed-rev="61"
+   kind="file"
+   committed-date="2013-12-09T17:47:16.354000Z"/>
+<entry
+   name="PreferenceBuilder.java"
+   checksum="58ed602d82a3c6b6b92d75fba6cb4741"
+   last-author="arnab.dutta@gmail.com"
+   text-time="2013-11-06T09:19:00.000000Z"
+   committed-rev="42"
+   kind="file"
+   committed-date="2013-11-07T16:43:44.296000Z"/>
+</wc-entries>
