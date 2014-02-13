@@ -4,6 +4,8 @@
 
 package code.dws.utils;
 
+import code.dws.experiment.ExperimentAutomation;
+
 /**
  * This class stores a set of constants required for the application
  * 
@@ -407,13 +409,210 @@ public class Constants
     /**
      * flag to determine if to use weights or probabilities
      */
-    public static boolean USE_LOGIT_FUNC = true;// ExperimentAutomation.USE_LOGIT;
-
-    public static final double SCALE_WEIGHT = 0;// ExperimentAutomation.SCALE_WEIGHT;
 
     /**
      * file I/O location
      */
     public static final String sample_dumps = "/output/ds_";
+
+    public static final String DIRECTORY = "/home/arnab/Work/data/experiments/reasoning/newBL/ds_"
+        + ExperimentAutomation.PREDICATE + "/";
+
+    // public static final String INPUT_CSV_FILE = DIRECTORY + "goldBL_" +
+    // PREDICATE + ".tsv";
+
+    public static final String DOMCONF = DIRECTORY + "domConf.nell.dbpedia.db";
+
+    public static final String RANCONF = DIRECTORY + "ranConf.nell.dbpedia.db";
+
+    public static final String DELIMIT_INPUT_CSV = "\t";
+
+    public static final String POST_FIX = "_";
+
+    public static final String BL = "/home/arnab/Work/data/experiments/reasoning/newBL/blData.tsv";
+
+    public static final String PSUBCONF_FILE = DIRECTORY + "psubConf.nell.dbpedia.db";
+
+    /**
+     * defines the batch size for the Data base operations
+     */
+    public static final int BATCH_SIZE = ExperimentAutomation.BATCH_SIZE;
+
+    // select URI, SF, SUM(COUNT), (SUM(COUNT)/(select SUM(COUNT) from wikiPrep
+    // where SF = 'satun')) as prob from wikiPrep where SF = 'satun' group by
+    // URI order by prob asc;
+
+    public static final String SILVER_STANDARD_DUMP =
+        "/home/arnab/Work/data/NELL/ontology/GoldStandardPredicateTypes.tsv";
+
+    public static final String AIRPEDIA_DUMP = "/home/arnab/Work/data/airpedia/airpedia-classes-en.nt";
+
+    /**
+     * annotated gold standard file of NELL triples
+     */
+    public static final String INPUT_CSV_FILE = sample_dumps + ExperimentAutomation.PREDICATE + "/goldBL_"
+        + ExperimentAutomation.PREDICATE + ".tsv";
+
+    /**
+     * output owl file of the NELL input triples
+     */
+    public static final String OUTPUT_OWL_FILE = sample_dumps + ExperimentAutomation.PREDICATE + "/data.owl";
+
+    /**
+     * gold standard evidence file, post-fixed
+     */
+    public static final String GOLD_MLN_EVIDENCE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/goldEvidencePostFixed.db";
+
+    /**
+     * gold standard evidence file, post-fixed
+     */
+    public static final String GOLD_MLN_EVIDENCE_ALL = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/goldEvidencePostFixedAll.db";
+
+    /**
+     * isTypeOf evidences of NELL entities
+     */
+    public static final String IS_OF_TYPE_CONF_NELL_EVIDENCE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/isOfTypeConf.nell.db";
+
+    /**
+     * location of the term-concept pair probabilities file
+     */
+    public static final String APRIORI_PROB_FILE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/sameAsLinksPrior.tsv";
+
+    /**
+     * SQL to fetch the probabilities of the same as links from terms to concepts
+     */
+    public static final String GET_WIKI_LINKS_APRIORI_SQL =
+        "select  URI, (SUM(COUNT)/(select  SUM(COUNT) from wikiPrep  where SF =?)) as p from wikiPrep  where SF =? group by URI order by p desc limit ?";
+
+    /**
+     * TOPK candidates for the same as links probabilities
+     */
+    public static final int SAMEAS_TOPK = ExperimentAutomation.TOP_K_MATCHES;
+
+    /**
+     * nell assertions with confidences
+     */
+    public static final String NELL_CONFIDENCE_FILE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/NELLTripleConfidences." + ExperimentAutomation.PREDICATE + ".csv";
+
+    /**
+     * location of different from MLN evidences
+     */
+    public static final String DIFFERENTFROM_DBPEDIA_EVIDENCE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/differentFrom.dbpedia";
+
+    /**
+     * isOfType MLN evidence location
+     */
+    public static final String IS_OF_TYPE_DBPEDIA_EVIDENCE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/isOfType.dbpedia";
+
+    /**
+     * Substitute placeholder for missing type information
+     */
+    public static final String UNTYPED = "UNTYPED";
+
+    /**
+     * base line created for the predicate
+     */
+    public static final String BL_DUMP = "resource/output/blSample." + ExperimentAutomation.PREDICATE + ".tsv";
+
+    /**
+     * annotated gold standard dump of the predicated. should contain 100 rows always
+     */
+    public static String FULL_GS_DUMP = "resource/input/ALL." + ExperimentAutomation.PREDICATE + ".tsv";
+
+    /**
+     * gold standard evidence file, post-fixed
+     */
+    public static final String SOURCE_TYPE_EVIDENCE = sample_dumps + ExperimentAutomation.PREDICATE + "/sourceType.db";
+
+    /**
+     * dom range evidence writer
+     */
+    public static final String DOM_RAN_EVIDENCE = sample_dumps + ExperimentAutomation.PREDICATE + "/domRanEvid.db";
+
+    public static final Double DOMRAN_CONFIDENCE_THRESHOLD = 0.500;
+
+    /**
+     * value used to scale up and down the node values while working with the DBPedia tree
+     */
+    public static double TREE_PROPAGATION_FACTOR = ExperimentAutomation.PROPGTN_FACTOR;
+
+    /**
+     * flag to determine if to use weights or probabilities
+     */
+    public static boolean USE_LOGIT_FUNC = ExperimentAutomation.USE_LOGIT;
+
+    public static boolean BOOTSTRAP = ExperimentAutomation.BOOTSTRAP;
+
+    public static final String DOMAIN = "Domain";
+
+    public static final String RANGE = "Range";
+
+    public static final String DOMAIN_RANGE_PREFERENCE_FILE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/domRanAlpha" + TREE_PROPAGATION_FACTOR + "." + String.valueOf(USE_LOGIT_FUNC) + ".out";
+
+    public static final String DOMAIN_RANGE_BS_PREFERENCE_FILE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/domRanAlphaBS" + TREE_PROPAGATION_FACTOR + "." + String.valueOf(USE_LOGIT_FUNC) + ".out";
+
+    public static final String DOMAIN_RANGE_EVIDENCE_FILE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/domRanEvidence.db";
+
+    public static final String DOMAIN_RANGE_BS_EVIDENCE_FILE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/domRanEvidenceBS.db";
+
+    // Top surface forms for a given wikipedia page
+    public static int TOP_ANCHORS = ExperimentAutomation.TOP_K_MATCHES;
+
+    /**
+     * Kernel Density estimates evidence file, post-fixed
+     */
+    public static final String KDE_EVIDENCE_ALL = sample_dumps + ExperimentAutomation.PREDICATE + "/KDEEvidenceAll.db";
+
+    /**
+     * gold standard evidence file, post-fixed
+     */
+    public static final String ALL_MLN_EVIDENCE = sample_dumps + ExperimentAutomation.PREDICATE + "/AllEvidence.db";
+
+    /**
+     * gold standard evidence file, post-fixed
+     */
+    public static final String ALL_MLN_EVIDENCE_T1 = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/AllEvidence_T1.db";
+
+    public static final String BASIC_REASON_OUT_FILE = sample_dumps + ExperimentAutomation.PREDICATE + "/out.db";
+
+    /**
+     * gold standard evidence file, post-fixed
+     */
+    public static final String REASONER_OUTPUT_MLN_EVIDENCE = sample_dumps + ExperimentAutomation.PREDICATE
+        + "/outAll_1.db";
+
+    /**
+     * flag to denote if the type information of DBPedia instances should be reloaded in Database or old data should be
+     * used.
+     */
+    public static boolean RELOAD_DBPEDIA_TYPES = ExperimentAutomation.RELOAD_TYPE;
+
+    /**
+     * insert DBPedia types SQL
+     */
+    public static String INSERT_DBP_TYPES =
+        "INSERT IGNORE INTO DBPEDIA_TYPES (DBPEDIA_INSTANCE, INSTANCE_TYPE) VALUES ( ?, ? )";
+
+    public static final String GET_DBPTYPE = "select INSTANCE_TYPE from DBPEDIA_TYPES where DBPEDIA_INSTANCE=?";
+
+    public static final double SCALE_WEIGHT = ExperimentAutomation.SCALE_WEIGHT;
+
+    public static final int TOP_K_NUMERIC_PROPERTIES = ExperimentAutomation.TOP_K_NUMERIC_PROPERTIES;
+
+    public static boolean ENGAGE_INTER_STEP = ExperimentAutomation.ENGAGE_INTER_STEP;
+
+    public static String OUTLIER_DETECTION_TECHNIQUE = "KDE";
 
 }
