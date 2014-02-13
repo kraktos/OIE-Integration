@@ -28,7 +28,7 @@ Say for example, your local repository is /home/user/Workspaces/Projects/OIE-Int
 4. Browse to the folder in your machine where the project is freshly cloned in Step 1. 
 /home/user/Workspaces/Projects/OIE-Integration in this case, and import the project to Eclipse workspace
 
-5. open command prompt and cd to /home/user/Workspaces/Projects/OIE-Integration and run the command
+5. open command prompt and change to working directory, e.g. /home/user/Workspaces/Projects/OIE-Integration and run the command
 
 mvn clean compile assembly:single install
 
