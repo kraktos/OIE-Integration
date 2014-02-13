@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 
 import code.dws.utils.Constants;
 import code.dws.utils.Utilities;
-import extractor.RelationExplorer;
+import code.dws.extractor.RelationExplorer;
 
 /**
  * Class to find related predicates between two given dbp entities
