@@ -8,8 +8,11 @@ Linux OS and Eclipse IDE
 
 Requirements
 1. Have the  jdk higher than the version 1.7 installed. Not jre but jdk !!
+ 
 2. Have maven installed, atleast maven2 
+
 3. have a github account
+ 
 
 
 Project Setup
