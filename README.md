@@ -19,15 +19,14 @@ Requirements
 Project Setup
 
 1. Clone the repository https://github.com/kraktos/OIE-Integration.git from the eclipse "Git Repository Exploring" view. 
-Say for example, ur local repository is /home/user/Workspaces/Projects/OIE-Integration
-a .git folder should be created there after cloning
+Say for example, your local repository is /home/user/Workspaces/Projects/OIE-Integration, then a .git folder should be created here after cloning
 
 2. Change perspective to java and import project
 
 3. Must select an existing Maven Project from the options. 
 
 4. Browse to the folder in your machine where the project is freshly cloned in Step 1. 
-/home/user/Workspaces/Projects/OIE-Integration in this case
+/home/user/Workspaces/Projects/OIE-Integration in this case, and import the project to Eclipse workspace
 
 5. open command prompt and cd to /home/user/Workspaces/Projects/OIE-Integration and run the command
 
