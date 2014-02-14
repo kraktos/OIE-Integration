@@ -30,5 +30,5 @@ Say for example, your local repository is /home/user/Workspaces/Projects/OIE-Int
 
 5. open command prompt and change to working directory, e.g. /home/user/Workspaces/Projects/OIE-Integration and run the command
 
-mvn clean compile assembly:single install
+mvn clean assembly:single install
 
