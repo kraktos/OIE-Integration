@@ -59,11 +59,9 @@ public class Discover
         Matcher matcher = null;
         Pattern pattern = Pattern.compile("sameAs\\((.*?)\\)");
 
-        File tempFile =
-            File.createTempFile(Constants.sample_dumps + predicate
-                + ((needInverse) ? "/invPropertyPaths.log" : "/propertyPaths.log"), null);
-
-        BufferedWriter propPathWriter = new BufferedWriter(new FileWriter(tempFile));
+        BufferedWriter propPathWriter =
+            new BufferedWriter(new FileWriter(predicate
+                + ((needInverse) ? "invPropertyPaths.log" : "propertyPaths.log")));
 
         while (scan.hasNextLine()) {
 
@@ -118,7 +116,6 @@ public class Discover
         }
 
         propPathWriter.close();
-        tempFile.deleteOnExit();
     }
 
     private static ArrayList<String> doGraphExploration(String dbSubj, String dbObj, double hops)
