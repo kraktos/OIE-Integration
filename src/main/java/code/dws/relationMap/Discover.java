@@ -61,7 +61,7 @@ public class Discover
 
         BufferedWriter propPathWriter =
             new BufferedWriter(new FileWriter(predicate
-                + ((needInverse) ? "invPropertyPaths.log" : "propertyPaths.log")));
+                + ((needInverse) ? "_invPropertyPaths.log" : "_propertyPaths.log")));
 
         while (scan.hasNextLine()) {
 

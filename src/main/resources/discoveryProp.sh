@@ -51,3 +51,5 @@ echo "weaponmadeincountry"
 java -jar OIE-Integration-0.0.1-SNAPSHOT-jar-with-dependencies.jar weaponmadeincountry 2 T
 java -jar OIE-Integration-0.0.1-SNAPSHOT-jar-with-dependencies.jar weaponmadeincountry 2 F
 
+
+mv /home/arnab/Workspaces/SchemaMapping/OIE-Integration/target/*.log /home/arnab/Workspaces/SchemaMapping/OIE-Integration/src/main/resources/output/
