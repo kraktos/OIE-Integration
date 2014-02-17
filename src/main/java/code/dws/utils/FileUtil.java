@@ -6,7 +6,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +23,36 @@ import code.dws.relationMap.Discover;
  */
 public class FileUtil
 {
+
+    public static ArrayList<ArrayList<String>> genericFileReader(InputStream inputStream, String valueSeperator,
+        boolean hasHeader)
+    {
+
+        Scanner scan;
+        scan = new Scanner(inputStream, "UTF-8");
+
+        if (hasHeader) {
+            scan.nextLine();
+        }
+        ArrayList<ArrayList<String>> lines = new ArrayList<ArrayList<String>>();
+
+        while (scan.hasNextLine()) {
+
+            ArrayList<String> tokens = new ArrayList<String>();
+
+            String line = scan.nextLine();
+            StringTokenizer st = new StringTokenizer(line, valueSeperator);
+
+            while (st.hasMoreTokens()) {
+                tokens.add(st.nextToken());
+            }
+            lines.add(tokens);
+        }
+
+        scan.close();
+
+        return lines;
+    }
 
     public final static Logger logger = LoggerFactory.getLogger(Discover.class);
 

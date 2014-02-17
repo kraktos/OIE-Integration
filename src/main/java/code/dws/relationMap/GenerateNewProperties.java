@@ -7,10 +7,18 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import code.dws.dbConnectivity.DBWrapper;
+import code.dws.ontology.GenericConverter;
+import code.dws.utils.Constants;
+import code.dws.utils.FileUtil;
+import code.dws.utils.Utilities;
 
 /**
  * This takes in the property hopped log files and tries to generate new properties
@@ -23,12 +31,70 @@ public class GenerateNewProperties
 
     private static final String PROPERTY_LOGS_PATH = "./src/main/resources/output";
 
+    private static final String PATH_SEPERATOR = ",";
+
+    private static final String NELL_FILE_PATH = "/input/Nell_truncated.csv";
+
+    private static final int SAMEAS_TOPK = 1;
+
     /**
      * @param args
      */
     public static void main(String[] args)
     {
+        readFiles(NELL_FILE_PATH);
+    }
 
+    /**
+     * read the NELL file to extract the subject-predicate-object
+     * 
+     * @param filePath
+     */
+    public static void readFiles(String filePath)
+    {
+        String nellRawSubj = null;
+        String nellRawPred = null;
+        String nellRawObj = null;
+
+        // init DB for getting the most frequebt URI for the NELL terms
+        DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
+
+        // load the NELL file in memory as a collection
+        ArrayList<ArrayList<String>> nellFile =
+            FileUtil
+                .genericFileReader(GenerateNewProperties.class.getResourceAsStream(filePath), PATH_SEPERATOR, false);
+
+        // iterate the file
+        for (ArrayList<String> line : nellFile) {
+            try {
+                log.debug(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\n");
+
+                // get the nell subjects and objects
+                nellRawSubj = line.get(0);
+                nellRawObj = line.get(2);
+
+                List<String> sameAsConfidences;
+
+                // get the top-k concepts, confidence pairs
+                sameAsConfidences =
+                    DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawSubj).replaceAll("\\_+", " ").trim(),
+                        SAMEAS_TOPK);
+
+                log.info(nellRawSubj + "\t" + sameAsConfidences.get(0).split("\t")[0]);
+
+            } catch (Exception e) {
+                log.error("Problem with line {}" + line.toString());
+                continue;
+            }
+        }
+        log.info(String.valueOf(nellFile.size()));
+    }
+
+    /**
+     * read the files generated from the property learner
+     */
+    public static void readFiles()
+    {
         File folder = null;
         File[] paths;
 

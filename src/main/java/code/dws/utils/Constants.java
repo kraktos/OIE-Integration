@@ -262,6 +262,13 @@ public class Constants
     public static final String GET_WIKI_TITLES_SQL =
         "select URI, SUM(COUNT) as cnt from wikiPrep where SF = ? group by BINARY URI order by cnt desc limit ?";
 
+    /**
+     * SQL to fetch the probabilities of the same as links from terms to concepts
+     */
+    public static final String GET_WIKI_LINKS_APRIORI_SQL =
+        "select  URI, (SUM(COUNT)/(select  SUM(COUNT) from wikiPrep  where SF =?)) as p from wikiPrep  where SF =? group by BINARY URI order by p desc limit ?";
+
+    
     public static final String GET_NELL_CONF =
         "select confidence from nell where subject = ? and predicate = ? and object = ?";
 
@@ -482,12 +489,7 @@ public class Constants
     public static final String APRIORI_PROB_FILE = sample_dumps + ExperimentAutomation.PREDICATE
         + "/sameAsLinksPrior.tsv";
 
-    /**
-     * SQL to fetch the probabilities of the same as links from terms to concepts
-     */
-    public static final String GET_WIKI_LINKS_APRIORI_SQL =
-        "select  URI, (SUM(COUNT)/(select  SUM(COUNT) from wikiPrep  where SF =?)) as p from wikiPrep  where SF =? group by URI order by p desc limit ?";
-
+    
     /**
      * TOPK candidates for the same as links probabilities
      */

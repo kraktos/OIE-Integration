@@ -50,7 +50,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>			
 		</plugins>
 	</build>
 	<dependencies>
@@ -133,5 +133,10 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.29</version>
+		</dependency>
 	</dependencies>
 </project>
