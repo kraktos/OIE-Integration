@@ -35,7 +35,7 @@ public class Constants
     /**
      * DBPedia End point URL
      */
-    public static String DBPEDIA_SPARQL_ENDPOINT = "http://dbpedia.org/sparql";
+    public static String DBPEDIA_SPARQL_ENDPOINT = "http://wifo5-32.informatik.uni-mannheim.de:8891/sparql";
 
     // ExperimentAutomation.DBPEDIA_SPARQL_ENDPOINT;
     // "http://wifo5-32.informatik.uni-mannheim.de:8890/sparql";
@@ -268,7 +268,6 @@ public class Constants
     public static final String GET_WIKI_LINKS_APRIORI_SQL =
         "select  URI, (SUM(COUNT)/(select  SUM(COUNT) from wikiPrep  where SF =?)) as p from wikiPrep  where SF =? group by BINARY URI order by p desc limit ?";
 
-    
     public static final String GET_NELL_CONF =
         "select confidence from nell where subject = ? and predicate = ? and object = ?";
 
@@ -489,7 +488,6 @@ public class Constants
     public static final String APRIORI_PROB_FILE = sample_dumps + ExperimentAutomation.PREDICATE
         + "/sameAsLinksPrior.tsv";
 
-    
     /**
      * TOPK candidates for the same as links probabilities
      */

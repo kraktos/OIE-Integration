@@ -3,22 +3,28 @@
  */
 package code.dws.relationMap;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileFilter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import code.dws.dbConnectivity.DBWrapper;
-import code.dws.ontology.GenericConverter;
+import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
 import code.dws.utils.Utilities;
+
+import com.hp.hpl.jena.query.QuerySolution;
 
 /**
  * This takes in the property hopped log files and tries to generate new properties
@@ -27,20 +33,27 @@ import code.dws.utils.Utilities;
  */
 public class GenerateNewProperties
 {
+    // define class logger
     public final static Logger log = LoggerFactory.getLogger(GenerateNewProperties.class);
 
     private static final String PROPERTY_LOGS_PATH = "./src/main/resources/output";
 
-    private static final String PATH_SEPERATOR = ",";
-
+    // location of the raw downloaded NELL path
     private static final String NELL_FILE_PATH = "/input/Nell_truncated.csv";
 
+    // data seperator of the NELL data file
+    private static final String PATH_SEPERATOR = ",";
+
+    // defines the top-k candidate to be fetched for each NELL term
     private static final int SAMEAS_TOPK = 1;
+
+    private static Map<String, List<String>> GLOBAL_PROPERTY_MAPPINGS = new HashMap<String, List<String>>();
 
     /**
      * @param args
+     * @throws IOException
      */
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         readFiles(NELL_FILE_PATH);
     }
@@ -49,12 +62,21 @@ public class GenerateNewProperties
      * read the NELL file to extract the subject-predicate-object
      * 
      * @param filePath
+     * @throws IOException
      */
-    public static void readFiles(String filePath)
+    public static void readFiles(String filePath) throws IOException
     {
+
+        int lineCounter = 0;
+
         String nellRawSubj = null;
-        String nellRawPred = null;
         String nellRawObj = null;
+
+        String candidateSubj = null;
+        String candidateObj = null;
+
+        BufferedWriter directPropWriter = new BufferedWriter(new FileWriter("DIRECT_PROP.log"));
+        BufferedWriter inversePropWriter = new BufferedWriter(new FileWriter("INVERSE_PROP.log"));
 
         // init DB for getting the most frequebt URI for the NELL terms
         DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
@@ -73,21 +95,135 @@ public class GenerateNewProperties
                 nellRawSubj = line.get(0);
                 nellRawObj = line.get(2);
 
-                List<String> sameAsConfidences;
-
-                // get the top-k concepts, confidence pairs
-                sameAsConfidences =
+                // get the top-k concepts for the subject
+                candidateSubj =
                     DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawSubj).replaceAll("\\_+", " ").trim(),
-                        SAMEAS_TOPK);
+                        SAMEAS_TOPK).get(0);
 
-                log.info(nellRawSubj + "\t" + sameAsConfidences.get(0).split("\t")[0]);
+                // get the top-k concepts for the object
+                candidateObj =
+                    DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawObj).replaceAll("\\_+", " ").trim(),
+                        SAMEAS_TOPK).get(0);
 
+                log.debug(candidateSubj.split("\t")[0] + "\t" + candidateObj.split("\t")[0]);
+
+                findDirectIndirectProps(line, candidateSubj, candidateObj, directPropWriter, inversePropWriter);
+
+                // update GLOBAL_PROPERTY_MAPPINGS with the possible values
+                // updateTheCollection(nellRawPred, directProperties);
+
+                if (lineCounter++ % 100 == 0)
+                    log.info("Completed " + lineCounter + " of " + nellFile.size() + " lines ");
+
+            } catch (IndexOutOfBoundsException e) {
+                continue;
             } catch (Exception e) {
-                log.error("Problem with line {}" + line.toString());
+                log.error("Problem with line " + line.toString());
+                e.printStackTrace();
                 continue;
             }
         }
-        log.info(String.valueOf(nellFile.size()));
+
+        // close streams
+        directPropWriter.close();
+        inversePropWriter.close();
+
+    }
+
+    /**
+     * @param line
+     * @param candidateSubj
+     * @param candidateObj
+     * @param propMapWriter
+     * @param inversePropWriter
+     * @return
+     * @throws IOException
+     */
+    public static void findDirectIndirectProps(ArrayList<String> line, String candidateSubj, String candidateObj,
+        BufferedWriter propMapWriter, BufferedWriter inversePropWriter) throws IOException
+    {
+        // for the current NELL predicate get the possible db:properties from
+        // SPARQL endpoint
+
+        // DIRECT PROPERTIES
+        List<String> directProperties = getPredsFromEndpoint(candidateSubj.split("\t")[0], candidateObj.split("\t")[0]);
+
+        propMapWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\t" + directProperties.toString()
+            + "\n");
+        propMapWriter.flush();
+
+        log.debug(line + "\t" + directProperties.toString() + "\n");
+
+        // INDIRECT PROPERTIES
+        List<String> inverseProps = getPredsFromEndpoint(candidateObj.split("\t")[0], candidateSubj.split("\t")[0]);
+
+        inversePropWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\t" + inverseProps.toString()
+            + "\n");
+        inversePropWriter.flush();
+
+        log.debug(line + "\t" + inverseProps.toString() + "\n");
+
+    }
+
+    /**
+     * updates a global collection of NELL property to possible mappings
+     * 
+     * @param nellRawPred
+     * @param probablePredicates
+     */
+    private static void updateTheCollection(String nellRawPred, List<String> probablePredicates)
+    {
+        List<String> propValues = null;
+        if (!GLOBAL_PROPERTY_MAPPINGS.containsKey(nellRawPred)) {
+            propValues = new ArrayList<String>();
+
+        } else {
+            propValues = GLOBAL_PROPERTY_MAPPINGS.get(nellRawPred);
+        }
+        propValues.addAll(probablePredicates);
+        GLOBAL_PROPERTY_MAPPINGS.put(nellRawPred, propValues);
+    }
+
+    /**
+     * get the possible predicates for a particular combination
+     * 
+     * @param candSubj
+     * @param candObj
+     * @return
+     */
+    private static List<String> getPredsFromEndpoint(String candSubj, String candObj)
+    {
+        // possible predicate variable
+        String possiblePred = null;
+
+        // return list of all possible predicates
+        List<String> returnPredicates = new ArrayList<String>();
+
+        String sparqlQuery =
+            "select * where {<"
+                + Constants.DBPEDIA_INSTANCE_NS
+                + candSubj
+                + "> ?val <"
+                + Constants.DBPEDIA_INSTANCE_NS
+                + candObj
+                + ">. "
+                + "?val <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty>."
+                + "FILTER(!regex(str(?val), 'http://dbpedia.org/ontology/wikiPageWikiLink'))}";
+
+        log.debug(sparqlQuery);
+
+        // fetch the result set
+        List<QuerySolution> listResults = SPARQLEndPointQueryAPI.queryDBPediaEndPoint(sparqlQuery);
+
+        for (QuerySolution querySol : listResults) {
+            possiblePred = querySol.get("val").toString();
+
+            // add the sub classes to a set
+            returnPredicates.add(possiblePred);
+
+        }
+
+        return returnPredicates;
     }
 
     /**
