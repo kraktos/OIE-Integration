@@ -115,6 +115,5 @@ public class PropertyStatistics {
 		}
 
 		MAP_OIE_IE_PROP_COUNTS.put(nellProp, mapValues);
-
 	}
 }
