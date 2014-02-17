@@ -1,0 +1,4 @@
+companyalsoknownas	http://dbpedia.org/ontology/keyPerson	http://dbpedia.org/ontology/board	
+companyalsoknownas	http://dbpedia.org/ontology/subsidiary	
+companyalsoknownas	http://dbpedia.org/ontology/foundedBy	http://dbpedia.org/ontology/board	
+companyalsoknownas	http://dbpedia.org/ontology/type	http://dbpedia.org/ontology/sisterStation	http://dbpedia.org/ontology/owningCompany	http://dbpedia.org/ontology/subsidiary	

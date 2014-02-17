@@ -1,0 +1,14 @@
+agentcollaborateswithagent	http://dbpedia.org/ontology/occupation	
+agentcollaborateswithagent	http://dbpedia.org/ontology/campus	http://dbpedia.org/ontology/leaderName	http://dbpedia.org/ontology/almaMater	http://dbpedia.org/ontology/athletics	
+agentcollaborateswithagent	http://dbpedia.org/ontology/foundedBy	
+agentcollaborateswithagent	http://dbpedia.org/ontology/keyPerson	
+agentcollaborateswithagent	http://dbpedia.org/ontology/city	http://dbpedia.org/ontology/leaderName	http://dbpedia.org/ontology/almaMater	http://dbpedia.org/ontology/athletics	
+agentcollaborateswithagent	http://dbpedia.org/ontology/president	
+agentcollaborateswithagent	http://dbpedia.org/ontology/city	http://dbpedia.org/ontology/leaderName	http://dbpedia.org/ontology/almaMater	http://dbpedia.org/ontology/athletics	
+agentcollaborateswithagent	http://dbpedia.org/ontology/athletics	
+agentcollaborateswithagent	http://dbpedia.org/ontology/successor	http://dbpedia.org/ontology/president	
+agentcollaborateswithagent	http://dbpedia.org/ontology/keyPerson	
+agentcollaborateswithagent	http://dbpedia.org/ontology/foundedBy	http://dbpedia.org/ontology/spouse	http://dbpedia.org/ontology/president	
+agentcollaborateswithagent	http://dbpedia.org/ontology/bandMember	
+agentcollaborateswithagent	http://dbpedia.org/ontology/almaMater	http://dbpedia.org/ontology/president	
+agentcollaborateswithagent	http://dbpedia.org/ontology/keyPerson	
