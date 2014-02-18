@@ -34,9 +34,9 @@ import com.hp.hpl.jena.query.QuerySolution;
  */
 public class GenerateNewProperties {
 
-	public static final String INVERSE_PROP_LOG = "INVERSE_PROP.log";
+	public static final String INVERSE_PROP_LOG = "INVERSE_PROP_TOP5.log";
 
-	public static final String DIRECT_PROP_LOG = "DIRECT_PROP.log";
+	public static final String DIRECT_PROP_LOG = "DIRECT_PROP_TOP5.log";
 
 	// define class logger
 	public final static Logger log = LoggerFactory
@@ -51,7 +51,7 @@ public class GenerateNewProperties {
 	private static final String PATH_SEPERATOR = ",";
 
 	// defines the top-k candidate to be fetched for each NELL term
-	private static final int SAMEAS_TOPK = 1;
+	private static final int SAMEAS_TOPK = 5;
 
 	private static Map<String, List<String>> GLOBAL_PROPERTY_MAPPINGS = new HashMap<String, List<String>>();
 
@@ -77,8 +77,8 @@ public class GenerateNewProperties {
 		String nellRawSubj = null;
 		String nellRawObj = null;
 
-		String candidateSubj = null;
-		String candidateObj = null;
+		List<String> candidateSubjs = null;
+		List<String> candidateObjs = null;
 
 		BufferedWriter directPropWriter = new BufferedWriter(new FileWriter(
 				DIRECT_PROP_LOG));
@@ -104,19 +104,16 @@ public class GenerateNewProperties {
 				nellRawObj = line.get(2);
 
 				// get the top-k concepts for the subject
-				candidateSubj = DBWrapper.fetchTopKLinksWikiPrepProb(
-						Utilities.cleanse(nellRawSubj).replaceAll("\\_+", " ")
-								.trim(), SAMEAS_TOPK).get(0);
+				candidateSubjs = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
+						.cleanse(nellRawSubj).replaceAll("\\_+", " ").trim(),
+						SAMEAS_TOPK);
 
 				// get the top-k concepts for the object
-				candidateObj = DBWrapper.fetchTopKLinksWikiPrepProb(
-						Utilities.cleanse(nellRawObj).replaceAll("\\_+", " ")
-								.trim(), SAMEAS_TOPK).get(0);
+				candidateObjs = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
+						.cleanse(nellRawObj).replaceAll("\\_+", " ").trim(),
+						SAMEAS_TOPK);
 
-				log.debug(candidateSubj.split("\t")[0] + "\t"
-						+ candidateObj.split("\t")[0]);
-
-				findDirectIndirectProps(line, candidateSubj, candidateObj,
+				findDirectIndirectProps(line, candidateSubjs, candidateObjs,
 						directPropWriter, inversePropWriter);
 
 				// update GLOBAL_PROPERTY_MAPPINGS with the possible values
@@ -151,32 +148,58 @@ public class GenerateNewProperties {
 	 * @throws IOException
 	 */
 	public static void findDirectIndirectProps(ArrayList<String> line,
-			String candidateSubj, String candidateObj,
+			List<String> candidateSubj, List<String> candidateObj,
 			BufferedWriter directPropWriter, BufferedWriter inversePropWriter)
 			throws IOException {
+
+		boolean blankDirect = false;
+		boolean blankInverse = false;
+
 		// for the current NELL predicate get the possible db:properties from
 		// SPARQL endpoint
+		for (String candSubj : candidateSubj) {
+			for (String candObj : candidateObj) {
+				// DIRECT PROPERTIES
+				String directProperties = getPredsFromEndpoint(
+						candSubj.split("\t")[0], candObj.split("\t")[0]);
 
-		// DIRECT PROPERTIES
-		String directProperties = getPredsFromEndpoint(
-				candidateSubj.split("\t")[0], candidateObj.split("\t")[0]);
+				if (directProperties.length() > 0) {
+					blankDirect = true;
+					directPropWriter.write(line.get(0) + "\t" + line.get(1)
+							+ "\t" + line.get(2) + "\t" + directProperties
+							+ "\n");
+					directPropWriter.flush();
+					log.debug(line + "\t" + directProperties + "\n");
+				}
 
-		directPropWriter.write(line.get(0) + "\t" + line.get(1) + "\t"
-				+ line.get(2) + "\t" + directProperties + "\n");
-		directPropWriter.flush();
+				// INDIRECT PROPERTIES
+				String inverseProps = getPredsFromEndpoint(
+						candObj.split("\t")[0], candSubj.split("\t")[0]);
 
-		log.debug(line + "\t" + directProperties + "\n");
+				if (inverseProps.length() > 0) {
+					blankInverse = true;
+					inversePropWriter.write(line.get(0) + "\t" + line.get(1)
+							+ "\t" + line.get(2) + "\t" + inverseProps + "\n");
+					inversePropWriter.flush();
+					log.debug(line + "\t" + inverseProps + "\n");
+				}
+			}
+		}
 
-		// INDIRECT PROPERTIES
-		String inverseProps = getPredsFromEndpoint(candidateObj.split("\t")[0],
-				candidateSubj.split("\t")[0]);
+		// if all possible candidate pairs have no predicates mapped, just
+		// add one entry in each log file, not
+		// multiple blank entries
+		if (!blankDirect) {
+			directPropWriter.write(line.get(0) + "\t" + line.get(1) + "\t"
+					+ line.get(2) + "\n");
+			directPropWriter.flush();
+		}
 
-		inversePropWriter.write(line.get(0) + "\t" + line.get(1) + "\t"
-				+ line.get(2) + "\t" + inverseProps + "\n");
-		inversePropWriter.flush();
-
-		log.debug(line + "\t" + inverseProps + "\n");
-
+		if (!blankInverse) {
+			inversePropWriter.write(line.get(0) + "\t" + line.get(1) + "\t"
+					+ line.get(2) + "\n");
+			inversePropWriter.flush();
+		}
 	}
 
 	/**
