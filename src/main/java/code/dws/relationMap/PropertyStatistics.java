@@ -81,18 +81,19 @@ public class PropertyStatistics
             }
         }
 
+        // find statistics on every property
+        performPredicateBasedAnalysis();
+
         // some stats
         log.info("TOTAL TRIPLES = " + directPropsFile.size());
 
-        log.info("TOTAL NON-MAPABLE TRIPLES = " + blankMapCntr + " i.e " + (double) blankMapCntr
-            / directPropsFile.size());
+        log.info("TOTAL NON-MAPABLE TRIPLES = " + blankMapCntr + " i.e "
+            + Math.round((double) (blankMapCntr * 100) / directPropsFile.size()) + "%");
 
-        log.info("TOTAL MAPPED TRIPLES = " + nonBlankCntr + " i.e " + (double) nonBlankCntr / directPropsFile.size());
+        log.info("TOTAL MAPPED TRIPLES = " + nonBlankCntr + " i.e "
+            + Math.round((double) (100 * nonBlankCntr) / directPropsFile.size()) + "%");
 
         log.info("TOTAL PROPERTIES = " + MAP_OIE_IE_PROP_COUNTS.size() + "\n\n");
-
-        // find statistics on every property
-        performPredicateBasedAnalysis();
 
     }
 
@@ -120,19 +121,41 @@ public class PropertyStatistics
      */
     private static void performPredicateBasedAnalysis()
     {
+        double percentageMapped = 0D;
+        int totalEntries = 0;
+        int totalNonMapped = 0;
+
         for (Map.Entry<String, Map<String, Integer>> entry : MAP_OIE_IE_PROP_COUNTS.entrySet()) {
             int countPredOccurncs = 0;
+            int countNonMappedOccrncs = 0;
 
             log.info("Predicate = " + entry.getKey());
 
             for (Map.Entry<String, Integer> valueEntry : MapUtils.sortByValue(entry.getValue(), false).entrySet()) {
                 log.info(valueEntry.getKey() + "\t" + valueEntry.getValue());
                 countPredOccurncs = countPredOccurncs + valueEntry.getValue();
+                if (valueEntry.getKey().equals("NA"))
+                    countNonMappedOccrncs = valueEntry.getValue();
             }
 
             log.info("Possible values for it  = " + countPredOccurncs);
-            log.info("Number of entries in the data set = " + MAP_PRED_COUNT.get(entry.getKey()) + "\n\n");
+            log.info("Number of triples in the data set = " + MAP_PRED_COUNT.get(entry.getKey()));
+
+            totalEntries = totalEntries + MAP_PRED_COUNT.get(entry.getKey());
+
+            totalNonMapped = totalNonMapped + countNonMappedOccrncs;
+
+            percentageMapped =
+                (double) (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs) * 100
+                    / (MAP_PRED_COUNT.get(entry.getKey()));
+
+            log.info("Percentage actually map-able = " + Math.round(percentageMapped) + "%\n\n");
+
         }
+
+        log.info("Total triples in data set = " + totalEntries);
+        log.info("Total mapped triples = " + (totalEntries - totalNonMapped));
+        log.info("Total non-mapped triples = " + totalNonMapped + "\n\n");
     }
 
     /*
