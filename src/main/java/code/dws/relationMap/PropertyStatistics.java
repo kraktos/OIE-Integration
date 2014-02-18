@@ -3,6 +3,9 @@
  */
 package code.dws.relationMap;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,6 +30,11 @@ public class PropertyStatistics
     // path seperator for the output property files
     private static final String PATH_SEPERATOR = "\t";
 
+    // threshold to consider mappable predicates. It means consider predicates which are atleast x % map-able
+    private static final double THRESHOLD = 40;
+
+    private static final String PROP_STATS = "PROP_STATISTICS.tsv";
+
     // map to hold the nell properties and the equivalent DBpedia properties
     // key is the nell property, value is a map with the dbp property and the
     // corresponding count
@@ -37,7 +45,7 @@ public class PropertyStatistics
     // property in the raw input file
     private static Map<String, Integer> MAP_PRED_COUNT = new HashMap<String, Integer>();
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         PropertyStatistics.loadPropStatsInMem("/input/" + GenerateNewProperties.DIRECT_PROP_LOG);
 
@@ -47,13 +55,16 @@ public class PropertyStatistics
 
     /**
      * method to read the property distribution files in memory
+     * 
+     * @throws IOException
      */
-    public static void loadPropStatsInMem(String filePath)
+    public static void loadPropStatsInMem(String filePath) throws IOException
     {
 
         int blankMapCntr = 0;
         int nonBlankCntr = 0;
 
+        // nell property in concern
         String nellProp = null;
 
         // read the file into memory
@@ -118,40 +129,61 @@ public class PropertyStatistics
 
     /**
      * iterate all the predicates stored in memory and find the statistics for each
+     * 
+     * @throws IOException
      */
-    private static void performPredicateBasedAnalysis()
+    private static void performPredicateBasedAnalysis() throws IOException
     {
         double percentageMapped = 0D;
         int totalEntries = 0;
         int totalNonMapped = 0;
 
+        // writer to dump the property stats
+        BufferedWriter propStatsWriter = new BufferedWriter(new FileWriter(PROP_STATS));
+
         for (Map.Entry<String, Map<String, Integer>> entry : MAP_OIE_IE_PROP_COUNTS.entrySet()) {
             int countPredOccurncs = 0;
             int countNonMappedOccrncs = 0;
 
-            log.info("Predicate = " + entry.getKey());
-
-            for (Map.Entry<String, Integer> valueEntry : MapUtils.sortByValue(entry.getValue(), false).entrySet()) {
-                log.info(valueEntry.getKey() + "\t" + valueEntry.getValue());
+            for (Map.Entry<String, Integer> valueEntry : entry.getValue().entrySet()) {
                 countPredOccurncs = countPredOccurncs + valueEntry.getValue();
                 if (valueEntry.getKey().equals("NA"))
                     countNonMappedOccrncs = valueEntry.getValue();
             }
 
-            log.info("Possible values for it  = " + countPredOccurncs);
-            log.info("Number of triples in the data set = " + MAP_PRED_COUNT.get(entry.getKey()));
+            percentageMapped =
+                (double) (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs) * 100
+                    / (MAP_PRED_COUNT.get(entry.getKey()));
+
+            if (percentageMapped > THRESHOLD) {
+                log.info("Predicate = " + entry.getKey());
+                log.info("Number of triples in the data set = " + MAP_PRED_COUNT.get(entry.getKey()));
+                log.info("Total non-mapped triples = " + countNonMappedOccrncs);
+                log.info("Total mapped triples = " + (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs));
+                log.info("Percentage actually map-able (rounded) = " + Math.round(percentageMapped) + "%");
+
+                log.info("Number of values  = " + countPredOccurncs);
+
+                for (Map.Entry<String, Integer> valueEntry : MapUtils.sortByValue(entry.getValue(), false).entrySet()) {
+                    log.info("\t" + valueEntry.getKey() + "\t" + valueEntry.getValue() + " ("
+                        + Math.round(((double) valueEntry.getValue() *100 / MAP_PRED_COUNT.get(entry.getKey()))) + "%)");
+                }
+                log.info("\n\n");
+            }
+
+            // dump all to the file
+            propStatsWriter.write(entry.getKey() + "\t" + MAP_PRED_COUNT.get(entry.getKey()) + "\t"
+                + (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs) + "\t" + countNonMappedOccrncs + "\t"
+                + Math.round(percentageMapped) + "\n");
 
             totalEntries = totalEntries + MAP_PRED_COUNT.get(entry.getKey());
 
             totalNonMapped = totalNonMapped + countNonMappedOccrncs;
 
-            percentageMapped =
-                (double) (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs) * 100
-                    / (MAP_PRED_COUNT.get(entry.getKey()));
-
-            log.info("Percentage actually map-able = " + Math.round(percentageMapped) + "%\n\n");
-
         }
+
+        propStatsWriter.flush();
+        propStatsWriter.close();
 
         log.info("Total triples in data set = " + totalEntries);
         log.info("Total mapped triples = " + (totalEntries - totalNonMapped));
