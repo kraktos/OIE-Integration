@@ -44,7 +44,7 @@ public class GenerateNewProperties
     private static final String PROPERTY_LOGS_PATH = "./src/main/resources/output";
 
     // location of the raw downloaded NELL path
-    private static final String NELL_FILE_PATH = "/input/small.csv"; //"/input/Nell_truncated.csv";
+    private static final String NELL_FILE_PATH = "/input/Nell_truncated.csv";
 
     // data seperator of the NELL data file
     private static final String PATH_SEPERATOR = ",";
