@@ -112,6 +112,7 @@ public class GenerateNewProperties
                     DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawObj).replaceAll("\\_+", " ").trim(),
                         SAMEAS_TOPK);
 
+                // use the SPARQL endpoint for querying the direct and inverse relation betwen the sub-obj pairs
                 findDirectIndirectProps(line, candidateSubjs, candidateObjs, directPropWriter, inversePropWriter);
 
                 // update GLOBAL_PROPERTY_MAPPINGS with the possible values
@@ -152,32 +153,51 @@ public class GenerateNewProperties
         boolean blankDirect = false;
         boolean blankInverse = false;
 
+        List<String> directPropList = new ArrayList<String>();
+        List<String> inversePropList = new ArrayList<String>();
+
         // for the current NELL predicate get the possible db:properties from
         // SPARQL endpoint
         for (String candSubj : candidateSubj) {
             for (String candObj : candidateObj) {
+
                 // DIRECT PROPERTIES
                 String directProperties = getPredsFromEndpoint(candSubj.split("\t")[0], candObj.split("\t")[0]);
-
-                if (directProperties.length() > 0) {
-                    blankDirect = true;
-                    directPropWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\t"
-                        + directProperties + "\n");
-                    directPropWriter.flush();
-                    log.debug(line + "\t" + directProperties + "\n");
-                }
+                directPropList.add(directProperties);
 
                 // INDIRECT PROPERTIES
                 String inverseProps = getPredsFromEndpoint(candObj.split("\t")[0], candSubj.split("\t")[0]);
+                inversePropList.add(inverseProps);
 
-                if (inverseProps.length() > 0) {
-                    blankInverse = true;
-                    inversePropWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\t" + inverseProps
-                        + "\n");
-                    inversePropWriter.flush();
-                    log.debug(line + "\t" + inverseProps + "\n");
-                }
             }
+        }
+
+        if (directPropList.size() > 0) {
+            blankDirect = true;
+            directPropWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\t");
+            log.debug(line + "\t");
+            for (String elem : directPropList) {
+                directPropWriter.write(elem + "\t");
+                log.debug(elem + "\t");
+            }
+            directPropWriter.write("\n");
+            log.debug("\n");
+            directPropWriter.flush();
+
+        }
+
+        if (inversePropList.size() > 0) {
+            blankInverse = true;
+
+            inversePropWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\t");
+            log.debug(line + "\t");
+            for (String elem : inversePropList) {
+                inversePropWriter.write(elem + "\t");
+                log.debug(elem + "\t");
+            }
+            inversePropWriter.write("\n");
+            log.debug("\n");
+            inversePropWriter.flush();
         }
 
         // if all possible candidate pairs have no predicates mapped, just
