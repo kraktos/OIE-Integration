@@ -27,300 +27,297 @@ import code.dws.utils.Utilities;
 import com.hp.hpl.jena.query.QuerySolution;
 
 /**
- * This takes in the property hopped log files and tries to generate new
- * properties
+ * This takes in the property hopped log files and tries to generate new properties
  * 
  * @author Arnab Dutta
  */
-public class GenerateNewProperties {
+public class GenerateNewProperties
+{
 
-	public static final String INVERSE_PROP_LOG = "INVERSE_PROP_TOP5.log";
+    public static final String INVERSE_PROP_LOG = "INVERSE_PROP.log";
 
-	public static final String DIRECT_PROP_LOG = "DIRECT_PROP_TOP5.log";
+    public static final String DIRECT_PROP_LOG = "DIRECT_PROP.log";
 
-	// define class logger
-	public final static Logger log = LoggerFactory
-			.getLogger(GenerateNewProperties.class);
+    // define class logger
+    public final static Logger log = LoggerFactory.getLogger(GenerateNewProperties.class);
 
-	private static final String PROPERTY_LOGS_PATH = "./src/main/resources/output";
+    private static final String PROPERTY_LOGS_PATH = "./src/main/resources/output";
 
-	// location of the raw downloaded NELL path
-	private static final String NELL_FILE_PATH = "/input/Nell_truncated.csv";
+    // location of the raw downloaded NELL path
+    private static final String NELL_FILE_PATH = "/input/Nell_truncated.csv";
 
-	// data seperator of the NELL data file
-	private static final String PATH_SEPERATOR = ",";
+    // data seperator of the NELL data file
+    private static final String PATH_SEPERATOR = ",";
 
-	// defines the top-k candidate to be fetched for each NELL term
-	private static final int SAMEAS_TOPK = 5;
+    // defines the top-k candidate to be fetched for each NELL term
+    private static final int SAMEAS_TOPK = 1;
 
-	private static Map<String, List<String>> GLOBAL_PROPERTY_MAPPINGS = new HashMap<String, List<String>>();
+    private static Map<String, List<String>> GLOBAL_PROPERTY_MAPPINGS = new HashMap<String, List<String>>();
 
-	/**
-	 * @param args
-	 * @throws IOException
-	 */
-	public static void main(String[] args) throws IOException {
-		readFiles(NELL_FILE_PATH);
-		// PropertyStatistics.loadInMemory("/input/" + DIRECT_PROP_LOG);
-	}
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException
+    {
+        readFiles(NELL_FILE_PATH);
+    }
 
-	/**
-	 * read the NELL file to extract the subject-predicate-object
-	 * 
-	 * @param filePath
-	 * @throws IOException
-	 */
-	public static void readFiles(String filePath) throws IOException {
+    /**
+     * read the NELL file to extract the subject-predicate-object
+     * 
+     * @param filePath
+     * @throws IOException
+     */
+    public static void readFiles(String filePath) throws IOException
+    {
 
-		int lineCounter = 0;
+        int lineCounter = 0;
 
-		String nellRawSubj = null;
-		String nellRawObj = null;
+        String nellRawSubj = null;
+        String nellRawObj = null;
 
-		List<String> candidateSubjs = null;
-		List<String> candidateObjs = null;
+        List<String> candidateSubjs = null;
+        List<String> candidateObjs = null;
 
-		BufferedWriter directPropWriter = new BufferedWriter(new FileWriter(
-				DIRECT_PROP_LOG));
-		BufferedWriter inversePropWriter = new BufferedWriter(new FileWriter(
-				INVERSE_PROP_LOG));
+        BufferedWriter directPropWriter = new BufferedWriter(new FileWriter(DIRECT_PROP_LOG));
+        BufferedWriter inversePropWriter = new BufferedWriter(new FileWriter(INVERSE_PROP_LOG));
 
-		// init DB for getting the most frequebt URI for the NELL terms
-		DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
+        // init DB for getting the most frequebt URI for the NELL terms
+        DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
 
-		// load the NELL file in memory as a collection
-		ArrayList<ArrayList<String>> nellFile = FileUtil.genericFileReader(
-				GenerateNewProperties.class.getResourceAsStream(filePath),
-				PATH_SEPERATOR, false);
+        // load the NELL file in memory as a collection
+        ArrayList<ArrayList<String>> nellFile =
+            FileUtil
+                .genericFileReader(GenerateNewProperties.class.getResourceAsStream(filePath), PATH_SEPERATOR, false);
 
-		// iterate the file
-		for (ArrayList<String> line : nellFile) {
-			try {
-				log.debug(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2)
-						+ "\n");
+        log.info("Raw NELL Input File Size = " + nellFile.size() + " tripeles");
 
-				// get the nell subjects and objects
-				nellRawSubj = line.get(0);
-				nellRawObj = line.get(2);
+        // iterate the file
+        for (ArrayList<String> line : nellFile) {
+            try {
+                log.debug(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\n");
 
-				// get the top-k concepts for the subject
-				candidateSubjs = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
-						.cleanse(nellRawSubj).replaceAll("\\_+", " ").trim(),
-						SAMEAS_TOPK);
+                // get the nell subjects and objects
+                nellRawSubj = line.get(0);
+                nellRawObj = line.get(2);
 
-				// get the top-k concepts for the object
-				candidateObjs = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
-						.cleanse(nellRawObj).replaceAll("\\_+", " ").trim(),
-						SAMEAS_TOPK);
+                // get the top-k concepts for the subject
+                candidateSubjs =
+                    DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawSubj).replaceAll("\\_+", " ").trim(),
+                        SAMEAS_TOPK);
 
-				findDirectIndirectProps(line, candidateSubjs, candidateObjs,
-						directPropWriter, inversePropWriter);
+                // get the top-k concepts for the object
+                candidateObjs =
+                    DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawObj).replaceAll("\\_+", " ").trim(),
+                        SAMEAS_TOPK);
 
-				// update GLOBAL_PROPERTY_MAPPINGS with the possible values
-				// updateTheCollection(nellRawPred, directProperties);
+                findDirectIndirectProps(line, candidateSubjs, candidateObjs, directPropWriter, inversePropWriter);
 
-				if (lineCounter++ % 1000 == 0)
-					log.info("Completed " + lineCounter + " of "
-							+ nellFile.size() + " lines ");
+                // update GLOBAL_PROPERTY_MAPPINGS with the possible values
+                // updateTheCollection(nellRawPred, directProperties);
 
-			} catch (IndexOutOfBoundsException e) {
-				continue;
-			} catch (Exception e) {
-				log.error("Problem with line " + line.toString());
-				e.printStackTrace();
-				continue;
-			}
-		}
+                if (lineCounter++ % 1000 == 0)
+                    log.info("Completed " + lineCounter + " of " + nellFile.size() + " lines ");
 
-		// close streams
-		directPropWriter.close();
-		inversePropWriter.close();
+            } catch (IndexOutOfBoundsException e) {
+                continue;
+            } catch (Exception e) {
+                log.error("Problem with line " + line.toString());
+                e.printStackTrace();
+                continue;
+            }
+        }
 
-	}
+        // close streams
+        directPropWriter.close();
+        inversePropWriter.close();
 
-	/**
-	 * @param line
-	 * @param candidateSubj
-	 * @param candidateObj
-	 * @param directPropWriter
-	 * @param inversePropWriter
-	 * @return
-	 * @throws IOException
-	 */
-	public static void findDirectIndirectProps(ArrayList<String> line,
-			List<String> candidateSubj, List<String> candidateObj,
-			BufferedWriter directPropWriter, BufferedWriter inversePropWriter)
-			throws IOException {
+    }
 
-		boolean blankDirect = false;
-		boolean blankInverse = false;
+    /**
+     * @param line
+     * @param candidateSubj
+     * @param candidateObj
+     * @param directPropWriter
+     * @param inversePropWriter
+     * @return
+     * @throws IOException
+     */
+    public static void findDirectIndirectProps(ArrayList<String> line, List<String> candidateSubj,
+        List<String> candidateObj, BufferedWriter directPropWriter, BufferedWriter inversePropWriter)
+        throws IOException
+    {
 
-		// for the current NELL predicate get the possible db:properties from
-		// SPARQL endpoint
-		for (String candSubj : candidateSubj) {
-			for (String candObj : candidateObj) {
-				// DIRECT PROPERTIES
-				String directProperties = getPredsFromEndpoint(
-						candSubj.split("\t")[0], candObj.split("\t")[0]);
+        boolean blankDirect = false;
+        boolean blankInverse = false;
 
-				if (directProperties.length() > 0) {
-					blankDirect = true;
-					directPropWriter.write(line.get(0) + "\t" + line.get(1)
-							+ "\t" + line.get(2) + "\t" + directProperties
-							+ "\n");
-					directPropWriter.flush();
-					log.debug(line + "\t" + directProperties + "\n");
-				}
+        // for the current NELL predicate get the possible db:properties from
+        // SPARQL endpoint
+        for (String candSubj : candidateSubj) {
+            for (String candObj : candidateObj) {
+                // DIRECT PROPERTIES
+                String directProperties = getPredsFromEndpoint(candSubj.split("\t")[0], candObj.split("\t")[0]);
 
-				// INDIRECT PROPERTIES
-				String inverseProps = getPredsFromEndpoint(
-						candObj.split("\t")[0], candSubj.split("\t")[0]);
+                if (directProperties.length() > 0) {
+                    blankDirect = true;
+                    directPropWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\t"
+                        + directProperties + "\n");
+                    directPropWriter.flush();
+                    log.debug(line + "\t" + directProperties + "\n");
+                }
 
-				if (inverseProps.length() > 0) {
-					blankInverse = true;
-					inversePropWriter.write(line.get(0) + "\t" + line.get(1)
-							+ "\t" + line.get(2) + "\t" + inverseProps + "\n");
-					inversePropWriter.flush();
-					log.debug(line + "\t" + inverseProps + "\n");
-				}
-			}
-		}
+                // INDIRECT PROPERTIES
+                String inverseProps = getPredsFromEndpoint(candObj.split("\t")[0], candSubj.split("\t")[0]);
 
-		// if all possible candidate pairs have no predicates mapped, just
-		// add one entry in each log file, not
-		// multiple blank entries
-		if (!blankDirect) {
-			directPropWriter.write(line.get(0) + "\t" + line.get(1) + "\t"
-					+ line.get(2) + "\n");
-			directPropWriter.flush();
-		}
+                if (inverseProps.length() > 0) {
+                    blankInverse = true;
+                    inversePropWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\t" + inverseProps
+                        + "\n");
+                    inversePropWriter.flush();
+                    log.debug(line + "\t" + inverseProps + "\n");
+                }
+            }
+        }
 
-		if (!blankInverse) {
-			inversePropWriter.write(line.get(0) + "\t" + line.get(1) + "\t"
-					+ line.get(2) + "\n");
-			inversePropWriter.flush();
-		}
-	}
+        // if all possible candidate pairs have no predicates mapped, just
+        // add one entry in each log file, not
+        // multiple blank entries
+        if (!blankDirect) {
+            directPropWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\n");
+            directPropWriter.flush();
+        }
 
-	/**
-	 * updates a global collection of NELL property to possible mappings
-	 * 
-	 * @param nellRawPred
-	 * @param probablePredicates
-	 */
-	private static void updateTheCollection(String nellRawPred,
-			List<String> probablePredicates) {
-		List<String> propValues = null;
-		if (!GLOBAL_PROPERTY_MAPPINGS.containsKey(nellRawPred)) {
-			propValues = new ArrayList<String>();
+        if (!blankInverse) {
+            inversePropWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\n");
+            inversePropWriter.flush();
+        }
+    }
 
-		} else {
-			propValues = GLOBAL_PROPERTY_MAPPINGS.get(nellRawPred);
-		}
-		propValues.addAll(probablePredicates);
-		GLOBAL_PROPERTY_MAPPINGS.put(nellRawPred, propValues);
-	}
+    /**
+     * updates a global collection of NELL property to possible mappings
+     * 
+     * @param nellRawPred
+     * @param probablePredicates
+     */
+    private static void updateTheCollection(String nellRawPred, List<String> probablePredicates)
+    {
+        List<String> propValues = null;
+        if (!GLOBAL_PROPERTY_MAPPINGS.containsKey(nellRawPred)) {
+            propValues = new ArrayList<String>();
 
-	/**
-	 * get the possible predicates for a particular combination
-	 * 
-	 * @param candSubj
-	 * @param candObj
-	 * @return
-	 */
-	private static String getPredsFromEndpoint(String candSubj, String candObj) {
-		// possible predicate variable
-		String possiblePred = null;
+        } else {
+            propValues = GLOBAL_PROPERTY_MAPPINGS.get(nellRawPred);
+        }
+        propValues.addAll(probablePredicates);
+        GLOBAL_PROPERTY_MAPPINGS.put(nellRawPred, propValues);
+    }
 
-		// return list of all possible predicates
-		List<String> returnPredicates = new ArrayList<String>();
-		StringBuffer sBuf = new StringBuffer();
+    /**
+     * get the possible predicates for a particular combination
+     * 
+     * @param candSubj
+     * @param candObj
+     * @return
+     */
+    private static String getPredsFromEndpoint(String candSubj, String candObj)
+    {
+        // possible predicate variable
+        String possiblePred = null;
 
-		String sparqlQuery = "select * where {<"
-				+ Constants.DBPEDIA_INSTANCE_NS
-				+ candSubj
-				+ "> ?val <"
-				+ Constants.DBPEDIA_INSTANCE_NS
-				+ candObj
-				+ ">. "
-				+ "?val <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty>."
-				+ "FILTER(!regex(str(?val), 'http://dbpedia.org/ontology/wikiPageWikiLink'))}";
+        // return list of all possible predicates
+        List<String> returnPredicates = new ArrayList<String>();
+        StringBuffer sBuf = new StringBuffer();
 
-		log.debug(sparqlQuery);
+        String sparqlQuery =
+            "select * where {<"
+                + Constants.DBPEDIA_INSTANCE_NS
+                + candSubj
+                + "> ?val <"
+                + Constants.DBPEDIA_INSTANCE_NS
+                + candObj
+                + ">. "
+                + "?val <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty>."
+                + "FILTER(!regex(str(?val), 'http://dbpedia.org/ontology/wikiPageWikiLink'))}";
 
-		// fetch the result set
-		List<QuerySolution> listResults = SPARQLEndPointQueryAPI
-				.queryDBPediaEndPoint(sparqlQuery);
+        log.debug(sparqlQuery);
 
-		for (QuerySolution querySol : listResults) {
-			possiblePred = querySol.get("val").toString();
+        // fetch the result set
+        List<QuerySolution> listResults = SPARQLEndPointQueryAPI.queryDBPediaEndPoint(sparqlQuery);
 
-			// add the sub classes to a set
-			returnPredicates.add(possiblePred);
-			sBuf.append(possiblePred + "\t");
-		}
+        for (QuerySolution querySol : listResults) {
+            possiblePred = querySol.get("val").toString();
 
-		return sBuf.toString().trim();
-	}
+            // add the sub classes to a set
+            returnPredicates.add(possiblePred);
+            sBuf.append(possiblePred + "\t");
+        }
 
-	/**
-	 * read the files generated from the property learner
-	 */
-	public static void readFiles() {
-		File folder = null;
-		File[] paths;
+        return sBuf.toString().trim();
+    }
 
-		try {
-			// create new file
-			folder = new File(PROPERTY_LOGS_PATH);
+    /**
+     * read the files generated from the property learner
+     */
+    public static void readFiles()
+    {
+        File folder = null;
+        File[] paths;
 
-			FileFilter filter = new FileFilter() {
-				@Override
-				public boolean accept(File pathname) {
-					return pathname.isFile() && pathname.length() > 0;
-				}
-			};
+        try {
+            // create new file
+            folder = new File(PROPERTY_LOGS_PATH);
 
-			// returns pathnames for files and directory
-			paths = folder.listFiles(filter);
+            FileFilter filter = new FileFilter()
+            {
+                @Override
+                public boolean accept(File pathname)
+                {
+                    return pathname.isFile() && pathname.length() > 0;
+                }
+            };
 
-			// for each pathname in pathname array
-			for (File path : paths) {
+            // returns pathnames for files and directory
+            paths = folder.listFiles(filter);
 
-				// individually parse each file and get the properties with hop
-				// lengths greater than one
-				// these signify the ones which are not directly map-able to
-				// DBpedia
+            // for each pathname in pathname array
+            for (File path : paths) {
 
-				processFile(path.toString());
+                // individually parse each file and get the properties with hop
+                // lengths greater than one
+                // these signify the ones which are not directly map-able to
+                // DBpedia
 
-			}
-		} catch (Exception e) {
-			// if any error occurs
-			e.printStackTrace();
-		}
-	}
+                processFile(path.toString());
 
-	/**
-	 * take the individual property files and parse them for likely paths
-	 * 
-	 * @param path
-	 * @throws IOException
-	 */
-	private static void processFile(String path) throws IOException {
+            }
+        } catch (Exception e) {
+            // if any error occurs
+            e.printStackTrace();
+        }
+    }
 
-		InputStream is = GenerateNewProperties.class.getResourceAsStream(path
-				.toString().replaceAll("./src/main/resources", ""));
+    /**
+     * take the individual property files and parse them for likely paths
+     * 
+     * @param path
+     * @throws IOException
+     */
+    private static void processFile(String path) throws IOException
+    {
 
-		Scanner scan = new Scanner(is, "UTF-8");
+        InputStream is =
+            GenerateNewProperties.class.getResourceAsStream(path.toString().replaceAll("./src/main/resources", ""));
 
-		while (scan.hasNextLine()) {
+        Scanner scan = new Scanner(is, "UTF-8");
 
-			String line = scan.nextLine();
-			String[] arr = line.split("\t");
-			if (arr.length > 2)
-				log.info(String.valueOf(line));
+        while (scan.hasNextLine()) {
 
-		}
-	}
+            String line = scan.nextLine();
+            String[] arr = line.split("\t");
+            if (arr.length > 2)
+                log.info(String.valueOf(line));
+
+        }
+    }
 }
