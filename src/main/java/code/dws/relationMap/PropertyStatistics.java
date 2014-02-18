@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import code.dws.utils.FileUtil;
+import code.dws.utils.MapUtils;
 
 /**
  * Responsible for computing the property statistics
@@ -32,11 +33,15 @@ public class PropertyStatistics
     private static Map<String, Map<String, Integer>> MAP_OIE_IE_PROP_COUNTS =
         new HashMap<String, Map<String, Integer>>();
 
+    // map keeping count of the nell predicate occurance, should be identical to the number of triples with that
+    // property in the raw input file
+    private static Map<String, Integer> MAP_PRED_COUNT = new HashMap<String, Integer>();
+
     public static void main(String[] args)
     {
         PropertyStatistics.loadPropStatsInMem("/input/" + GenerateNewProperties.DIRECT_PROP_LOG);
 
-//        PropertyStatistics.loadPropStatsInMem("/input/" + GenerateNewProperties.INVERSE_PROP_LOG);
+        // PropertyStatistics.loadPropStatsInMem("/input/" + GenerateNewProperties.INVERSE_PROP_LOG);
 
     }
 
@@ -55,13 +60,12 @@ public class PropertyStatistics
         ArrayList<ArrayList<String>> directPropsFile =
             FileUtil.genericFileReader(PropertyStatistics.class.getResourceAsStream(filePath), PATH_SEPERATOR, false);
 
-        log.info("TOTAL TRIPLES = " + directPropsFile.size());
-
         // iterate through them
         for (ArrayList<String> line : directPropsFile) {
             nellProp = line.get(1);
 
             if (nellProp != null) {
+
                 if (line.size() == 3) {
                     blankMapCntr++;
                     updateMapValues(nellProp, "NA");
@@ -71,17 +75,64 @@ public class PropertyStatistics
                         updateMapValues(nellProp, line.get(cnt));
                     }
                 }
+
+                // update the count of the occurance of this predicate
+                updateCount(nellProp);
             }
         }
+
+        // some stats
+        log.info("TOTAL TRIPLES = " + directPropsFile.size());
 
         log.info("TOTAL NON-MAPABLE TRIPLES = " + blankMapCntr + " i.e " + (double) blankMapCntr
             / directPropsFile.size());
 
         log.info("TOTAL MAPPED TRIPLES = " + nonBlankCntr + " i.e " + (double) nonBlankCntr / directPropsFile.size());
 
-        log.debug("Distribution for buildinglocatedincity " + MAP_OIE_IE_PROP_COUNTS.get("buildinglocatedincity"));
+        log.info("TOTAL PROPERTIES = " + MAP_OIE_IE_PROP_COUNTS.size() + "\n\n");
 
-        log.info("TOTAL PROPERTIES = " + MAP_OIE_IE_PROP_COUNTS.size());
+        // find statistics on every property
+        performPredicateBasedAnalysis();
+
+    }
+
+    /**
+     * update the nell pred counts in the whole raw NEll file
+     * 
+     * @param nellProp
+     */
+    private static void updateCount(String nellProp)
+    {
+        int count = 0;
+
+        if (!MAP_PRED_COUNT.containsKey(nellProp)) {
+            count = 1;
+        } else {
+            count = MAP_PRED_COUNT.get(nellProp);
+            count++;
+        }
+        MAP_PRED_COUNT.put(nellProp, count);
+
+    }
+
+    /**
+     * iterate all the predicates stored in memory and find the statistics for each
+     */
+    private static void performPredicateBasedAnalysis()
+    {
+        for (Map.Entry<String, Map<String, Integer>> entry : MAP_OIE_IE_PROP_COUNTS.entrySet()) {
+            int countPredOccurncs = 0;
+
+            log.info("Predicate = " + entry.getKey());
+
+            for (Map.Entry<String, Integer> valueEntry : MapUtils.sortByValue(entry.getValue(), false).entrySet()) {
+                log.info(valueEntry.getKey() + "\t" + valueEntry.getValue());
+                countPredOccurncs = countPredOccurncs + valueEntry.getValue();
+            }
+
+            log.info("Possible values for it  = " + countPredOccurncs);
+            log.info("Number of entries in the data set = " + MAP_PRED_COUNT.get(entry.getKey()) + "\n\n");
+        }
     }
 
     /*
@@ -98,7 +149,7 @@ public class PropertyStatistics
                                                              // one entry
             mapValues = new HashMap<String, Integer>();
             mapValues.put(dbProp, 1);
-        } else { // nell prop key exists
+        } else { // if nell prop key exists
 
             // retrieve the existing collection first
             mapValues = MAP_OIE_IE_PROP_COUNTS.get(nellProp);

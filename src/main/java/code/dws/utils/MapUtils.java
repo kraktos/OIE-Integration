@@ -30,4 +30,35 @@ public class MapUtils
         }
         return result;
     }
+
+    /**
+     * overloaded function which sorts on the values, ascending or descending
+     * 
+     * @param map
+     * @param ascending
+     * @return
+     */
+    public static Map<String, Integer> sortByValue(Map<String, Integer> map, final boolean ascending)
+    {
+        List list = new LinkedList(map.entrySet());
+        Collections.sort(list, new Comparator()
+        {
+            public int compare(Object o1, Object o2)
+            {
+                if (ascending)
+                    return ((Comparable) ((Map.Entry) (o1)).getValue()).compareTo(((Map.Entry) (o2)).getValue());
+                else
+                    return ((Comparable) ((Map.Entry) (o2)).getValue()).compareTo(((Map.Entry) (o1)).getValue());
+
+            }
+        });
+
+        Map result = new LinkedHashMap();
+        for (Iterator it = list.iterator(); it.hasNext();) {
+            Map.Entry entry = (Map.Entry) it.next();
+
+            result.put(entry.getKey(), (Integer) entry.getValue());
+        }
+        return result;
+    }
 }
