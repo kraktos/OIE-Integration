@@ -5,6 +5,7 @@
 package code.dws.utils;
 
 import code.dws.experiment.ExperimentAutomation;
+import code.dws.message.Messages;
 
 /**
  * This class stores a set of constants required for the application
@@ -614,5 +615,24 @@ public class Constants
     public static boolean ENGAGE_INTER_STEP = ExperimentAutomation.ENGAGE_INTER_STEP;
 
     public static String OUTLIER_DETECTION_TECHNIQUE = "KDE";
+    
+    
+    /*
+     * DB Details
+     */
 
+    // DB Driver name
+    public static String DRIVER_NAME = "com.mysql.jdbc.Driver";
+
+    // Url to conenct to the Database
+    public static String CONNECTION_URL = "jdbc:mysql://134.155.86.39/";
+
+    // name of the database
+    public static String DB_NAME = "wikiStat";
+
+    // user of the database. Make sure this user is created for the DB
+    public static String DB_USER = "root";
+
+    // password for the user
+    public static String DB_PWD = "mannheim1234";
 }

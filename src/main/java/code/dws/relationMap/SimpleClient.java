@@ -12,7 +12,7 @@ public class SimpleClient
     public static void main(String[] args) throws IOException
     {
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i <= 85; i++) {
             PropertyStatistics.main(new String[] {String.valueOf(i)});
         }
     }

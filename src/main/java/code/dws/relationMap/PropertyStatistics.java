@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,15 +34,12 @@ public class PropertyStatistics {
 	// threshold to consider mappable predicates. It means consider NELL
 	// predicates
 	// which are atleast x % map-able
-	private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 0;
+	private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 40;
 
 	// use it to set a threshold on the mapped DBpedia property mapping
 	private static double DBP_PROPERTY_CONFIDENCE_THRESHOLD = 0D;
 
-	// use it to put threshold on the ratio of map/non-map
-	private static final double DROP_THRESHOLD = 4;
-
-	private static final String PROP_STATS = "PROP_STATISTICS_TOP5.tsv"; // "PROP_STATISTICS.tsv";
+	private static final String PROP_STATS =  "PROP_STATISTICS.tsv"; //"PROP_STATISTICS_TOP5.tsv"; 
 
 	// total triples that can be reconstructed
 	private static int newTriples = 0;
@@ -61,7 +57,7 @@ public class PropertyStatistics {
 
 	public static void main(String[] args) throws IOException {
 		if (args.length == 0) {
-			DBP_PROPERTY_CONFIDENCE_THRESHOLD = 40;
+			DBP_PROPERTY_CONFIDENCE_THRESHOLD = 0;
 		} else {
 			DBP_PROPERTY_CONFIDENCE_THRESHOLD = 15 + Integer.parseInt(args[0]);
 		}
@@ -210,6 +206,7 @@ public class PropertyStatistics {
 				log.info("Percentage actually map-able (rounded) = "
 						+ Math.round(percentageMapped) + "%");
 
+				log.info("\t"  + Math.round(percentageMapped));
 				log.info("Number of values  = " + countPredOccurncs);
 
 				ArrayList<String> possibleProps = new ArrayList<String>();
@@ -243,6 +240,7 @@ public class PropertyStatistics {
 								+ " triples can be newly added with "
 								+ valueEntry.getKey());
 
+						log.warn(entry.getKey() + "\t" + valueEntry.getKey());
 						possibleProps.add(valueEntry.getKey());
 
 					}
