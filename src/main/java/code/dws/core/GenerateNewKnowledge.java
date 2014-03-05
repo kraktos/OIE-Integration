@@ -104,8 +104,18 @@ public class GenerateNewKnowledge
 
                                 for (String dbpProp : PropertyStatistics.FINAL_MAPPINGS.get(nellProp)) {
 
-                                    newKnowledgeWriter.write(candidateSubjs.get(0).split("\t")[0] + "\t" + dbpProp
-                                        + "\t" + candidateObjs.get(0).split("\t")[0] + "\n");
+                                    if (log.isWarnEnabled())
+                                        newKnowledgeWriter.write(nellRawSubj + "\t" + nellRawObj + "\t"
+                                            + Utilities.utf8ToCharacter(candidateSubjs.get(0).split("\t")[0]) + "\t"
+                                            + dbpProp + "\t"
+                                            + Utilities.utf8ToCharacter(candidateObjs.get(0).split("\t")[0]) + "\n");
+                                    else
+                                        newKnowledgeWriter.write(Utilities.utf8ToCharacter(candidateSubjs.get(0).split(
+                                            "\t")[0])
+                                            + "\t"
+                                            + dbpProp
+                                            + "\t"
+                                            + Utilities.utf8ToCharacter(candidateObjs.get(0).split("\t")[0]) + "\n");
 
                                     countNewTripels++;
                                 }
