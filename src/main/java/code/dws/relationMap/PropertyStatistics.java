@@ -6,10 +6,12 @@ package code.dws.relationMap;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.math3.stat.regression.SimpleRegression;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,7 +41,10 @@ public class PropertyStatistics {
 	// use it to set a threshold on the mapped DBpedia property mapping
 	private static double DBP_PROPERTY_CONFIDENCE_THRESHOLD = 0D;
 
-	private static final String PROP_STATS =  "PROP_STATISTICS.tsv"; //"PROP_STATISTICS_TOP5.tsv"; 
+	private static final String PROP_STATS = "PROP_STATISTICS.tsv"; // "PROP_STATISTICS_TOP5.tsv";
+
+	// tolerance of error, 1.1 means 10%
+	private static final double ERROR_TOLERANCE = 1.1;
 
 	// total triples that can be reconstructed
 	private static int newTriples = 0;
@@ -48,6 +53,12 @@ public class PropertyStatistics {
 	// key is the nell property, value is a map with the dbp property and the
 	// corresponding count
 	private static Map<String, Map<String, Integer>> MAP_OIE_IE_PROP_COUNTS = new HashMap<String, Map<String, Integer>>();
+
+	static DecimalFormat twoDForm = new DecimalFormat("#.##");
+
+	static SimpleRegression regression = new SimpleRegression(true);
+	// static OLSMultipleLinearRegression regression2 = new
+	// OLSMultipleLinearRegression();
 
 	// map keeping count of the nell predicate occurrence, should be identical
 	// to
@@ -66,8 +77,8 @@ public class PropertyStatistics {
 
 		try {
 			newTriples = 0;
-			PropertyStatistics.loadPropStatsInMem("/input/DIRECT_PROP.log");
-
+			PropertyStatistics.loadPropStatsInMem("/input/DIRECT_PROP.log");// DIRECT_PROP.log");
+			// INVERSE_PROP.log
 		} finally {
 
 			MAP_PRED_COUNT.clear();
@@ -114,11 +125,18 @@ public class PropertyStatistics {
 					}
 				}
 
-				// update the count of the occurance of this predicate
+				// update the count of the occurrence of this predicate
 				updateCount(nellProp);
 			}
 		}
 
+		// train the regression model by feedin the data observed by the
+		// underlying data set
+		trainRegressionModel();
+
+		// log.info(String.valueOf(regression.getSignificance()));
+
+		// System.exit(1);
 		// find statistics on every property
 		performPredicateBasedAnalysis();
 
@@ -160,6 +178,87 @@ public class PropertyStatistics {
 	}
 
 	/**
+	 * method to learn the underlying data set behavior and fit a regression
+	 * line
+	 * 
+	 * @param regression
+	 * @return
+	 * @throws IOException
+	 */
+	public static void trainRegressionModel() throws IOException {
+
+		double percentageMapped = 0D;
+		double propConf = 0D;
+		double tau = 0D;
+
+		// writer to dump the property stats
+		BufferedWriter propStatsWriter = new BufferedWriter(new FileWriter(
+				PROP_STATS));
+
+		for (Map.Entry<String, Map<String, Integer>> entry : MAP_OIE_IE_PROP_COUNTS
+				.entrySet()) {
+
+			int countPredOccurncs = 0;
+			int countNonMappedOccrncs = 0;
+
+			// iterate and find how many are actually not mappable
+			for (Map.Entry<String, Integer> valueEntry : entry.getValue()
+					.entrySet()) {
+				countPredOccurncs = countPredOccurncs + valueEntry.getValue();
+				if (valueEntry.getKey().equals("NA"))
+					countNonMappedOccrncs = valueEntry.getValue();
+			}
+
+			// compute the mappable value for this predicate
+			percentageMapped = (double) (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs)
+					* 100 / (MAP_PRED_COUNT.get(entry.getKey()));
+
+			// write to output file for R
+			if (Math.round(percentageMapped) > OIE_PROPERTY_MAPPED_THRESHOLD)
+				propStatsWriter.write("\n"
+						+ String.valueOf(Math.round(percentageMapped)) + "\t");
+
+			// iterate the individual possible DBpedia mappings to analyze
+			// further
+			for (Map.Entry<String, Integer> valueEntry : MapUtils.sortByValue(
+					entry.getValue(), false).entrySet()) {
+
+				propConf = ((double) valueEntry.getValue() * 100 / MAP_PRED_COUNT
+						.get(entry.getKey()));
+
+				if (!valueEntry.getKey().equals("NA")) {	
+
+					tau = (double) (100 - percentageMapped) / propConf;
+
+					if (percentageMapped > OIE_PROPERTY_MAPPED_THRESHOLD)
+						try {
+							log.debug(Math.round(percentageMapped) + "\t"
+									+ Double.valueOf(twoDForm.format(tau)));
+
+							regression.addData(percentageMapped,
+									Double.valueOf(twoDForm.format(tau)));
+
+							propStatsWriter.write(Double.valueOf(twoDForm
+									.format(tau)) + "\t");
+
+						} catch (NumberFormatException e) {
+							log.debug(Math.round(percentageMapped) + "\t"
+									+ "-1");
+							propStatsWriter.write("-1\t");
+						}
+					break;
+				}
+			}
+		}
+
+		regression.addData(100, 0);
+		propStatsWriter.write("\n100\t0");
+		propStatsWriter.flush();
+		propStatsWriter.close();
+
+	}
+
+	/**
 	 * iterate all the predicates stored in memory and find the statistics for
 	 * each
 	 * 
@@ -172,19 +271,14 @@ public class PropertyStatistics {
 
 		int totalEntries = 0;
 		int totalNonMapped = 0;
+		double tau = 0D;
 
-		// writer to dump the property stats
-		BufferedWriter propStatsWriter = new BufferedWriter(new FileWriter(
-				PROP_STATS));
+		double error = 0D;
 
 		for (Map.Entry<String, Map<String, Integer>> entry : MAP_OIE_IE_PROP_COUNTS
 				.entrySet()) {
 			int countPredOccurncs = 0;
 			int countNonMappedOccrncs = 0;
-			// int countMappedOccrncs = 0;
-			// int previousValue = 0;
-
-			double factorDrop = 0D;
 
 			for (Map.Entry<String, Integer> valueEntry : entry.getValue()
 					.entrySet()) {
@@ -196,91 +290,103 @@ public class PropertyStatistics {
 			percentageMapped = (double) (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs)
 					* 100 / (MAP_PRED_COUNT.get(entry.getKey()));
 
-			if (percentageMapped > OIE_PROPERTY_MAPPED_THRESHOLD) {
-				log.info("Predicate = " + entry.getKey());
-				log.info("Number of triples in the data set = "
-						+ MAP_PRED_COUNT.get(entry.getKey()));
-				log.info("Total non-mapped triples = " + countNonMappedOccrncs);
-				log.info("Total mapped triples = "
-						+ (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs));
-				log.info("Percentage actually map-able (rounded) = "
-						+ Math.round(percentageMapped) + "%");
+			// if (percentageMapped > OIE_PROPERTY_MAPPED_THRESHOLD) {
+			log.info("Predicate = " + entry.getKey());
+			log.info("Number of triples in the data set = "
+					+ MAP_PRED_COUNT.get(entry.getKey()));
+			log.info("Total non-mapped triples = " + countNonMappedOccrncs);
+			log.info("Total mapped triples = "
+					+ (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs));
+			log.info("Percentage actually map-able (rounded) = "
+					+ Math.round(percentageMapped) + "%");
 
-				log.info("\t"  + Math.round(percentageMapped));
-				log.info("Number of values  = " + countPredOccurncs);
+			log.info("Number of values  = " + countPredOccurncs);
 
-				ArrayList<String> possibleProps = new ArrayList<String>();
+			ArrayList<String> possibleProps = new ArrayList<String>();
 
-				// int count = 1;
-				for (Map.Entry<String, Integer> valueEntry : MapUtils
-						.sortByValue(entry.getValue(), false).entrySet()) {
+			for (Map.Entry<String, Integer> valueEntry : MapUtils.sortByValue(
+					entry.getValue(), false).entrySet()) {
 
-					propConf = Math
-							.round(((double) valueEntry.getValue() * 100 / MAP_PRED_COUNT
-									.get(entry.getKey())));
+				propConf = ((double) valueEntry.getValue() * 100 / MAP_PRED_COUNT
+						.get(entry.getKey()));
 
-					// use this prop confidence to determine if the unmapped
-					// triples could be newly generated
+				// use this prop confidence to determine if the unmapped
+				// triples could be newly generated
 
-					log.info("\t" + valueEntry.getKey() + "\t"
-							+ valueEntry.getValue() + " (" + propConf + "%)");
+				tau = (double) (100 - percentageMapped) / propConf;
 
-					if (!valueEntry.getKey().equals("NA")
-							&& propConf >= DBP_PROPERTY_CONFIDENCE_THRESHOLD) {
+				error = (double) Math.abs((regression.predict(Math
+						.round(percentageMapped)) - tau))
+						/ (regression.predict(Math.round(percentageMapped)));
 
-						// keep track of number of reconstructed triples
-						// and if already reconstructed with some confident
-						// property, other possible properties will also be
-						// added,
-						// since they can also create a set of new knowledge
-						//
-						newTriples = newTriples + valueEntry.getValue();
+				log.info(entry.getKey() + "\t" + valueEntry.getKey() + "\t"
+						+ valueEntry.getValue() + " (" + propConf + "%)" + "\t"
+						+ tau + "\t" + regression.predict(percentageMapped));
 
-						log.info("Yes, " + countNonMappedOccrncs
-								+ " triples can be newly added with "
-								+ valueEntry.getKey());
+				if (!valueEntry.getKey().equals("NA")
+				// && tau <=
+				// regression.getIntercept()*(1-(double)OIE_PROPERTY_MAPPED_THRESHOLD/100)
+						&& (tau <= ERROR_TOLERANCE
+								* regression.predict(percentageMapped))) {
+					// && propConf >= DBP_PROPERTY_CONFIDENCE_THRESHOLD)
+					// {
+					// && Math.round(percentageMapped) >
+					// OIE_PROPERTY_MAPPED_THRESHOLD) {
+					// keep track of number of reconstructed triples
+					// and if already reconstructed with some confident
+					// property, other possible properties will also be
+					// added,
+					// since they can also create a set of new knowledge
+					//
+					// newTriples = newTriples + valueEntry.getValue();
 
-						log.warn(entry.getKey() + "\t" + valueEntry.getKey());
-						possibleProps.add(valueEntry.getKey());
+					newTriples = newTriples + countNonMappedOccrncs;
 
-					}
+					log.warn("Yes, " + countNonMappedOccrncs
+							+ " triples can be newly added with "
+							+ valueEntry.getKey());
 
-					log.debug("\t" + valueEntry.getKey() + "\t"
-							+ valueEntry.getValue() + " (" + propConf + "%)\t"
-							+ factorDrop);
+					log.info(entry.getKey() + "\t" + "Can be predicated with "
+							+ valueEntry.getKey() + "\t"
+							+ valueEntry.getValue() + " (" + propConf + "%)"
+							+ "\t" + tau);
+
+					log.warn("	" + entry.getKey() + "\t" + valueEntry.getKey()
+							+ "\t" + propConf + "\t" + percentageMapped);
+
+					possibleProps.add(valueEntry.getKey());
 
 				}
-
-				checkForSubsumptionRelations(possibleProps);
-
-				log.info("\n\n");
 			}
+			// propStatsWriter.write("\n");
+
+			checkForSubsumptionRelations(possibleProps);
+
+			log.info("\n\n");
+			// }
 
 			// dump all to the file
-			propStatsWriter
-					.write(entry.getKey()
-							+ "\t"
-							+ MAP_PRED_COUNT.get(entry.getKey())
-							+ "\t"
-							+ (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs)
-							+ "\t" + countNonMappedOccrncs + "\t"
-							+ Math.round(percentageMapped) + "\n");
+			// propStatsWriter
+			// .write(entry.getKey()
+			// + "\t"
+			// + MAP_PRED_COUNT.get(entry.getKey())
+			// + "\t"
+			// + (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs)
+			// + "\t" + countNonMappedOccrncs + "\t"
+			// + Math.round(percentageMapped) + "\n");
 
 			totalEntries = totalEntries + MAP_PRED_COUNT.get(entry.getKey());
 			totalNonMapped = totalNonMapped + countNonMappedOccrncs;
 
 		} // end of for for all NELL properties
 
-		propStatsWriter.flush();
-		propStatsWriter.close();
-
 		log.info("Total triples in data set = " + totalEntries);
 		log.info("Total mapped triples = " + (totalEntries - totalNonMapped));
 		log.info("Total non-mapped triples = " + totalNonMapped);
 		log.info("Total that can be newly added = " + newTriples + " ("
 				+ (double) newTriples * 100 / totalNonMapped + "%)\n\n");
-		log.warn("\t" + DBP_PROPERTY_CONFIDENCE_THRESHOLD + "\t"
-				+ (double) newTriples * 100 / totalNonMapped);
+		log.warn("Amount of new knowledge created =\t" + (double) newTriples
+				* 100 / totalNonMapped);
 	}
 
 	private static void checkForSubsumptionRelations(
