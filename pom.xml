@@ -24,7 +24,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>code.dws.relationMap.Discover</mainClass>
+							<mainClass>code.dws.relationMap.GenerateNewProperties</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -37,7 +37,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>code.dws.relationMap.Discover</mainClass>
+							<mainClass>code.dws.relationMap.GenerateNewProperties</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -137,6 +137,11 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.29</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-math3</artifactId>
+			<version>3.2</version>
 		</dependency>
 	</dependencies>
 </project>
