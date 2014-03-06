@@ -31,6 +31,8 @@ public class GenerateNewKnowledge
 
     private static final String NEW_TRIPLES_LOG = "NEW_TRIPLES.log";
 
+    private static final int TOP_K_LIMIT = 6;
+
     /**
      * @param args
      * @throws IOException
@@ -87,12 +89,12 @@ public class GenerateNewKnowledge
                     // get the top-k concepts for the subject
                     candidateSubjs =
                         DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawSubj).replaceAll("\\_+", " ")
-                            .trim(), 1);
+                            .trim(), TOP_K_LIMIT);
 
                     // get the top-k concepts for the object
                     candidateObjs =
                         DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawObj).replaceAll("\\_+", " ")
-                            .trim(), 1);
+                            .trim(), TOP_K_LIMIT);
 
                     try {
                         for (String candSubj : candidateSubjs) {
@@ -106,16 +108,16 @@ public class GenerateNewKnowledge
 
                                     if (log.isWarnEnabled())
                                         newKnowledgeWriter.write(nellRawSubj + "\t" + nellRawObj + "\t"
-                                            + Utilities.utf8ToCharacter(candidateSubjs.get(0).split("\t")[0]) + "\t"
+                                            + Utilities.utf8ToCharacter(candSubj.split("\t")[0]) + "\t"
                                             + dbpProp + "\t"
-                                            + Utilities.utf8ToCharacter(candidateObjs.get(0).split("\t")[0]) + "\n");
+                                            + Utilities.utf8ToCharacter(candObj.split("\t")[0]) + "\n");
                                     else
-                                        newKnowledgeWriter.write(Utilities.utf8ToCharacter(candidateSubjs.get(0).split(
+                                        newKnowledgeWriter.write(Utilities.utf8ToCharacter(candSubj.split(
                                             "\t")[0])
                                             + "\t"
                                             + dbpProp
                                             + "\t"
-                                            + Utilities.utf8ToCharacter(candidateObjs.get(0).split("\t")[0]) + "\n");
+                                            + Utilities.utf8ToCharacter(candObj.split("\t")[0]) + "\n");
 
                                     countNewTripels++;
                                 }
