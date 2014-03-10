@@ -185,18 +185,23 @@ public class GenerateNewProperties
 
                 // DIRECT PROPERTIES
                 String directProperties = getPredsFromEndpoint(candSubj.split("\t")[0], candObj.split("\t")[0]);
-                directPropList.add(directProperties);
 
-                // find domain type
-                domainType = getTypeInfo(candSubj.split("\t")[0]);
+                if (directProperties.length() > 0) {
+                    directPropList.add(directProperties);
+
+                    // find domain type
+                    domainType = getTypeInfo(candSubj.split("\t")[0]);
+                }
 
                 // INDIRECT PROPERTIES
                 String inverseProps = getPredsFromEndpoint(candObj.split("\t")[0], candSubj.split("\t")[0]);
-                inversePropList.add(inverseProps);
 
-                // find range type
-                rangeType = getTypeInfo(candObj.split("\t")[0]);
+                if (inverseProps.length() > 0) {
+                    inversePropList.add(inverseProps);
 
+                    // find range type
+                    rangeType = getTypeInfo(candObj.split("\t")[0]);
+                }
             }
         }
 
