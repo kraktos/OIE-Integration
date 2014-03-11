@@ -25,14 +25,14 @@ import code.dws.utils.MapUtils;
  * 
  * @author adutta
  */
-public class PropertyStatistics
+public class PropertyStatisticsImproved
 {
 
     // read the mother mappings file, containing nell triples and possible mappings
     public static final String INPUT_LOG = "/input/DIRECT_PROP.log"; // INVERSE_PROP.log");
 
     // define class logger
-    public final static Logger log = LoggerFactory.getLogger(PropertyStatistics.class);
+    public final static Logger log = LoggerFactory.getLogger(PropertyStatisticsImproved.class);
 
     // path seperator for the output property files
     public static final String PATH_SEPERATOR = "\t";
@@ -46,6 +46,8 @@ public class PropertyStatistics
     private static double DBP_PROPERTY_CONFIDENCE_THRESHOLD = 0D;
 
     private static final String PROP_STATS = "PROP_STATISTICS.tsv"; // "PROP_STATISTICS_TOP5.tsv";
+
+    private static final String ITEMS_RULES = "PROP_TRANSC.tsv"; // "PROP_STATISTICS_TOP5.tsv";
 
     // tolerance of error, 1.1 means 10%
     private static final double ERROR_TOLERANCE = 1.1;
@@ -88,7 +90,7 @@ public class PropertyStatistics
 
         try {
             newTriples = 0;
-            PropertyStatistics.loadPropStatsInMem(INPUT_LOG);
+            PropertyStatisticsImproved.loadPropStatsInMem(INPUT_LOG);
             // INVERSE_PROP.log
 
         } finally {
@@ -96,10 +98,6 @@ public class PropertyStatistics
             MAP_PRED_COUNT.clear();
             MAP_OIE_IE_PROP_COUNTS.clear();
         }
-
-        // PropertyStatistics.loadPropStatsInMem("/input/" +
-        // GenerateNewProperties.INVERSE_PROP_LOG);
-
     }
 
     /**
@@ -118,7 +116,14 @@ public class PropertyStatistics
 
         // read the file into memory
         ArrayList<ArrayList<String>> directPropsFile =
-            FileUtil.genericFileReader(PropertyStatistics.class.getResourceAsStream(filePath), PATH_SEPERATOR, false);
+            FileUtil.genericFileReader(PropertyStatisticsImproved.class.getResourceAsStream(filePath), PATH_SEPERATOR,
+                false);
+
+        // write transactions to the file for analysis
+        BufferedWriter itemsWriter = new BufferedWriter(new FileWriter(ITEMS_RULES));
+
+        List<String> possibleProps = null;
+        List<String> possibleTypes = null;
 
         // iterate through them
         for (ArrayList<String> line : directPropsFile) {
@@ -129,27 +134,47 @@ public class PropertyStatistics
                 if (line.size() == 3) {
                     blankMapCntr++;
                     updateMapValues(nellProp, "NA");
-                } else {
+                } else { // cases which could be mapoped
+                    possibleProps = new ArrayList<String>();
+                    possibleTypes = new ArrayList<String>();
+                    
                     nonBlankMapCntr++;
                     for (int cnt = 3; cnt < line.size(); cnt++) {
-                        updateMapValues(nellProp, line.get(cnt));
+                        if (line.get(cnt).contains(Constants.ONTOLOGY_NAMESPACE)) {
+                            possibleProps.add(line.get(cnt));
+                            updateMapValues(nellProp, line.get(cnt));
+                        } else {
+                            possibleTypes.add(line.get(cnt));
+                        }
                     }
+
+                    try {
+                        for (String prop : possibleProps) {
+                            itemsWriter.write(nellProp + "\t" + prop + "\t" + possibleTypes.get(0) + "\t"
+                                + possibleTypes.get(1) + "\n");
+                        }
+                    } catch (Exception e) {
+                        log.error("Problem with line = " + line);
+                    }
+                    possibleProps.clear();
                 }
 
                 // update the count of the occurrence of this predicate
                 updateCount(nellProp);
             }
+
+            itemsWriter.flush();
         }
 
         // train the regression model by feedin the data observed by the
         // underlying data set
-        trainRegressionModel();
+        // trainRegressionModel();
 
         // log.info(String.valueOf(regression.getSignificance()));
 
         // System.exit(1);
         // find statistics on every property
-        performPredicateBasedAnalysis();
+        // performPredicateBasedAnalysis();
 
         // some stats
         log.info("TOTAL TRIPLES = " + directPropsFile.size());
@@ -164,6 +189,7 @@ public class PropertyStatistics
 
         log.warn(FINAL_MAPPINGS.toString());
 
+        itemsWriter.close();
     }
 
     /**

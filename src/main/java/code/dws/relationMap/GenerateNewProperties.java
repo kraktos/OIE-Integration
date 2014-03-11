@@ -177,6 +177,7 @@ public class GenerateNewProperties
 
         List<String> directPropList = new ArrayList<String>();
         List<String> inversePropList = new ArrayList<String>();
+        
 
         // for the current NELL predicate get the possible db:properties from
         // SPARQL endpoint
