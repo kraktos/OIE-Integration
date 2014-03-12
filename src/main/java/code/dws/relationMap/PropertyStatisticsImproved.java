@@ -180,6 +180,7 @@ public class PropertyStatisticsImproved
                     log.info(entry.getKey() + "\t" + nellVal.getKey() + "\t" + pairs.getKey() + "\t" + pairs.getValue());
                 }
             }
+            log.info(entry.getKey() + "\tNA\t" + MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA"));
         }
 
         // train the regression model by feedin the data observed by the
