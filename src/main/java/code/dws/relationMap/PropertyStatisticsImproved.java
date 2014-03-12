@@ -11,11 +11,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import code.dws.dao.Pair;
 import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
 import code.dws.utils.MapUtils;
@@ -48,6 +50,9 @@ public class PropertyStatisticsImproved
     private static final String PROP_STATS = "PROP_STATISTICS.tsv"; // "PROP_STATISTICS_TOP5.tsv";
 
     private static final String ITEMS_RULES = "PROP_TRANSC.tsv"; // "PROP_STATISTICS_TOP5.tsv";
+
+    private static Map<String, Map<String, Map<Pair<String, String>, Long>>> GLOBAL_TRANSCS_MAP =
+        new HashMap<String, Map<String, Map<Pair<String, String>, Long>>>();
 
     // tolerance of error, 1.1 means 10%
     private static final double ERROR_TOLERANCE = 1.1;
@@ -137,7 +142,7 @@ public class PropertyStatisticsImproved
                 } else { // cases which could be mapoped
                     possibleProps = new ArrayList<String>();
                     possibleTypes = new ArrayList<String>();
-                    
+
                     nonBlankMapCntr++;
                     for (int cnt = 3; cnt < line.size(); cnt++) {
                         if (line.get(cnt).contains(Constants.ONTOLOGY_NAMESPACE)) {
@@ -148,6 +153,7 @@ public class PropertyStatisticsImproved
                         }
                     }
 
+                    // small routine to dump separately the property transactions with classes associate
                     try {
                         for (String prop : possibleProps) {
                             itemsWriter.write(nellProp + "\t" + prop + "\t" + possibleTypes.get(0) + "\t"
@@ -164,6 +170,16 @@ public class PropertyStatisticsImproved
             }
 
             itemsWriter.flush();
+        }
+
+        analyzeThePropertyDist();
+
+        for (Map.Entry<String, Map<String, Map<Pair<String, String>, Long>>> entry : GLOBAL_TRANSCS_MAP.entrySet()) {
+            for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry.getValue().entrySet()) {
+                for (Map.Entry<Pair<String, String>, Long> pairs : nellVal.getValue().entrySet()) {
+                    log.info(entry.getKey() + "\t" + nellVal.getKey() + "\t" + pairs.getKey() + "\t" + pairs.getValue());
+                }
+            }
         }
 
         // train the regression model by feedin the data observed by the
@@ -190,6 +206,60 @@ public class PropertyStatisticsImproved
         log.warn(FINAL_MAPPINGS.toString());
 
         itemsWriter.close();
+    }
+
+    private static void analyzeThePropertyDist()
+    {
+
+        // read the file into memory
+        ArrayList<ArrayList<String>> propRules =
+            FileUtil.genericFileReader(PropertyStatisticsImproved.class.getResourceAsStream("/input/" + ITEMS_RULES),
+                PATH_SEPERATOR, false);
+
+        String nellProp = null;
+        String dbProp = null;
+
+        String dom = null;
+        String ran = null;
+        long count = 0;
+
+        for (ArrayList<String> line : propRules) {
+            nellProp = line.get(0);
+            dbProp = line.get(1);
+            dom = line.get(2);
+            ran = line.get(3);
+
+            Map<String, Map<Pair<String, String>, Long>> nellPropMap = null;
+            Map<Pair<String, String>, Long> dbpPropMap = null;
+
+            Pair<String, String> pair = new Pair<String, String>(dom, ran);
+
+            if (GLOBAL_TRANSCS_MAP.containsKey(nellProp)) {
+                nellPropMap = GLOBAL_TRANSCS_MAP.get(nellProp);
+
+                if (nellPropMap.containsKey(dbProp)) {
+                    dbpPropMap = nellPropMap.get(dbProp);
+
+                    if (dbpPropMap.containsKey(pair)) {
+                        count = dbpPropMap.get(pair);
+                        count++;
+                        dbpPropMap.put(pair, count);
+                    } else {
+                        dbpPropMap.put(pair, 1L);
+                    }
+                } else {
+                    dbpPropMap = new HashMap<Pair<String, String>, Long>();
+                    dbpPropMap.put(pair, 1L);
+                }
+            } else {
+                nellPropMap = new HashMap<String, Map<Pair<String, String>, Long>>();
+                dbpPropMap = new HashMap<Pair<String, String>, Long>();
+                dbpPropMap.put(new Pair<String, String>(dom, ran), 1L);
+            }
+            nellPropMap.put(dbProp, dbpPropMap);
+
+            GLOBAL_TRANSCS_MAP.put(nellProp, nellPropMap);
+        }
     }
 
     /**
