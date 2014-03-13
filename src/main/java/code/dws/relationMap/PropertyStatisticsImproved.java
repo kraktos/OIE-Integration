@@ -42,7 +42,7 @@ public class PropertyStatisticsImproved
     // threshold to consider mappable predicates. It means consider NELL
     // predicates
     // which are atleast x % map-able
-    private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 40;
+    private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 35;
 
     // use it to set a threshold on the mapped DBpedia property mapping
     private static double DBP_PROPERTY_CONFIDENCE_THRESHOLD = 0D;
@@ -55,7 +55,7 @@ public class PropertyStatisticsImproved
         new HashMap<String, Map<String, Map<Pair<String, String>, Long>>>();
 
     // tolerance of error, 1.1 means 10%
-    private static final double ERROR_TOLERANCE = 1;
+    private static final double ERROR_TOLERANCE = 1.1;
 
     // total triples that can be reconstructed
     private static int newTriples = 0;
@@ -199,14 +199,14 @@ public class PropertyStatisticsImproved
 
                     double countProb = (double) pairs.getValue() / nellPredCount;
 
-                    double jointProb = domProb * ranProb;
+                    double jointProb = domProb * ranProb * countProb;
 
                     // look for the max tau
                     if (jointProb > probMax) {
                         probMax = jointProb;
                     }
 
-                    log.debug(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
+                    log.info(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
                         + ")\t" + pairs.getKey().getFirst() + "("
                         + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), true) + ")\t"
                         + pairs.getKey().getSecond() + "("
@@ -377,28 +377,23 @@ public class PropertyStatisticsImproved
 
                     double countProb = (double) pairs.getValue() / nellPredCount;
 
-                    double jointProb = domProb * ranProb;
+                    double jointProb = domProb * ranProb * countProb;
 
                     tau = (double) MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA") / (nellPredCount * jointProb);
 
-                    log.debug(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
+                    log.info(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
                         + ")\t" + pairs.getKey().getFirst() + "("
                         + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), true) + ")\t"
                         + pairs.getKey().getSecond() + "("
                         + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getSecond(), false) + ")\t"
-                        + pairs.getValue() + "\t" + tau);
+                        + pairs.getValue() + "\t" + tau + "\t" + percentageMapped + "\t"
+                        + regression.predict(percentageMapped));
 
                     if (tau <= ERROR_TOLERANCE * regression.predict(percentageMapped)) {
                         // store in memory
                         storeMappings(entry.getKey(), nellVal.getKey());
                     }
 
-                    log.debug(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
-                        + ")\t" + pairs.getKey().getFirst() + "("
-                        + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), true) + ")\t"
-                        + pairs.getKey().getSecond() + "("
-                        + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getSecond(), false) + ")\t"
-                        + pairs.getValue() + "\t" + jointProb);
                 }
             }
 
