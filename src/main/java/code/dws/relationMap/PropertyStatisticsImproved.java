@@ -55,7 +55,7 @@ public class PropertyStatisticsImproved
         new HashMap<String, Map<String, Map<Pair<String, String>, Long>>>();
 
     // tolerance of error, 1.1 means 10%
-    private static final double ERROR_TOLERANCE = 1.1;
+    private static final double ERROR_TOLERANCE = 1;
 
     // total triples that can be reconstructed
     private static int newTriples = 0;
@@ -71,7 +71,7 @@ public class PropertyStatisticsImproved
      */
     public static Map<String, List<String>> FINAL_MAPPINGS = new HashMap<String, List<String>>();
 
-    static DecimalFormat twoDForm = new DecimalFormat("#.##");
+    static DecimalFormat twoDForm = new DecimalFormat("#.######");
 
     static SimpleRegression regression = new SimpleRegression(true);
 
@@ -86,12 +86,6 @@ public class PropertyStatisticsImproved
 
     public static void main(String[] args) throws IOException
     {
-        if (args.length == 0) {
-            DBP_PROPERTY_CONFIDENCE_THRESHOLD = 0;
-        } else {
-            DBP_PROPERTY_CONFIDENCE_THRESHOLD = 15 + Integer.parseInt(args[0]);
-        }
-        log.info("Computing for Threshold = " + DBP_PROPERTY_CONFIDENCE_THRESHOLD + "%");
 
         try {
             newTriples = 0;
@@ -113,6 +107,8 @@ public class PropertyStatisticsImproved
     public static void loadPropStatsInMem(String filePath) throws IOException
     {
 
+        double percentageMapped = 0D;
+
         int blankMapCntr = 0;
         int nonBlankMapCntr = 0;
 
@@ -127,6 +123,9 @@ public class PropertyStatisticsImproved
         // write transactions to the file for analysis
         BufferedWriter itemsWriter = new BufferedWriter(new FileWriter(ITEMS_RULES));
 
+        // writer to dump the property stats
+        BufferedWriter propStatsWriter = new BufferedWriter(new FileWriter(PROP_STATS));
+
         List<String> possibleProps = null;
         List<String> possibleTypes = null;
 
@@ -139,7 +138,7 @@ public class PropertyStatisticsImproved
                 if (line.size() == 3) {
                     blankMapCntr++;
                     updateMapValues(nellProp, "NA");
-                } else { // cases which could be mapoped
+                } else { // cases which could be mapped
                     possibleProps = new ArrayList<String>();
                     possibleTypes = new ArrayList<String>();
 
@@ -172,26 +171,75 @@ public class PropertyStatisticsImproved
             itemsWriter.flush();
         }
 
-        analyzeThePropertyDist();
+        loadPropDistributionInCollection();
 
+        // DEBUG POINT, print the distribution
         for (Map.Entry<String, Map<String, Map<Pair<String, String>, Long>>> entry : GLOBAL_TRANSCS_MAP.entrySet()) {
+            double probMax = 0D;
+
+            long nellPredCount = getNellPropCount(entry.getKey());
+
+            // compute the mappable value for this predicate
+            percentageMapped =
+                100 * (1 - ((double) MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA") / nellPredCount));
+
             for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry.getValue().entrySet()) {
+
+                long nellDbpPredCount = getNellAndDbpPropCount(entry.getKey(), nellVal.getKey());
+
                 for (Map.Entry<Pair<String, String>, Long> pairs : nellVal.getValue().entrySet()) {
-                    log.info(entry.getKey() + "\t" + nellVal.getKey() + "\t" + pairs.getKey() + "\t" + pairs.getValue());
+
+                    double domProb =
+                        (double) getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), true)
+                            / nellPredCount;
+
+                    double ranProb =
+                        (double) getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getSecond(), false)
+                            / nellPredCount;
+
+                    double countProb = (double) pairs.getValue() / nellPredCount;
+
+                    double jointProb = domProb * ranProb;
+
+                    // look for the max tau
+                    if (jointProb > probMax) {
+                        probMax = jointProb;
+                    }
+
+                    log.debug(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
+                        + ")\t" + pairs.getKey().getFirst() + "("
+                        + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), true) + ")\t"
+                        + pairs.getKey().getSecond() + "("
+                        + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getSecond(), false) + ")\t"
+                        + pairs.getValue() + "\t" + jointProb);
+
                 }
             }
-            log.info(entry.getKey() + "\tNA\t" + MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA"));
+
+            log.debug(entry.getKey() + "(" + getNellPropCount(entry.getKey()) + ")" + "\tNA\t"
+                + MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA") + "\t" + probMax);
+
+            double tau = (double) (MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA")) / (nellPredCount * probMax);
+
+            log.debug(entry.getKey() + "\t" + percentageMapped);
+
+            if (percentageMapped >= OIE_PROPERTY_MAPPED_THRESHOLD) {
+                // train the regression model by feedin the data observed by the
+
+                // underlying data set
+                // adding maximum tau for the nell property to the regression model
+                regression.addData(Double.valueOf(twoDForm.format(percentageMapped)),
+                    Double.valueOf(twoDForm.format(tau)));
+
+                propStatsWriter.write(Double.valueOf(twoDForm.format(percentageMapped)) + "\t"
+                    + Double.valueOf(twoDForm.format(tau)) + "\n");
+            }
         }
 
-        // train the regression model by feedin the data observed by the
-        // underlying data set
-        // trainRegressionModel();
+        regression.addData(100, 0);
+        propStatsWriter.write("100\t0");
 
-        // log.info(String.valueOf(regression.getSignificance()));
-
-        // System.exit(1);
-        // find statistics on every property
-        // performPredicateBasedAnalysis();
+        performPredicateBasedAnalysis();
 
         // some stats
         log.info("TOTAL TRIPLES = " + directPropsFile.size());
@@ -204,12 +252,20 @@ public class PropertyStatisticsImproved
 
         log.info("TOTAL PROPERTIES = " + MAP_OIE_IE_PROP_COUNTS.size() + "\n\n");
 
-        log.warn(FINAL_MAPPINGS.toString());
+        for (Entry<String, List<String>> entry : FINAL_MAPPINGS.entrySet()) {
+            log.warn(entry.getKey() + "\t" + entry.getValue());
+        }
 
         itemsWriter.close();
+        propStatsWriter.flush();
+        propStatsWriter.close();
+
     }
 
-    private static void analyzeThePropertyDist()
+    /**
+     * loads the entire property distribution of nell over dbpedia in a colelction
+     */
+    private static void loadPropDistributionInCollection()
     {
 
         // read the file into memory
@@ -261,6 +317,7 @@ public class PropertyStatisticsImproved
 
             GLOBAL_TRANSCS_MAP.put(nellProp, nellPropMap);
         }
+
     }
 
     /**
@@ -283,78 +340,6 @@ public class PropertyStatisticsImproved
     }
 
     /**
-     * method to learn the underlying data set behavior and fit a regression line
-     * 
-     * @param regression
-     * @return
-     * @throws IOException
-     */
-    public static void trainRegressionModel() throws IOException
-    {
-
-        double percentageMapped = 0D;
-        double propConf = 0D;
-        double tau = 0D;
-
-        // writer to dump the property stats
-        BufferedWriter propStatsWriter = new BufferedWriter(new FileWriter(PROP_STATS));
-
-        for (Map.Entry<String, Map<String, Integer>> entry : MAP_OIE_IE_PROP_COUNTS.entrySet()) {
-
-            int countPredOccurncs = 0;
-            int countNonMappedOccrncs = 0;
-
-            // iterate and find how many are actually not mappable
-            for (Map.Entry<String, Integer> valueEntry : entry.getValue().entrySet()) {
-                countPredOccurncs = countPredOccurncs + valueEntry.getValue();
-                if (valueEntry.getKey().equals("NA"))
-                    countNonMappedOccrncs = valueEntry.getValue();
-            }
-
-            // compute the mappable value for this predicate
-            percentageMapped =
-                (double) (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs) * 100
-                    / (MAP_PRED_COUNT.get(entry.getKey()));
-
-            // write to output file for R
-            if (Math.round(percentageMapped) > OIE_PROPERTY_MAPPED_THRESHOLD)
-                propStatsWriter.write("\n" + String.valueOf(Math.round(percentageMapped)) + "\t");
-
-            // iterate the individual possible DBpedia mappings to analyze
-            // further
-            for (Map.Entry<String, Integer> valueEntry : MapUtils.sortByValue(entry.getValue(), false).entrySet()) {
-
-                propConf = ((double) valueEntry.getValue() * 100 / MAP_PRED_COUNT.get(entry.getKey()));
-
-                if (!valueEntry.getKey().equals("NA")) {
-
-                    tau = (double) (100 - percentageMapped) / propConf;
-
-                    if (percentageMapped > OIE_PROPERTY_MAPPED_THRESHOLD)
-                        try {
-                            log.debug(Math.round(percentageMapped) + "\t" + Double.valueOf(twoDForm.format(tau)));
-
-                            regression.addData(percentageMapped, Double.valueOf(twoDForm.format(tau)));
-
-                            propStatsWriter.write(Double.valueOf(twoDForm.format(tau)) + "\t");
-
-                        } catch (NumberFormatException e) {
-                            log.debug(Math.round(percentageMapped) + "\t" + "-1");
-                            propStatsWriter.write("-1\t");
-                        }
-                    break;
-                }
-            }
-        }
-
-        regression.addData(100, 0);
-        propStatsWriter.write("\n100\t0");
-        propStatsWriter.flush();
-        propStatsWriter.close();
-
-    }
-
-    /**
      * iterate all the predicates stored in memory and find the statistics for each
      * 
      * @throws IOException
@@ -363,118 +348,62 @@ public class PropertyStatisticsImproved
     {
 
         double percentageMapped = 0D;
-        double propConf = 0D;
-
-        int totalEntries = 0;
-        int totalNonMapped = 0;
         double tau = 0D;
 
-        double error = 0D;
+        // iterate over nell properties
+        for (Map.Entry<String, Map<String, Map<Pair<String, String>, Long>>> entry : GLOBAL_TRANSCS_MAP.entrySet()) {
 
-        for (Map.Entry<String, Map<String, Integer>> entry : MAP_OIE_IE_PROP_COUNTS.entrySet()) {
-            int countPredOccurncs = 0;
-            int countNonMappedOccrncs = 0;
+            long nellPredCount = getNellPropCount(entry.getKey());
 
-            for (Map.Entry<String, Integer> valueEntry : entry.getValue().entrySet()) {
-                countPredOccurncs = countPredOccurncs + valueEntry.getValue();
-                if (valueEntry.getKey().equals("NA"))
-                    countNonMappedOccrncs = valueEntry.getValue();
-            }
-
+            // compute the mappable value for this predicate
             percentageMapped =
-                (double) (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs) * 100
-                    / (MAP_PRED_COUNT.get(entry.getKey()));
+                100 * (1 - ((double) MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA") / nellPredCount));
 
-            // if (percentageMapped > OIE_PROPERTY_MAPPED_THRESHOLD) {
-            log.info("Predicate = " + entry.getKey());
-            log.info("Number of triples in the data set = " + MAP_PRED_COUNT.get(entry.getKey()));
-            log.info("Total non-mapped triples = " + countNonMappedOccrncs);
-            log.info("Total mapped triples = " + (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs));
-            log.info("Percentage actually map-able (rounded) = " + Math.round(percentageMapped) + "%");
+            // iterate over dbpedia properties
+            for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry.getValue().entrySet()) {
 
-            log.info("Number of values  = " + countPredOccurncs);
+                long nellDbpPredCount = getNellAndDbpPropCount(entry.getKey(), nellVal.getKey());
 
-            ArrayList<String> possibleProps = new ArrayList<String>();
+                // iterate over all possible class types
+                for (Map.Entry<Pair<String, String>, Long> pairs : nellVal.getValue().entrySet()) {
 
-            for (Map.Entry<String, Integer> valueEntry : MapUtils.sortByValue(entry.getValue(), false).entrySet()) {
+                    double domProb =
+                        (double) getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), true)
+                            / nellPredCount;
 
-                propConf = ((double) valueEntry.getValue() * 100 / MAP_PRED_COUNT.get(entry.getKey()));
+                    double ranProb =
+                        (double) getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getSecond(), false)
+                            / nellPredCount;
 
-                // use this prop confidence to determine if the unmapped
-                // triples could be newly generated
+                    double countProb = (double) pairs.getValue() / nellPredCount;
 
-                tau = (double) (100 - percentageMapped) / propConf;
+                    double jointProb = domProb * ranProb;
 
-                error =
-                    (double) Math.abs((regression.predict(Math.round(percentageMapped)) - tau))
-                        / (regression.predict(Math.round(percentageMapped)));
+                    tau = (double) MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA") / (nellPredCount * jointProb);
 
-                log.info(entry.getKey() + "\t" + valueEntry.getKey() + "\t" + valueEntry.getValue() + " (" + propConf
-                    + "%)" + "\t" + tau + "\t" + regression.predict(percentageMapped));
+                    log.debug(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
+                        + ")\t" + pairs.getKey().getFirst() + "("
+                        + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), true) + ")\t"
+                        + pairs.getKey().getSecond() + "("
+                        + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getSecond(), false) + ")\t"
+                        + pairs.getValue() + "\t" + tau);
 
-                if (!valueEntry.getKey().equals("NA")
-                // && tau <=
-                // regression.getIntercept()*(1-(double)OIE_PROPERTY_MAPPED_THRESHOLD/100)
-                    && (tau <= ERROR_TOLERANCE * regression.predict(percentageMapped))) {
-                    // && propConf >= DBP_PROPERTY_CONFIDENCE_THRESHOLD)
-                    // {
-                    // && Math.round(percentageMapped) >
-                    // OIE_PROPERTY_MAPPED_THRESHOLD) {
-                    // keep track of number of reconstructed triples
-                    // and if already reconstructed with some confident
-                    // property, other possible properties will also be
-                    // added,
-                    // since they can also create a set of new knowledge
-                    //
-                    // newTriples = newTriples + valueEntry.getValue();
+                    if (tau <= ERROR_TOLERANCE * regression.predict(percentageMapped)) {
+                        // store in memory
+                        storeMappings(entry.getKey(), nellVal.getKey());
+                    }
 
-                    newTriples = newTriples + countNonMappedOccrncs;
-
-                    log.warn("Yes, " + countNonMappedOccrncs + " triples can be newly added with "
-                        + valueEntry.getKey());
-
-                    log.info(entry.getKey() + "\t" + "Can be predicated with " + valueEntry.getKey() + "\t"
-                        + valueEntry.getValue() + " (" + propConf + "%)" + "\t" + tau);
-
-                    log.warn("	" + entry.getKey() + "\t" + valueEntry.getKey() + "\t" + propConf + "\t"
-                        + percentageMapped);
-
-                    // store in memory
-                    storeMappings(entry.getKey(), valueEntry.getKey());
-
-                    possibleProps.add(valueEntry.getKey());
-
+                    log.debug(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
+                        + ")\t" + pairs.getKey().getFirst() + "("
+                        + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), true) + ")\t"
+                        + pairs.getKey().getSecond() + "("
+                        + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getSecond(), false) + ")\t"
+                        + pairs.getValue() + "\t" + jointProb);
                 }
             }
-            // propStatsWriter.write("\n");
 
-            checkForSubsumptionRelations(possibleProps);
+        }
 
-            log.info("\n\n");
-            // }
-
-            // dump all to the file
-            // propStatsWriter
-            // .write(entry.getKey()
-            // + "\t"
-            // + MAP_PRED_COUNT.get(entry.getKey())
-            // + "\t"
-            // + (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs)
-            // + "\t" + countNonMappedOccrncs + "\t"
-            // + Math.round(percentageMapped) + "\n");
-
-            totalEntries = totalEntries + MAP_PRED_COUNT.get(entry.getKey());
-            totalNonMapped = totalNonMapped + countNonMappedOccrncs;
-
-        } // end of for for all NELL properties
-
-        log.info("Total triples in data set = " + totalEntries);
-        log.info("Total mapped triples = " + (totalEntries - totalNonMapped));
-        log.info("Total non-mapped triples = " + totalNonMapped);
-        log.info("Total that can be newly added = " + newTriples + " (" + (double) newTriples * 100 / totalNonMapped
-            + "%)\n\n");
-        log.warn("Amount of new knowledge created =\t" + newTriples + "(" + (double) newTriples * 100 / totalNonMapped
-            + ")");
     }
 
     /**
@@ -488,22 +417,13 @@ public class PropertyStatisticsImproved
         List<String> possibleCands = null;
         if (FINAL_MAPPINGS.containsKey(oieProp)) {
             possibleCands = FINAL_MAPPINGS.get(oieProp);
-            possibleCands.add(dbpProp);
+            if (!possibleCands.contains(dbpProp))
+                possibleCands.add(dbpProp);
         } else {
             possibleCands = new ArrayList<String>();
             possibleCands.add(dbpProp);
         }
         FINAL_MAPPINGS.put(oieProp, possibleCands);
-    }
-
-    // TODO
-    private static void checkForSubsumptionRelations(ArrayList<String> possibleProps)
-    {
-        for (int outer = 0; outer < possibleProps.size(); outer++) {
-            for (int inner = outer + 1; inner < possibleProps.size() - outer; inner++) {
-                log.debug("Comparing = " + possibleProps.get(outer) + ", " + possibleProps.get(inner));
-            }
-        }
     }
 
     /*
@@ -537,4 +457,68 @@ public class PropertyStatisticsImproved
 
         MAP_OIE_IE_PROP_COUNTS.put(nellProp, mapValues);
     }
+
+    private static long getNellAndDbpPropCount(String nellProp, String dbpProp)
+    {
+        long val = 0;
+
+        for (Map.Entry<String, Map<String, Map<Pair<String, String>, Long>>> entry : GLOBAL_TRANSCS_MAP.entrySet()) {
+
+            if (entry.getKey().equals(nellProp)) {
+                for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry.getValue().entrySet()) {
+                    if (nellVal.getKey().equals(dbpProp)) {
+                        for (Map.Entry<Pair<String, String>, Long> pairs : nellVal.getValue().entrySet()) {
+                            val = val + pairs.getValue();
+                        }
+                    }
+                }
+            }
+        }
+
+        return val;
+    }
+
+    private static long getNellPropCount(String nellProp)
+    {
+        long val = 0;
+
+        for (Map.Entry<String, Map<String, Map<Pair<String, String>, Long>>> entry : GLOBAL_TRANSCS_MAP.entrySet()) {
+
+            if (entry.getKey().equals(nellProp)) {
+                for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry.getValue().entrySet()) {
+                    for (Map.Entry<Pair<String, String>, Long> pairs : nellVal.getValue().entrySet()) {
+                        val = val + pairs.getValue();
+                    }
+                }
+            }
+        }
+
+        return val + MAP_OIE_IE_PROP_COUNTS.get(nellProp).get("NA");
+    }
+
+    private static long getNellAndDbpTypeCount(String nellProp, String type, boolean isDomain)
+    {
+        long val = 0;
+
+        boolean flag = false;
+
+        for (Map.Entry<String, Map<String, Map<Pair<String, String>, Long>>> entry : GLOBAL_TRANSCS_MAP.entrySet()) {
+
+            if (entry.getKey().equals(nellProp)) {
+                for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry.getValue().entrySet()) {
+                    for (Map.Entry<Pair<String, String>, Long> pairs : nellVal.getValue().entrySet()) {
+                        flag =
+                            (isDomain) ? (pairs.getKey().getFirst().equals(type)) : (pairs.getKey().getSecond()
+                                .equals(type));
+                        if (flag) {
+                            val = val + pairs.getValue();
+                        }
+                    }
+                }
+            }
+        }
+
+        return val;
+    }
+
 }
