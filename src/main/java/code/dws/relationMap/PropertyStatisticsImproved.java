@@ -202,15 +202,15 @@ public class PropertyStatisticsImproved {
 					double countProb = (double) pairs.getValue()
 							/ nellPredCount;
 
-					double jointProb = (double) getNellAndBothDbpTypeCount(
+					double support = (double) getNellAndBothDbpTypeCount(
 							entry.getKey(), pairs.getKey().getFirst(), pairs
 									.getKey().getSecond())
 							/ nellPredCount; // domProb * ranProb * countProb;
 
 					// look for the max probability of two classes occurring
 					// together
-					if (jointProb > probMax) {
-						probMax = jointProb;
+					if (support > probMax) {
+						probMax = support;
 					}
 
 					log.info(entry.getKey()
@@ -230,7 +230,7 @@ public class PropertyStatisticsImproved {
 							+ "("
 							+ getNellAndDbpTypeCount(entry.getKey(), pairs
 									.getKey().getSecond(), false) + ")\t"
-							+ pairs.getValue() + "\t" + jointProb);
+							+ pairs.getValue() + "\t" + support);
 
 				}
 			}
@@ -415,10 +415,8 @@ public class PropertyStatisticsImproved {
 							/ nellPredCount;
 
 					double jointProb = (double) pairs.getValue()
-							/ getNellAndBothDbpTypeCount(entry.getKey(), pairs
-									.getKey().getFirst(), pairs.getKey()
-									.getSecond());// domProb * ranProb *
-													// countProb;
+							/ nellPredCount;// domProb * ranProb *
+					// countProb;
 
 					if (entry.getKey().equals("parentofperson"))
 						System.out.println();
@@ -442,8 +440,8 @@ public class PropertyStatisticsImproved {
 							+ "("
 							+ getNellAndDbpTypeCount(entry.getKey(), pairs
 									.getKey().getSecond(), false) + ")\t"
-							+ pairs.getValue() + "\t" + tau 
-							+ "\t" + Math.round(percentageMapped) + "%\t"
+							+ pairs.getValue() + "\t" + tau + "\t"
+							+ Math.round(percentageMapped) + "%\t"
 							+ regression.predict(percentageMapped));
 
 					if (tau <= ERROR_TOLERANCE
