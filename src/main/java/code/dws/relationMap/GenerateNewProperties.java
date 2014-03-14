@@ -177,7 +177,6 @@ public class GenerateNewProperties
 
         List<String> directPropList = new ArrayList<String>();
         List<String> inversePropList = new ArrayList<String>();
-        
 
         // for the current NELL predicate get the possible db:properties from
         // SPARQL endpoint
@@ -254,14 +253,17 @@ public class GenerateNewProperties
 
     private static String getTypeInfo(String inst)
     {
-        String retVal = "";
+        String mostSpecificVal = "";
+        String mostGeneralVal = "";
+
         List<String> types = SPARQLEndPointQueryAPI.getInstanceTypes(Utilities.utf8ToCharacter(inst));
 
         try {
-            retVal = SPARQLEndPointQueryAPI.getLowestType(types).get(0);
+            mostSpecificVal = SPARQLEndPointQueryAPI.getLowestType(types).get(0);
+            mostGeneralVal = SPARQLEndPointQueryAPI.getHighestType(types).get(0);
         } catch (IndexOutOfBoundsException e) {
         } finally {
-            return retVal;
+            return mostSpecificVal + "\t" + mostGeneralVal;
         }
     }
 
