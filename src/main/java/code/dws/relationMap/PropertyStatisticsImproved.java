@@ -17,7 +17,10 @@ import org.apache.commons.math3.stat.regression.SimpleRegression;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.hp.hpl.jena.query.QuerySolution;
+
 import code.dws.dao.Pair;
+import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
 
@@ -42,7 +45,7 @@ public class PropertyStatisticsImproved
     // threshold to consider mappable predicates. It means consider NELL
     // predicates
     // which are atleast x % map-able
-    private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 25;
+    private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 30;
 
     private static final String PROP_STATS = "PROP_STATISTICS.tsv"; // "PROP_STATISTICS_TOP5.tsv";
 
@@ -81,8 +84,12 @@ public class PropertyStatisticsImproved
     // property in the raw input file
     private static Map<String, Integer> MAP_PRED_COUNT = new HashMap<String, Integer>();
 
+    private static Map<String, String> CACHED_SUBCLASSES = new HashMap<String, String>();
+
     public static void main(String[] args) throws IOException
     {
+
+        buildClassHierarchy();
 
         try {
             newTriples = 0;
@@ -383,6 +390,11 @@ public class PropertyStatisticsImproved
 
                     double jointProb = (double) pairs.getValue() / nellPredCount;
 
+                    jointProb =
+                        (double) getNellAndBothDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), pairs.getKey()
+                            .getSecond())
+                            / nellPredCount; // domProb * ranProb * countProb;
+
                     tau = (double) MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA") / (nellPredCount * jointProb);
 
                     log.info(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
@@ -560,7 +572,10 @@ public class PropertyStatisticsImproved
             if (entry.getKey().equals(nellProp)) {
                 for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry.getValue().entrySet()) {
                     for (Map.Entry<Pair<String, String>, Long> pairs : nellVal.getValue().entrySet()) {
-                        flag = (pairs.getKey().getFirst().equals(domain)) && (pairs.getKey().getSecond().equals(range));
+                        flag =
+                            (isSuperClass(pairs.getKey().getFirst(), domain))
+                                && isSuperClass(pairs.getKey().getSecond(), range);
+
                         if (flag) {
                             val = val + pairs.getValue();
                         }
@@ -572,4 +587,49 @@ public class PropertyStatisticsImproved
         return val;
     }
 
+    private static boolean isSuperClass(String someClass, String particularClass)
+    {
+        if (someClass.equals(particularClass))
+            return true;
+
+        List<String> trailCol = new ArrayList<String>();
+        List<String> allSuperClasses = getAllMyParents(particularClass, trailCol);
+        log.debug("SUPER CLASSES of " + particularClass + " = " + allSuperClasses.toString());
+        if (allSuperClasses.contains(someClass))
+            return true;
+
+        return false;
+
+    }
+
+    private static List<String> getAllMyParents(String particularClass, List<String> coll)
+    {
+        String superCls = CACHED_SUBCLASSES.get(particularClass);
+        if (CACHED_SUBCLASSES.containsKey(superCls)) {
+            coll.add(superCls);
+            getAllMyParents(superCls, coll);
+        } else {
+            coll.add(superCls);
+        }
+        return coll;
+    }
+
+    private static void buildClassHierarchy()
+    {
+        String getAll = "SELECT * WHERE  { ?subclass <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?superclass}";
+        List<QuerySolution> allPairs = SPARQLEndPointQueryAPI.queryDBPediaEndPoint(getAll);
+
+        for (QuerySolution querySol : allPairs) {
+            // Get the next result row
+            // QuerySolution querySol = results.next();
+            if (querySol.get("subclass").toString().indexOf(Constants.DBPEDIA_CONCEPT_NS) != -1
+                && querySol.get("superclass").toString().indexOf(Constants.DBPEDIA_CONCEPT_NS) != -1) {
+
+                CACHED_SUBCLASSES.put(querySol.get("subclass").toString().replaceAll(Constants.DBPEDIA_CONCEPT_NS, ""),
+                    querySol.get("superclass").toString().replaceAll(Constants.DBPEDIA_CONCEPT_NS, ""));
+            }
+        }
+
+        log.debug(CACHED_SUBCLASSES.toString());
+    }
 }
