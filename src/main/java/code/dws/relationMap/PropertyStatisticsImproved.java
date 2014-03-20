@@ -20,9 +20,11 @@ import org.slf4j.LoggerFactory;
 import com.hp.hpl.jena.query.QuerySolution;
 
 import code.dws.dao.Pair;
+import code.dws.dbConnectivity.DBWrapper;
 import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
+import code.dws.utils.Utilities;
 
 /**
  * Responsible for computing the property statistics
@@ -45,17 +47,21 @@ public class PropertyStatisticsImproved
     // threshold to consider mappable predicates. It means consider NELL
     // predicates
     // which are atleast x % map-able
-    private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 40;
+    private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 35;
 
     private static final String PROP_STATS = "PROP_STATISTICS.tsv"; // "PROP_STATISTICS_TOP5.tsv";
 
     private static final String ITEMS_RULES = "PROP_TRANSC.tsv"; // "PROP_STATISTICS_TOP5.tsv";
+
+    private static final String NEW_TRIPLES = "NEW_TRIPLES.tsv";
 
     private static Map<String, Map<String, Map<Pair<String, String>, Long>>> GLOBAL_TRANSCS_MAP =
         new HashMap<String, Map<String, Map<Pair<String, String>, Long>>>();
 
     // tolerance of error, 1.1 means 10%
     private static final double ERROR_TOLERANCE = 1.1;
+
+    private static final int SAMEAS_TOPK = 1;
 
     // total triples that can be reconstructed
     private static int newTriples = 0;
@@ -96,10 +102,168 @@ public class PropertyStatisticsImproved
             PropertyStatisticsImproved.run(INPUT_LOG);
             // INVERSE_PROP.log
 
+            PropertyStatisticsImproved.createNewTriples(INPUT_LOG);
         } finally {
 
             MAP_PRED_COUNT.clear();
             MAP_OIE_IE_PROP_COUNTS.clear();
+        }
+    }
+
+    private static void createNewTriples(String filePath) throws IOException
+    {
+        int cnt = 0;
+        // nell property in concern
+        String nellProp = null;
+
+        // write transactions to the file for analysis
+        BufferedWriter triplesWriter = new BufferedWriter(new FileWriter(NEW_TRIPLES));
+
+        // read the file into memory
+        ArrayList<ArrayList<String>> directPropsFile =
+            FileUtil.genericFileReader(PropertyStatisticsImproved.class.getResourceAsStream(filePath), PATH_SEPERATOR,
+                false);
+
+        // init DB for getting the most frequebt URI for the NELL terms
+        DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
+
+        // iterate through them
+        for (ArrayList<String> line : directPropsFile) {
+            nellProp = line.get(1);
+
+            if (line.size() == 3)
+                if (FINAL_MAPPINGS.containsKey(nellProp)) {
+                    cnt++;
+                    // log.info("Non mapped triples = " + line);
+
+                    List<String> dbProps = FINAL_MAPPINGS.get(nellProp);
+
+                    reCreateTriples(dbProps, line, triplesWriter);
+
+                }
+        }
+
+        log.info("" + cnt);
+
+        triplesWriter.close();
+
+    }
+
+    private static void reCreateTriples(List<String> dbProps, ArrayList<String> line, BufferedWriter triplesWriter)
+        throws IOException
+    {
+        String domainType = null;
+        String rangeType = null;
+
+        String nellRawSubj = null;
+        String nellRawObj = null;
+
+        List<String> candidateSubjs = null;
+        List<String> candidateObjs = null;
+
+        // get the nell subjects and objects
+        nellRawSubj = line.get(0);
+        nellRawObj = line.get(2);
+
+        // get the top-k concepts for the subject
+        candidateSubjs =
+            DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawSubj).replaceAll("\\_+", " ").trim(),
+                SAMEAS_TOPK);
+
+        // get the top-k concepts for the object
+        candidateObjs =
+            DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawObj).replaceAll("\\_+", " ").trim(),
+                SAMEAS_TOPK);
+        try {
+            // find domain type
+            domainType = getTypeInfo(candidateSubjs.get(0).split("\t")[0]);
+
+        } catch (Exception e) {
+            log.error("Problem with line " + line.toString());
+            // e.printStackTrace();
+        }
+        try {
+            // find range type
+            rangeType = getTypeInfo(candidateObjs.get(0).split("\t")[0]);
+
+        } catch (Exception e) {
+            log.error("Problem with line " + line.toString());
+            // e.printStackTrace();
+        }
+
+        try {
+            shoudBeIn(dbProps, domainType, rangeType, line, triplesWriter, candidateSubjs.get(0).split("\t")[0],
+                candidateObjs.get(0).split("\t")[0]);
+        } catch (Exception e) {
+        }
+
+    }
+
+    /**
+     * does the domain and range of this mapped triple satisfy the allowed dbprop domain range
+     * 
+     * @param dbProps
+     * @param domainType
+     * @param rangeType
+     * @param triplesWriter
+     * @param line
+     * @param dbpObj
+     * @param dbpSub
+     * @return
+     * @throws IOException
+     */
+    private static void shoudBeIn(List<String> dbProps, String domainType, String rangeType, ArrayList<String> line,
+        BufferedWriter triplesWriter, String dbpSub, String dbpObj) throws IOException
+    {
+        String allowedDomain = null;
+        String allowedRange = null;
+
+        for (String dbprop : dbProps) {
+
+            try {
+                allowedDomain =
+                    SPARQLEndPointQueryAPI
+                        .queryDBPediaEndPoint(
+                            "select ?dom where {<" + dbprop + "> <http://www.w3.org/2000/01/rdf-schema#domain> ?dom}")
+                        .get(0).get("dom").toString();
+
+                allowedDomain = allowedDomain.replaceAll(Constants.ONTOLOGY_DBP_NS, "");
+
+            } catch (Exception e) {
+            }
+            try {
+                allowedRange =
+                    SPARQLEndPointQueryAPI
+                        .queryDBPediaEndPoint(
+                            "select ?ran where {<" + dbprop + "> <http://www.w3.org/2000/01/rdf-schema#range> ?ran}")
+                        .get(0).get("ran").toString();
+
+                allowedRange = allowedRange.replaceAll(Constants.ONTOLOGY_DBP_NS, "");
+
+            } catch (Exception e) {
+            }
+
+            // all good case
+            if (isSuperClass3(allowedDomain, domainType) && isSuperClass3(allowedRange, rangeType)) {
+                triplesWriter.write(line.get(0) + "\t" + line.get(1) + "\t" + line.get(2) + "\t" + dbpSub + "\t"
+                    + dbprop + "\t" + dbpObj + "\n");
+                triplesWriter.flush();
+            }
+        }
+
+    }
+
+    private static String getTypeInfo(String inst)
+    {
+        String mostSpecificVal = null;
+
+        List<String> types = SPARQLEndPointQueryAPI.getInstanceTypes(Utilities.utf8ToCharacter(inst));
+
+        try {
+            mostSpecificVal = SPARQLEndPointQueryAPI.getLowestType(types).get(0);
+        } catch (IndexOutOfBoundsException e) {
+        } finally {
+            return mostSpecificVal;
         }
     }
 
@@ -218,7 +382,7 @@ public class PropertyStatisticsImproved
                         probMax = support;
                     }
 
-                    log.debug(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
+                    log.info(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
                         + ")\t" + pairs.getKey().getFirst() + "("
                         + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), true) + ")\t"
                         + pairs.getKey().getSecond() + "("
@@ -533,7 +697,7 @@ public class PropertyStatisticsImproved
 
                     tau = (double) MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA") / (nellPredCount * jointProb);
 
-                    log.debug(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
+                    log.info(entry.getKey() + "(" + nellPredCount + ")\t" + nellVal.getKey() + "(" + nellDbpPredCount
                         + ")\t" + pairs.getKey().getFirst() + "("
                         + getNellAndDbpTypeCount(entry.getKey(), pairs.getKey().getFirst(), true) + ")\t"
                         + pairs.getKey().getSecond() + "("
@@ -553,7 +717,7 @@ public class PropertyStatisticsImproved
                     + MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA"));
 
                 int numProps = FINAL_MAPPINGS.get(entry.getKey()).size();
-                newTriples = newTriples + numProps * MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA");
+                newTriples = newTriples + MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA");
             }
 
         }
@@ -578,7 +742,7 @@ public class PropertyStatisticsImproved
             possibleCands = new ArrayList<String>();
             possibleCands.add(dbpProp);
         }
-        possibleCands = filterGeneralMostProperties2(possibleCands);
+        // possibleCands = filterGeneralMostProperties2(possibleCands);
         FINAL_MAPPINGS.put(oieProp, possibleCands);
 
         return possibleCands.size();
@@ -732,6 +896,27 @@ public class PropertyStatisticsImproved
         }
 
         return val;
+    }
+
+    private static boolean isSuperClass3(String generalClass, String particularClass)
+    {
+        if (generalClass == null)
+            return true;
+
+        if (particularClass == null)
+            return true;
+
+        if (generalClass.equals(particularClass))
+            return true;
+
+        List<String> trailCol = new ArrayList<String>();
+        List<String> allSuperClasses = getAllMyParents(particularClass, trailCol);
+        log.debug("SUPER CLASSES of " + particularClass + " = " + allSuperClasses.toString());
+        if (allSuperClasses.contains(generalClass))
+            return true;
+
+        return false;
+
     }
 
     private static boolean isSuperClass(String generalClass, String particularClass)
