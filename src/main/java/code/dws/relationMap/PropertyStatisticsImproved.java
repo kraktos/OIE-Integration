@@ -900,11 +900,11 @@ public class PropertyStatisticsImproved
 
     private static boolean isSuperClass3(String generalClass, String particularClass)
     {
-        if (generalClass == null)
+        if (generalClass == null && particularClass == null)
             return true;
 
-        if (particularClass == null)
-            return true;
+        // if (particularClass == null)
+        // return true;
 
         if (generalClass.equals(particularClass))
             return true;
