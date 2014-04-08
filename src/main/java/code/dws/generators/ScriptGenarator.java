@@ -43,7 +43,6 @@ public class ScriptGenarator
         log.info("Loaded all properties from " + GenerateNewProperties.NELL_FILE_PATH + ";  " + PROPS.size());
 
         generateScript();
-
     }
 
     private static void generateScript() throws IOException
@@ -61,6 +60,7 @@ public class ScriptGenarator
             scriptWriter.write("echo \"Done with complete reasoning of " + oieProp + "\"\n\n");
 
             System.out.println("java -jar /home/arnab/Workspaces/UPDATE_REFINED.jar " + oieProp);
+            System.out.println("echo \"Done with " + oieProp + "\"\n");
         }
 
         scriptWriter.flush();

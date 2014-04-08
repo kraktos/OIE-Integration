@@ -269,6 +269,9 @@ public class Constants
     public static final String GET_WIKI_LINKS_APRIORI_SQL =
         "select  URI, (SUM(COUNT)/(select  SUM(COUNT) from wikiPrep  where SF =?)) as p from wikiPrep  where SF =? group by BINARY URI order by p desc limit ?";
 
+    public static final String GET_REFINED_MAPPINGS_SQL =
+        "select DBP_SUB, DBP_OBJ from OIE_REFINED where OIE_SUB=? and OIE_PRED=? and OIE_OBJ=?";
+
     public static final String GET_NELL_CONF =
         "select confidence from nell where subject = ? and predicate = ? and object = ?";
 
@@ -615,8 +618,7 @@ public class Constants
     public static boolean ENGAGE_INTER_STEP = ExperimentAutomation.ENGAGE_INTER_STEP;
 
     public static String OUTLIER_DETECTION_TECHNIQUE = "KDE";
-    
-    
+
     /*
      * DB Details
      */

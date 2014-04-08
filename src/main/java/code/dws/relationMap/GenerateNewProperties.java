@@ -63,6 +63,8 @@ public class GenerateNewProperties
     // graph exploratory search modes.
     private static boolean multiHop = false;
 
+    private static boolean refinedMode = true;
+
     /**
      * @param args
      * @throws IOException
@@ -96,6 +98,7 @@ public class GenerateNewProperties
         String nellRawSubj = null;
         String nellRawObj = null;
 
+        List<String> candidates = null;
         List<String> candidateSubjs = null;
         List<String> candidateObjs = null;
 
@@ -103,11 +106,12 @@ public class GenerateNewProperties
         BufferedWriter inversePropWriter = new BufferedWriter(new FileWriter(INVERSE_PROP_LOG));
 
         // init DB for getting the most frequent URI for the NELL terms
-        DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
+        if (!refinedMode)
+            DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
 
-        //TODO
-        // init DB for getting the most frequent URI for the NELL terms
-        DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
+        // another run mode with refined mapping, not just top-1
+        if (refinedMode)
+            DBWrapper.init(Constants.GET_REFINED_MAPPINGS_SQL);
 
         // load the NELL file in memory as a collection
         ArrayList<ArrayList<String>> nellFile =
@@ -125,15 +129,35 @@ public class GenerateNewProperties
                 nellRawSubj = line.get(0);
                 nellRawObj = line.get(2);
 
-                // get the top-k concepts for the subject
-                candidateSubjs =
-                    DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawSubj).replaceAll("\\_+", " ").trim(),
-                        SAMEAS_TOPK);
+                if (!refinedMode) {
+                    // get the top-k concepts for the subject
+                    candidateSubjs =
+                        DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawSubj).replaceAll("\\_+", " ")
+                            .trim(), SAMEAS_TOPK);
+                    // get the top-k concepts for the object
+                    candidateObjs =
+                        DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawObj).replaceAll("\\_+", " ")
+                            .trim(), SAMEAS_TOPK);
+                } else {
+                    if (nellRawSubj.indexOf("john_irving") != -1 && nellRawObj.indexOf("the_cider_house_rules") != -1)
+                        System.out.println("");
 
-                // get the top-k concepts for the object
-                candidateObjs =
-                    DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(nellRawObj).replaceAll("\\_+", " ").trim(),
-                        SAMEAS_TOPK);
+                    candidates =
+                        DBWrapper.fetchRefinedMapping(Utilities.cleanse(nellRawSubj).trim(), line.get(1).trim(),
+                            Utilities.cleanse(nellRawObj).trim());
+
+                    try {
+                        candidateSubjs = new ArrayList<String>();
+                        candidateSubjs.add(candidates.get(0));
+
+                        candidateObjs = new ArrayList<String>();
+                        candidateObjs.add(candidates.get(1));
+
+                    } catch (IndexOutOfBoundsException e) {
+
+                    }
+
+                }
 
                 // use the SPARQL endpoint for querying the direct and inverse
                 // relation betwen the sub-obj pairs

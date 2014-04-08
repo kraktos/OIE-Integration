@@ -24,12 +24,12 @@ import code.dws.utils.Constants;
 import code.dws.utils.Utilities;
 
 /**
- * Wrapper class to initiate the DB operations. Used on top of
- * {@link DBConnection}
+ * Wrapper class to initiate the DB operations. Used on top of {@link DBConnection}
  * 
  * @author Arnab Dutta
  */
-public class DBWrapper {
+public class DBWrapper
+{
 
     public static final String GS_DELIMITER = "~~";
 
@@ -68,13 +68,17 @@ public class DBWrapper {
 
     // For NELL class hierarchy api
     static PreparedStatement getSupClassesPrepStmnt = null;
+
     static PreparedStatement getSubClassesPrepStmnt = null;
+
     static PreparedStatement getInvRelPrepStmnt = null;
+
     static PreparedStatement getDisjClassPrepStmnt = null;
 
     static int batchCounter = 0;
 
-    public static void initNellReasoner() {
+    public static void initNellReasoner()
+    {
 
         try {
             // instantiate the DB connection
@@ -103,7 +107,8 @@ public class DBWrapper {
         }
     }
 
-    public static void batchInit() {
+    public static void batchInit()
+    {
         try {
             // instantiate the DB connection
             dbConnection = new DBConnection();
@@ -136,7 +141,8 @@ public class DBWrapper {
      * 
      * @param sql
      */
-    public static void init(String sql) {
+    public static void init(String sql)
+    {
 
         try {
             // instantiate the DB connection
@@ -181,8 +187,8 @@ public class DBWrapper {
      * @param dbpValue
      * @param score apriori probability
      */
-    public static void saveAxiomsPrior(OWLNamedIndividual ieValue, OWLNamedIndividual dbpValue,
-            double score) {
+    public static void saveAxiomsPrior(OWLNamedIndividual ieValue, OWLNamedIndividual dbpValue, double score)
+    {
 
         try {
             pstmt.setString(1, ieValue.toString());
@@ -205,8 +211,8 @@ public class DBWrapper {
      * @param valueFromDBPedia
      * @param score aposteriori probability
      */
-    public static void saveAxiomsPosterior(String valueFromExtractionEngine,
-            String valueFromDBPedia, double score) {
+    public static void saveAxiomsPosterior(String valueFromExtractionEngine, String valueFromDBPedia, double score)
+    {
 
         try {
             pstmt.setDouble(1, score);
@@ -223,13 +229,13 @@ public class DBWrapper {
     }
 
     /**
-     * queries the dB to fetch the surface forms. Look into the table structures
-     * title_2_id and link_anchors
+     * queries the dB to fetch the surface forms. Look into the table structures title_2_id and link_anchors
      * 
      * @param arg
      * @return
      */
-    public static List<String> fetchSurfaceForms(String arg) {
+    public static List<String> fetchSurfaceForms(String arg)
+    {
         ResultSet rs = null;
         List<String> results = null;
 
@@ -296,17 +302,13 @@ public class DBWrapper {
     //
     // }
 
-    public static void saveBaseLine(String ieArg1, String ieRel, String ieArg2,
-            FreeFormFactDao dbPediaTriple) {
+    public static void saveBaseLine(String ieArg1, String ieRel, String ieArg2, FreeFormFactDao dbPediaTriple)
+    {
 
         try {
 
-            logger.debug("[" + dbPediaTriple.getSurfaceSubj() + ", "
-                    + dbPediaTriple.getRelationship()
-                    + ", "
-                    + dbPediaTriple.getSurfaceObj() + "]  =>  [" + ieArg1 + ", " + ieRel + ", "
-                    + ieArg2
-                    + "] ");
+            logger.debug("[" + dbPediaTriple.getSurfaceSubj() + ", " + dbPediaTriple.getRelationship() + ", "
+                + dbPediaTriple.getSurfaceObj() + "]  =>  [" + ieArg1 + ", " + ieRel + ", " + ieArg2 + "] ");
 
             insertBaseLine.setString(1, ieArg1);
             insertBaseLine.setString(2, ieRel);
@@ -338,15 +340,15 @@ public class DBWrapper {
 
     }
 
-    private static String stripHeaders(String arg) {
+    private static String stripHeaders(String arg)
+    {
         arg = arg.replace("http://dbpedia.org/resource/", "");
-        
 
         return arg;
     }
 
-    public static void saveGoldStandard(FreeFormFactDao nellTriple, String arg1, String rel,
-            String arg2) {
+    public static void saveGoldStandard(FreeFormFactDao nellTriple, String arg1, String rel, String arg2)
+    {
 
         ResultSet rs = null;
 
@@ -356,8 +358,7 @@ public class DBWrapper {
         try {
 
             fetchCountsPrepstmnt.setString(1, stripHeaders(arg1));
-            fetchCountsPrepstmnt.setString(2, Utilities.cleanse(nellTriple.getSurfaceSubj())
-                    .replaceAll("_", " "));
+            fetchCountsPrepstmnt.setString(2, Utilities.cleanse(nellTriple.getSurfaceSubj()).replaceAll("_", " "));
 
             // run the query finally
             rs = fetchCountsPrepstmnt.executeQuery();
@@ -367,8 +368,7 @@ public class DBWrapper {
             }
 
             fetchCountsPrepstmnt.setString(1, stripHeaders(arg2));
-            fetchCountsPrepstmnt.setString(2, Utilities.cleanse(nellTriple.getSurfaceObj())
-                    .replaceAll("_", " "));
+            fetchCountsPrepstmnt.setString(2, Utilities.cleanse(nellTriple.getSurfaceObj()).replaceAll("_", " "));
 
             // run the query finally
             rs = fetchCountsPrepstmnt.executeQuery();
@@ -377,10 +377,9 @@ public class DBWrapper {
                 objLinksCount = rs.getInt(1);
             }
 
-            logger.debug("[" + nellTriple.getSurfaceSubj() + ", " + nellTriple.getRelationship()
-                    + ", "
-                    + nellTriple.getSurfaceObj() + "]  =>  [" + arg1 + ", " + rel + ", " + arg2
-                    + "] " + subjLinksCount + " " + objLinksCount);
+            logger.debug("[" + nellTriple.getSurfaceSubj() + ", " + nellTriple.getRelationship() + ", "
+                + nellTriple.getSurfaceObj() + "]  =>  [" + arg1 + ", " + rel + ", " + arg2 + "] " + subjLinksCount
+                + " " + objLinksCount);
 
             insertPrepstmnt.setString(1, nellTriple.getSurfaceSubj());
             insertPrepstmnt.setString(2, nellTriple.getRelationship());
@@ -414,7 +413,8 @@ public class DBWrapper {
         }
     }
 
-    public static void saveResidualDBPTypes() {
+    public static void saveResidualDBPTypes()
+    {
         try {
             if (batchCounter % Constants.BATCH_SIZE != 0) {
                 insertDBPTypePrepstmnt.executeBatch();
@@ -425,7 +425,8 @@ public class DBWrapper {
         }
     }
 
-    public static void saveResidualBaseLine() {
+    public static void saveResidualBaseLine()
+    {
         try {
             if (batchCounter % Constants.BATCH_SIZE != 0) {
                 insertBaseLine.executeBatch();
@@ -437,7 +438,8 @@ public class DBWrapper {
         }
     }
 
-    public static void saveResidualGS() {
+    public static void saveResidualGS()
+    {
         try {
             if (batchCounter % Constants.BATCH_SIZE != 0) {
                 insertPrepstmnt.executeBatch();
@@ -448,7 +450,8 @@ public class DBWrapper {
         }
     }
 
-    public static void saveResidualSFs() {
+    public static void saveResidualSFs()
+    {
         try {
             if (batchCounter % Constants.BATCH_SIZE != 0) { // batches of 100
                 pstmt.executeBatch();
@@ -459,7 +462,8 @@ public class DBWrapper {
         }
     }
 
-    public static List<String> fetchTopKWikiTitles(String arg, int topK) {
+    public static List<String> fetchTopKWikiTitles(String arg, int topK)
+    {
         ResultSet rs = null;
         List<String> results = null;
 
@@ -482,7 +486,34 @@ public class DBWrapper {
         return results;
     }
 
-    public static List<String> fetchTopKLinksWikiPrepProb(String arg, int limit) {
+    public static List<String> fetchRefinedMapping(String oieSub, String pred, String oieObj)
+    {
+        ResultSet rs = null;
+        List<String> results = null;
+
+        try {
+            pstmt.setString(1, oieSub);
+            pstmt.setString(2, pred);
+            pstmt.setString(3, oieObj);
+
+            rs = pstmt.executeQuery();
+            results = new ArrayList<String>();
+
+            while (rs.next()) {
+
+                results.add(Utilities.characterToUTF8((rs.getString(1)).replaceAll("\\s", "_").replaceAll("[", "(")
+                    .replaceAll("]", ")")));
+                results.add(Utilities.characterToUTF8((rs.getString(2)).replaceAll("\\s", "_").replaceAll("[", "(")
+                    .replaceAll("]", ")")));
+            }
+        } catch (Exception e) {
+        }
+
+        return results;
+    }
+
+    public static List<String> fetchTopKLinksWikiPrepProb(String arg, int limit)
+    {
         ResultSet rs = null;
         List<String> results = null;
 
@@ -498,9 +529,8 @@ public class DBWrapper {
 
             while (rs.next()) {
 
-                results.add(Utilities.characterToUTF8((rs.getString(1)).replaceAll("\\s", "_"))
-                        + "\t" + decimalFormatter
-                                .format(rs.getDouble(2)));
+                results.add(Utilities.characterToUTF8((rs.getString(1)).replaceAll("\\s", "_")) + "\t"
+                    + decimalFormatter.format(rs.getDouble(2)));
             }
 
         } catch (Exception e) {
@@ -510,7 +540,8 @@ public class DBWrapper {
         return results;
     }
 
-    public static List<Double> fetchNELLConfidence(String sub, String pred, String obj) {
+    public static List<Double> fetchNELLConfidence(String sub, String pred, String obj)
+    {
         ResultSet rs = null;
         List<Double> results = null;
 
@@ -534,7 +565,8 @@ public class DBWrapper {
         return results;
     }
 
-    public static List<String> fetchWikiTitles(String arg) {
+    public static List<String> fetchWikiTitles(String arg)
+    {
         ResultSet rs = null;
         List<String> results = null;
 
@@ -557,7 +589,8 @@ public class DBWrapper {
         return results;
     }
 
-    public static void shutDown() {
+    public static void shutDown()
+    {
 
         if (pstmt != null) {
             try {
@@ -626,7 +659,8 @@ public class DBWrapper {
 
     }
 
-    public static Set<String> getAllSurfaceForms(Set<String> aLL_SURFACES, String arg) {
+    public static Set<String> getAllSurfaceForms(Set<String> aLL_SURFACES, String arg)
+    {
 
         try {
             pstmt.setString(1, arg);
@@ -646,15 +680,14 @@ public class DBWrapper {
 
     }
 
-    public static List<FreeFormFactDao> getTriples(
-            List<FreeFormFactDao> allDupliTriples) {
+    public static List<FreeFormFactDao> getTriples(List<FreeFormFactDao> allDupliTriples)
+    {
 
         try {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                allDupliTriples.add(new FreeFormFactDao(rs.getString(1), rs.getString(2), rs
-                        .getString(3)));
+                allDupliTriples.add(new FreeFormFactDao(rs.getString(1), rs.getString(2), rs.getString(3)));
             }
 
         } catch (SQLException e) {
@@ -666,7 +699,8 @@ public class DBWrapper {
 
     }
 
-    public static Map<String, Long> getAllNellPreds(Map<String, Long> allPreds) {
+    public static Map<String, Long> getAllNellPreds(Map<String, Long> allPreds)
+    {
 
         try {
             ResultSet rs = pstmt.executeQuery();
@@ -684,7 +718,8 @@ public class DBWrapper {
 
     }
 
-    public static long findPredMatches(String arg) {
+    public static long findPredMatches(String arg)
+    {
         try {
             getAllPredPrepStmnt.setString(1, arg);
             ResultSet rs = getAllPredPrepStmnt.executeQuery();
@@ -701,12 +736,12 @@ public class DBWrapper {
 
     }
 
-    public static Map<String, Long> getRankedPredicates(String predicate) {
+    public static Map<String, Long> getRankedPredicates(String predicate)
+    {
 
         /*
-         * Map<Long, String> rankedPredicates = new TreeMap<Long, String>(new
-         * Comparator<Long>() { public int compare(Long first, Long second) {
-         * return second.compareTo(first); } });
+         * Map<Long, String> rankedPredicates = new TreeMap<Long, String>(new Comparator<Long>() { public int
+         * compare(Long first, Long second) { return second.compareTo(first); } });
          */
 
         Map<String, Long> rankedPredicates = new TreeMap<String, Long>();
@@ -727,7 +762,8 @@ public class DBWrapper {
 
     }
 
-    public static void saveSurfaceForms(String uri, String sf, double sfGivenUri) {
+    public static void saveSurfaceForms(String uri, String sf, double sfGivenUri)
+    {
 
         try {
 
@@ -756,7 +792,8 @@ public class DBWrapper {
 
     }
 
-    public static Set<String> findURIs(Set<String> aLL_URIS, String pred) {
+    public static Set<String> findURIs(Set<String> aLL_URIS, String pred)
+    {
         try {
             pstmt.setString(1, pred);
             ResultSet rs = pstmt.executeQuery();
@@ -771,7 +808,8 @@ public class DBWrapper {
         return aLL_URIS;
     }
 
-    public static long findPerfectObjectMatches(String pred) {
+    public static long findPerfectObjectMatches(String pred)
+    {
         int rsCount = 0;
 
         try {
@@ -790,7 +828,8 @@ public class DBWrapper {
         return 0;
     }
 
-    public static long findPerfectSubjectMatches(String pred) {
+    public static long findPerfectSubjectMatches(String pred)
+    {
 
         try {
             getAllSubPredPrepStmnt.setString(1, pred);
@@ -806,7 +845,8 @@ public class DBWrapper {
         return 0;
     }
 
-    public static long findPerfectMatches(String pred) {
+    public static long findPerfectMatches(String pred)
+    {
         int rsCount = 0;
 
         try {
@@ -825,7 +865,8 @@ public class DBWrapper {
         return 0;
     }
 
-    public static List<FreeFormFactDao> giveDupliRows(FreeFormFactDao nellTriple) {
+    public static List<FreeFormFactDao> giveDupliRows(FreeFormFactDao nellTriple)
+    {
 
         List<FreeFormFactDao> retList = new ArrayList<FreeFormFactDao>();
 
@@ -848,7 +889,8 @@ public class DBWrapper {
 
     }
 
-    public static List<String> getWrongMappingsFromEval(String pred) {
+    public static List<String> getWrongMappingsFromEval(String pred)
+    {
         List<String> results = new ArrayList<String>();
 
         try {
@@ -857,9 +899,9 @@ public class DBWrapper {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                results.add(rs.getString(1) + "|" + rs.getString(2) + "|" + rs.getString(3) + "|"
-                        + rs.getString(4) + "|" + rs.getString(5) + "|" + rs.getString(6) + "|"
-                        + rs.getString(7) + "|" + rs.getString(8) + "|" + rs.getString(9) + "|");
+                results.add(rs.getString(1) + "|" + rs.getString(2) + "|" + rs.getString(3) + "|" + rs.getString(4)
+                    + "|" + rs.getString(5) + "|" + rs.getString(6) + "|" + rs.getString(7) + "|" + rs.getString(8)
+                    + "|" + rs.getString(9) + "|");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -868,7 +910,8 @@ public class DBWrapper {
         return results;
     }
 
-    public static List<String> getTopTriples(FreeFormFactDao ieTriple) {
+    public static List<String> getTopTriples(FreeFormFactDao ieTriple)
+    {
         List<String> results = new ArrayList<String>();
 
         try {
@@ -878,11 +921,8 @@ public class DBWrapper {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                results.add(rs.getString(1) + GS_DELIMITER + rs.getString(2) + GS_DELIMITER
-                        + rs.getString(3)
-                        + GS_DELIMITER
-                        + rs.getString(4) + GS_DELIMITER + rs.getString(5) + GS_DELIMITER
-                        + rs.getString(6));
+                results.add(rs.getString(1) + GS_DELIMITER + rs.getString(2) + GS_DELIMITER + rs.getString(3)
+                    + GS_DELIMITER + rs.getString(4) + GS_DELIMITER + rs.getString(5) + GS_DELIMITER + rs.getString(6));
             }
         } catch (SQLException e) {
             logger.error("Error in getTopTriples " + e.getMessage());
@@ -891,7 +931,8 @@ public class DBWrapper {
         return results;
     }
 
-    public static void insertGold(String tuple) {
+    public static void insertGold(String tuple)
+    {
 
         String[] arr = tuple.split(GS_DELIMITER);
         try {
@@ -924,8 +965,8 @@ public class DBWrapper {
 
     }
 
-    public static Map<Pair<String, String>, Long> getCanonVsUriPairs(
-            Map<Pair<String, String>, Long> pairs) {
+    public static Map<Pair<String, String>, Long> getCanonVsUriPairs(Map<Pair<String, String>, Long> pairs)
+    {
 
         long countVal = 0;
 
@@ -933,8 +974,7 @@ public class DBWrapper {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                Pair<String, String> pair = new Pair<String, String>(rs.getString(1),
-                        rs.getString(2));
+                Pair<String, String> pair = new Pair<String, String>(rs.getString(1), rs.getString(2));
                 if (pairs.containsKey(pair)) {
                     countVal = pairs.get(pair) + 1;
                     pairs.put(pair, countVal);
@@ -950,17 +990,15 @@ public class DBWrapper {
 
     }
 
-    public static List<String> getGoldTriples(List<String> allDistinctGoldTriples) {
+    public static List<String> getGoldTriples(List<String> allDistinctGoldTriples)
+    {
         try {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                allDistinctGoldTriples.add(rs.getString(1) + GS_DELIMITER + rs.getString(2)
-                        + GS_DELIMITER
-                        + rs.getString(3)
-                        + GS_DELIMITER
-                        + rs.getString(4) + GS_DELIMITER + rs.getString(5) + GS_DELIMITER
-                        + rs.getString(6));
+                allDistinctGoldTriples.add(rs.getString(1) + GS_DELIMITER + rs.getString(2) + GS_DELIMITER
+                    + rs.getString(3) + GS_DELIMITER + rs.getString(4) + GS_DELIMITER + rs.getString(5) + GS_DELIMITER
+                    + rs.getString(6));
             }
 
         } catch (SQLException e) {
@@ -972,7 +1010,8 @@ public class DBWrapper {
 
     }
 
-    public static List<String> getSampleInstances(String predicate, String key) {
+    public static List<String> getSampleInstances(String predicate, String key)
+    {
         List<String> results = new ArrayList<String>();
 
         try {
@@ -982,11 +1021,8 @@ public class DBWrapper {
             ResultSet rs = getOccurancePredicatesPrepStmnt.executeQuery();
 
             while (rs.next()) {
-                results.add(rs.getString(1) + GS_DELIMITER + rs.getString(2) + GS_DELIMITER
-                        + rs.getString(3)
-                        + GS_DELIMITER
-                        + rs.getString(4) + GS_DELIMITER + rs.getString(5) + GS_DELIMITER
-                        + rs.getString(6));
+                results.add(rs.getString(1) + GS_DELIMITER + rs.getString(2) + GS_DELIMITER + rs.getString(3)
+                    + GS_DELIMITER + rs.getString(4) + GS_DELIMITER + rs.getString(5) + GS_DELIMITER + rs.getString(6));
             }
         } catch (SQLException e) {
             logger.error("Error in getSampleInstances " + e.getMessage());
@@ -996,7 +1032,8 @@ public class DBWrapper {
 
     }
 
-    public static void saveToDBPediaTypes(String instance, String instType) {
+    public static void saveToDBPediaTypes(String instance, String instType)
+    {
 
         try {
 
@@ -1013,7 +1050,7 @@ public class DBWrapper {
                 // execute batch update
                 insertDBPTypePrepstmnt.executeBatch();
 
-                //System.out.println("FLUSHED TO DBPEDIA_TYPES");
+                // System.out.println("FLUSHED TO DBPEDIA_TYPES");
                 connection.commit();
                 insertDBPTypePrepstmnt.clearBatch();
             }
@@ -1024,7 +1061,8 @@ public class DBWrapper {
 
     }
 
-    public static void saveToBL(String tuple, String delimiter) {
+    public static void saveToBL(String tuple, String delimiter)
+    {
 
         String[] arr = tuple.split(delimiter);
         try {
@@ -1059,7 +1097,8 @@ public class DBWrapper {
 
     }
 
-    public static String getSuper(String arg) {
+    public static String getSuper(String arg)
+    {
         try {
             getSupClassesPrepStmnt.setString(1, arg);
             ResultSet rs = getSupClassesPrepStmnt.executeQuery();
@@ -1074,7 +1113,8 @@ public class DBWrapper {
 
     }
 
-    public static List<String> getSub(String arg) {
+    public static List<String> getSub(String arg)
+    {
         List<String> subClasses = new ArrayList<String>();
 
         try {
@@ -1090,7 +1130,8 @@ public class DBWrapper {
         return subClasses;
     }
 
-    public static String getInverseRel(String arg) {
+    public static String getInverseRel(String arg)
+    {
         try {
             getInvRelPrepStmnt.setString(1, arg);
             ResultSet rs = getInvRelPrepStmnt.executeQuery();
@@ -1105,7 +1146,8 @@ public class DBWrapper {
 
     }
 
-    public static List<String> getDisjClasses(String arg) {
+    public static List<String> getDisjClasses(String arg)
+    {
         List<String> subClasses = new ArrayList<String>();
 
         try {
@@ -1121,7 +1163,8 @@ public class DBWrapper {
         return subClasses;
     }
 
-    public static List<String> getCanonForms(List<String> listSurfaceForms) {
+    public static List<String> getCanonForms(List<String> listSurfaceForms)
+    {
         try {
             ResultSet rs = pstmt.executeQuery();
 
@@ -1138,8 +1181,8 @@ public class DBWrapper {
 
     }
 
-    public static void insertIntoPredTypes(String nellPredicate, List<String> listTypes,
-            String instance) {
+    public static void insertIntoPredTypes(String nellPredicate, List<String> listTypes, String instance)
+    {
         try {
 
             for (String types : listTypes) {
@@ -1169,7 +1212,8 @@ public class DBWrapper {
 
     }
 
-    public static List<Pair<String, Long>> getTfIdf(String predicate) {
+    public static List<Pair<String, Long>> getTfIdf(String predicate)
+    {
 
         List<Pair<String, Long>> termFrequencies = new ArrayList<Pair<String, Long>>();
         Pair<String, Long> pair = null;
@@ -1189,7 +1233,8 @@ public class DBWrapper {
 
     }
 
-    public static double getInverseDocFreq(String predicate, String type) {
+    public static double getInverseDocFreq(String predicate, String type)
+    {
         try {
             pstmt.setString(1, type.trim());
             // pstmt.setString(2, type.trim());
@@ -1205,7 +1250,8 @@ public class DBWrapper {
         return 0;
     }
 
-    public static List<String> getTypes(String predicate) {
+    public static List<String> getTypes(String predicate)
+    {
         List<String> types = new ArrayList<String>();
 
         try {
@@ -1221,7 +1267,8 @@ public class DBWrapper {
         return types;
     }
 
-    public static double getInstances(String predicate, String type) {
+    public static double getInstances(String predicate, String type)
+    {
         try {
             pstmt.setString(1, predicate.trim());
             pstmt.setString(2, type.trim());
@@ -1237,7 +1284,8 @@ public class DBWrapper {
         return 0;
     }
 
-    public static int getDistinctInstancesByPred(String predicate) {
+    public static int getDistinctInstancesByPred(String predicate)
+    {
         try {
             pstmt.setString(1, predicate.trim());
 
@@ -1252,13 +1300,13 @@ public class DBWrapper {
         return 0;
     }
 
-    public static List<String> getDBPInstanceType(String instance) {
+    public static List<String> getDBPInstanceType(String instance)
+    {
         List<String> types = new ArrayList<String>();
 
-        
-        if(instance.indexOf("Ring") != -1)
+        if (instance.indexOf("Ring") != -1)
             System.out.println();
-        
+
         try {
             fetchDbpTypePrepstmnt.setString(1, instance);
             ResultSet rs = fetchDbpTypePrepstmnt.executeQuery();
