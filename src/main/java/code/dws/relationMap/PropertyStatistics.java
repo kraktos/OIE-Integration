@@ -29,7 +29,7 @@ public class PropertyStatistics
 {
 
     // read the mother mappings file, containing nell triples and possible mappings
-    public static final String INPUT_LOG = "/input/DIRECT_PROP.log"; // INVERSE_PROP.log");
+    public static final String INPUT_LOG = "/input/INVERSE_PROP.log"; //DIRECT_PROP.log"; // INVERSE_PROP.log");
 
     // define class logger
     public final static Logger log = LoggerFactory.getLogger(PropertyStatistics.class);
@@ -274,6 +274,7 @@ public class PropertyStatistics
 
         double error = 0D;
 
+        System.out.println(MAP_OIE_IE_PROP_COUNTS.size());
         for (Map.Entry<String, Map<String, Integer>> entry : MAP_OIE_IE_PROP_COUNTS.entrySet()) {
             int countPredOccurncs = 0;
             int countNonMappedOccrncs = 0;
@@ -288,12 +289,14 @@ public class PropertyStatistics
                 (double) (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs) * 100
                     / (MAP_PRED_COUNT.get(entry.getKey()));
 
+            System.out.println(Math.round(percentageMapped));
+
             // if (percentageMapped > OIE_PROPERTY_MAPPED_THRESHOLD) {
             log.info("Predicate = " + entry.getKey());
             log.info("Number of triples in the data set = " + MAP_PRED_COUNT.get(entry.getKey()));
             log.info("Total non-mapped triples = " + countNonMappedOccrncs);
             log.info("Total mapped triples = " + (MAP_PRED_COUNT.get(entry.getKey()) - countNonMappedOccrncs));
-            log.info("Percentage actually map-able (rounded) = " + Math.round(percentageMapped) + "%");
+            log.info("Percentage actually map-able (rounded) = " + percentageMapped + "%");
 
             log.info("Number of values  = " + countPredOccurncs);
 
@@ -333,13 +336,13 @@ public class PropertyStatistics
 
                     newTriples = newTriples + countNonMappedOccrncs;
 
-                    log.warn("Yes, " + countNonMappedOccrncs + " triples can be newly added with "
+                    log.info("Yes, " + countNonMappedOccrncs + " triples can be newly added with "
                         + valueEntry.getKey());
 
                     log.info(entry.getKey() + "\t" + "Can be predicated with " + valueEntry.getKey() + "\t"
                         + valueEntry.getValue() + " (" + propConf + "%)" + "\t" + tau);
 
-                    log.warn("	" + entry.getKey() + "\t" + valueEntry.getKey() + "\t" + propConf + "\t"
+                    log.info("	" + entry.getKey() + "\t" + valueEntry.getKey() + "\t" + propConf + "\t"
                         + percentageMapped);
 
                     // store in memory

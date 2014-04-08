@@ -179,16 +179,12 @@ public class PropertyStatisticsImproved
             domainType = getTypeInfo(candidateSubjs.get(0).split("\t")[0]);
 
         } catch (Exception e) {
-            log.error("Problem with line " + line.toString());
-            // e.printStackTrace();
         }
         try {
             // find range type
             rangeType = getTypeInfo(candidateObjs.get(0).split("\t")[0]);
 
         } catch (Exception e) {
-            log.error("Problem with line " + line.toString());
-            // e.printStackTrace();
         }
 
         try {
@@ -196,7 +192,6 @@ public class PropertyStatisticsImproved
                 candidateObjs.get(0).split("\t")[0]);
         } catch (Exception e) {
         }
-
     }
 
     /**
@@ -407,6 +402,9 @@ public class PropertyStatisticsImproved
                 regression.addData(Double.valueOf(twoDForm.format(percentageMapped)),
                     Double.valueOf(twoDForm.format(tau)));
 
+//                propStatsWriter.write(probMax + "\t" + Double.valueOf(twoDForm.format(percentageMapped)) + "\t"
+//                    + Double.valueOf(twoDForm.format(tau)) + "\n");
+                
                 propStatsWriter.write(Double.valueOf(twoDForm.format(percentageMapped)) + "\t"
                     + Double.valueOf(twoDForm.format(tau)) + "\n");
             }
@@ -666,6 +664,8 @@ public class PropertyStatisticsImproved
             // compute the mappable value for this predicate
             percentageMapped =
                 100 * (1 - ((double) MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA") / nellPredCount));
+
+            System.out.println(percentageMapped);
 
             // iterate over dbpedia properties
             for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry.getValue().entrySet()) {
@@ -932,7 +932,6 @@ public class PropertyStatisticsImproved
             return true;
 
         return false;
-
     }
 
     private static boolean isSuperClass2(String generalClass, String particularClass)

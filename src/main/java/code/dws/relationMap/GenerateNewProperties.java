@@ -46,7 +46,7 @@ public class GenerateNewProperties
     private static final String PROPERTY_LOGS_PATH = "./src/main/resources/output";
 
     // location of the raw downloaded NELL path
-    private static final String NELL_FILE_PATH = "/input/Nell_truncated.csv";
+    public static final String NELL_FILE_PATH = "/input/Nell_truncated.csv";
 
     // //"/input/small.csv";
 
@@ -102,7 +102,11 @@ public class GenerateNewProperties
         BufferedWriter directPropWriter = new BufferedWriter(new FileWriter(DIRECT_PROP_LOG));
         BufferedWriter inversePropWriter = new BufferedWriter(new FileWriter(INVERSE_PROP_LOG));
 
-        // init DB for getting the most frequebt URI for the NELL terms
+        // init DB for getting the most frequent URI for the NELL terms
+        DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
+
+        //TODO
+        // init DB for getting the most frequent URI for the NELL terms
         DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
 
         // load the NELL file in memory as a collection
