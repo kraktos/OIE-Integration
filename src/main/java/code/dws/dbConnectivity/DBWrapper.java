@@ -501,12 +501,13 @@ public class DBWrapper
 
             while (rs.next()) {
 
-                results.add(Utilities.characterToUTF8((rs.getString(1)).replaceAll("\\s", "_").replaceAll("[", "(")
-                    .replaceAll("]", ")")));
-                results.add(Utilities.characterToUTF8((rs.getString(2)).replaceAll("\\s", "_").replaceAll("[", "(")
-                    .replaceAll("]", ")")));
+                results.add(Utilities.characterToUTF8((rs.getString(1)).replaceAll("\\s", "_").replaceAll("\\[", "\\(")
+                    .replaceAll("\\]", "\\)")));
+                results.add(Utilities.characterToUTF8((rs.getString(2)).replaceAll("\\s", "_").replaceAll("\\[", "\\(")
+                    .replaceAll("\\]", "\\")));
             }
         } catch (Exception e) {
+//            e.printStackTrace();
         }
 
         return results;
