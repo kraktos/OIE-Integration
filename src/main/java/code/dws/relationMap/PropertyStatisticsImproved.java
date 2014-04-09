@@ -47,7 +47,7 @@ public class PropertyStatisticsImproved
     // threshold to consider mappable predicates. It means consider NELL
     // predicates
     // which are atleast x % map-able
-    private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 35;
+    private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 30;
 
     private static final String PROP_STATS = "PROP_STATISTICS.tsv"; // "PROP_STATISTICS_TOP5.tsv";
 
@@ -139,7 +139,6 @@ public class PropertyStatisticsImproved
                     List<String> dbProps = FINAL_MAPPINGS.get(nellProp);
 
                     reCreateTriples(dbProps, line, triplesWriter);
-
                 }
         }
 

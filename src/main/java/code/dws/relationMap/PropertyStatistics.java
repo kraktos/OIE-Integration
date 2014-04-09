@@ -40,7 +40,7 @@ public class PropertyStatistics
     // threshold to consider mappable predicates. It means consider NELL
     // predicates
     // which are atleast x % map-able
-    private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 40;
+    private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 0;
 
     // use it to set a threshold on the mapped DBpedia property mapping
     private static double DBP_PROPERTY_CONFIDENCE_THRESHOLD = 0D;
