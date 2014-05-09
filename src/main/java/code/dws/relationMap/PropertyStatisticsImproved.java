@@ -36,7 +36,7 @@ public class PropertyStatisticsImproved
 
     // read the mother mappings file, containing nell triples and possible
     // mappings
-    public static final String INPUT_LOG = "/input/DIRECT_PROP.log"; // INVERSE_PROP.log");
+    public static final String INPUT_LOG = "/input/INVERSE_PROP.log"; // DIRECT_PROP.log");
 
     // define class logger
     public final static Logger log = LoggerFactory.getLogger(PropertyStatisticsImproved.class);
@@ -51,7 +51,7 @@ public class PropertyStatisticsImproved
 
     private static final String PROP_STATS = "PROP_STATISTICS.tsv"; // "PROP_STATISTICS_TOP5.tsv";
 
-    private static final String ITEMS_RULES = "PROP_TRANSC.tsv"; // "PROP_STATISTICS_TOP5.tsv";
+    private static final String ITEMS_RULES = "PROP_TRANSC_INVERSE.tsv";
 
     private static final String NEW_TRIPLES = "NEW_TRIPLES.tsv";
 
@@ -64,6 +64,8 @@ public class PropertyStatisticsImproved
     private static final double ERROR_TOLERANCE = 1.1;
 
     private static final int SAMEAS_TOPK = 1;
+
+    private static final boolean INVERSE = true;
 
     // total triples that can be reconstructed
     private static int newTriples = 0;
@@ -190,8 +192,12 @@ public class PropertyStatisticsImproved
         }
 
         try {
-            shoudBeIn(dbProps, domainType, rangeType, line, triplesWriter, statStriplesWriter, candidateSubjs.get(0)
-                .split("\t")[0], candidateObjs.get(0).split("\t")[0]);
+            if (!INVERSE)
+                shoudBeIn(dbProps, domainType, rangeType, line, triplesWriter, statStriplesWriter, candidateSubjs
+                    .get(0).split("\t")[0], candidateObjs.get(0).split("\t")[0]);
+            else
+                shoudBeIn(dbProps, rangeType, domainType, line, triplesWriter, statStriplesWriter, candidateObjs.get(0)
+                    .split("\t")[0], candidateSubjs.get(0).split("\t")[0]);
         } catch (Exception e) {
         }
     }
@@ -231,7 +237,7 @@ public class PropertyStatisticsImproved
                 allowedDomain = allowedDomain.replaceAll(Constants.ONTOLOGY_DBP_NS, "");
 
             } catch (Exception e) {
-                allowedDomain = "XX";
+                // allowedDomain = "XX";
             }
             try {
                 allowedRange =
@@ -243,7 +249,7 @@ public class PropertyStatisticsImproved
                 allowedRange = allowedRange.replaceAll(Constants.ONTOLOGY_DBP_NS, "");
 
             } catch (Exception e) {
-                allowedRange = "XX";
+                // allowedRange = "XX";
             }
 
             // all good case
