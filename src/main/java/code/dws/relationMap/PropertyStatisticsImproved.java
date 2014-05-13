@@ -36,7 +36,7 @@ public class PropertyStatisticsImproved
 
     // read the mother mappings file, containing nell triples and possible
     // mappings
-    public static final String INPUT_LOG = "/input/INVERSE_PROP.log"; // DIRECT_PROP.log");
+    public static final String INPUT_LOG = "/input/DIRECT_PROP.log"; // INVERSE_PROP.log"; // DIRECT_PROP.log");
 
     // define class logger
     public final static Logger log = LoggerFactory.getLogger(PropertyStatisticsImproved.class);
@@ -51,7 +51,7 @@ public class PropertyStatisticsImproved
 
     private static final String PROP_STATS = "PROP_STATISTICS.tsv"; // "PROP_STATISTICS_TOP5.tsv";
 
-    private static final String ITEMS_RULES = "PROP_TRANSC_INVERSE.tsv";
+    private static final String ITEMS_RULES = "PROP_TRANSC_DIRECT.tsv";
 
     private static final String NEW_TRIPLES = "NEW_TRIPLES.tsv";
 
@@ -65,7 +65,7 @@ public class PropertyStatisticsImproved
 
     private static final int SAMEAS_TOPK = 1;
 
-    private static final boolean INVERSE = true;
+    private static final boolean INVERSE = false;
 
     // total triples that can be reconstructed
     private static int newTriples = 0;
@@ -469,130 +469,130 @@ public class PropertyStatisticsImproved
 
     }
 
-    private static List<String> filterGeneralMostProperties2(List<String> dbpProps)
-    {
+//    private static List<String> filterGeneralMostProperties2(List<String> dbpProps)
+//    {
+//
+//        String subProperty = null;
+//
+//        List<String> toBeRemovedProps = new ArrayList<String>();
+//
+//        for (int out = 0; out < dbpProps.size(); out++) {
+//            for (int in = out + 1; in < dbpProps.size(); in++) {
+//                subProperty = checkPropertySubsumption(dbpProps.get(out), dbpProps.get(in));
+//
+//                if (!toBeRemovedProps.contains(subProperty) && subProperty != null)
+//                    toBeRemovedProps.add(subProperty);
+//            }
+//        }
+//
+//        dbpProps.removeAll(toBeRemovedProps);
+//
+//        return dbpProps;
+//    }
 
-        String subProperty = null;
+//    private static void filterGeneralMostProperties()
+//    {
+//
+//        String subProperty = null;
+//
+//        for (Entry<String, List<String>> entry : FINAL_MAPPINGS.entrySet()) {
+//
+//            List<String> toBeRemovedProps = new ArrayList<String>();
+//            // log.warn(entry.getKey() + "\t" + entry.getValue());
+//            List<String> dbpProps = entry.getValue();
+//
+//            for (int out = 0; out < dbpProps.size(); out++) {
+//                for (int in = out + 1; in < dbpProps.size(); in++) {
+//                    subProperty = checkPropertySubsumption(dbpProps.get(out), dbpProps.get(in));
+//
+//                    if (!toBeRemovedProps.contains(subProperty) && subProperty != null)
+//                        toBeRemovedProps.add(subProperty);
+//                }
+//            }
+//
+//            dbpProps.removeAll(toBeRemovedProps);
+//
+//            FINAL_MAPPINGS.put(entry.getKey(), dbpProps);
+//        }
+//    }
 
-        List<String> toBeRemovedProps = new ArrayList<String>();
-
-        for (int out = 0; out < dbpProps.size(); out++) {
-            for (int in = out + 1; in < dbpProps.size(); in++) {
-                subProperty = checkPropertySubsumption(dbpProps.get(out), dbpProps.get(in));
-
-                if (!toBeRemovedProps.contains(subProperty) && subProperty != null)
-                    toBeRemovedProps.add(subProperty);
-            }
-        }
-
-        dbpProps.removeAll(toBeRemovedProps);
-
-        return dbpProps;
-    }
-
-    private static void filterGeneralMostProperties()
-    {
-
-        String subProperty = null;
-
-        for (Entry<String, List<String>> entry : FINAL_MAPPINGS.entrySet()) {
-
-            List<String> toBeRemovedProps = new ArrayList<String>();
-            // log.warn(entry.getKey() + "\t" + entry.getValue());
-            List<String> dbpProps = entry.getValue();
-
-            for (int out = 0; out < dbpProps.size(); out++) {
-                for (int in = out + 1; in < dbpProps.size(); in++) {
-                    subProperty = checkPropertySubsumption(dbpProps.get(out), dbpProps.get(in));
-
-                    if (!toBeRemovedProps.contains(subProperty) && subProperty != null)
-                        toBeRemovedProps.add(subProperty);
-                }
-            }
-
-            dbpProps.removeAll(toBeRemovedProps);
-
-            FINAL_MAPPINGS.put(entry.getKey(), dbpProps);
-        }
-    }
-
-    private static String checkPropertySubsumption(String prop1, String prop2)
-    {
-        String domainProp1 = null;
-        String rangeProp1 = null;
-
-        String domainProp2 = null;
-        String rangeProp2 = null;
-
-        log.debug("Comparing " + prop1 + " and " + prop2);
-
-        try {
-            domainProp1 =
-                SPARQLEndPointQueryAPI
-                    .queryDBPediaEndPoint(
-                        "select ?dom where {<" + prop1 + "> <http://www.w3.org/2000/01/rdf-schema#domain> ?dom}")
-                    .get(0).get("dom").toString();
-
-        } catch (Exception e) {
-            domainProp1 = "null";
-        }
-        try {
-            rangeProp1 =
-                SPARQLEndPointQueryAPI
-                    .queryDBPediaEndPoint(
-                        "select ?ran where {<" + prop1 + "> <http://www.w3.org/2000/01/rdf-schema#range> ?ran}").get(0)
-                    .get("ran").toString();
-        } catch (Exception e) {
-            rangeProp2 = "null";
-        }
-
-        try {
-            domainProp2 =
-                SPARQLEndPointQueryAPI
-                    .queryDBPediaEndPoint(
-                        "select ?dom where {<" + prop2 + "> <http://www.w3.org/2000/01/rdf-schema#domain> ?dom}")
-                    .get(0).get("dom").toString();
-
-        } catch (Exception e) {
-            domainProp2 = "null";
-        }
-        try {
-            rangeProp2 =
-                SPARQLEndPointQueryAPI
-                    .queryDBPediaEndPoint(
-                        "select ?ran where {<" + prop2 + "> <http://www.w3.org/2000/01/rdf-schema#range> ?ran}").get(0)
-                    .get("ran").toString();
-        } catch (Exception e) {
-            rangeProp2 = "null";
-        }
-
-        log.debug(domainProp1 + "\t" + prop1 + "\t" + rangeProp1);
-        log.debug(domainProp2 + "\t" + prop2 + "\t" + rangeProp2);
-
-        try {
-            domainProp1 = (domainProp1 != null) ? domainProp1.replaceAll(Constants.ONTOLOGY_DBP_NS, "") : "null";
-
-            domainProp2 = (domainProp2 != null) ? domainProp2.replaceAll(Constants.ONTOLOGY_DBP_NS, "") : "null";
-
-            rangeProp1 = (rangeProp1 != null) ? rangeProp1.replaceAll(Constants.ONTOLOGY_DBP_NS, "") : "null";
-            rangeProp2 = (rangeProp2 != null) ? rangeProp2.replaceAll(Constants.ONTOLOGY_DBP_NS, "") : "null";
-
-            if (isSuperClass2(domainProp1, domainProp2) && isSuperClass2(rangeProp1, rangeProp2)) {
-                log.debug(prop1 + " super property of " + prop2);
-                return prop2;
-            }
-
-            if (isSuperClass2(domainProp2, domainProp1) && isSuperClass2(rangeProp2, rangeProp1)) {
-                log.debug(prop2 + " super property of " + prop1);
-                return prop1;
-            }
-        } catch (Exception e) {
-            log.error(domainProp1 + "\t" + domainProp2 + "\t" + rangeProp1 + "\t" + rangeProp2);
-            e.printStackTrace();
-        }
-        return null;
-
-    }
+//    private static String checkPropertySubsumption(String prop1, String prop2)
+//    {
+//        String domainProp1 = null;
+//        String rangeProp1 = null;
+//
+//        String domainProp2 = null;
+//        String rangeProp2 = null;
+//
+//        log.debug("Comparing " + prop1 + " and " + prop2);
+//
+//        try {
+//            domainProp1 =
+//                SPARQLEndPointQueryAPI
+//                    .queryDBPediaEndPoint(
+//                        "select ?dom where {<" + prop1 + "> <http://www.w3.org/2000/01/rdf-schema#domain> ?dom}")
+//                    .get(0).get("dom").toString();
+//
+//        } catch (Exception e) {
+//            domainProp1 = "null";
+//        }
+//        try {
+//            rangeProp1 =
+//                SPARQLEndPointQueryAPI
+//                    .queryDBPediaEndPoint(
+//                        "select ?ran where {<" + prop1 + "> <http://www.w3.org/2000/01/rdf-schema#range> ?ran}").get(0)
+//                    .get("ran").toString();
+//        } catch (Exception e) {
+//            rangeProp2 = "null";
+//        }
+//
+//        try {
+//            domainProp2 =
+//                SPARQLEndPointQueryAPI
+//                    .queryDBPediaEndPoint(
+//                        "select ?dom where {<" + prop2 + "> <http://www.w3.org/2000/01/rdf-schema#domain> ?dom}")
+//                    .get(0).get("dom").toString();
+//
+//        } catch (Exception e) {
+//            domainProp2 = "null";
+//        }
+//        try {
+//            rangeProp2 =
+//                SPARQLEndPointQueryAPI
+//                    .queryDBPediaEndPoint(
+//                        "select ?ran where {<" + prop2 + "> <http://www.w3.org/2000/01/rdf-schema#range> ?ran}").get(0)
+//                    .get("ran").toString();
+//        } catch (Exception e) {
+//            rangeProp2 = "null";
+//        }
+//
+//        log.debug(domainProp1 + "\t" + prop1 + "\t" + rangeProp1);
+//        log.debug(domainProp2 + "\t" + prop2 + "\t" + rangeProp2);
+//
+//        try {
+//            domainProp1 = (domainProp1 != null) ? domainProp1.replaceAll(Constants.ONTOLOGY_DBP_NS, "") : "null";
+//
+//            domainProp2 = (domainProp2 != null) ? domainProp2.replaceAll(Constants.ONTOLOGY_DBP_NS, "") : "null";
+//
+//            rangeProp1 = (rangeProp1 != null) ? rangeProp1.replaceAll(Constants.ONTOLOGY_DBP_NS, "") : "null";
+//            rangeProp2 = (rangeProp2 != null) ? rangeProp2.replaceAll(Constants.ONTOLOGY_DBP_NS, "") : "null";
+//
+//            if (isSuperClass2(domainProp1, domainProp2) && isSuperClass2(rangeProp1, rangeProp2)) {
+//                log.debug(prop1 + " super property of " + prop2);
+//                return prop2;
+//            }
+//
+//            if (isSuperClass2(domainProp2, domainProp1) && isSuperClass2(rangeProp2, rangeProp1)) {
+//                log.debug(prop2 + " super property of " + prop1);
+//                return prop1;
+//            }
+//        } catch (Exception e) {
+//            log.error(domainProp1 + "\t" + domainProp2 + "\t" + rangeProp1 + "\t" + rangeProp2);
+//            e.printStackTrace();
+//        }
+//        return null;
+//
+//    }
 
     /**
      * loads the entire property distribution of nell over dbpedia in a colelction
@@ -895,8 +895,8 @@ public class PropertyStatisticsImproved
                 for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry.getValue().entrySet()) {
                     for (Map.Entry<Pair<String, String>, Long> pairs : nellVal.getValue().entrySet()) {
                         flag =
-                            (isSuperClass(pairs.getKey().getFirst(), domain))
-                                && isSuperClass(pairs.getKey().getSecond(), range);
+                            (isSuperClass(domain, pairs.getKey().getFirst()))
+                                && isSuperClass(range, pairs.getKey().getSecond());
 
                         if (flag) {
                             val = val + pairs.getValue();
@@ -936,6 +936,9 @@ public class PropertyStatisticsImproved
         if (generalClass.equals(particularClass))
             return true;
 
+//        if (generalClass == null || particularClass == null)
+//            return true;
+
         List<String> trailCol = new ArrayList<String>();
         List<String> allSuperClasses = getAllMyParents(particularClass, trailCol);
         log.debug("SUPER CLASSES of " + particularClass + " = " + allSuperClasses.toString());
@@ -945,7 +948,7 @@ public class PropertyStatisticsImproved
         return false;
     }
 
-    private static boolean isSuperClass2(String generalClass, String particularClass)
+    /*private static boolean isSuperClass2(String generalClass, String particularClass)
     {
 
         if (particularClass.equals("null") && generalClass != null)
@@ -962,7 +965,7 @@ public class PropertyStatisticsImproved
 
         return false;
 
-    }
+    }*/
 
     private static List<String> getAllMyParents(String particularClass, List<String> coll)
     {
