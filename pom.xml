@@ -143,5 +143,16 @@
 			<artifactId>commons-math3</artifactId>
 			<version>3.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-snowball</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie.modules</groupId>
+			<artifactId>org-apache-commons-lang3</artifactId>
+			<version>6.1.0.CR1</version>
+			<type>pom</type>
+		</dependency>
 	</dependencies>
 </project>
