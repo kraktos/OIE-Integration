@@ -46,7 +46,7 @@ public class ReverbPreProcessing
 
     private static final String REVERB_PROP_FILE = "/input/test.txt"; // uniq_props.txt";
 
-    private static final String OUTPUT = "OUTPUT.log";
+    private static final String OUTPUT = "OUTPUT_WEIGHTED.log";
 
     // defines the top-k candidate to be fetched for each NELL term
     private static final int SAMEAS_TOPK = 1;
@@ -96,6 +96,9 @@ public class ReverbPreProcessing
         String subType = null;
         String objType = null;
 
+        double simScoreSubj = 0;
+        double simScoreObj = 0;
+
         String types = null;
 
         outputWriter = new BufferedWriter(new FileWriter(OUTPUT));
@@ -106,7 +109,6 @@ public class ReverbPreProcessing
 
             Scanner scan;
             scan = new Scanner(ReverbPreProcessing.class.getResourceAsStream(filePath), "UTF-8");
-
 
             while (scan.hasNextLine()) {
 
@@ -126,13 +128,19 @@ public class ReverbPreProcessing
                     DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(revObj).replaceAll("\\_+", " ").trim(),
                         SAMEAS_TOPK);
 
-                if (candidateSubjs.size() > 0)
+                if (candidateSubjs.size() > 0) {
                     subType = getTypeInfo(candidateSubjs.get(0).split("\t")[0]);
+                    simScoreSubj = Double.parseDouble(candidateSubjs.get(0).split("\t")[1]);
+                }
 
-                if (candidateObjs.size() > 0)
+                if (candidateObjs.size() > 0) {
                     objType = getTypeInfo(candidateObjs.get(0).split("\t")[0]);
+                    simScoreObj = Double.parseDouble(candidateObjs.get(0).split("\t")[1]);
+                }
 
-                outputWriter.write(subType + "\t" + revSubj + "\t" + revProp + "\t" + revObj + "\t" + objType + "\n");
+                outputWriter.write(simScoreSubj * simScoreObj + "\t"
+                    + Utilities.convertProbabilityToWeight(simScoreSubj * simScoreObj) + "\t" + subType + "\t"
+                    + revSubj + "\t" + revProp + "\t" + revObj + "\t" + objType + "\n");
                 outputWriter.flush();
 
                 candidateSubjs = null;
