@@ -36,7 +36,7 @@ public class PropertyStatisticsImproved
 
     // read the mother mappings file, containing nell triples and possible
     // mappings
-    public static final String INPUT_LOG = "/input/DIRECT_PROP.log"; // INVERSE_PROP.log"; // DIRECT_PROP.log");
+    public static final String INPUT_LOG = "/input/DIRECT_PROP.log"; //sDIRECT_PROP.log"; // INVERSE_PROP.log"; // DIRECT_PROP.log");
 
     // define class logger
     public final static Logger log = LoggerFactory.getLogger(PropertyStatisticsImproved.class);
