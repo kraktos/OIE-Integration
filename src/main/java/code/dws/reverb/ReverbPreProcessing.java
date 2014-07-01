@@ -114,6 +114,9 @@ public class ReverbPreProcessing {
 
 				sCurrentLine = scan.nextLine();
 
+//				if(sCurrentLine.indexOf("consider") != -1)
+//					System.out.println();
+				
 				strArr = sCurrentLine.split(DELIMIT);
 				revSubj = strArr[0].trim();
 				revProp = stemTerm(strArr[1].trim());
@@ -153,6 +156,8 @@ public class ReverbPreProcessing {
 				candidateObjs = null;
 				subType = null;
 				objType = null;
+				simScoreSubj = 0;
+				simScoreObj = 0;
 
 			}
 		} finally {
