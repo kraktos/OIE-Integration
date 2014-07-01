@@ -8,10 +8,9 @@ propAsst(prop, inst, inst)
 
 *propAsstConf(prop, inst, inst, float_)
 
-//conf: !cooccurConf(x, y, conf) v  cooccur(x, y)
-conf: !sameAsConf(x, y, conf) v  sameAs(x, y)
+conf: !propAsstConf(x, y, z, conf) v  propAsst(x, y, z)
 
-!propAsstConf(P, x, y, passconf) v  propAsst(P, x, y).
+
 
 
 

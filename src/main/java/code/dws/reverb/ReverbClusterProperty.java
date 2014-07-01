@@ -52,6 +52,11 @@ public class ReverbClusterProperty {
 
 	}
 
+	/**
+	 * read the pre processed Revverb treiples and cluster them on domain, range
+	 * 
+	 * @param filePath
+	 */
 	private static void readProcessedFile(String filePath) {
 		Scanner scan;
 		String sCurrentLine;
@@ -92,6 +97,14 @@ public class ReverbClusterProperty {
 
 	}
 
+	/**
+	 * put the romain range pair as key and the associated proeprty value with
+	 * weights in a memory collection
+	 * 
+	 * @param pair
+	 * @param property
+	 * @param weight
+	 */
 	private static void updateMap(Pair<String, String> pair, String property,
 			double weight) {
 
@@ -119,7 +132,7 @@ public class ReverbClusterProperty {
 	}
 
 	/**
-	 * write out the clusters
+	 * write out the clusters to a file
 	 * 
 	 * @throws IOException
 	 */
@@ -129,9 +142,6 @@ public class ReverbClusterProperty {
 			outputWriter = new BufferedWriter(new FileWriter(CLUSTERS));
 			for (Entry<Pair<String, String>, Map<String, Double>> e : MAP_CLUSTER
 					.entrySet()) {
-
-				// outputWriter.write("[" + e.getKey().getLeft() + ","
-				// + e.getKey().getRight() + "]" + "\n");
 
 				for (Entry<String, Double> propEntry : e.getValue().entrySet()) {
 
