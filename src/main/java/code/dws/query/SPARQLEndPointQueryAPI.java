@@ -46,8 +46,7 @@ public class SPARQLEndPointQueryAPI
         String sparqlQueryString1 = QUERY;
 
         Query query = QueryFactory.create(sparqlQueryString1);
-        QueryExecution qexec = QueryExecutionFactory.sparqlService(
-                Constants.DBPEDIA_SPARQL_ENDPOINT, query);
+        QueryExecution qexec = QueryExecutionFactory.sparqlService(Constants.DBPEDIA_SPARQL_ENDPOINT_LOCAL, query);
 
         // get the result set
         ResultSet results = qexec.execSelect();
@@ -79,9 +78,9 @@ public class SPARQLEndPointQueryAPI
     public static List<QuerySolution> queryDBPediaEndPoint(final String QUERY, String endpoint)
     {
         if (endpoint == null) {
-            endpoint = Constants.DBPEDIA_SPARQL_ENDPOINT;
+            endpoint = Constants.DBPEDIA_SPARQL_ENDPOINT_LOCAL;
         } else {
-            Constants.DBPEDIA_SPARQL_ENDPOINT = endpoint;
+            Constants.DBPEDIA_SPARQL_ENDPOINT_LOCAL = endpoint;
         }
         return queryDBPediaEndPoint(QUERY);
     }
@@ -91,21 +90,38 @@ public class SPARQLEndPointQueryAPI
         List<QuerySolution> listResults = null;
 
         QueryExecution qexec;
+        ResultSet results = null;
 
         Query query = QueryFactory.create(QUERY);
-        qexec = QueryExecutionFactory.sparqlService(
-                Constants.DBPEDIA_SPARQL_ENDPOINT, query);
+
+        // trying ENDPOINT 1
+        qexec = QueryExecutionFactory.sparqlService(Constants.DBPEDIA_SPARQL_ENDPOINT_LOCAL, query);
         try {
             // get the result set
-            ResultSet results = qexec.execSelect();
-            listResults = ResultSetFormatter.toList(results);
+            results = qexec.execSelect();
 
         } catch (Exception e) {
-            System.out.println(query);
-            e.printStackTrace();
+            try {
+                // trying ENDPOINT 2
+                qexec = QueryExecutionFactory.sparqlService(Constants.DBPEDIA_SPARQL_ENDPOINT, query);
+                results = qexec.execSelect();
 
-        } finally
-        {
+            } catch (Exception ee) {
+
+                try {
+                    // trying ENDPOINT 3
+                    qexec = QueryExecutionFactory.sparqlService(Constants.DBPEDIA_SPARQL_ENDPOINT_LIVE_DBP, query);
+                    results = qexec.execSelect();
+
+                } catch (Exception eee) {
+
+                    System.out.println(query);
+                    eee.printStackTrace();
+                }
+            }
+
+        } finally {
+            listResults = ResultSetFormatter.toList(results);
             qexec.close();
         }
 
@@ -118,12 +134,14 @@ public class SPARQLEndPointQueryAPI
      * @param inst instance
      * @return list of its type
      */
-    public static List<String> getInstanceTypes(String inst) {
+    public static List<String> getInstanceTypes(String inst)
+    {
         List<String> result = new ArrayList<String>();
         String sparqlQuery = null;
 
         try {
-            sparqlQuery = "select ?val where{ <http://dbpedia.org/resource/" + inst
+            sparqlQuery =
+                "select ?val where{ <http://dbpedia.org/resource/" + inst
                     + "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val}";
 
             // fetch the result set
@@ -151,14 +169,14 @@ public class SPARQLEndPointQueryAPI
      * @param inst instance
      * @return list of its type
      */
-    public static List<String> getInstanceTypesAll(String inst) {
+    public static List<String> getInstanceTypesAll(String inst)
+    {
         List<String> result = new ArrayList<String>();
         String sparqlQuery = null;
 
         try {
             ResultSet results = null;
-            sparqlQuery = "select ?val where{ <" + inst
-                    + "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val} ";
+            sparqlQuery = "select ?val where{ <" + inst + "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val} ";
 
             // fetch the result set
             List<QuerySolution> listResults = queryDBPediaEndPoint(sparqlQuery);
@@ -174,12 +192,12 @@ public class SPARQLEndPointQueryAPI
     }
 
     /**
-     * This method finds the highest type in hierarchy given a list of such
-     * types
+     * This method finds the highest type in hierarchy given a list of such types
      * 
      * @param types List of types
      */
-    public static void createClassVsSubclassMap(List<String> types) {
+    public static void createClassVsSubclassMap(List<String> types)
+    {
 
         Set<String> setSubClasses = null;
 
@@ -196,7 +214,8 @@ public class SPARQLEndPointQueryAPI
             // Set to contain the unique list of subclasses
             setSubClasses = new HashSet<String>();
 
-            sparqlQuery = "SELECT ?val WHERE {?val <http://www.w3.org/2000/01/rdf-schema#subClassOf> <"
+            sparqlQuery =
+                "SELECT ?val WHERE {?val <http://www.w3.org/2000/01/rdf-schema#subClassOf> <"
                     + "http://dbpedia.org/ontology/" + key + "> .} ";
 
             // fetch the result set
@@ -204,8 +223,7 @@ public class SPARQLEndPointQueryAPI
 
             for (QuerySolution querySol : listResults) {
                 subClassValue = querySol.get("val").toString();
-                if (subClassValue.indexOf(Constants.DBPEDIA_CONCEPT_NS) != -1)
-                {
+                if (subClassValue.indexOf(Constants.DBPEDIA_CONCEPT_NS) != -1) {
                     subClassValue = subClassValue.replaceAll(Constants.DBPEDIA_CONCEPT_NS, "");
                     // add the sub classes to a set
                     setSubClasses.add(subClassValue);
@@ -218,13 +236,13 @@ public class SPARQLEndPointQueryAPI
     }
 
     /**
-     * iterates the map and removes the types which occurs as subclass in some
-     * other class
+     * iterates the map and removes the types which occurs as subclass in some other class
      * 
      * @param types
      * @return
      */
-    private static List<String> removeChildClasses(List<String> types) {
+    private static List<String> removeChildClasses(List<String> types)
+    {
 
         for (Map.Entry<String, Set<String>> e : classAndSubClassesMap.entrySet()) {
             for (String val : e.getValue()) {
@@ -237,7 +255,8 @@ public class SPARQLEndPointQueryAPI
         return types;
     }
 
-    private static List<String> removeSuperClasses(List<String> types) {
+    private static List<String> removeSuperClasses(List<String> types)
+    {
 
         List<String> subClass = new ArrayList<String>();
 
@@ -264,7 +283,8 @@ public class SPARQLEndPointQueryAPI
      * 
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         String test = "Peter_Pan";
         List<String> types = getInstanceTypes(test);
@@ -281,7 +301,8 @@ public class SPARQLEndPointQueryAPI
      * @param types
      * @return
      */
-    public static List<String> getHighestType(List<String> types) {
+    public static List<String> getHighestType(List<String> types)
+    {
         createClassVsSubclassMap(types);
         types = removeChildClasses(types);
         return types;
@@ -291,7 +312,8 @@ public class SPARQLEndPointQueryAPI
      * @param types
      * @return
      */
-    public static List<String> getLowestType(List<String> types) {
+    public static List<String> getLowestType(List<String> types)
+    {
         List<String> specificType = null;
         createClassVsSubclassMap(types);
         specificType = removeSuperClasses(types);

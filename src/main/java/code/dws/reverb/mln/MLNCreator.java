@@ -64,14 +64,14 @@ public class MLNCreator {
 			sCurrentLine = scan.nextLine();
 
 			strArr = sCurrentLine.split(DELIMIT);
-			weight = 14+Double.parseDouble(strArr[0]);
+			weight = Double.parseDouble(strArr[0]);
 
 			domain = strArr[1];
 			range = strArr[2];
 			property = strArr[3].replaceAll(" ", "_");
 
-			evidenceWriter.write("propAsstConf(\"" + property + "\",\"" + domain
-					+ "\",\"" + range + "\"," + formatter.format(weight) + ")\n");
+			evidenceWriter.write("propAsstConf(\"" + property + "\",\"DBP#ontology/" + domain
+					+ "\",\"DBP#ontology/" + range + "\"," + formatter.format(weight) + ")\n");
 
 			evidenceWriter.flush();
 		}

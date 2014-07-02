@@ -51,6 +51,8 @@ public class DBWrapper
 
     static PreparedStatement insertPrepstmnt = null;
 
+    static PreparedStatement insertReverbPrepstmnt = null;
+
     static PreparedStatement insertBaseLine = null;
 
     static PreparedStatement fetchCountsPrepstmnt = null;
@@ -87,19 +89,6 @@ public class DBWrapper
             // retrieve the freshly created connection instance
             connection = dbConnection.getConnection();
 
-            // create a statement
-            // getSupClassesPrepStmnt = connection
-            // .prepareStatement(NellHierarchyApi.GET_ALL_SUPER_CLASSES);
-            //
-            // getSubClassesPrepStmnt = connection
-            // .prepareStatement(NellHierarchyApi.GET_ALL_SUB_CLASSES);
-            //
-            // getInvRelPrepStmnt = connection
-            // .prepareStatement(NellHierarchyApi.GET_INV_REL);
-            //
-            // getDisjClassPrepStmnt = connection
-            // .prepareStatement(NellHierarchyApi.GET_DISJ_CLASSES);
-
             connection.setAutoCommit(false);
 
         } catch (SQLException ex) {
@@ -116,19 +105,6 @@ public class DBWrapper
             // retrieve the freshly created connection instance
             connection = dbConnection.getConnection();
 
-            // create a statement
-            // getAllPredPrepStmnt = connection
-            // .prepareStatement(PrecisionBL.ALL_INSTANCES_BY_PREDICATE);
-
-            // getAllMatchingPredPrepStmnt = connection
-            // .prepareStatement(PrecisionBL.ALL_MATCHING_INSTANCES_BY_PREDICATE);
-            //
-            // getAllSubPredPrepStmnt =
-            // connection.prepareStatement(PrecisionBL.SUBJECT_PRECISION_SQL);
-            //
-            // getAllObjPredPrepStmnt =
-            // connection.prepareStatement(PrecisionBL.OBJECT_PRECISION_SQL);
-
             connection.setAutoCommit(false);
 
         } catch (SQLException ex) {
@@ -143,7 +119,6 @@ public class DBWrapper
      */
     public static void init(String sql)
     {
-
         try {
             // instantiate the DB connection
             dbConnection = new DBConnection();
@@ -155,16 +130,14 @@ public class DBWrapper
             pstmt = connection.prepareStatement(sql);
             connection.setAutoCommit(false);
 
-            // for nell
-            // insertPrepstmnt =
-            // connection.prepareStatement(Constants.INSERT_GOLD_STANDARD);
-
             // for DBPedia types
             insertDBPTypePrepstmnt = connection.prepareStatement(Constants.INSERT_DBP_TYPES);
             fetchDbpTypePrepstmnt = connection.prepareStatement(Constants.GET_DBPTYPE);
 
             // for reverb
             insertPrepstmnt = connection.prepareStatement(Constants.INSERT_GOLD_STANDARD_REVERB);
+
+            insertReverbPrepstmnt = connection.prepareStatement(Constants.INSERT_REVERB_TYPE_WEIGHTS_SQL);
 
             insertBaseLine = connection.prepareStatement(Constants.INSERT_BASE_LINE);
             // insertBaseLine =
@@ -257,50 +230,43 @@ public class DBWrapper
         return results;
     }
 
-    // public static List<SurfaceFormDao> fetchSurfaceFormsUri(String arg) {
-    // ResultSet rs = null;
-    // List<SurfaceFormDao> results = null;
-    //
-    // try {
-    // pstmt.setString(1, arg);
-    // pstmt.setInt(2, Constants.ATLEAST_LINKS);
-    // pstmt.setInt(3, Constants.TOP_ANCHORS);
-    // // run the query finally
-    // rs = pstmt.executeQuery();
-    // results = new ArrayList<SurfaceFormDao>();
-    //
-    // while (rs.next()) {
-    // results.add(new SurfaceFormDao(rs.getString(1),
-    // "http://dbpedia.org/resource/"
-    // + arg, rs.getInt(2)));
-    // }
-    //
-    // } catch (Exception e) {
-    // logger.error(" exception while fetching " + arg + " " + e.getMessage());
-    // }
-    //
-    // return results;
-    // }
+    public static void saveReverbTypeWeights(double subSim, double objSim, String subType, String sub, String prop,
+        String stemProp, String obj, String objType)
+    {
 
-    // public static void dbRoutine(List<SurfaceFormDao> surfaceForms) {
-    //
-    // try {
-    // insertPrepstmnt =
-    // connection.prepareStatement(Constants.INSERT_SURFACE_FORMS_SQL);
-    //
-    // for (SurfaceFormDao dao : surfaceForms) {
-    // insertPrepstmnt.setString(1, dao.getUri());
-    // insertPrepstmnt.setString(2, dao.getForm().toLowerCase());
-    // insertPrepstmnt.setInt(3, dao.getCount());
-    //
-    // // run the query finally
-    // insertPrepstmnt.executeUpdate();
-    // }
-    // } catch (SQLException e) {
-    //
-    // }
-    //
-    // }
+        try {
+
+            insertReverbPrepstmnt.setDouble(1, subSim);
+            insertReverbPrepstmnt.setDouble(2, objSim);
+            insertReverbPrepstmnt.setString(3, subType);
+            insertReverbPrepstmnt.setString(4, sub);
+            insertReverbPrepstmnt.setString(5, prop);
+            insertReverbPrepstmnt.setString(6, stemProp);
+            insertReverbPrepstmnt.setString(7, obj);
+            insertReverbPrepstmnt.setString(8, objType);
+
+            // insertPrepstmnt.executeUpdate();
+            insertReverbPrepstmnt.addBatch();
+            insertReverbPrepstmnt.clearParameters();
+
+            batchCounter++;
+            // logger.info(batchCounter % Constants.BATCH_SIZE);
+            if (batchCounter % Constants.BATCH_SIZE == 0) { // batches of 100
+                                                            // are flushed at
+                                                            // a time
+                // execute batch update
+                insertReverbPrepstmnt.executeBatch();
+
+                logger.info("FLUSHED TO reverb type...");
+                connection.commit();
+                insertReverbPrepstmnt.clearBatch();
+            }
+
+        } catch (SQLException e) {
+            logger.error("Error with batch insertion of Reverb types .." + e.getMessage());
+        }
+
+    }
 
     public static void saveBaseLine(String ieArg1, String ieRel, String ieArg2, FreeFormFactDao dbPediaTriple)
     {
@@ -438,6 +404,18 @@ public class DBWrapper
         }
     }
 
+    public static void saveResidualReverbData()
+    {
+        try {
+            if (batchCounter % Constants.BATCH_SIZE != 0) {
+                insertReverbPrepstmnt.executeBatch();
+                logger.info("FLUSHED TO Reverb DB...");
+                connection.commit();
+            }
+        } catch (SQLException e) {
+        }
+    }
+
     public static void saveResidualGS()
     {
         try {
@@ -507,7 +485,7 @@ public class DBWrapper
                     .replaceAll("\\]", "\\")));
             }
         } catch (Exception e) {
-//            e.printStackTrace();
+            // e.printStackTrace();
         }
 
         return results;
@@ -610,6 +588,13 @@ public class DBWrapper
         if (fetchDbpTypePrepstmnt != null) {
             try {
                 fetchDbpTypePrepstmnt.close();
+            } catch (Exception excp) {
+            }
+        }
+
+        if (insertReverbPrepstmnt != null) {
+            try {
+                insertReverbPrepstmnt.close();
             } catch (Exception excp) {
             }
         }
@@ -730,7 +715,7 @@ public class DBWrapper
             }
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
         return 0;

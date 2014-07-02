@@ -28,206 +28,210 @@ import code.dws.utils.FileUtil;
 import code.dws.utils.Utilities;
 
 /**
- * this class takes a rax Reverb input, gets the type of top-1 candidate for
- * each instance, and dumps into a file for further analysis
+ * this class takes a rax Reverb input, gets the type of top-1 candidate for each instance, and dumps into a file for
+ * further analysis
  * 
  * @author arnab
  */
-public class ReverbPreProcessing {
+public class ReverbPreProcessing
+{
 
-	// define class logger
-	public final static Logger log = LoggerFactory
-			.getLogger(ReverbPreProcessing.class);
+    // define class logger
+    public final static Logger log = LoggerFactory.getLogger(ReverbPreProcessing.class);
 
-	private static final String PATH_SEPERATOR = "";
+    private static final String PATH_SEPERATOR = "";
 
-	// Reverb original triples file
-	private static final String REVERB_FILE = "/input/highReverb.csv"; // uniq_props.txt";
+    // Reverb original triples file
+    private static final String REVERB_FILE = "/input/highConfidenceReverbData.csv"; // uniq_props.txt";
 
-	private static final String REVERB_PROP_FILE = "/input/test.txt"; // uniq_props.txt";
+    private static final String REVERB_PROP_FILE = "/input/test.txt"; // uniq_props.txt";
 
-	private static final String OUTPUT = "OUTPUT_WEIGHTED.log";
+    private static final String OUTPUT = "REVERB_TYPE_OUTPUT_WEIGHTED.log";
 
-	// defines the top-k candidate to be fetched for each NELL term
-	private static final int SAMEAS_TOPK = 1;
+    // defines the top-k candidate to be fetched for each NELL term
+    private static final int SAMEAS_TOPK = 1;
 
-	static BufferedWriter outputWriter;
+    static BufferedWriter outputWriter;
 
-	static String DELIMIT = ";";
+    static String DELIMIT = ";";
 
-	/*
-	 * remove some prepositions
-	 */
-	static String regex = "\\ban?\\b|\\bbe\\b|\\bof\\b|\\bfor\\b|\\bin\\b"
-			+ "|\\bat\\b|\\bby\\b|\\bto\\b|\\bthe\\b|\\bfrom\\b|\\bon\\b|\\b-\\b";
+    /*
+     * remove some prepositions
+     */
+    static String regex = "\\ban?\\b|\\bbe\\b|\\bof\\b|\\bfor\\b|\\bin\\b"
+        + "|\\bat\\b|\\bby\\b|\\bto\\b|\\bthe\\b|\\bfrom\\b|\\bon\\b|\\b-\\b";
 
-	/**
+    /**
      * 
      */
-	public ReverbPreProcessing() {
-		Constants.USE_LOGIT_FUNC = true;
-	}
+    public ReverbPreProcessing()
+    {
+        Constants.USE_LOGIT_FUNC = true;
+        Constants.BATCH_SIZE = 10;
+    }
 
-	/**
-	 * @param args
-	 * @throws IOException
-	 */
-	public static void main(String[] args) throws IOException {
-		// readPropFiles(REVERB_PROP_FILE);
-		readTriples(REVERB_FILE);
-	}
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException
+    {
+        // readPropFiles(REVERB_PROP_FILE);
+        readTriples(REVERB_FILE);
+    }
 
-	public static void readTriples(String filePath) throws IOException {
-		FileInputStream inputStream = null;
-		Scanner sc = null;
-		String sCurrentLine;
-		String[] strArr = null;
-		String revSubj = null;
-		String revProp = null;
-		String revObj = null;
-		BufferedReader br = null;
+    public static void readTriples(String filePath) throws IOException
+    {
+        FileInputStream inputStream = null;
+        Scanner sc = null;
+        String sCurrentLine;
+        String[] strArr = null;
+        String revSubj = null;
+        String revProp = null;
+        String revObj = null;
+        BufferedReader br = null;
 
-		List<String> candidateSubjs = null;
-		List<String> candidateObjs = null;
+        List<String> candidateSubjs = null;
+        List<String> candidateObjs = null;
 
-		String subType = null;
-		String objType = null;
+        String subType = null;
+        String objType = null;
 
-		double simScoreSubj = 0;
-		double simScoreObj = 0;
+        double simScoreSubj = 0;
+        double simScoreObj = 0;
 
-		String types = null;
+        String types = null;
 
-		outputWriter = new BufferedWriter(new FileWriter(OUTPUT));
+        // outputWriter = new BufferedWriter(new FileWriter(OUTPUT));
 
-		try {
-			Constants.USE_LOGIT_FUNC = true;
-			// init DB
-			DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
+        try {
+            Constants.USE_LOGIT_FUNC = true;
+            // init DB
+            DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
 
-			Scanner scan;
-			scan = new Scanner(
-					ReverbPreProcessing.class.getResourceAsStream(filePath),
-					"UTF-8");
+            Scanner scan;
+            scan = new Scanner(ReverbPreProcessing.class.getResourceAsStream(filePath), "UTF-8");
 
-			while (scan.hasNextLine()) {
+            while (scan.hasNextLine()) {
 
-				sCurrentLine = scan.nextLine();
+                sCurrentLine = scan.nextLine();
 
-//				if(sCurrentLine.indexOf("consider") != -1)
-//					System.out.println();
-				
-				strArr = sCurrentLine.split(DELIMIT);
-				revSubj = strArr[0].trim();
-				revProp = stemTerm(strArr[1].trim());
-				revObj = strArr[2].trim();
+                // if(sCurrentLine.indexOf("consider") != -1)
+                // System.out.println();
 
-				// get the top-k concepts for the subject
-				candidateSubjs = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
-						.cleanse(revSubj).replaceAll("\\_+", " ").trim(),
-						SAMEAS_TOPK);
-				// get the top-k concepts for the object
-				candidateObjs = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
-						.cleanse(revObj).replaceAll("\\_+", " ").trim(),
-						SAMEAS_TOPK);
+                strArr = sCurrentLine.split(DELIMIT);
+                revSubj = strArr[0].trim();
+                revProp = stemTerm(strArr[1].trim());
+                revObj = strArr[2].trim();
 
-				if (candidateSubjs.size() > 0) {
-					subType = getTypeInfo(candidateSubjs.get(0).split("\t")[0]);
-					simScoreSubj = Double.parseDouble(candidateSubjs.get(0)
-							.split("\t")[1]);
-				}
+                // get the top-k concepts for the subject
+                candidateSubjs =
+                    DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(revSubj).replaceAll("\\_+", " ").trim(),
+                        SAMEAS_TOPK);
+                // get the top-k concepts for the object
+                candidateObjs =
+                    DBWrapper.fetchTopKLinksWikiPrepProb(Utilities.cleanse(revObj).replaceAll("\\_+", " ").trim(),
+                        SAMEAS_TOPK);
 
-				if (candidateObjs.size() > 0) {
-					objType = getTypeInfo(candidateObjs.get(0).split("\t")[0]);
-					simScoreObj = Double.parseDouble(candidateObjs.get(0)
-							.split("\t")[1]);
-				}
+                if (candidateSubjs.size() > 0) {
+                    subType = getTypeInfo(candidateSubjs.get(0).split("\t")[0]);
+                    simScoreSubj = Double.parseDouble(candidateSubjs.get(0).split("\t")[1]);
+                }
 
-				outputWriter.write(simScoreSubj
-						* simScoreObj
-						+ "\t"
-						+ Utilities.convertProbabilityToWeight(simScoreSubj
-								* simScoreObj) + "\t" + subType + "\t"
-						+ revSubj + "\t" + revProp + "\t" + revObj + "\t"
-						+ objType + "\n");
-				outputWriter.flush();
+                if (candidateObjs.size() > 0) {
+                    objType = getTypeInfo(candidateObjs.get(0).split("\t")[0]);
+                    simScoreObj = Double.parseDouble(candidateObjs.get(0).split("\t")[1]);
+                }
 
-				candidateSubjs = null;
-				candidateObjs = null;
-				subType = null;
-				objType = null;
-				simScoreSubj = 0;
-				simScoreObj = 0;
+                // flush it to DB
+                DBWrapper.saveReverbTypeWeights(simScoreSubj, simScoreObj, subType, revSubj, strArr[1].trim(), revProp,
+                    revObj, objType);
+                //
+                // outputWriter.write(simScoreSubj + "\t" + simScoreObj + "\t" + subType + "\t" + revSubj + "\t" +
+                // revProp
+                // + "\t" + revObj + "\t" + objType + "\n");
+                // outputWriter.flush();
 
-			}
-		} finally {
-			if (inputStream != null) {
-				inputStream.close();
-			}
+                candidateSubjs = null;
+                candidateObjs = null;
+                subType = null;
+                objType = null;
+                simScoreSubj = 0;
+                simScoreObj = 0;
 
-			outputWriter.close();
+            }
 
-		}
-	}
+            DBWrapper.saveResidualReverbData();
 
-	private static String getTypeInfo(String inst) {
-		String mostSpecificVal = null;
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+            }
 
-		List<String> types = SPARQLEndPointQueryAPI.getInstanceTypes(Utilities
-				.utf8ToCharacter(inst));
+            // shutdown DB
+            DBWrapper.shutDown();
 
-		try {
-			mostSpecificVal = SPARQLEndPointQueryAPI.getLowestType(types)
-					.get(0);
-		} catch (IndexOutOfBoundsException e) {
-		} finally {
-			return mostSpecificVal;
-		}
-	}
+            // outputWriter.close();
+        }
+    }
 
-	private static void readPropFiles(String filePath) throws IOException {
-		// read the file into memory
-		ArrayList<ArrayList<String>> reverbPropFile = FileUtil
-				.genericFileReader(
-						ReverbPreProcessing.class.getResourceAsStream(filePath),
-						PATH_SEPERATOR, false);
+    private static String getTypeInfo(String inst)
+    {
+        String mostSpecificVal = null;
 
-		// iterate
+        List<String> types = SPARQLEndPointQueryAPI.getInstanceTypes(Utilities.utf8ToCharacter(inst));
 
-		String arg1 = null;
-		String arg2 = null;
-		int score = 0;
+        try {
+            mostSpecificVal = SPARQLEndPointQueryAPI.getLowestType(types).get(0);
+        } catch (IndexOutOfBoundsException e) {
+        } finally {
+            return mostSpecificVal;
+        }
+    }
 
-		outputWriter = new BufferedWriter(new FileWriter(OUTPUT));
+    private static void readPropFiles(String filePath) throws IOException
+    {
+        // read the file into memory
+        ArrayList<ArrayList<String>> reverbPropFile =
+            FileUtil.genericFileReader(ReverbPreProcessing.class.getResourceAsStream(filePath), PATH_SEPERATOR, false);
 
-		for (int outer = 0; outer < reverbPropFile.size(); outer++) {
-			arg1 = stemTerm(reverbPropFile.get(outer).get(0));
-			for (int inner = outer + 1; inner < reverbPropFile.size(); inner++) {
-				arg2 = stemTerm(reverbPropFile.get(inner).get(0));
-				score = StringUtils.getLevenshteinDistance(arg1, arg2);
+        // iterate
 
-				log.debug("Comparing " + arg1 + ", " + arg2 + "\t " + score);
-				// outputWriter.write(stemTerm(line.get(0).trim().replaceAll(regex,
-				// "").replaceAll(" ", "~")) + "\n");
-				// outputWriter.flush();
-			}
-		}
+        String arg1 = null;
+        String arg2 = null;
+        int score = 0;
 
-		// outputWriter.close();
-	}
+        outputWriter = new BufferedWriter(new FileWriter(OUTPUT));
 
-	/**
-	 * stem every predicate to reduce to base form
-	 * 
-	 * @param term
-	 * @return
-	 */
+        for (int outer = 0; outer < reverbPropFile.size(); outer++) {
+            arg1 = stemTerm(reverbPropFile.get(outer).get(0));
+            for (int inner = outer + 1; inner < reverbPropFile.size(); inner++) {
+                arg2 = stemTerm(reverbPropFile.get(inner).get(0));
+                score = StringUtils.getLevenshteinDistance(arg1, arg2);
 
-	private static String stemTerm(String term) {
-		PorterStemmer stem = new PorterStemmer();
-		stem.setCurrent(term);
-		stem.stem();
-		return stem.getCurrent();
-	}
+                log.debug("Comparing " + arg1 + ", " + arg2 + "\t " + score);
+                // outputWriter.write(stemTerm(line.get(0).trim().replaceAll(regex,
+                // "").replaceAll(" ", "~")) + "\n");
+                // outputWriter.flush();
+            }
+        }
+
+        // outputWriter.close();
+    }
+
+    /**
+     * stem every predicate to reduce to base form
+     * 
+     * @param term
+     * @return
+     */
+
+    private static String stemTerm(String term)
+    {
+        PorterStemmer stem = new PorterStemmer();
+        stem.setCurrent(term);
+        stem.stem();
+        return stem.getCurrent();
+    }
 
 }

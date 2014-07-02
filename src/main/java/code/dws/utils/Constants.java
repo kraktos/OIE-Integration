@@ -36,7 +36,11 @@ public class Constants
     /**
      * DBPedia End point URL
      */
-    public static String DBPEDIA_SPARQL_ENDPOINT = "http://wifo5-32.informatik.uni-mannheim.de:8891/sparql";
+    public static String DBPEDIA_SPARQL_ENDPOINT_LOCAL = "http://wifo5-32.informatik.uni-mannheim.de:8891/sparql";
+
+    public static String DBPEDIA_SPARQL_ENDPOINT = "http://dbpedia.org/sparql";
+    
+    public static String DBPEDIA_SPARQL_ENDPOINT_LIVE_DBP = "http://live.dbpedia.org/sparql";
 
     // ExperimentAutomation.DBPEDIA_SPARQL_ENDPOINT;
     // "http://wifo5-32.informatik.uni-mannheim.de:8890/sparql";
@@ -245,6 +249,12 @@ public class Constants
         "INSERT INTO axioms (E_ENTITY, CANDIDATE, APRIORI, APOSTERIORI) VALUES (?, ?, ?, ?)";
 
     /**
+     * SQL to insert typed weights for REVERB triples
+     */
+    public static final String INSERT_REVERB_TYPE_WEIGHTS_SQL =
+        "INSERT INTO REVERB_WEIGHTED_TYPES (SUB_SIM, OBJ_SIM ,SUB_TYPE, REVERB_SUB , PROP, STEM_PROP, REVERB_OBJ, OBJ_TYPE) VALUES (?, ?, ?, ?,?, ?, ?, ?)";
+
+    /**
      * SQL to update an axiom after running inference
      */
     public static final String UPDATE_AXIOM_SQL = "UPDATE axioms SET APOSTERIORI=? WHERE  E_ENTITY=? AND CANDIDATE=?";
@@ -446,7 +456,7 @@ public class Constants
     /**
      * defines the batch size for the Data base operations
      */
-    public static final int BATCH_SIZE = ExperimentAutomation.BATCH_SIZE;
+    public static int BATCH_SIZE = 1000;
 
     // select URI, SF, SUM(COUNT), (SUM(COUNT)/(select SUM(COUNT) from wikiPrep
     // where SF = 'satun')) as prob from wikiPrep where SF = 'satun' group by
