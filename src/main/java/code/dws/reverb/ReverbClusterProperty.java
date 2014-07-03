@@ -18,6 +18,7 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import code.dws.dbConnectivity.DBWrapper;
 import code.dws.utils.Constants;
+import code.dws.wordnet.WordNetAPI;
 
 /**
  * this class clubs together properties with similar domain, range distribution
@@ -89,7 +90,11 @@ public class ReverbClusterProperty
                 reverbProperties = val.split("\t")[2].split("~");
 
                 for (String prop : reverbProperties) {
-                    outputWriter.write("\t" + prop + "\n");
+                    outputWriter.write("\t" + prop + "\t" + WordNetAPI.getSynonyms(prop) + "\n");
+
+                    // look for wordnet senses
+                    // System.out.println(prop + "==> " + WordNetAPI.getSynonyms(prop));
+
                 }
 
                 outputWriter.flush();
