@@ -629,6 +629,7 @@ public class Constants
 
     public static String OUTLIER_DETECTION_TECHNIQUE = "KDE";
 
+    
     /*
      * DB Details
      */
@@ -637,7 +638,8 @@ public class Constants
     public static String DRIVER_NAME = "com.mysql.jdbc.Driver";
 
     // Url to conenct to the Database
-    public static String CONNECTION_URL = "jdbc:mysql://134.155.86.39/";
+//    public static String CONNECTION_URL = "jdbc:mysql://134.155.86.39/"; 
+    public static String CONNECTION_URL = "jdbc:mysql://134.155.95.117:3306/";
 
     // name of the database
     public static String DB_NAME = "wikiStat";

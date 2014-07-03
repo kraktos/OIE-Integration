@@ -149,6 +149,7 @@ public class DBWrapper
             // .prepareStatement(PredicateMapper.GET_SAMPLE);
 
         } catch (SQLException ex) {
+            ex.printStackTrace();
             logger.error("Connection Failed! Check output console" + ex.getMessage());
         }
     }
