@@ -39,7 +39,7 @@ public class Constants
     public static String DBPEDIA_SPARQL_ENDPOINT_LOCAL = "http://wifo5-32.informatik.uni-mannheim.de:8891/sparql";
 
     public static String DBPEDIA_SPARQL_ENDPOINT = "http://dbpedia.org/sparql";
-    
+
     public static String DBPEDIA_SPARQL_ENDPOINT_LIVE_DBP = "http://live.dbpedia.org/sparql";
 
     // ExperimentAutomation.DBPEDIA_SPARQL_ENDPOINT;
@@ -308,6 +308,14 @@ public class Constants
      */
     public static final String GET_NELL_PREDICATES =
         "select E_PRED, count(*) as cnt from goldStandardClean group by E_PRED order by cnt desc";
+
+    public static String GET_DISTINCT_REVERB_PROP_CLUSTERS =
+        "select SUB_TYPE, OBJ_TYPE, GROUP_CONCAT(DISTINCT PROP SEPARATOR '~') prop from REVERB_WEIGHTED_TYPES group by SUB_TYPE, OBJ_TYPE having SUB_TYPE <> 'NULL' and OBJ_TYPE <> 'NULL'";
+
+    // "select distinct SUB_TYPE, OBJ_TYPE from REVERB_WEIGHTED_TYPES where SUB_TYPE <> 'NULL' and OBJ_TYPE <> 'NULL'";
+
+    public static final String GET_DISTINCT_REVERB_PROP_FOR_A_DOM_RAN =
+        "select distinct PROP from REVERB_WEIGHTED_TYPES where SUB_TYPE = ? and OBJ_TYPE =  ?";
 
     // "select predicate, count(*) as cnt from nell group by predicate order by cnt desc";
 
@@ -629,7 +637,6 @@ public class Constants
 
     public static String OUTLIER_DETECTION_TECHNIQUE = "KDE";
 
-    
     /*
      * DB Details
      */
@@ -638,7 +645,7 @@ public class Constants
     public static String DRIVER_NAME = "com.mysql.jdbc.Driver";
 
     // Url to conenct to the Database
-//    public static String CONNECTION_URL = "jdbc:mysql://134.155.86.39/"; 
+    // public static String CONNECTION_URL = "jdbc:mysql://134.155.86.39/";
     public static String CONNECTION_URL = "jdbc:mysql://134.155.95.117:3306/";
 
     // name of the database

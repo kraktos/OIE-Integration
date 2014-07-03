@@ -5,15 +5,12 @@ package code.dws.reverb;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -22,7 +19,6 @@ import org.tartarus.snowball.ext.PorterStemmer;
 
 import code.dws.dbConnectivity.DBWrapper;
 import code.dws.query.SPARQLEndPointQueryAPI;
-import code.dws.relationMap.PropertyStatisticsImproved;
 import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
 import code.dws.utils.Utilities;

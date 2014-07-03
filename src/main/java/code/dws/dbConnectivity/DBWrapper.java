@@ -55,6 +55,8 @@ public class DBWrapper
 
     static PreparedStatement insertBaseLine = null;
 
+    static PreparedStatement getReverbProperties = null;
+
     static PreparedStatement fetchCountsPrepstmnt = null;
 
     static PreparedStatement getOccurancePredicatesPrepStmnt = null;
@@ -140,8 +142,8 @@ public class DBWrapper
             insertReverbPrepstmnt = connection.prepareStatement(Constants.INSERT_REVERB_TYPE_WEIGHTS_SQL);
 
             insertBaseLine = connection.prepareStatement(Constants.INSERT_BASE_LINE);
-            // insertBaseLine =
-            // connection.prepareStatement(Constants.INSERT_BASE_LINE_REVERB);
+
+            getReverbProperties = connection.prepareStatement(Constants.GET_DISTINCT_REVERB_PROP_FOR_A_DOM_RAN);
 
             fetchCountsPrepstmnt = connection.prepareStatement(Constants.GET_LINK_COUNT);
 
@@ -492,6 +494,27 @@ public class DBWrapper
         return results;
     }
 
+    public static List<String> fetchDistinctReverbClusterNames()
+    {
+        ResultSet rs = null;
+        List<String> results = null;
+
+        try {
+
+            rs = pstmt.executeQuery();
+            results = new ArrayList<String>();
+
+            while (rs.next()) {
+                results.add(rs.getString(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3));
+            }
+
+        } catch (Exception e) {
+            logger.error(" exception while fetching " + " " + e.getMessage());
+        }
+
+        return results;
+    }
+
     public static List<String> fetchTopKLinksWikiPrepProb(String arg, int limit)
     {
         ResultSet rs = null;
@@ -575,6 +598,13 @@ public class DBWrapper
         if (pstmt != null) {
             try {
                 pstmt.close();
+            } catch (Exception excp) {
+            }
+        }
+
+        if (getReverbProperties != null) {
+            try {
+                getReverbProperties.close();
             } catch (Exception excp) {
             }
         }
@@ -1131,6 +1161,25 @@ public class DBWrapper
         }
         return null;
 
+    }
+
+    public static List<String> getDistinctReverbProperties(String arg1, String arg2)
+    {
+        List<String> distinctProps = new ArrayList<String>();
+
+        try {
+            getReverbProperties.setString(1, arg1);
+            getReverbProperties.setString(2, arg2);
+
+            ResultSet rs = getReverbProperties.executeQuery();
+
+            while (rs.next()) {
+                distinctProps.add(rs.getString(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return distinctProps;
     }
 
     public static List<String> getDisjClasses(String arg)
