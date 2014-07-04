@@ -110,7 +110,7 @@ public class ReverbClusterProperty
     }
 
     /**
-     * read the pre processed Revverb treiples and cluster them on domain, range
+     * read the pre processed Reverb triples and cluster them on domain, range
      * 
      * @param filePath
      */

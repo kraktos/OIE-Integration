@@ -57,6 +57,10 @@ public class DBWrapper
 
     static PreparedStatement getReverbProperties = null;
 
+    static PreparedStatement getReverbPropSubTypes = null;
+
+    static PreparedStatement getReverbPropObjTypes = null;
+
     static PreparedStatement fetchCountsPrepstmnt = null;
 
     static PreparedStatement getOccurancePredicatesPrepStmnt = null;
@@ -144,6 +148,8 @@ public class DBWrapper
             insertBaseLine = connection.prepareStatement(Constants.INSERT_BASE_LINE);
 
             getReverbProperties = connection.prepareStatement(Constants.GET_DISTINCT_REVERB_PROP_FOR_A_DOM_RAN);
+            getReverbPropSubTypes = connection.prepareStatement(Constants.GET_REVERB_PROP_SUB_TYPE_COUNTS);
+            getReverbPropObjTypes = connection.prepareStatement(Constants.GET_REVERB_PROP_OBJ_TYPE_COUNTS);
 
             fetchCountsPrepstmnt = connection.prepareStatement(Constants.GET_LINK_COUNT);
 
@@ -1354,6 +1360,57 @@ public class DBWrapper
             e.printStackTrace();
         }
         return types;
+    }
+
+    public static List<String> fetchTopReverbProperties(long topk)
+    {
+        List<String> types = new ArrayList<String>();
+
+        try {
+            pstmt.setLong(1, topk);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                types.add(rs.getString(1) + "\t" + rs.getString(2));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return types;
+    }
+
+    public static List<String> getSubTypesCount(String prop)
+    {
+        List<String> result = new ArrayList<String>();
+
+        try {
+            getReverbPropSubTypes.setString(1, prop);
+            ResultSet rs = getReverbPropSubTypes.executeQuery();
+
+            while (rs.next()) {
+                result.add(rs.getString(1) + "\t" + rs.getString(2));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public static List<String> getObjTypesCount(String prop)
+    {
+        List<String> result = new ArrayList<String>();
+
+        try {
+            getReverbPropObjTypes.setString(1, prop);
+            ResultSet rs = getReverbPropObjTypes.executeQuery();
+
+            while (rs.next()) {
+                result.add(rs.getString(1) + "\t" + rs.getString(2));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
 }

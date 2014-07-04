@@ -317,7 +317,14 @@ public class Constants
     public static final String GET_DISTINCT_REVERB_PROP_FOR_A_DOM_RAN =
         "select distinct PROP from REVERB_WEIGHTED_TYPES where SUB_TYPE = ? and OBJ_TYPE =  ?";
 
-    // "select predicate, count(*) as cnt from nell group by predicate order by cnt desc";
+    public static final String GET_TOP_PROPERTIES_REVERB =
+        "select distinct PROP, count(*) as c from REVERB_WEIGHTED_TYPES group by PROP order by c desc limit ?";
+
+    public static final String GET_REVERB_PROP_OBJ_TYPE_COUNTS =
+        "select DISTINCT OBJ_TYPE, count(*)  from REVERB_WEIGHTED_TYPES where PROP = ? group by OBJ_TYPE, PROP ";
+
+    public static final String GET_REVERB_PROP_SUB_TYPE_COUNTS =
+        "select DISTINCT SUB_TYPE, count(*)  from REVERB_WEIGHTED_TYPES where PROP = ? group by SUB_TYPE, PROP ";
 
     // *****************OWL
     // PARAMETES***************************************************
