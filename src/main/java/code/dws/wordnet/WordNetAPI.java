@@ -14,7 +14,7 @@ import edu.smu.tspell.wordnet.*;
 public class WordNetAPI
 {
     static {
-        System.setProperty("wordnet.database.dir", "/home/arnab/Work/data/Wordnet/WordNet-3.0/dict/");
+        System.setProperty("wordnet.database.dir", "/home/adutta/WordNet-3.0/dict/");
     }
 
     /**
