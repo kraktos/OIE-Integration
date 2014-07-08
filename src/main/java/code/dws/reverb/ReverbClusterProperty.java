@@ -17,6 +17,7 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import code.dws.dbConnectivity.DBWrapper;
 import code.dws.utils.Constants;
+import code.dws.wordnet.SimilatityWebService;
 import code.dws.wordnet.WordNetAPI;
 
 /**
@@ -38,7 +39,7 @@ public class ReverbClusterProperty
      */
     private static final String CLUSTERS = "CLUSTERS_TYPE";
 
-    private static final String CLUSTERS_WORDNET = "CLUSTERS_WORDNET";
+    private static final String CLUSTERS_WORDNET = "CLUSTERS_UMBC";
 
     /**
      * 
@@ -83,7 +84,10 @@ public class ReverbClusterProperty
                     // WordNetAPI.scoreWordNet(results.get(id).split(" "), results.get(id2).split(" ")));
 
                     outputWriter.write(results.get(id) + "\t" + results.get(id2) + " ==> "
-                        + WordNetAPI.scoreWordNet(results.get(id).split(" "), results.get(id2).split(" ")) + "\n");
+                        + SimilatityWebService.getSimScore(results.get(id), results.get(id2) + "\n"));
+
+                    // outputWriter.write(results.get(id) + "\t" + results.get(id2) + " ==> "
+                    // + WordNetAPI.scoreWordNet(results.get(id).split(" "), results.get(id2).split(" ")) + "\n");
                 }
                 outputWriter.flush();
             }
