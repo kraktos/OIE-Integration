@@ -500,6 +500,28 @@ public class DBWrapper
         return results;
     }
 
+    public static List<String> fetchDistinctReverbProperties(int k)
+    {
+        ResultSet rs = null;
+        List<String> results = null;
+
+        try {
+
+            pstmt.setInt(1, k);
+            rs = pstmt.executeQuery();
+            results = new ArrayList<String>();
+
+            while (rs.next()) {
+                results.add(rs.getString(1));
+            }
+
+        } catch (Exception e) {
+            logger.error(" exception while fetching " + " " + e.getMessage());
+        }
+
+        return results;
+    }
+
     public static List<String> fetchDistinctReverbClusterNames()
     {
         ResultSet rs = null;

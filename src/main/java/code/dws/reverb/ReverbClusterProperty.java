@@ -6,7 +6,6 @@ package code.dws.reverb;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +38,8 @@ public class ReverbClusterProperty
      */
     private static final String CLUSTERS = "CLUSTERS_TYPE";
 
+    private static final String CLUSTERS_WORDNET = "CLUSTERS_WORDNET";
+
     /**
      * 
      */
@@ -56,8 +57,11 @@ public class ReverbClusterProperty
      */
     public static void main(String[] args) throws IOException
     {
+        getWordNetSimScores();
 
-        getDistinctClusterNames();
+        // getDistinctClusterNames(new String[][] {new String[] {"is a member of"}, new String[]
+        // {"is an active member of"}, new String[] {"is the spouse of"}, new String[] {"located in"}, new String[]
+        // {"will take place in"}});
 
         // readProcessedFile(PREPROCESSED_REVERBFILE);
 
@@ -65,41 +69,24 @@ public class ReverbClusterProperty
 
     }
 
-    /**
-     * method to get the baseline cluster without any MLN or intelligent ways
-     * 
-     * @throws IOException
-     */
-    private static void getDistinctClusterNames() throws IOException
+    private static void getWordNetSimScores() throws IOException
     {
-        String[] reverbProperties = null;
-
-        BufferedWriter outputWriter = new BufferedWriter(new FileWriter(CLUSTERS));
+        BufferedWriter outputWriter = new BufferedWriter(new FileWriter(CLUSTERS_WORDNET));
 
         // init DB
-        DBWrapper.init(Constants.GET_DISTINCT_REVERB_PROP_CLUSTERS);
-
+        DBWrapper.init(Constants.GET_DISTINCT_REVERB_PROPERTIES);
         try {
-            List<String> results = DBWrapper.fetchDistinctReverbClusterNames();
+            List<String> results = DBWrapper.fetchDistinctReverbProperties(100);
+            for (int id = 0; id < results.size(); id++) {
+                for (int id2 = id + 1; id2 < results.size(); id2++) {
+                    // System.out.println(results.get(id) + "\t" + results.get(id2) + " ==> " +
+                    // WordNetAPI.scoreWordNet(results.get(id).split(" "), results.get(id2).split(" ")));
 
-            // iterate the distinct cluster names = [Domain, Range]
-            for (String val : results) {
-
-                outputWriter.write(val.split("\t")[0] + "\t" + val.split("\t")[1] + "\n");
-
-                reverbProperties = val.split("\t")[2].split("~");
-
-                for (String prop : reverbProperties) {
-                    outputWriter.write("\t" + prop + "\t" + WordNetAPI.getSynonyms(prop) + "\n");
-
-                    // look for wordnet senses
-                    // System.out.println(prop + "==> " + WordNetAPI.getSynonyms(prop));
-
+                    outputWriter.write(results.get(id) + "\t" + results.get(id2) + " ==> "
+                        + WordNetAPI.scoreWordNet(results.get(id).split(" "), results.get(id2).split(" ")) + "\n");
                 }
-
                 outputWriter.flush();
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -107,6 +94,63 @@ public class ReverbClusterProperty
             DBWrapper.shutDown();
         }
 
+    }
+
+    /**
+     * method to get the baseline cluster without any MLN or intelligent ways
+     * 
+     * @param strings
+     * @throws IOException
+     */
+    private static void getDistinctClusterNames(String[][] strings) throws IOException
+    {
+        String[] reverbProperties = null;
+
+        if (strings.length == 0) {
+
+            BufferedWriter outputWriter = new BufferedWriter(new FileWriter(CLUSTERS));
+
+            // init DB
+            DBWrapper.init(Constants.GET_DISTINCT_REVERB_PROP_CLUSTERS);
+
+            try {
+                List<String> results = DBWrapper.fetchDistinctReverbClusterNames();
+
+                // iterate the distinct cluster names = [Domain, Range]
+                for (String val : results) {
+
+                    outputWriter.write(val.split("\t")[0] + "\t" + val.split("\t")[1] + "\n");
+
+                    reverbProperties = val.split("\t")[2].split("~");
+
+                    for (String prop : reverbProperties) {
+                        outputWriter.write("\t" + prop + "\t" + WordNetAPI.getSynonyms(prop) + "\n");
+
+                        // look for wordnet senses
+                        // System.out.println(prop + "==> " + WordNetAPI.getSynonyms(prop));
+
+                    }
+
+                    outputWriter.flush();
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                outputWriter.close();
+                DBWrapper.shutDown();
+            }
+        } else {
+
+            // compute the intra property sim score using Wordnet
+            for (int outer = 0; outer < strings.length - 1; outer++) {
+                for (int inner = outer + 1; inner < strings.length; inner++) {
+                    System.out
+                        .println("COMPARING:  " + strings[outer][0].toString() + " \t " + strings[inner][0].toString()
+                            + "\t" + WordNetAPI.scoreWordNet(strings[outer], strings[inner]));
+                }
+            }
+        }
     }
 
     /**

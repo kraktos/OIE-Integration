@@ -309,6 +309,11 @@ public class Constants
     public static final String GET_NELL_PREDICATES =
         "select E_PRED, count(*) as cnt from goldStandardClean group by E_PRED order by cnt desc";
 
+    public static String GET_DISTINCT_REVERB_PROPERTIES =
+        "select distinct(PROP), count(*) as c from REVERB_WEIGHTED_TYPES group by PROP order by c desc limit ?";
+
+    // "select distinct(PROP) from REVERB_WEIGHTED_TYPES";
+
     public static String GET_DISTINCT_REVERB_PROP_CLUSTERS =
         "select SUB_TYPE, OBJ_TYPE, GROUP_CONCAT(DISTINCT PROP SEPARATOR '~') prop from REVERB_WEIGHTED_TYPES group by SUB_TYPE, OBJ_TYPE having SUB_TYPE <> 'NULL' and OBJ_TYPE <> 'NULL'";
 
