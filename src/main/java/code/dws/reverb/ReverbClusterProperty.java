@@ -84,7 +84,7 @@ public class ReverbClusterProperty
                     // WordNetAPI.scoreWordNet(results.get(id).split(" "), results.get(id2).split(" ")));
 
                     outputWriter.write(results.get(id) + "\t" + results.get(id2) + " ==> "
-                        + SimilatityWebService.getSimScore(results.get(id), results.get(id2) + "\n"));
+                        + SimilatityWebService.getSimScore(results.get(id), results.get(id2)) + "\n");
 
                     // outputWriter.write(results.get(id) + "\t" + results.get(id2) + " ==> "
                     // + WordNetAPI.scoreWordNet(results.get(id).split(" "), results.get(id2).split(" ")) + "\n");
