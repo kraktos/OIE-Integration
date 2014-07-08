@@ -19,9 +19,16 @@ import org.apache.http.util.EntityUtils;
 
 public class SimilatityWebService
 {
+    public static void main(String[] args) throws Exception
+    {
+        System.out.println(getSimScore("be in", "turn to"));
+
+    }
+
     public static double getSimScore(String arg1, String arg2) throws Exception
     {
         String response = null;
+        double score = 0;
 
         String uri = "http://swoogle.umbc.edu/SimService/GetSimilarity?operation=api";
 
@@ -50,8 +57,16 @@ public class SimilatityWebService
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return (response != null && response.length() > 0) ? Double.valueOf(response) : 0;
+
+        try {
+            if (response.trim().equals("-Infinity"))
+                throw new Exception();
+            score = Double.valueOf(response.trim());
+        } catch (Exception e) {
+            score = 0;
+        }
+
+        return score;
 
     }
-
 }
