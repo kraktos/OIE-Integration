@@ -153,7 +153,6 @@ public class MLNOutputParser {
 
 			mapPairValues.put(sCurrentLine.split(", ")[0],
 					sCurrentLine.split(", ")[1]);
-			System.out.println(sCurrentLine);
 		}
 
 		return mapPairValues;
