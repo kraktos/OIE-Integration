@@ -1,0 +1,40 @@
+
+// ****************** hidden predicates ******************
+
+propAsst(prop, inst, inst)
+
+
+// ****************** observed predicates ******************
+
+*propAsstConf(prop, inst, inst, float_)
+*csub(inst, inst)
+*cdis(class, class)
+
+//conf: !propAsstConf(x, y, z, conf) v  propAsst(x, y, z)
+
+
+
+//*****************************************
+//********** T-Box rules (HARD) ***********
+//*****************************************
+
+// => csub(A, A)
+csub(A,A).
+
+//csub(A,B) and csub(B,C) => csub(A,C)
+!csub(A,B) v !csub(B,C) v csub(A,C).
+
+//cdis(A,B) => cdis(B,A)
+!cdis(A,B) v cdis(B,A).
+
+//csub(A,B) and cdis(B,C) => cdis(A,C)
+!csub(A,B) v !cdis(B,C) v cdis(A,C).
+
+//not cdis(A,A)
+!cdis(A,A).
+
+
+// RULE
+
+conf: !propAsstConf(P, d, r, conf) v !csub(d, dsup) v !csub(r, rsup) v !propAsstConf(P, dsup, rsup, conf) v propAsst(P, d, r)
+
