@@ -34,7 +34,7 @@ public class ReverbClusterProperty {
 	/**
 	 * top K most frequent Reverb properties
 	 */
-	private static int TOPK_REV_PROPS = 10;
+	public static int TOPK_REV_PROPS = 10;
 
 	private static final String DELIMIT = "\t";
 
@@ -136,7 +136,7 @@ public class ReverbClusterProperty {
 	 * 
 	 * @return List of properties
 	 */
-	private static List<String> getReverbProperties() {
+	public static List<String> getReverbProperties() {
 
 		try {
 			// init DB
