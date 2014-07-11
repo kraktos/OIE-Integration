@@ -1,8 +1,7 @@
 
 // ****************** hidden predicates ******************
 
-sameAsPropWN(prop, prop)
-
+sameAsProp(prop, prop)
 
 // ****************** observed predicates ******************
 
@@ -10,12 +9,13 @@ sameAsPropWN(prop, prop)
 *sameAsPropJacConf(prop, prop, float_)
 
 //*sameAsPropWN(prop, prop)
-*sameAsPropJac(prop, prop)
+//*sameAsPropJac(prop, prop)
 
-conf: !sameAsPropWNConf(x, y, conf) v  sameAsPropWN(x, y)
-conf: !sameAsPropJacConf(x, y, conf) v  sameAsPropJac(x, y)
+conf: !sameAsPropWNConf(x, y, conf) v  sameAsProp(x, y)
+
+conf: !sameAsPropJacConf(x, y, conf) v  sameAsProp(x, y)
 
 
-f1: !sameAsPropJacConf(A,B,f1) v  !sameAsPropWNConf(A,B, f2) v sameAsPropWN(A,B)
+//f1: !sameAsPropJacConf(A,B,f1) v  !sameAsPropWNConf(A,B, f2) v sameAsProp(A,B)
 
-|B| sameAsPropWN(A, B) <= 1
+|B| sameAsProp(A, B) <= 1

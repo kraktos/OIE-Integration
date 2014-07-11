@@ -4,7 +4,6 @@
 package code.dws.reverb;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -27,7 +26,7 @@ public class KClustersAlgo {
 	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_500";
 	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_500";
 
-	private static final int SEED = 50;
+	private static int SEED = 100;
 
 	private static List<String> reverbProperties = null;
 
@@ -41,9 +40,11 @@ public class KClustersAlgo {
 	 */
 	public static void main(String[] args) {
 
+		if (args.length > 0)
+			SEED = Integer.parseInt(args[0]);
+
 		// feed seedc count and generate K-random cluster points
 		List<String> seedReverbProperties = generateKRandomSeed(SEED);
-		System.out.println(seedReverbProperties);
 
 		// load the scores in memeory
 		loadScores(WORDNET_SCORES);
@@ -63,6 +64,7 @@ public class KClustersAlgo {
 
 		System.out.println(K_CLUSTER_MAP.size());
 		int k = 1;
+
 		for (Entry<String, List<String>> e : K_CLUSTER_MAP.entrySet()) {
 			System.out.println(" \n************  Cluster " + k++
 					+ " **************** ");
@@ -71,7 +73,6 @@ public class KClustersAlgo {
 				System.out.println("\t" + val);
 			}
 		}
-
 	}
 
 	/**
@@ -110,7 +111,6 @@ public class KClustersAlgo {
 			SCORE_MAP.put(pair, score);
 			// System.out.println(sCurrentLine);
 		}
-
 	}
 
 	/**
@@ -214,7 +214,11 @@ public class KClustersAlgo {
 	private static List<String> getRandomProps(int seedK) {
 		List<String> temp = new LinkedList<String>(reverbProperties);
 		Collections.shuffle(temp);
-		return temp.subList(0, seedK);
+		List<String> seeedList = temp.subList(0, seedK);
+		for (String k : seeedList) {
+			reverbProperties.remove(k);
+		}
+		return seeedList;
 	}
 
 }
