@@ -129,6 +129,7 @@ public class MLNCreator {
 
 	}
 
+	@SuppressWarnings({ "resource", "unused" })
 	private static void createGroundTruths(String weightedAssertionFile)
 			throws IOException {
 		Scanner scan;

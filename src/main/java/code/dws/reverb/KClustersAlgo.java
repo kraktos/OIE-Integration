@@ -26,14 +26,34 @@ public class KClustersAlgo {
 	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_500";
 	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_500";
 
-	private static int SEED = 100;
+	private static int SEED = 50;
 
 	private static List<String> reverbProperties = null;
+	private static List<String> seedReverbProperties = null;
 
 	private static Map<Pair<String, String>, Double> SCORE_MAP = new HashMap<Pair<String, String>, Double>();
 
 	// cluster placeholder
 	private static Map<String, List<String>> K_CLUSTER_MAP = new HashMap<String, List<String>>();
+
+	/**
+	 * 
+	 */
+	public static void init() {
+		// feed seedc count and generate K-random cluster points
+		seedReverbProperties = generateKRandomSeed();
+
+		// load the scores in memeory
+		loadScores(WORDNET_SCORES);
+		loadScores(JACCARD_SCORES);
+	}
+
+	/**
+	 * @return the reverbProperties
+	 */
+	public static List<String> getReverbProperties() {
+		return reverbProperties;
+	}
 
 	/**
 	 * @param args
@@ -43,18 +63,20 @@ public class KClustersAlgo {
 		if (args.length > 0)
 			SEED = Integer.parseInt(args[0]);
 
-		// feed seedc count and generate K-random cluster points
-		List<String> seedReverbProperties = generateKRandomSeed(SEED);
-
-		// load the scores in memeory
-		loadScores(WORDNET_SCORES);
-		loadScores(JACCARD_SCORES);
+		init();
 
 		// perform clustering with the K-seed properties
-		doKClustering(seedReverbProperties);
+		doKClustering();
 
 		// write out the clusters
 		printCluster();
+	}
+
+	/**
+	 * @return the sCORE_MAP
+	 */
+	public static Map<Pair<String, String>, Double> getScoreMap() {
+		return SCORE_MAP;
 	}
 
 	/**
@@ -118,7 +140,7 @@ public class KClustersAlgo {
 	 * 
 	 * @param seedReverbProperties
 	 */
-	private static void doKClustering(List<String> seedReverbProperties) {
+	private static void doKClustering() {
 
 		double bestScore;
 		String bestSeedProp = null;
@@ -189,13 +211,14 @@ public class KClustersAlgo {
 	 * @param seed2
 	 * @return
 	 */
-	private static List<String> generateKRandomSeed(int seed2) {
+	private static List<String> generateKRandomSeed() {
 
 		ReverbClusterProperty.TOPK_REV_PROPS = 500;
 		// call DBand retrieve a set of TOPK properties
 		reverbProperties = ReverbClusterProperty.getReverbProperties();
 
-		List<String> temp = getRandomProps(SEED);
+		List<String> temp = getRandomProps((SEED < ReverbClusterProperty.TOPK_REV_PROPS) ? SEED
+				: ReverbClusterProperty.TOPK_REV_PROPS);
 
 		for (String p : temp) {
 			K_CLUSTER_MAP.put(p, new ArrayList<String>());
@@ -212,6 +235,7 @@ public class KClustersAlgo {
 	 * @return
 	 */
 	private static List<String> getRandomProps(int seedK) {
+
 		List<String> temp = new LinkedList<String>(reverbProperties);
 		Collections.shuffle(temp);
 		List<String> seeedList = temp.subList(0, seedK);

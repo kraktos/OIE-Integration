@@ -10,26 +10,19 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.hp.hpl.jena.query.QuerySolution;
-
-import sun.swing.plaf.synth.Paint9Painter;
 
 import code.dws.dao.Pair;
 import code.dws.experiment.ExperimentAutomation;
 import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.utils.Constants;
 import code.dws.utils.Utilities;
+
+import com.hp.hpl.jena.query.QuerySolution;
 
 /**
  * This class is responsible for clustering the properties from NELL with
