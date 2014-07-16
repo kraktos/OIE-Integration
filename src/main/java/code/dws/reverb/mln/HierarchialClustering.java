@@ -21,7 +21,7 @@ import com.apporiented.algorithm.clustering.DefaultClusteringAlgorithm;
  * @author adutta
  * 
  */
-public class HierarchialCLustering {
+public class HierarchialClustering {
 
 	static List<String> props;
 	static Map<Pair<String, String>, Double> map;
@@ -36,6 +36,13 @@ public class HierarchialCLustering {
 
 		createDataMatrix();
 
+		// for (int outer = 0; outer < names.length; outer++) {
+		// for (int inner = 0; inner < names.length; inner++) {
+		// System.out.print(distances[outer][inner] + "\t\t");
+		// }
+		// System.out.println();
+		// }
+
 		Cluster cluster = performClustering();
 
 		levelWisePrinting(cluster, 1);
@@ -44,12 +51,32 @@ public class HierarchialCLustering {
 	private static void levelWisePrinting(Cluster c, int count) {
 
 		for (Cluster cluster : c.getChildren()) {
-			for (int i = 0; i < count; i++) {
-				System.out.print("\t\t");
-			}
-			System.out.println(cluster.toString());
-			levelWisePrinting(cluster, count + 1);
+			// for (int i = 0; i < count; i++) {
+			// System.out.print("\t\t");
+			// }
+			// levelWisePrinting(cluster, count + 1);
 
+			System.out.println(cluster.toString());
+			for (Cluster c1 : cluster.getChildren()) {
+				System.out.println("\t" + c1.toString());
+				for (Cluster c2 : c1.getChildren()) {
+					System.out.println("\t\t" + c2.toString());
+					for (Cluster c3 : c2.getChildren()) {
+						System.out.println("\t\t\t" + c3.toString());
+						for (Cluster c4 : c3.getChildren()) {
+							System.out.println("\t\t\t\t" + c4.toString());
+							for (Cluster c5 : c4.getChildren()) {
+								System.out
+										.println("\t\t\t\t\t" + c5.toString());
+								for (Cluster c6 : c5.getChildren()) {
+									System.out.println("\t\t\t\t\t\t"
+											+ c6.toString());
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -64,7 +91,7 @@ public class HierarchialCLustering {
 		System.out.println("Clustering please wait...");
 		ClusteringAlgorithm alg = new DefaultClusteringAlgorithm();
 		Cluster cluster = alg.performClustering(distances, names,
-				new CompleteLinkageStrategy());
+				new AverageLinkageStrategy());
 
 		return cluster;
 

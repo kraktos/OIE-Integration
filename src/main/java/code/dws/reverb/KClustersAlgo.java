@@ -25,8 +25,9 @@ public class KClustersAlgo {
 
 	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_500";
 	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_500";
+	private static final int TOPK_REVERB_PROPERTIES = 100;
 
-	private static int SEED = 50;
+	private static int SEED = (int) (0.2 * TOPK_REVERB_PROPERTIES);
 
 	private static List<String> reverbProperties = null;
 	private static List<String> seedReverbProperties = null;
@@ -84,7 +85,6 @@ public class KClustersAlgo {
 	 */
 	private static void printCluster() {
 
-		System.out.println(K_CLUSTER_MAP.size());
 		int k = 1;
 
 		for (Entry<String, List<String>> e : K_CLUSTER_MAP.entrySet()) {
@@ -130,7 +130,7 @@ public class KClustersAlgo {
 			} else {
 				score = Double.valueOf(sCurrentLine.split(", ")[2]);
 			}
-			SCORE_MAP.put(pair, score);
+			SCORE_MAP.put(pair, score - 0.5);
 			// System.out.println(sCurrentLine);
 		}
 	}
@@ -213,12 +213,12 @@ public class KClustersAlgo {
 	 */
 	private static List<String> generateKRandomSeed() {
 
-		ReverbClusterProperty.TOPK_REV_PROPS = 500;
+		ReverbClusterProperty.TOPK_REV_PROPS = TOPK_REVERB_PROPERTIES;
 		// call DBand retrieve a set of TOPK properties
 		reverbProperties = ReverbClusterProperty.getReverbProperties();
 
-		List<String> temp = getRandomProps((SEED < ReverbClusterProperty.TOPK_REV_PROPS) ? SEED
-				: ReverbClusterProperty.TOPK_REV_PROPS);
+		List<String> temp = getRandomProps((SEED < TOPK_REVERB_PROPERTIES) ? SEED
+				: TOPK_REVERB_PROPERTIES);
 
 		for (String p : temp) {
 			K_CLUSTER_MAP.put(p, new ArrayList<String>());
@@ -239,9 +239,9 @@ public class KClustersAlgo {
 		List<String> temp = new LinkedList<String>(reverbProperties);
 		Collections.shuffle(temp);
 		List<String> seeedList = temp.subList(0, seedK);
-		for (String k : seeedList) {
-			reverbProperties.remove(k);
-		}
+		// for (String k : seeedList) {
+		// reverbProperties.remove(k);
+		// }
 		return seeedList;
 	}
 
