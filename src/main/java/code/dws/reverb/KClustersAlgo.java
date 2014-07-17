@@ -23,8 +23,8 @@ import org.apache.commons.lang3.tuple.Pair;
  */
 public class KClustersAlgo {
 
-	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_500";
-	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_500";
+	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_100";
+	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_100";
 	private static final int TOPK_REVERB_PROPERTIES = 100;
 
 	private static int SEED = (int) (0.2 * TOPK_REVERB_PROPERTIES);
@@ -45,8 +45,8 @@ public class KClustersAlgo {
 		seedReverbProperties = generateKRandomSeed();
 
 		// load the scores in memeory
-		loadScores(WORDNET_SCORES);
-		loadScores(JACCARD_SCORES);
+		loadScores(WORDNET_SCORES, "sameAsPropWNConf");
+//		loadScores(JACCARD_SCORES, "sameAsPropJacConf");
 	}
 
 	/**
@@ -101,9 +101,10 @@ public class KClustersAlgo {
 	 * load in memory all the scores, Wordnet similarity and jaccard ones
 	 * 
 	 * @param file
+	 * @param arg
 	 */
 	@SuppressWarnings("resource")
-	private static void loadScores(String file) {
+	private static void loadScores(String file, String arg) {
 
 		String sCurrentLine;
 		double score;
@@ -116,7 +117,7 @@ public class KClustersAlgo {
 
 		while (scan.hasNextLine()) {
 			sCurrentLine = scan.nextLine();
-			sCurrentLine = sCurrentLine.replaceAll("sameAsPropWNConf\\(", "")
+			sCurrentLine = sCurrentLine.replaceAll("" + arg + "\\(", "")
 					.replaceAll("\\)", "").replaceAll("\"", "");
 
 			pair = new ImmutablePair<String, String>(
@@ -130,7 +131,8 @@ public class KClustersAlgo {
 			} else {
 				score = Double.valueOf(sCurrentLine.split(", ")[2]);
 			}
-			SCORE_MAP.put(pair, score - 0.5);
+
+			SCORE_MAP.put(pair, score);
 			// System.out.println(sCurrentLine);
 		}
 	}
