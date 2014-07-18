@@ -3,6 +3,10 @@
  */
 package code.dws.reverb;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,6 +19,8 @@ import java.util.Scanner;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
+import code.dws.utils.Constants;
+
 /**
  * define K seed of random properties and start clustertinga
  * 
@@ -23,9 +29,11 @@ import org.apache.commons.lang3.tuple.Pair;
  */
 public class KClustersAlgo {
 
-	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_100";
-	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_100";
-	private static final int TOPK_REVERB_PROPERTIES = 100;
+	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_1000";
+	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_1000";
+	private static final int TOPK_REVERB_PROPERTIES = 1000;
+
+	private static final String ALL_SCORES = "COMBINED_SCORE.tsv";
 
 	private static int SEED = (int) (0.2 * TOPK_REVERB_PROPERTIES);
 
@@ -46,7 +54,7 @@ public class KClustersAlgo {
 
 		// load the scores in memeory
 		loadScores(WORDNET_SCORES, "sameAsPropWNConf");
-//		loadScores(JACCARD_SCORES, "sameAsPropJacConf");
+		loadScores(JACCARD_SCORES, "sameAsPropJacConf");
 	}
 
 	/**
@@ -58,19 +66,40 @@ public class KClustersAlgo {
 
 	/**
 	 * @param args
+	 * @throws IOException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		if (args.length > 0)
 			SEED = Integer.parseInt(args[0]);
 
 		init();
 
+		ioRoutine();
+		System.out.println("Dumped combined scores to " + ALL_SCORES);
+
 		// perform clustering with the K-seed properties
 		doKClustering();
 
 		// write out the clusters
 		printCluster();
+	}
+
+	/**
+	 * a sub routine to dump the values of the pair wise scores to a file.
+	 * required for clustering
+	 * 
+	 * @throws IOException
+	 */
+	private static void ioRoutine() throws IOException {
+		BufferedWriter ioWriter = new BufferedWriter(new FileWriter(ALL_SCORES));
+		for (Entry<Pair<String, String>, Double> e : SCORE_MAP.entrySet()) {
+			ioWriter.write(e.getKey().getLeft() + "\t" + e.getKey().getRight()
+					+ "\t" + Constants.formatter.format(e.getValue()) + "\n");
+		}
+
+		ioWriter.flush();
+		ioWriter.close();
 	}
 
 	/**
@@ -125,14 +154,15 @@ public class KClustersAlgo {
 					sCurrentLine.split(", ")[1].trim());
 
 			if (SCORE_MAP.containsKey(pair)) {
-				score = SCORE_MAP.get(pair)
-						+ Double.valueOf(sCurrentLine.split(", ")[2]);
+				score = (double) (SCORE_MAP.get(pair) + Double
+						.valueOf(sCurrentLine.split(", ")[2])) / 2;
 
 			} else {
 				score = Double.valueOf(sCurrentLine.split(", ")[2]);
 			}
 
 			SCORE_MAP.put(pair, score);
+
 			// System.out.println(sCurrentLine);
 		}
 	}

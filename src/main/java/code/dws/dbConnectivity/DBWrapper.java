@@ -62,6 +62,8 @@ public class DBWrapper {
 
 	static PreparedStatement getReverbPropObjTypes = null;
 
+	static PreparedStatement getReverbInstancesPrepStmnt = null;
+
 	static PreparedStatement fetchCountsPrepstmnt = null;
 
 	static PreparedStatement getOccurancePredicatesPrepStmnt = null;
@@ -159,6 +161,8 @@ public class DBWrapper {
 			getReverbPropObjTypes = connection
 					.prepareStatement(Constants.GET_REVERB_PROP_OBJ_TYPE_COUNTS);
 
+			getReverbInstancesPrepStmnt = connection
+					.prepareStatement(Constants.GET_REVERB_INSTS_FOR_A_PROPERTY);
 			fetchCountsPrepstmnt = connection
 					.prepareStatement(Constants.GET_LINK_COUNT);
 
@@ -1454,13 +1458,44 @@ public class DBWrapper {
 			String propArg) {
 		List<ImmutablePair<String, String>> result = new ArrayList<ImmutablePair<String, String>>();
 
+		String reverbSub = null;
+		String reverbObj = null;
+
+		String dbpSub = null;
+		String dbpObj = null;
+
+		ResultSet rs2 = null;
+		ResultSet rs3 = null;
+
 		try {
-			pstmt.setString(1, propArg);
-			ResultSet rs = pstmt.executeQuery();
+			getReverbInstancesPrepStmnt.setString(1, propArg);
+			ResultSet rs = getReverbInstancesPrepStmnt.executeQuery();
 
 			while (rs.next()) {
-				result.add(new ImmutablePair<String, String>(rs.getString(1),
-						rs.getString(2)));
+				reverbSub = rs.getString(1);
+				reverbObj = rs.getString(2);
+
+//				pstmt.setString(1, reverbSub);
+//				try {
+//					rs2 = pstmt.executeQuery();
+//					while (rs2.next()) {
+//						dbpSub = rs2.getString(1);
+//					}
+//				} catch (Exception e1) {
+//					dbpSub = reverbSub;
+//				}
+//
+//				pstmt.setString(1, reverbObj);
+//				try {
+//					rs3 = pstmt.executeQuery();
+//					while (rs3.next()) {
+//						dbpObj = rs3.getString(1);
+//					}
+//				} catch (Exception e) {
+//					dbpObj = reverbObj;
+//				}
+
+				result.add(new ImmutablePair<String, String>(reverbSub, reverbObj));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

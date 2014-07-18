@@ -273,6 +273,7 @@ public class Constants {
 	 */
 	public static final String GET_WIKI_TITLES_SQL = "select URI, SUM(COUNT) as cnt from wikiPrep where SF = ? group by BINARY URI order by cnt desc limit ?";
 
+	public static final String GET_MOST_FREQUENT_SENSE = "select  URI from wikiPrep  where SF =? group by BINARY URI order by COUNT desc limit 1";
 	/**
 	 * SQL to fetch the probabilities of the same as links from terms to
 	 * concepts

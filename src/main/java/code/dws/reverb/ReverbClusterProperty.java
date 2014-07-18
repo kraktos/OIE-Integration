@@ -94,10 +94,9 @@ public class ReverbClusterProperty {
 				CLUSTERS_NAME + "OVERLAP_" + TOPK_REV_PROPS));
 
 		// init DB
-		DBWrapper.init(Constants.GET_REVERB_INSTS_FOR_A_PROPERTY);
+		DBWrapper.init(Constants.GET_MOST_FREQUENT_SENSE);
 
 		try {
-
 			// iterate the list of size n, n(n-1)/2 comparison !! :D
 			for (int outerIdx = 0; outerIdx < properties.size(); outerIdx++) {
 				for (int innerIdx = outerIdx + 1; innerIdx < properties.size(); innerIdx++) {
