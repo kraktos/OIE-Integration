@@ -4,13 +4,12 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import code.dws.reverb.KClustersAlgo;
+import code.dws.reverb.clustering.KMediodCluster;
 import code.dws.utils.Constants;
 
 public class CreateNodesAndEdges {
@@ -26,13 +25,13 @@ public class CreateNodesAndEdges {
 		BufferedWriter writerEdges = new BufferedWriter(new FileWriter(
 				"edges.txt"));
 
-		KClustersAlgo.init();
+		KMediodCluster.init();
 
 		Map<String, Integer> keys = new HashMap<String, Integer>();
 
 		int cnt = 1;
 
-		for (Entry<Pair<String, String>, Double> e : KClustersAlgo
+		for (Entry<Pair<String, String>, Double> e : KMediodCluster
 				.getScoreMap().entrySet()) {
 			// System.out.println(e.getKey() + "\t" + e.getValue());
 

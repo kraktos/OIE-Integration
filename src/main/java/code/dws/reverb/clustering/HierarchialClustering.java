@@ -1,7 +1,7 @@
 /**
  * 
  */
-package code.dws.reverb.mln;
+package code.dws.reverb.clustering;
 
 import java.util.List;
 import java.util.Map;
@@ -9,12 +9,11 @@ import java.util.Map;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
-import code.dws.reverb.KClustersAlgo;
+import code.dws.reverb.clustering.KMediodCluster;
 
 import com.apporiented.algorithm.clustering.AverageLinkageStrategy;
 import com.apporiented.algorithm.clustering.Cluster;
 import com.apporiented.algorithm.clustering.ClusteringAlgorithm;
-import com.apporiented.algorithm.clustering.CompleteLinkageStrategy;
 import com.apporiented.algorithm.clustering.DefaultClusteringAlgorithm;
 
 /**
@@ -103,9 +102,9 @@ public class HierarchialClustering {
 	 */
 	private static void createDataMatrix() {
 
-		KClustersAlgo.init();
-		props = KClustersAlgo.getReverbProperties();
-		map = KClustersAlgo.getScoreMap();
+		KMediodCluster.init();
+		props = KMediodCluster.getReverbProperties();
+		map = KMediodCluster.getScoreMap();
 
 		names = new String[props.size()];
 

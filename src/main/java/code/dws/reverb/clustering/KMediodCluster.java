@@ -1,12 +1,11 @@
 /**
  * 
  */
-package code.dws.reverb;
+package code.dws.reverb.clustering;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,15 +18,18 @@ import java.util.Scanner;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
+import code.dws.reverb.ReverbClusterProperty;
+import code.dws.reverb.ReverbPreProcessing;
 import code.dws.utils.Constants;
 
 /**
- * define K seed of random properties and start clustertinga
+ * define K seed of random properties and start clusterting. Idea is a place a
+ * property nearest to one of the K seed properties
  * 
  * @author adutta
  * 
  */
-public class KClustersAlgo {
+public class KMediodCluster {
 
 	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_1000";
 	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_1000";
@@ -35,7 +37,7 @@ public class KClustersAlgo {
 
 	private static final String ALL_SCORES = "COMBINED_SCORE.tsv";
 
-	private static int SEED = (int) (0.2 * TOPK_REVERB_PROPERTIES);
+	private static int SEED_CLUSTERS = (int) (0.2 * TOPK_REVERB_PROPERTIES);
 
 	private static List<String> reverbProperties = null;
 	private static List<String> seedReverbProperties = null;
@@ -58,6 +60,13 @@ public class KClustersAlgo {
 	}
 
 	/**
+	 * @return the k_CLUSTER_MAP
+	 */
+	public static Map<String, List<String>> getAllClusters() {
+		return K_CLUSTER_MAP;
+	}
+
+	/**
 	 * @return the reverbProperties
 	 */
 	public static List<String> getReverbProperties() {
@@ -71,7 +80,7 @@ public class KClustersAlgo {
 	public static void main(String[] args) throws IOException {
 
 		if (args.length > 0)
-			SEED = Integer.parseInt(args[0]);
+			SEED_CLUSTERS = Integer.parseInt(args[0]);
 
 		init();
 
@@ -139,7 +148,7 @@ public class KClustersAlgo {
 		double score;
 
 		Scanner scan;
-		scan = new Scanner(ReverbPreProcessing.class.getResourceAsStream(file),
+		scan = new Scanner(KMediodCluster.class.getResourceAsStream(file),
 				"UTF-8");
 
 		Pair<String, String> pair = null;
@@ -249,7 +258,7 @@ public class KClustersAlgo {
 		// call DBand retrieve a set of TOPK properties
 		reverbProperties = ReverbClusterProperty.getReverbProperties();
 
-		List<String> temp = getRandomProps((SEED < TOPK_REVERB_PROPERTIES) ? SEED
+		List<String> temp = getRandomProps((SEED_CLUSTERS < TOPK_REVERB_PROPERTIES) ? SEED_CLUSTERS
 				: TOPK_REVERB_PROPERTIES);
 
 		for (String p : temp) {
