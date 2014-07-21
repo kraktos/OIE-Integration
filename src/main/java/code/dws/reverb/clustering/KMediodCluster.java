@@ -19,7 +19,6 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import code.dws.reverb.ReverbClusterProperty;
-import code.dws.reverb.ReverbPreProcessing;
 import code.dws.utils.Constants;
 
 /**
@@ -31,13 +30,13 @@ import code.dws.utils.Constants;
  */
 public class KMediodCluster {
 
-	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_1000";
-	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_1000";
-	private static final int TOPK_REVERB_PROPERTIES = 1000;
+	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_500";
+	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_500";
+	private static final int TOPK_REVERB_PROPERTIES = 100;
 
 	private static final String ALL_SCORES = "COMBINED_SCORE.tsv";
 
-	private static int SEED_CLUSTERS = (int) (0.2 * TOPK_REVERB_PROPERTIES);
+	// private static int SEED_CLUSTERS = (int) (0.2 * TOPK_REVERB_PROPERTIES);
 
 	private static List<String> reverbProperties = null;
 	private static List<String> seedReverbProperties = null;
@@ -50,9 +49,9 @@ public class KMediodCluster {
 	/**
 	 * 
 	 */
-	public static void init() {
+	public static void loadScores() {
 		// feed seedc count and generate K-random cluster points
-		seedReverbProperties = generateKRandomSeed();
+		// seedReverbProperties = generateKRandomSeed();
 
 		// load the scores in memeory
 		loadScores(WORDNET_SCORES, "sameAsPropWNConf");
@@ -79,19 +78,22 @@ public class KMediodCluster {
 	 */
 	public static void main(String[] args) throws IOException {
 
+		int SEED_CLUSTERS = 0;
 		if (args.length > 0)
 			SEED_CLUSTERS = Integer.parseInt(args[0]);
 
-		init();
+		// load the two+ pair-wise scoring files
+		loadScores();
 
+		// combine the scores to a single normalized value
 		ioRoutine();
 		System.out.println("Dumped combined scores to " + ALL_SCORES);
 
 		// perform clustering with the K-seed properties
-		doKClustering();
+		doKClustering(SEED_CLUSTERS);
 
 		// write out the clusters
-		printCluster();
+		// printCluster();
 	}
 
 	/**
@@ -100,7 +102,7 @@ public class KMediodCluster {
 	 * 
 	 * @throws IOException
 	 */
-	private static void ioRoutine() throws IOException {
+	public static void ioRoutine() throws IOException {
 		BufferedWriter ioWriter = new BufferedWriter(new FileWriter(ALL_SCORES));
 		for (Entry<Pair<String, String>, Double> e : SCORE_MAP.entrySet()) {
 			ioWriter.write(e.getKey().getLeft() + "\t" + e.getKey().getRight()
@@ -181,12 +183,15 @@ public class KMediodCluster {
 	 * 
 	 * @param seedReverbProperties
 	 */
-	private static void doKClustering() {
+	public static void doKClustering(int kSeeds) {
 
 		double bestScore;
 		String bestSeedProp = null;
 
 		double score = 0;
+
+		// feed seedc count and generate K-random cluster points
+		seedReverbProperties = generateKRandomSeed(kSeeds);
 
 		// iterate the full list of properties
 		for (String reverbProp : reverbProperties) {
@@ -224,6 +229,9 @@ public class KMediodCluster {
 			putInCluster(bestSeedProp, reverbProp);
 		}
 
+		System.out.println("Loaded " + K_CLUSTER_MAP.size()
+				+ " mediod clusters...");
+
 	}
 
 	/**
@@ -249,18 +257,21 @@ public class KMediodCluster {
 	/**
 	 * populae full list of properties
 	 * 
+	 * @param seedCluster
+	 * 
 	 * @param seed2
 	 * @return
 	 */
-	private static List<String> generateKRandomSeed() {
+	private static List<String> generateKRandomSeed(int seedCluster) {
 
 		ReverbClusterProperty.TOPK_REV_PROPS = TOPK_REVERB_PROPERTIES;
 		// call DBand retrieve a set of TOPK properties
 		reverbProperties = ReverbClusterProperty.getReverbProperties();
 
-		List<String> temp = getRandomProps((SEED_CLUSTERS < TOPK_REVERB_PROPERTIES) ? SEED_CLUSTERS
+		List<String> temp = getRandomProps((seedCluster < TOPK_REVERB_PROPERTIES) ? seedCluster
 				: TOPK_REVERB_PROPERTIES);
 
+		K_CLUSTER_MAP.clear();
 		for (String p : temp) {
 			K_CLUSTER_MAP.put(p, new ArrayList<String>());
 		}

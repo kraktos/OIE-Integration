@@ -45,7 +45,7 @@ public class MarkovClustering {
 	/**
 	 * @return the cLUSTER
 	 */
-	public Map<String, List<String>> getAllClusters() {
+	public static Map<String, List<String>> getAllClusters() {
 		return CLUSTER;
 	}
 
@@ -75,13 +75,14 @@ public class MarkovClustering {
 		Scanner scan;
 		scan = new Scanner(new File((OUTPUT)), "UTF-8");
 
-		List<String> list = new ArrayList<String>();
+		List<String> list = null;
 
 		int cnt = 1;
 		String sCurrentLine = null;
 		String[] elem = null;
 
 		while (scan.hasNextLine()) {
+			list = new ArrayList<String>();
 			sCurrentLine = scan.nextLine();
 			elem = sCurrentLine.split("\t");
 			for (String s : elem)
@@ -90,7 +91,7 @@ public class MarkovClustering {
 			CLUSTER.put("C" + cnt++, list);
 		}
 
-		System.out.println(CLUSTER.size());
+		System.out.println("Loaded " + CLUSTER.size() + " markov clusters...");
 	}
 
 	private static void systemRoutine(String inflation) {

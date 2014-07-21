@@ -25,7 +25,7 @@ public class CreateNodesAndEdges {
 		BufferedWriter writerEdges = new BufferedWriter(new FileWriter(
 				"edges.txt"));
 
-		KMediodCluster.init();
+		// KMediodCluster.init();
 
 		Map<String, Integer> keys = new HashMap<String, Integer>();
 

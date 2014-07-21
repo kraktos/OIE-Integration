@@ -102,7 +102,7 @@ public class HierarchialClustering {
 	 */
 	private static void createDataMatrix() {
 
-		KMediodCluster.init();
+		KMediodCluster.loadScores();
 		props = KMediodCluster.getReverbProperties();
 		map = KMediodCluster.getScoreMap();
 
