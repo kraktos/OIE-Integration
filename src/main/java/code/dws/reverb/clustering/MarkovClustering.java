@@ -59,7 +59,7 @@ public class MarkovClustering {
 		if (args.length > 0)
 			inflation = args[0];
 		else
-			inflation = "4";
+			inflation = "1";
 
 		// make mcl call to perform clustering
 		systemRoutine(inflation);

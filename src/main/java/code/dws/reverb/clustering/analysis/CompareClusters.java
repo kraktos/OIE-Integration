@@ -6,6 +6,7 @@ package code.dws.reverb.clustering.analysis;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -38,59 +39,161 @@ public class CompareClusters {
 		KMediodCluster.loadScores();
 		KMediodCluster.ioRoutine();
 
-		BufferedWriter writer = new BufferedWriter(new FileWriter("KCL_MCL_CL"));
+		Map<String, List<String>> mCl = null;
+		Map<String, List<String>> kmCl = null;
 
-		for (int p = 1; p <= 100; p++) {
+		Map<String, Double> isoKcl = new HashMap<String, Double>();
+		Map<String, Double> isoMcl = new HashMap<String, Double>();
+
+		BufferedWriter writer = new BufferedWriter(new FileWriter("KCL_MCL_CL2"));
+
+		double kclIndex = Integer.MAX_VALUE;
+		double mclIndex = 0;
+
+		writer.write("ITERATION\tCLUSTER_SIZE\tKCL_SCORE\tMCL_SCORE\n");
+		for (double p = 3; p <= 20;) {
+
+			double tempIndex = 0;
+
 			// perform a Markov Cluster
-			MarkovClustering.main(new String[] { String.valueOf(p * 0.1) });
+			MarkovClustering.main(new String[] { String.valueOf(p) });
 
 			// get the clusters in memory
-			Map<String, List<String>> mCl = MarkovClustering.getAllClusters();
+			mCl = MarkovClustering.getAllClusters();
+
+			mclIndex = computeClusterIndex(mCl, isoMcl);
+
+			// create a map of cluster key and its highest isolation value
+			System.out.println("MCL Index Score = " + mclIndex);
 
 			for (int i = 0; i < 10; i++) {
+
 				// perform k-mediod cluster
 				KMediodCluster.doKClustering(mCl.size());
+
 				// get the cluster in memory
-				Map<String, List<String>> kmCl = KMediodCluster
-						.getAllClusters();
-				double compactnessMCl = getCompactness(mCl);
-				double compactnessKCl = getCompactness(kmCl);
-				System.out.println("MCL = " + compactnessMCl);
-				System.out.println("K-Mediod = " + compactnessKCl);
-				writer.write(p * 0.1 + "\t" + mCl.size() + "\t"
-						+ compactnessKCl + "\t" + compactnessMCl + "\n");
+				kmCl = KMediodCluster.getAllClusters();
+
+				// create a map of cluster key and its highest isolation value
+				tempIndex = computeClusterIndex(kmCl, isoKcl);
+
+				kclIndex = (tempIndex < kclIndex) ? tempIndex : kclIndex;
 			}
 
+			System.out.println("KCL Index Score = " + kclIndex);
+			p = p + 0.2;
+			writer.write(p + "\t" + mCl.size() + "\t" + kclIndex + "\t"
+					+ mclIndex + "\n");
 			writer.flush();
 		}
 		writer.close();
 	}
 
 	/**
-	 * computes the inter cluster score for a given cluster Collection
+	 * get a isolation score for the whole cluster set
 	 * 
-	 * @param clusters
+	 * @param mCl
+	 * @param isoMcl
+	 * @return
 	 * @return
 	 */
-	private static double getCompactness(Map<String, List<String>> clusters) {
+	private static double computeClusterIndex(Map<String, List<String>> mCl,
+			Map<String, Double> isoMcl) {
 
-		String key = null;
-		List<String> cluster = null;
-		double interClusterScore = 0D;
+		double minCompactness = 0;
+		double tempIsolation = 0;
+		double maxIsolation = 0;
 
-		// iterate the map
-		for (Entry<String, List<String>> e : clusters.entrySet()) {
-			key = e.getKey();
-			cluster = e.getValue();
+		List<String> arg1 = null;
+		List<String> arg2 = null;
 
-			// this gives a score for each cluster and for all the clusters for
-			// the method
+		double clusterGoodness = 0;
+		// long n = (mCl.size()) * (mCl.size() - 1) / 2;
+		for (Entry<String, List<String>> e1 : mCl.entrySet()) {
 
-			interClusterScore = interClusterScore
-					+ getInterClusterScore(cluster);
+			maxIsolation = 0;
+
+			for (Entry<String, List<String>> e2 : mCl.entrySet()) {
+				if (e2.getKey().hashCode() != e1.getKey().hashCode()) {
+
+					arg1 = e1.getValue();
+					arg2 = e2.getValue();
+					tempIsolation = intraClusterScore(arg1, arg2);
+
+					// get the maximum score, i.e the strongest intra-cluster
+					// pair..
+					maxIsolation = (maxIsolation < tempIsolation) ? tempIsolation
+							: maxIsolation;
+				}
+			}
+
+			// isoMcl.put(e1.getKey(), isolation);
+
+			// perform its own compactness
+			minCompactness = getInterClusterScore(e1.getValue());
+
+			// System.out.println(e1.getKey() + "\t" + maxIsolation + "\t"
+			// + minCompactness);
+
+			clusterGoodness = clusterGoodness + (double) minCompactness
+					/ maxIsolation;
+
+			// System.out.println(clusterGoodness);
 
 		}
-		return (double) interClusterScore / clusters.size();
+
+		clusterGoodness = (clusterGoodness == 0) ? (Math.pow(10, -8) - clusterGoodness)
+				: clusterGoodness;
+
+		return (double) 1 / clusterGoodness;
+
+		// return (double) isolation / n;
+	}
+
+	/**
+	 * take 2 lists and find the max pairwise similarity score. this essentially
+	 * gives the isolation score of two clusters represented by two lists
+	 * 
+	 * @param arg1
+	 * @param arg2
+	 * @return
+	 */
+	private static double intraClusterScore(List<String> arg1, List<String> arg2) {
+		// compare each elements from argList1 vs argList2
+
+		Pair<String, String> pair = null;
+		double tempScore = 0;
+		double maxScore = 0;
+
+		for (int list1Id = 0; list1Id < arg1.size(); list1Id++) {
+			for (int list2Id = 0; list2Id < arg2.size(); list2Id++) {
+
+				// create a pair
+				pair = new ImmutablePair<String, String>(arg1.get(list1Id),
+						arg2.get(list2Id));
+
+				try {
+					// retrieve the key from the collection
+					tempScore = KMediodCluster.getScoreMap().get(pair);
+				} catch (Exception e) {
+					try {
+						pair = new ImmutablePair<String, String>(
+								arg2.get(list2Id), arg1.get(list1Id));
+						tempScore = KMediodCluster.getScoreMap().get(pair);
+
+					} catch (Exception e1) {
+						e1.printStackTrace();
+						tempScore = 0;
+					}
+				}
+
+				// System.out.println(" temp score = " + tempScore);
+				maxScore = (tempScore > maxScore) ? tempScore : maxScore;
+			}
+		}
+
+		// System.out.println("max = " + maxScore);
+		return maxScore;
 	}
 
 	/**
@@ -103,8 +206,12 @@ public class CompareClusters {
 
 		Pair<String, String> pair = null;
 
-		double score = 0;
+		double score = 1;
 		double tempScore = 0;
+
+		// System.out.println("CL size " + cluster.size());
+		if (cluster.size() <= 1)
+			return 0;
 
 		for (int outer = 0; outer < cluster.size(); outer++) {
 			for (int inner = outer + 1; inner < cluster.size(); inner++) {
@@ -127,16 +234,16 @@ public class CompareClusters {
 					}
 				}
 
-				if (tempScore > 1)
-					System.out.println(pair.toString());
+				// for sum of all pairwise scores
+				// score = score + tempScore;
 
-				score = score + tempScore;
+				// for the minimum inter cluster score
+				score = (score >= tempScore) ? tempScore : score;
 			}
 		}
 
 		// System.out.println("Inter Cluster sum = " + score);
 		// System.out.println("Cluster size = " + cluster.size());
-		return (score == 0) ? 0 : (double) (2 * score)
-				/ (cluster.size() * (cluster.size() - 1));
+		return score;
 	}
 }

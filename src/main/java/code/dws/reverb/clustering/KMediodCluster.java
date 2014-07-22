@@ -30,9 +30,9 @@ import code.dws.utils.Constants;
  */
 public class KMediodCluster {
 
-	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_500";
-	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_500";
-	private static final int TOPK_REVERB_PROPERTIES = 100;
+	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_";
+	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_";
+	private static final int TOPK_REVERB_PROPERTIES = 500;
 
 	private static final String ALL_SCORES = "COMBINED_SCORE.tsv";
 
@@ -45,6 +45,7 @@ public class KMediodCluster {
 
 	// cluster placeholder
 	private static Map<String, List<String>> K_CLUSTER_MAP = new HashMap<String, List<String>>();
+	private static Map<String, List<String>> K_CLUSTER_MAP2 = new HashMap<String, List<String>>();
 
 	/**
 	 * 
@@ -54,15 +55,19 @@ public class KMediodCluster {
 		// seedReverbProperties = generateKRandomSeed();
 
 		// load the scores in memeory
-		loadScores(WORDNET_SCORES, "sameAsPropWNConf");
-		loadScores(JACCARD_SCORES, "sameAsPropJacConf");
+		loadScores(WORDNET_SCORES + TOPK_REVERB_PROPERTIES, "sameAsPropWNConf");
+		loadScores(JACCARD_SCORES + TOPK_REVERB_PROPERTIES, "sameAsPropJacConf");
 	}
 
 	/**
 	 * @return the k_CLUSTER_MAP
 	 */
 	public static Map<String, List<String>> getAllClusters() {
-		return K_CLUSTER_MAP;
+		int cnt = 1;
+		for (Entry<String, List<String>> e : K_CLUSTER_MAP.entrySet()) {
+			K_CLUSTER_MAP2.put("C" + cnt++, e.getValue());
+		}
+		return K_CLUSTER_MAP2;
 	}
 
 	/**
@@ -252,6 +257,7 @@ public class KMediodCluster {
 		}
 
 		K_CLUSTER_MAP.put(keySeedProp, exixtingClusterMemebers);
+
 	}
 
 	/**
