@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import code.dws.relationMap.GenerateNewProperties;
 import code.dws.reverb.ReverbPropertyReNaming;
+import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
 
 /**
@@ -35,12 +36,10 @@ public class ScriptGenarator {
 
 	private static final int MAX_BOOT_ITER = 6;
 
-	private static boolean OIE_IS_NELL = false;
-
-	private static final String PIPELINE_NAME = (OIE_IS_NELL) ? "PIPELINE_ALL_NELL.sh "
+	private static final String PIPELINE_NAME = (Constants.OIE_IS_NELL) ? "PIPELINE_ALL_NELL.sh "
 			: "PIPELINE_ALL_REVERB.sh ";
 
-	private static final String BOOTSTRAP_NAME = (OIE_IS_NELL) ? "BOOTSTRAP_ALL_NELL.sh "
+	private static final String BOOTSTRAP_NAME = (Constants.OIE_IS_NELL) ? "BOOTSTRAP_ALL_NELL.sh "
 			: "BOOTSTRAP_ALL_REVERB.sh ";
 
 	/**
@@ -89,7 +88,7 @@ public class ScriptGenarator {
 	private static void loadOIEProps(String oieFilePath) {
 		String oieProp = null;
 
-		if (OIE_IS_NELL) {
+		if (Constants.OIE_IS_NELL) {
 			// load the NELL file in memory as a collection
 			ArrayList<ArrayList<String>> nellFile = FileUtil.genericFileReader(
 					GenerateNewProperties.class

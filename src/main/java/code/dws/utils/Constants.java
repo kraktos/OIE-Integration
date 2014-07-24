@@ -185,6 +185,11 @@ public class Constants {
 	public static final String NELL_DATA_PATH = "/home/arnab/Work/data/NELL/Nell.csv";
 
 	/**
+	 * location of the output file generated the IE Engine ReVerb
+	 */
+	public static final String REVERB_DATA_PATH = "src/main/resources/input/highConfidenceReverbData.csv";
+
+	/**
 	 * Delimiter used to parse the ReVerb extracted tuples
 	 */
 	public static final String REVERB_IE_DELIMIT = ";";
@@ -451,7 +456,7 @@ public class Constants {
 	/**
 	 * file I/O location
 	 */
-	public static final String sample_dumps = "/output/ds_";
+	public static final String sample_dumps = "src/main/resources/output/ds_";
 
 	public static final String DIRECTORY = "/home/arnab/Work/data/experiments/reasoning/newBL/ds_"
 			+ ExperimentAutomation.PREDICATE + "/";
@@ -512,7 +517,7 @@ public class Constants {
 
 	/**
 	 * isTypeOf evidences of NELL entities
-	 */
+	 */	
 	public static final String IS_OF_TYPE_CONF_NELL_EVIDENCE = sample_dumps
 			+ ExperimentAutomation.PREDICATE + "/isOfTypeConf.nell.db";
 
@@ -684,4 +689,5 @@ public class Constants {
 
 	public static DecimalFormat formatter = new DecimalFormat("#.############");
 
+	public static boolean OIE_IS_NELL = false;
 }
