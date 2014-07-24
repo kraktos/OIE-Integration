@@ -8,7 +8,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,7 +21,6 @@ import java.util.Set;
 
 import code.dws.dao.Pair;
 import code.dws.dbConnectivity.DBWrapper;
-import code.dws.experiment.ExperimentAutomation;
 import code.dws.ontology.GenericConverter;
 import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.reverb.ReverbPropertyReNaming;
@@ -466,28 +464,28 @@ public class EvidenceBuilder {
 		return nellInst;
 	}
 
-	/**
-	 * load the gold standard file in memory
-	 * 
-	 * @throws IOException
-	 */
-	private void loadGoldStandard() throws IOException {
-		BufferedReader tupleReader = new BufferedReader(new FileReader(
-				Constants.INPUT_CSV_FILE));
-		String line;
-		String key = null;
-		Pair<String, String> valuePair = null;
-
-		while ((line = tupleReader.readLine()) != null) {
-
-			key = line.split("\t")[0] + "\t" + line.split("\t")[2];
-			valuePair = new Pair<String, String>(line.split("\t")[5],
-					line.split("\t")[6]);
-
-			GS_PAIRS.put(key, valuePair);
-		}
-
-		System.out
-				.println("Loaded Gold Standard MAP size = " + GS_PAIRS.size());
-	}
+	// /**
+	// * load the gold standard file in memory
+	// *
+	// * @throws IOException
+	// */
+	// private void loadGoldStandard() throws IOException {
+	// BufferedReader tupleReader = new BufferedReader(new FileReader(
+	// Constants.INPUT_CSV_FILE));
+	// String line;
+	// String key = null;
+	// Pair<String, String> valuePair = null;
+	//
+	// while ((line = tupleReader.readLine()) != null) {
+	//
+	// key = line.split("\t")[0] + "\t" + line.split("\t")[2];
+	// valuePair = new Pair<String, String>(line.split("\t")[5],
+	// line.split("\t")[6]);
+	//
+	// GS_PAIRS.put(key, valuePair);
+	// }
+	//
+	// System.out
+	// .println("Loaded Gold Standard MAP size = " + GS_PAIRS.size());
+	// }
 }

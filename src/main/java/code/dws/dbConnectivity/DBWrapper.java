@@ -1461,11 +1461,7 @@ public class DBWrapper {
 		String reverbSub = null;
 		String reverbObj = null;
 
-		String dbpSub = null;
-		String dbpObj = null;
-
-		ResultSet rs2 = null;
-		ResultSet rs3 = null;
+		
 
 		try {
 			getReverbInstancesPrepStmnt.setString(1, propArg);

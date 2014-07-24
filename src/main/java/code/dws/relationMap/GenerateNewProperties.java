@@ -9,7 +9,6 @@ import java.io.FileFilter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +19,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import code.dws.dbConnectivity.DBWrapper;
-import code.dws.extractor.RelationExplorer;
 import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
@@ -279,7 +277,8 @@ public class GenerateNewProperties
         }
     }
 
-    private static String getTypeInfo(String inst)
+    @SuppressWarnings("finally")
+	private static String getTypeInfo(String inst)
     {
         String mostSpecificVal = "";
         String mostGeneralVal = "";

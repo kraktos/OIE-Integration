@@ -22,8 +22,6 @@ import java.util.Map;
 import code.dws.bootstrap.BootStrapMethod;
 import code.dws.dao.Pair;
 import code.dws.dbConnectivity.DBWrapper;
-import code.dws.experiment.ExperimentAutomation;
-import code.dws.ontology.GenericConverter;
 import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.reverb.ReverbPropertyReNaming;
 import code.dws.utils.Constants;
@@ -163,7 +161,7 @@ public class DistantSupervised {
 	private void bootStrap(OIE oieType) throws IOException {
 
 		List<String> candidates = new ArrayList<String>();
-		List<String> entityTypes = null;
+//		List<String> entityTypes = null;
 
 		boolean isSubject = false;
 

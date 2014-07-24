@@ -12,14 +12,9 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import code.dws.baseline.GetProbability;
 import code.dws.core.AutomatedNodeScoringWrapper;
-import code.dws.goldStandard.ProcessAnnotatedGoldStd;
 import code.dws.markovLogic.EvidenceBuilder;
-import code.dws.markovLogic.MLNFileGenerator;
-import code.dws.ontology.OntologyMatcher;
 import code.dws.reverb.ReverbPropertyReNaming;
-import code.dws.utils.Constants;
 
 /**
  * @author Arnab Dutta
@@ -118,9 +113,7 @@ public class ExperimentAutomation {
 	private static void runAll() throws IOException,
 			OWLOntologyCreationException, Exception {
 
-		// EvidenceBuilder.main(new String[] { PREDICATE });
-
-		ReverbPropertyReNaming.main(new String[] { "" });
+		EvidenceBuilder.main(new String[] { PREDICATE });
 
 		AutomatedNodeScoringWrapper.main(new String[] { PREDICATE });
 

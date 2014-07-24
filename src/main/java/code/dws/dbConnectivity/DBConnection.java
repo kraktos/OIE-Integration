@@ -12,7 +12,6 @@ import java.sql.Statement;
 
 import org.apache.log4j.Logger;
 
-import code.dws.message.Messages;
 import code.dws.utils.Constants;
 
 /**
