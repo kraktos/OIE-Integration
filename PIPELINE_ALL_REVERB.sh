@@ -7,7 +7,7 @@ if [ ! -d 'src/main/resources/output/ds_'$1'' ]; then
 	mkdir 'src/main/resources/output/ds_'$1''
 fi
 
-echo " --------- RUNNING FULL REASONING FOR " $1
+echo " ======= RUNNING FULL REASONING FOR " $1 " ========"
 
 
 # trying out only the Alpha tree

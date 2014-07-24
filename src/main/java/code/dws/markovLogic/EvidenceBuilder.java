@@ -173,9 +173,14 @@ public class EvidenceBuilder {
 					if (this.propertyName.equals(arrStr[1])) {
 
 						// process them
-						this.createEvidences(arrStr[0].replaceAll("\\s+", "_"),
+						this.createEvidences(
+								arrStr[0].replaceAll("\\s+", "_")
+										.replaceAll(",", "~2C")
+										.replaceAll("$", "~24"),
 								arrStr[1].replaceAll("\\s+", "_"),
-								arrStr[2].replaceAll("\\s+", "_"), arrStr[3],
+								arrStr[2].replaceAll("\\s+", "_")
+										.replaceAll(",", "~2C")
+										.replaceAll("$", "~24"), arrStr[3],
 								allEvidenceWriterTop1, allEvidenceWriter,
 								termConceptPairSet);
 					}
