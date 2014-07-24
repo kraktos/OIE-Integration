@@ -62,9 +62,10 @@ public class ScriptGenarator {
 		for (String oieProp : PROPS) {
 			int bootIter = 2;
 			scriptWriter.write("sh ./" + PIPELINE_NAME + oieProp + "\n");
-//			while (bootIter != MAX_BOOT_ITER + 2) {
-//				scriptWriter.write("sh ./" + BOOTSTRAP_NAME + oieProp + " "						+ bootIter++ + "\n");
-//			}
+			while (bootIter != MAX_BOOT_ITER + 2) {
+				scriptWriter.write("sh ./" + BOOTSTRAP_NAME + oieProp + " "
+						+ bootIter++ + "\n");
+			}
 			scriptWriter.write("echo \"Done with complete reasoning of "
 					+ oieProp + "\"\n\n");
 
