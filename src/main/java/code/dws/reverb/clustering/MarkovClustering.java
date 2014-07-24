@@ -59,7 +59,7 @@ public class MarkovClustering {
 		if (args.length > 0)
 			inflation = args[0];
 		else
-			inflation = "1";
+			inflation = "23";
 
 		// make mcl call to perform clustering
 		systemRoutine(inflation);
@@ -91,14 +91,16 @@ public class MarkovClustering {
 			CLUSTER.put("C" + cnt++, list);
 		}
 
-		System.out.println("Loaded " + CLUSTER.size() + " markov clusters...");
+		System.out
+				.println("\nLoaded " + CLUSTER.size() + " markov clusters...");
 	}
 
 	private static void systemRoutine(String inflation) {
 		Runtime r = Runtime.getRuntime();
 
-		System.out.println("Running Markov clustering...");
+		System.out.println("Running Markov clustering for p = " + inflation);
 		try {
+
 			Process p = r
 					.exec("/home/adutta/Work/mcl/mcl-14-137/bin/mcl "
 							+ "/home/adutta/git/OIE-Integration/COMBINED_SCORE.tsv --abc -I "
@@ -112,10 +114,11 @@ public class MarkovClustering {
 			while ((line = bufferedreader.readLine()) != null) {
 				System.out.println(line);
 			}
-
 			try {
 				if (p.waitFor() != 0)
 					System.err.println("exit value = " + p.exitValue());
+				else
+					System.out.println("running...");
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {

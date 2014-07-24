@@ -6,6 +6,7 @@ package code.dws.reverb.clustering.analysis;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +23,8 @@ import code.dws.reverb.clustering.MarkovClustering;
  * 
  */
 public class CompareClusters {
+
+	public static final String CLUSTER_INDICES = "KCL_MCL_CL2";
 
 	/**
 	 * 
@@ -45,18 +48,22 @@ public class CompareClusters {
 		Map<String, Double> isoKcl = new HashMap<String, Double>();
 		Map<String, Double> isoMcl = new HashMap<String, Double>();
 
-		BufferedWriter writer = new BufferedWriter(new FileWriter("KCL_MCL_CL2"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter(
+				CLUSTER_INDICES));
 
 		double kclIndex = Integer.MAX_VALUE;
 		double mclIndex = 0;
 
+		DecimalFormat df = new DecimalFormat("##.##");
+
 		writer.write("ITERATION\tCLUSTER_SIZE\tKCL_SCORE\tMCL_SCORE\n");
-		for (double p = 3; p <= 20;) {
+		for (double p = 2; p < 21;) {
 
 			double tempIndex = 0;
 
 			// perform a Markov Cluster
-			MarkovClustering.main(new String[] { String.valueOf(p) });
+			MarkovClustering
+					.main(new String[] { String.valueOf(df.format(p)) });
 
 			// get the clusters in memory
 			mCl = MarkovClustering.getAllClusters();
@@ -66,7 +73,7 @@ public class CompareClusters {
 			// create a map of cluster key and its highest isolation value
 			System.out.println("MCL Index Score = " + mclIndex);
 
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 5; i++) {
 
 				// perform k-mediod cluster
 				KMediodCluster.doKClustering(mCl.size());
@@ -81,10 +88,12 @@ public class CompareClusters {
 			}
 
 			System.out.println("KCL Index Score = " + kclIndex);
-			p = p + 0.2;
-			writer.write(p + "\t" + mCl.size() + "\t" + kclIndex + "\t"
-					+ mclIndex + "\n");
+
+			writer.write(df.format(p) + "\t" + mCl.size() + "\t" + kclIndex
+					+ "\t" + mclIndex + "\n");
+
 			writer.flush();
+			p = p + 0.2;
 		}
 		writer.close();
 	}
@@ -182,7 +191,6 @@ public class CompareClusters {
 						tempScore = KMediodCluster.getScoreMap().get(pair);
 
 					} catch (Exception e1) {
-						e1.printStackTrace();
 						tempScore = 0;
 					}
 				}
