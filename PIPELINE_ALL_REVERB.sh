@@ -16,19 +16,19 @@ java -jar /home/adutta/git/OIE-Integration/PIPE_ALLREVERB.jar $1 /home/adutta/gi
 
 #DYNAMICALLY CREATE THE MODEL FILE
 
-###cat '/home/arnab/Work/rockit/modelBasic.mln' '/home/arnab/Workspaces/SchemaMapping/linking-IE/resource/output/ds_'$1'/domRanEvidence.db'  > '/home/arnab/Work/rockit/model.mln'
+cat '/home/adutta/rockit/modelBasic.mln' '/home/adutta/git/OIE-Integration/src/main/resources/output/ds_'$1'/domRanEvidence.db'  > '/home/adutta/rockit/model.mln'
 
 #CHANGE TO ROCKIT DIRECTORY
-###cd /home/arnab/Work/rockit
+cd /home/adutta/rockit
 
 # RUN INFERENCE ENGINE
 
-###java -Xmx4G -jar rockit-0.3.228.jar -input model.mln -data '/home/arnab/Workspaces/SchemaMapping/linking-IE/resource/output/ds_'$1'/AllEvidence.db' -output '/home/arnab/Workspaces/SchemaMapping/linking-IE/resource/output/ds_'$1'/outAll.db'
+java -Xmx4G -jar rockit-0.3.228.jar -input model.mln -data '/home/adutta/git/OIE-Integration/src/main/resources/output/ds_'$1'/AllEvidence.db' -output '/home/adutta/git/OIE-Integration/src/main/resources/output/ds_'$1'/outAll.db'
 
 # COPY FILES
 
 
-###cp '/home/arnab/Workspaces/SchemaMapping/linking-IE/resource/output/ds_'$1'/outAll.db' '/home/arnab/Workspaces/SchemaMapping/linking-IE/resource/output/ds_'$1'/out.db'
+cp '/home/adutta/git/OIE-Integration/src/main/resources/output/ds_'$1'/outAll.db' '/home/adutta/git/OIE-Integration/src/main/resources/output/ds_'$1'/out.db'
 
-###cp '/home/arnab/Workspaces/SchemaMapping/linking-IE/resource/output/ds_'$1'/domRanEvidence.db' '/home/arnab/Workspaces/SchemaMapping/linking-IE/resource/output/ds_'$1'/domRanEvidence_A1.db'
+cp '/home/adutta/git/OIE-Integration/src/main/resources/output/ds_'$1'/domRanEvidence.db' '/home/adutta/git/OIE-Integration/src/main/resources/output/ds_'$1'/domRanEvidence_A1.db'
 

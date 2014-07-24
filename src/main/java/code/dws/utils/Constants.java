@@ -517,7 +517,7 @@ public class Constants {
 
 	/**
 	 * isTypeOf evidences of NELL entities
-	 */	
+	 */
 	public static final String IS_OF_TYPE_CONF_NELL_EVIDENCE = sample_dumps
 			+ ExperimentAutomation.PREDICATE + "/isOfTypeConf.nell.db";
 
@@ -689,5 +689,5 @@ public class Constants {
 
 	public static DecimalFormat formatter = new DecimalFormat("#.############");
 
-	public static boolean OIE_IS_NELL = false;
+	public static boolean OIE_IS_NELL = ExperimentAutomation.IS_NELL;
 }

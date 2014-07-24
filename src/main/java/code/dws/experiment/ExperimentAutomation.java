@@ -18,6 +18,7 @@ import code.dws.goldStandard.ProcessAnnotatedGoldStd;
 import code.dws.markovLogic.EvidenceBuilder;
 import code.dws.markovLogic.MLNFileGenerator;
 import code.dws.ontology.OntologyMatcher;
+import code.dws.reverb.ReverbPropertyReNaming;
 import code.dws.utils.Constants;
 
 /**
@@ -40,6 +41,8 @@ public class ExperimentAutomation {
 	 */
 	public final static Logger logger = LoggerFactory
 			.getLogger(ExperimentAutomation.class);
+
+	public static boolean IS_NELL = false;
 
 	public static boolean USE_LOGIT;
 
@@ -85,6 +88,8 @@ public class ExperimentAutomation {
 					.getProperty("DBPEDIA_SPARQL_ENDPOINT");
 			ExperimentAutomation.USE_LOGIT = Boolean.valueOf(prop
 					.getProperty("USE_LOGIT"));
+			ExperimentAutomation.IS_NELL = Boolean.valueOf(prop
+					.getProperty("IS_NELL"));
 			ExperimentAutomation.RELOAD_TYPE = Boolean.valueOf(prop
 					.getProperty("RELOAD_TYPE"));
 			ExperimentAutomation.BATCH_SIZE = Integer.parseInt(prop
@@ -113,46 +118,11 @@ public class ExperimentAutomation {
 	private static void runAll() throws IOException,
 			OWLOntologyCreationException, Exception {
 
-		// The density estimator is also called here..
-		// EstimatorEngine.main(new String[] {ExperimentAutomation.PREDICATE});
-		//
+		// EvidenceBuilder.main(new String[] { PREDICATE });
 
-		// System.exit(1);
-		//
-		EvidenceBuilder.main(new String[] { PREDICATE });
+		ReverbPropertyReNaming.main(new String[] { "" });
 
-		// Create the subset of data from the dump of annotated gold standard
-		// for the given predicate
-
-		// ProcessAnnotatedGoldStd.main(null);
-		//
-		// // Run the data files to create owl file and goldStandard MLN and
-		// // isOfTypeConfMLN
-		// OntologyMatcher.main(null);
-		//
-		// // create the same as prior weights
-		// GetProbability.main(null);
-		//
-		// // create MLN for sameAsConf
-		//
-		// // System.out.println(GenericConverter.SUB_SET_TYPES);
-		// // System.out.println("************************************ ");
-		// // System.out.println(GenericConverter.OBJ_SET_TYPES);
-		//
-		// for (int k = 1; k <= ExperimentAutomation.TOP_K_MATCHES; k++) {
-		// MLNFileGenerator.main(new String[] {Constants.OUTPUT_OWL_FILE,
-		// Constants.sample_dumps + PREDICATE + "/sameAsConf.nell-dbpedia-top" +
-		// k + ".db", "sameAsConf",
-		// String.valueOf(k)});
-		// }
-		//
-		// // create MLN for propAsst
-		//
-		// MLNFileGenerator.main(new String[] {Constants.OUTPUT_OWL_FILE,
-		// Constants.sample_dumps + PREDICATE + "/propAsstConf.nell.db",
-		// "propAsstConf"});
-
-//		AutomatedNodeScoringWrapper.main(new String[] { PREDICATE });
+		AutomatedNodeScoringWrapper.main(new String[] { PREDICATE });
 
 	}
 }
