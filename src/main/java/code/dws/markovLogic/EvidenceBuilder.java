@@ -119,8 +119,9 @@ public class EvidenceBuilder {
 				new FileWriter(Constants.ALL_MLN_EVIDENCE_T1));
 
 		// the file where the evidences for the MLN are written out
-		BufferedWriter goldEvidenceWriter = new BufferedWriter(new FileWriter(
-				Constants.GOLD_MLN_EVIDENCE_ALL));
+		// BufferedWriter goldEvidenceWriter = new BufferedWriter(new
+		// FileWriter(
+		// Constants.GOLD_MLN_EVIDENCE_ALL));
 
 		// load the gold standard file.
 		// loadGoldStandard();
@@ -143,15 +144,14 @@ public class EvidenceBuilder {
 					if (this.propertyName.equals(arrStr[1])) {
 
 						// process them
-						this.createEvidences(arrStr[0].replaceAll("\\s+", "_"),
-								arrStr[1], arrStr[2], arrStr[3],
-								allEvidenceWriterTop1, allEvidenceWriter,
-								termConceptPairSet);
+						this.createEvidences(arrStr[0], arrStr[1], arrStr[2],
+								arrStr[3], allEvidenceWriterTop1,
+								allEvidenceWriter, termConceptPairSet);
 					}
 
 			}
 
-		} else {
+		} else { // FOr REVERB
 
 			for (String prop : this.propertyNames) {
 
@@ -173,16 +173,9 @@ public class EvidenceBuilder {
 					if (this.propertyName.equals(arrStr[1])) {
 
 						// process them
-						this.createEvidences(
-								arrStr[0].replaceAll("\\s+", "_")
-										.replaceAll(",", "~2C")
-										.replaceAll("$", "~24"),
-								arrStr[1].replaceAll("\\s+", "_"),
-								arrStr[2].replaceAll("\\s+", "_")
-										.replaceAll(",", "~2C")
-										.replaceAll("$", "~24"), arrStr[3],
-								allEvidenceWriterTop1, allEvidenceWriter,
-								termConceptPairSet);
+						this.createEvidences(arrStr[0], arrStr[1], arrStr[2],
+								arrStr[3], allEvidenceWriterTop1,
+								allEvidenceWriter, termConceptPairSet);
 					}
 				}
 			}
@@ -194,7 +187,7 @@ public class EvidenceBuilder {
 		// close stream writer
 		allEvidenceWriterTop1.close();
 		allEvidenceWriter.close();
-		goldEvidenceWriter.close();
+		// goldEvidenceWriter.close();
 
 		// flush residuals
 		DBWrapper.saveResidualDBPTypes();
@@ -202,6 +195,11 @@ public class EvidenceBuilder {
 		// shutdown DB
 		DBWrapper.shutDown();
 
+	}
+
+	private static String format(String arg) {
+		return arg.replaceAll(",", "~2C")
+				.replaceAll("\\$", "~24");
 	}
 
 	/**
@@ -236,24 +234,26 @@ public class EvidenceBuilder {
 		confidence = Double.parseDouble(conf);
 
 		// uniquely identify each instance by concating a post fixd number
-		nellSubPFxd = generateUniqueURI(nellSub);
-		nellObjPFxd = generateUniqueURI(nellObj);
+		nellSubPFxd = generateUniqueURI(nellSub.replaceAll("\\s+", "_"));
+		nellObjPFxd = generateUniqueURI(nellObj.replaceAll("\\s+", "_"));
 
 		// create a list of local mapping pair and return it
 
 		/**
 		 * create the property assertions
 		 */
-		allEvidenceWriter.write("propAsstConf(\"NELL#Predicate/" + nellPred
-				+ "\", \"NELL#Instance/" + nellSubPFxd + "\", \"NELL#Instance/"
-				+ nellObjPFxd + "\", " + confidence + ")\n");
+		allEvidenceWriter.write("propAsstConf(\"NELL#Predicate/"
+				+ nellPred.replaceAll("\\s+", "_") + "\", \"NELL#Instance/"
+				+ format(nellSubPFxd) + "\", \"NELL#Instance/" + format(nellObjPFxd) + "\", "
+				+ confidence + ")\n");
 
 		/**
 		 * create the property assertions
 		 */
-		allEvidenceWriterTop1.write("propAsstConf(\"NELL#Predicate/" + nellPred
-				+ "\", \"NELL#Instance/" + nellSubPFxd + "\", \"NELL#Instance/"
-				+ nellObjPFxd + "\", " + confidence + ")\n");
+		allEvidenceWriterTop1.write("propAsstConf(\"NELL#Predicate/"
+				+ nellPred.replaceAll("\\s+", "_") + "\", \"NELL#Instance/"
+				+ nellSubPFxd + "\", \"NELL#Instance/" + nellObjPFxd + "\", "
+				+ confidence + ")\n");
 
 		/**
 		 * create top-k evidences for subject
