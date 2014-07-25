@@ -332,9 +332,7 @@ public class DistantSupervised {
 						.getInstanceTypes(dbpEntity);
 				entityTypes = SPARQLEndPointQueryAPI.getLowestType(entityTypes);
 			} else {
-				if (dbpEntity.indexOf("Ring") != -1)
-					System.out.println();
-
+				
 				entityTypes = DBWrapper.getDBPInstanceType(Utilities
 						.characterToUTF8(dbpEntity));
 			}

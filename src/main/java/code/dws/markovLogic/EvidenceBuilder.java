@@ -198,8 +198,7 @@ public class EvidenceBuilder {
 	}
 
 	private static String format(String arg) {
-		return arg.replaceAll(",", "~2C")
-				.replaceAll("\\$", "~24");
+		return arg.replaceAll(",", "~2C").replaceAll("\\$", "~24").replaceAll("%", "~25");
 	}
 
 	/**
@@ -244,16 +243,16 @@ public class EvidenceBuilder {
 		 */
 		allEvidenceWriter.write("propAsstConf(\"NELL#Predicate/"
 				+ nellPred.replaceAll("\\s+", "_") + "\", \"NELL#Instance/"
-				+ format(nellSubPFxd) + "\", \"NELL#Instance/" + format(nellObjPFxd) + "\", "
-				+ confidence + ")\n");
+				+ format(nellSubPFxd) + "\", \"NELL#Instance/"
+				+ format(nellObjPFxd) + "\", " + confidence + ")\n");
 
 		/**
 		 * create the property assertions
 		 */
 		allEvidenceWriterTop1.write("propAsstConf(\"NELL#Predicate/"
 				+ nellPred.replaceAll("\\s+", "_") + "\", \"NELL#Instance/"
-				+ nellSubPFxd + "\", \"NELL#Instance/" + nellObjPFxd + "\", "
-				+ confidence + ")\n");
+				+ format(nellSubPFxd) + "\", \"NELL#Instance/"
+				+ format(nellObjPFxd) + "\", " + confidence + ")\n");
 
 		/**
 		 * create top-k evidences for subject
@@ -293,7 +292,10 @@ public class EvidenceBuilder {
 		List<String> sameAsConfidences;
 		String conc;
 
+		if (nellInst.indexOf("99 percent") != -1)
+			System.out.println();
 		// get the top-k concepts, confidence pairs
+		// UTF-8 at this stage
 		sameAsConfidences = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
 				.cleanse(nellInst).replaceAll("\\_+", " "),
 				Constants.SAMEAS_TOPK);
@@ -305,7 +307,11 @@ public class EvidenceBuilder {
 			// if one instance-dbpedia pair is already in, skip it
 			if (!termConceptPairSet.contains(nellPostFixdInst + val)) {
 
+				// back to character again
 				conc = Utilities.utf8ToCharacter(val.split("\t")[0]);
+
+//				if (conc.indexOf("We_are_the_99") != -1)
+//					System.out.println();
 
 				generateDBPediaTypeMLN(conc, allEvidenceWriter);
 
@@ -316,7 +322,7 @@ public class EvidenceBuilder {
 				allEvidenceWriter.write("sameAsConf("
 						+ conc
 						+ ", \"NELL#Instance/"
-						+ nellPostFixdInst
+						+ format(nellPostFixdInst)
 						+ "\", "
 						+ decimalFormatter.format(Utilities
 								.convertProbabilityToWeight(Double
@@ -368,6 +374,7 @@ public class EvidenceBuilder {
 	 * @param pair
 	 * @param isOfTypeEvidenceWriter
 	 * @param identifier
+	 * @throws Exception
 	 */
 	private void generateDBPediaTypeMLN(String dbPediaInstance,
 			BufferedWriter isOfTypeEvidenceWriter) {
@@ -376,19 +383,11 @@ public class EvidenceBuilder {
 
 		String tempInst = null;
 
-		tempInst = Utilities.utf8ToCharacter(dbPediaInstance.replaceAll("~",
-				"%"));
-		//
-		// if(tempInst.indexOf("Liverpool")!= -1)
-		// System.out.println("");
-
-		// if(dbPediaInstance.indexOf("The_Ring_") != -1)
-		// System.out.println();
+		tempInst = dbPediaInstance;
 
 		// get DBPedia types
 		if (Constants.RELOAD_DBPEDIA_TYPES)
-			listTypes = SPARQLEndPointQueryAPI.getInstanceTypes(Utilities
-					.utf8ToCharacter(tempInst));
+			listTypes = SPARQLEndPointQueryAPI.getInstanceTypes(tempInst);
 
 		else { // load cached copy from DB
 

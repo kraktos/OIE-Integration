@@ -9,7 +9,6 @@
                 <attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="/home/adutta/git/OIE-Integration/target/classes"/>
-	    <exclude name="/home/adutta/git/OIE-Integration/src/main/resources/executables/" />
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/thirdPartyJar/jaws-bin.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/thirdPartyJar/ws4j-1.0.1.jar"/>
             <fileset dir="/home/adutta/git/hierarchical-clustering-java/target/classes"/>
@@ -21,7 +20,6 @@
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/apache/lucene/lucene-core/3.6.2/lucene-core-3.6.2.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/jgrapht/jgrapht-jdk1.5/0.7.3/jgrapht-jdk1.5-0.7.3.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/com/hp/hpl/jena/arq/2.8.8/arq-2.8.8.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/com/hp/hpl/jena/jena/2.6.4/jena-2.6.4.jar"/>
@@ -31,6 +29,7 @@
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/com/hp/hpl/jena/iri/0.8/iri-0.8.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/codehaus/woodstox/wstx-asl/3.2.9/wstx-asl-3.2.9.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/net/sourceforge/owlapi/owlapi-distribution/3.4.10/owlapi-distribution-3.4.10.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/net/sourceforge/owlapi/owlapi-apibinding/3.4.10/owlapi-apibinding-3.4.10.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/apache/felix/org.osgi.core/1.4.0/org.osgi.core-1.4.0.jar"/>
@@ -73,6 +72,7 @@
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar"/>
         </jar>
     </target>
+
 <target name="create_run_jar2">
         <jar destfile="/home/adutta/git/OIE-Integration/src/main/resources/executables/BOOTSTRAP_B.jar" filesetmanifest="mergewithoutmain">
             <manifest>
@@ -80,7 +80,6 @@
                 <attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="/home/adutta/git/OIE-Integration/target/classes"/>
-	    <exclude name="/home/adutta/git/OIE-Integration/src/main/resources/executables/" />
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/thirdPartyJar/jaws-bin.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/thirdPartyJar/ws4j-1.0.1.jar"/>
             <fileset dir="/home/adutta/git/hierarchical-clustering-java/target/classes"/>
@@ -92,7 +91,6 @@
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/apache/lucene/lucene-core/3.6.2/lucene-core-3.6.2.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/jgrapht/jgrapht-jdk1.5/0.7.3/jgrapht-jdk1.5-0.7.3.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/com/hp/hpl/jena/arq/2.8.8/arq-2.8.8.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/com/hp/hpl/jena/jena/2.6.4/jena-2.6.4.jar"/>
@@ -102,6 +100,7 @@
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/com/hp/hpl/jena/iri/0.8/iri-0.8.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/codehaus/woodstox/wstx-asl/3.2.9/wstx-asl-3.2.9.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/net/sourceforge/owlapi/owlapi-distribution/3.4.10/owlapi-distribution-3.4.10.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/net/sourceforge/owlapi/owlapi-apibinding/3.4.10/owlapi-apibinding-3.4.10.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/apache/felix/org.osgi.core/1.4.0/org.osgi.core-1.4.0.jar"/>
@@ -144,4 +143,5 @@
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar"/>
         </jar>
     </target>
+
 </project>

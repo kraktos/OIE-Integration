@@ -52,11 +52,12 @@ public class BootStrapMethod {
 
 		ExperimentAutomation.loadConfigParameters(args);
 		ExperimentAutomation.BOOTSTRAP = true;
+		ExperimentAutomation.RELOAD_TYPE = false;
 
 		// take the output file generated
 		createSameAsHypotheses("/home/adutta/git/OIE-Integration/src/main/resources/output/ds_"
 				+ ExperimentAutomation.PREDICATE + "/out.db");
-		
+
 		createSubObjLists("/home/adutta/git/OIE-Integration/src/main/resources/output/ds_"
 				+ ExperimentAutomation.PREDICATE + "/out.db");
 
