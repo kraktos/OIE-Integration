@@ -10,10 +10,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.FileVisitor;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,156 +29,158 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import code.dws.extractor.RelationExplorer;
+import code.dws.reverb.ReverbPropertyReNaming;
 import code.dws.utils.Constants;
 import code.dws.utils.Utilities;
-import code.dws.extractor.RelationExplorer;
 
 /**
  * Class to find related predicates between two given dbp entities
  * 
  * @author Arnab Dutta
  */
-public class Discover
-{
+public class Discover {
 
-    public final static Logger log = LoggerFactory.getLogger(Discover.class);
+	public final static Logger log = LoggerFactory.getLogger(Discover.class);
 
-    static Map<String, String> SAMEAS_MAP = new HashMap<String, String>();
+	static Map<String, String> SAMEAS_MAP = new HashMap<String, String>();
 
-    private static void createPropertyPaths(String mappingFile, List<ArrayList<String>> propertyPaths, double hops,
-        String predicate, boolean needInverse) throws IOException, URISyntaxException
-    {
+	@SuppressWarnings("resource")
+	private static void createPropertyPaths(String mappingFile,
+			List<ArrayList<String>> propertyPaths, double hops,
+			String predicate, boolean needInverse) throws IOException,
+			URISyntaxException {
 
-        Scanner scan;
+		Scanner scan;
+		scan = new Scanner(new File(mappingFile), "UTF-8");
 
-        InputStream is = Discover.class.getResourceAsStream(mappingFile);
+		String line;
 
-        scan = new Scanner(is, "UTF-8");
+		String oieSubj = null;
+		String oieObj = null;
+		String dbSubj = null;
+		String dbObj = null;
 
-        // BufferedReader tupleReader = new BufferedReader(new Fileinp(is));
+		Matcher matcher = null;
+		Pattern pattern = Pattern.compile("sameAs\\((.*?)\\)");
 
-        String line;
+		BufferedWriter propPathWriter = new BufferedWriter(new FileWriter(
+				predicate
+						+ ((needInverse) ? "_invPropertyPaths.log"
+								: "_propertyPaths.log")));
 
-        String oieSubj = null;
-        String oieObj = null;
-        String dbSubj = null;
-        String dbObj = null;
+		while (scan.hasNextLine()) {
 
-        Matcher matcher = null;
-        Pattern pattern = Pattern.compile("sameAs\\((.*?)\\)");
+			line = scan.nextLine();
+			matcher = pattern.matcher(line);
 
-        BufferedWriter propPathWriter =
-            new BufferedWriter(new FileWriter(predicate
-                + ((needInverse) ? "_invPropertyPaths.log" : "_propertyPaths.log")));
+			while (matcher.find()) {
+				line = line.replaceAll("sameAs\\(", "").replaceAll("\\)", "");
 
-        while (scan.hasNextLine()) {
+				SAMEAS_MAP.put(line.split(",")[1].trim(),
+						line.split(",")[0].trim());
+			}
+		}
 
-            line = scan.nextLine();
-            matcher = pattern.matcher(line);
+		pattern = Pattern.compile("propAsst\\((.*?)\\)");
+		scan = new Scanner(new File(mappingFile), "UTF-8");
 
-            while (matcher.find()) {
-                line = line.replaceAll("sameAs\\(", "").replaceAll("\\)", "");
+		scan = new Scanner(new File(mappingFile), "UTF-8");
 
-                SAMEAS_MAP.put(line.split(",")[1].trim(), line.split(",")[0].trim());
-            }
-        }
+		while (scan.hasNextLine()) {
+			line = scan.nextLine();
 
-        pattern = Pattern.compile("propAsst\\((.*?)\\)");
-        // tupleReader = new BufferedReader(new FileReader(is));
-        is = Discover.class.getResourceAsStream(mappingFile);
+			matcher = pattern.matcher(line);
 
-        scan = new Scanner(is, "UTF-8");
+			while (matcher.find()) {
+				line = line.replaceAll("propAsst\\(", "").replaceAll("\\)", "");
+				oieSubj = line.split(",")[1].trim();
+				oieObj = line.split(",")[2].trim();
 
-        while (scan.hasNextLine()) {
-            line = scan.nextLine();
+				dbSubj = SAMEAS_MAP.get(oieSubj);
+				dbObj = SAMEAS_MAP.get(oieObj);
 
-            matcher = pattern.matcher(line);
+				// we are ready to explore the graph
+				// for each pair explore the relations
 
-            while (matcher.find()) {
-                line = line.replaceAll("propAsst\\(", "").replaceAll("\\)", "");
-                oieSubj = line.split(",")[1].trim();
-                oieObj = line.split(",")[2].trim();
+				ArrayList<String> p = (!needInverse) ? doGraphExploration(
+						dbSubj, dbObj, hops) : doGraphExploration(dbObj,
+						dbSubj, hops);
 
-                dbSubj = SAMEAS_MAP.get(oieSubj);
-                dbObj = SAMEAS_MAP.get(oieObj);
+				if (p.size() > 0) {
+					log.info(dbSubj + "\t" + dbObj + "\t" + p.toString());
+				}
 
-                // we are ready to explore the graph
-                // for each pair explore the relations
+				if (p.size() > 0) {
+					propPathWriter.write(predicate + "\t");
+					for (String path : p)
+						propPathWriter.write(path + "\t");
 
-                ArrayList<String> p =
-                    (!needInverse) ? doGraphExploration(dbSubj, dbObj, hops) : doGraphExploration(dbObj, dbSubj, hops);
+					propPathWriter.write("\n");
+					propPathWriter.flush();
+				}
+			}
+		}
 
-                if (p.size() > 0) {
-                    log.info(dbSubj + "\t" + dbObj + "\t" + p.toString());
-                }
+		propPathWriter.close();
+	}
 
-                if (p.size() > 0) {
-                    propPathWriter.write(predicate + "\t");
-                    for (String path : p)
-                        propPathWriter.write(path + "\t");
+	private static ArrayList<String> doGraphExploration(String dbSubj,
+			String dbObj, double hops) {
 
-                    propPathWriter.write("\n");
-                    propPathWriter.flush();
-                }
-            }
-        }
+		ArrayList<String> paths = new ArrayList<String>();
 
-        propPathWriter.close();
-    }
+		if (dbSubj != null && dbObj != null) {
 
-    private static ArrayList<String> doGraphExploration(String dbSubj, String dbObj, double hops)
-    {
+			// some cleanup
+			dbSubj = cleanUp(dbSubj);
+			dbObj = cleanUp(dbObj);
 
-        ArrayList<String> paths = new ArrayList<String>();
+			log.debug("Exploring for " + dbSubj + "\t" + dbObj);
 
-        if (dbSubj != null && dbObj != null) {
+			// make call to relation finder
+			RelationExplorer relExp = new RelationExplorer(dbSubj, dbObj,
+					(int) hops);
+			paths = relExp.init();
+			if (paths.size() > 0) {
+				log.debug(paths.toString());
+			}
+		}
+		return paths;
 
-            // some cleanup
-            dbSubj = cleanUp(dbSubj);
-            dbObj = cleanUp(dbObj);
+	}
 
-            log.debug("Exploring for " + dbSubj + "\t" + dbObj);
+	private static String cleanUp(String input) {
+		return Utilities.cleanTerms(input)
+				.replaceAll("DBP#resource/", Constants.DBPEDIA_INSTANCE_NS)
+				.replaceAll("~", "%").replaceAll("\\*", "'")
+				.replaceAll("DBP#resource/", Constants.DBPEDIA_INSTANCE_NS)
+				.replaceAll("\\[", "\\(").replaceAll("\\]", "\\)");
+	}
 
-            // make call to relation finder
-            RelationExplorer relExp = new RelationExplorer(dbSubj, dbObj, (int) hops);
-            paths = relExp.init();
-            if (paths.size() > 0) {
-                log.debug(paths.toString());
-            }
-        }
-        return paths;
+	/**
+	 * @param args
+	 * @throws IOException
+	 * @throws URISyntaxException
+	 */
+	public static void main(String[] args) throws IOException,
+			URISyntaxException {
 
-    }
+		// create a collection of property paths to be generated
+		List<ArrayList<String>> propertyPaths = new ArrayList<ArrayList<String>>();
 
-    private static String cleanUp(String input)
-    {
-        return Utilities.cleanTerms(input).replaceAll("DBP#resource/", Constants.DBPEDIA_INSTANCE_NS)
-            .replaceAll("~", "%").replaceAll("\\*", "'").replaceAll("DBP#resource/", Constants.DBPEDIA_INSTANCE_NS)
-            .replaceAll("\\[", "\\(").replaceAll("\\]", "\\)");
-    }
+		// the interested OIE predicate
+		String predicate = args[0];
 
-    /**
-     * @param args
-     * @throws IOException
-     * @throws URISyntaxException
-     */
-    public static void main(String[] args) throws IOException, URISyntaxException
-    {
+		// number of node jumps interested in
+		double hops = Double.valueOf(args[1]);
 
-        // create a collection of property paths to be generated
-        List<ArrayList<String>> propertyPaths = new ArrayList<ArrayList<String>>();
+		// determines if direct or inverse properties
+		boolean mode = (args[2].equals("T")) ? true : false;
 
-        // the interested OIE predicate
-        String predicate = args[0];
+		String mappingFile = "/output/ds_" + predicate + "/outT3_IT6.db";
 
-        // number of node jumps interested in
-        double hops = Double.valueOf(args[1]);
+		createPropertyPaths(mappingFile, propertyPaths, hops, predicate, mode);
 
-        // determines if direct or inverse properties
-        boolean mode = (args[2].equals("T")) ? true : false;
-
-        String mappingFile = "/output/ds_" + predicate + "/outT3_IT6.db";
-
-        createPropertyPaths(mappingFile, propertyPaths, hops, predicate, mode);
-    }
+	}
 }

@@ -198,7 +198,8 @@ public class EvidenceBuilder {
 	}
 
 	private static String format(String arg) {
-		return arg.replaceAll(",", "~2C").replaceAll("\\$", "~24").replaceAll("%", "~25");
+		return arg.replaceAll(",", "~2C").replaceAll("\\$", "~24")
+				.replaceAll("%", "~25");
 	}
 
 	/**
@@ -310,8 +311,8 @@ public class EvidenceBuilder {
 				// back to character again
 				conc = Utilities.utf8ToCharacter(val.split("\t")[0]);
 
-//				if (conc.indexOf("We_are_the_99") != -1)
-//					System.out.println();
+				// if (conc.indexOf("We_are_the_99") != -1)
+				// System.out.println();
 
 				generateDBPediaTypeMLN(conc, allEvidenceWriter);
 
@@ -328,13 +329,6 @@ public class EvidenceBuilder {
 								.convertProbabilityToWeight(Double
 										.parseDouble(val.split("\t")[1])))
 						+ ")\n");
-
-				// add to the list
-				// listMappings.add("sameAsConf("
-				// + conc
-				// + ", \"NELL#Instance/"
-				// + nellPostFixdInst
-				// + "\", f)");
 
 				listMappings.add(conc);
 

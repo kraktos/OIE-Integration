@@ -480,7 +480,7 @@ public class Constants {
 	/**
 	 * defines the batch size for the Data base operations
 	 */
-	public static int BATCH_SIZE = 1000;
+	public static int BATCH_SIZE = 10000;
 
 	// select URI, SF, SUM(COUNT), (SUM(COUNT)/(select SUM(COUNT) from wikiPrep
 	// where SF = 'satun')) as prob from wikiPrep where SF = 'satun' group by
@@ -662,6 +662,11 @@ public class Constants {
 	public static final double SCALE_WEIGHT = ExperimentAutomation.SCALE_WEIGHT;
 
 	public static final int TOP_K_NUMERIC_PROPERTIES = ExperimentAutomation.TOP_K_NUMERIC_PROPERTIES;
+
+	public static final String UPDT_OIE_POSTFIXED = "INSERT INTO OIE_REFINED (OIE_SUB, OIE_PRED, OIE_OBJ, DBP_SUB, DBP_OBJ) VALUES (?, ?, ?, ?, ?);";
+
+	// public static final String UPDT_OIE_POSTFIXED =
+	// "UPDATE OIE_REFINED SET DBP_SUB=?, DBP_OBJ=? WHERE OIE_PFX_SUB=? AND OIE_PFX_OBJ=? AND OIE_PRED=?";;
 
 	public static boolean ENGAGE_INTER_STEP = ExperimentAutomation.ENGAGE_INTER_STEP;
 

@@ -68,6 +68,8 @@ public class DBWrapper {
 
 	static PreparedStatement getOccurancePredicatesPrepStmnt = null;
 
+	static PreparedStatement updateOIEPFxdPrepstmnt = null;
+
 	// For precision values
 	static PreparedStatement getAllPredPrepStmnt = null;
 
@@ -166,8 +168,8 @@ public class DBWrapper {
 			fetchCountsPrepstmnt = connection
 					.prepareStatement(Constants.GET_LINK_COUNT);
 
-			// getOccurancePredicatesPrepStmnt = connection
-			// .prepareStatement(PredicateMapper.GET_SAMPLE);
+			updateOIEPFxdPrepstmnt = connection
+					.prepareStatement(Constants.UPDT_OIE_POSTFIXED);
 
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -1461,8 +1463,6 @@ public class DBWrapper {
 		String reverbSub = null;
 		String reverbObj = null;
 
-		
-
 		try {
 			getReverbInstancesPrepStmnt.setString(1, propArg);
 			ResultSet rs = getReverbInstancesPrepStmnt.executeQuery();
@@ -1471,32 +1471,77 @@ public class DBWrapper {
 				reverbSub = rs.getString(1);
 				reverbObj = rs.getString(2);
 
-//				pstmt.setString(1, reverbSub);
-//				try {
-//					rs2 = pstmt.executeQuery();
-//					while (rs2.next()) {
-//						dbpSub = rs2.getString(1);
-//					}
-//				} catch (Exception e1) {
-//					dbpSub = reverbSub;
-//				}
-//
-//				pstmt.setString(1, reverbObj);
-//				try {
-//					rs3 = pstmt.executeQuery();
-//					while (rs3.next()) {
-//						dbpObj = rs3.getString(1);
-//					}
-//				} catch (Exception e) {
-//					dbpObj = reverbObj;
-//				}
+				// pstmt.setString(1, reverbSub);
+				// try {
+				// rs2 = pstmt.executeQuery();
+				// while (rs2.next()) {
+				// dbpSub = rs2.getString(1);
+				// }
+				// } catch (Exception e1) {
+				// dbpSub = reverbSub;
+				// }
+				//
+				// pstmt.setString(1, reverbObj);
+				// try {
+				// rs3 = pstmt.executeQuery();
+				// while (rs3.next()) {
+				// dbpObj = rs3.getString(1);
+				// }
+				// } catch (Exception e) {
+				// dbpObj = reverbObj;
+				// }
 
-				result.add(new ImmutablePair<String, String>(reverbSub, reverbObj));
+				result.add(new ImmutablePair<String, String>(reverbSub,
+						reverbObj));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	public static void updateResidualOIERefined() {
+		try {
+			if (batchCounter % Constants.BATCH_SIZE != 0) {
+				updateOIEPFxdPrepstmnt.executeBatch();
+				logger.info("FLUSHED TO OIE_REFINED...");
+				connection.commit();
+			}
+		} catch (SQLException e) {
+		}
+	}
+
+	public static void updateOIEPostFxd(String oieSub, String oiePred,
+			String oieObj, String dbpS, String dbpO) {
+
+		try {
+
+			updateOIEPFxdPrepstmnt.setString(1, oieSub);
+			updateOIEPFxdPrepstmnt.setString(2, oiePred);
+			updateOIEPFxdPrepstmnt.setString(3, oieObj);
+			updateOIEPFxdPrepstmnt.setString(4, dbpS);
+			updateOIEPFxdPrepstmnt.setString(5, dbpO);
+
+			updateOIEPFxdPrepstmnt.addBatch();
+			updateOIEPFxdPrepstmnt.clearParameters();
+
+			batchCounter++;
+			if (batchCounter % Constants.BATCH_SIZE == 0) { // batches are
+															// flushed at
+															// a time
+				// execute batch update
+				updateOIEPFxdPrepstmnt.executeBatch();
+
+				System.out.println("FLUSHED TO OIE_REFINED");
+				connection.commit();
+				updateOIEPFxdPrepstmnt.clearBatch();
+			}
+
+		} catch (SQLException e) {
+			logger.error("Error with batch update of OIE_REFINED .."
+					+ e.getMessage());
+		}
+
 	}
 
 }
