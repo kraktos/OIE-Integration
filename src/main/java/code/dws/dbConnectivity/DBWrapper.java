@@ -1512,15 +1512,16 @@ public class DBWrapper {
 	}
 
 	public static void updateOIEPostFxd(String oieSub, String oiePred,
-			String oieObj, String dbpS, String dbpO) {
+			String clusterName, String oieObj, String dbpS, String dbpO) {
 
 		try {
 
 			updateOIEPFxdPrepstmnt.setString(1, oieSub);
 			updateOIEPFxdPrepstmnt.setString(2, oiePred);
-			updateOIEPFxdPrepstmnt.setString(3, oieObj);
-			updateOIEPFxdPrepstmnt.setString(4, dbpS);
-			updateOIEPFxdPrepstmnt.setString(5, dbpO);
+			updateOIEPFxdPrepstmnt.setString(3, clusterName);
+			updateOIEPFxdPrepstmnt.setString(4, oieObj);
+			updateOIEPFxdPrepstmnt.setString(5, dbpS);
+			updateOIEPFxdPrepstmnt.setString(6, dbpO);
 
 			updateOIEPFxdPrepstmnt.addBatch();
 			updateOIEPFxdPrepstmnt.clearParameters();

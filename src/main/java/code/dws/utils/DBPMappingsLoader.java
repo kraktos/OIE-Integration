@@ -19,8 +19,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import code.dws.dbConnectivity.DBWrapper;
+import code.dws.reverb.ReverbPropertyReNaming;
 
 /**
  * this class reads the refined output files for each of the NELL property
@@ -45,6 +47,10 @@ public class DBPMappingsLoader {
 			PREDICATE = args[0];
 			readOutputFiles();
 		} else {
+
+			// load the cluster names and reverb properties
+			ReverbPropertyReNaming.main(new String[] { "" });
+
 			Path filePath = Paths.get("src/main/resources/output/");
 
 			final List<Path> files = new ArrayList<Path>();
@@ -69,7 +75,12 @@ public class DBPMappingsLoader {
 							.replaceAll("ds_", "");
 
 					PREDICATE = clusterName;
-					readOutputFiles();
+					for (String reverbProp : ReverbPropertyReNaming
+							.getReNamedProperties().get(clusterName)) {
+
+						readOutputFiles();
+					}
+
 				}
 
 			} catch (IOException e) {
@@ -90,6 +101,7 @@ public class DBPMappingsLoader {
 		String key;
 
 		String nSub;
+		String nProp;
 		String nObj;
 
 		String dbpSVal;
@@ -125,6 +137,7 @@ public class DBPMappingsLoader {
 
 				if (arr.length == 7) {
 					nSub = arr[3].replaceAll("NELL#Instance/", "");
+					nProp = arr[1].replaceAll("NELL#Predicate/", "");
 					nObj = arr[5].replaceAll("NELL#Instance/", "");
 
 					if (SAMEAS.containsKey(nSub))
@@ -147,7 +160,7 @@ public class DBPMappingsLoader {
 							.replaceAll("\\[", "\\(").replaceAll("\\]", "\\)")
 							: dbpSVal);
 
-					updateDB(nSub, PREDICATE, nObj, dbpSVal, dbpOVal);
+					updateDB(nSub, nProp, PREDICATE, nObj, dbpSVal, dbpOVal);
 
 				}
 			}
@@ -158,10 +171,11 @@ public class DBPMappingsLoader {
 
 	}
 
-	private static void updateDB(String nSub, String pred, String nObj,
-			String dbpSVal, String dbpOVal) {
+	private static void updateDB(String nSub, String pred, String clusterName,
+			String nObj, String dbpSVal, String dbpOVal) {
 
-		DBWrapper.updateOIEPostFxd(nSub, pred, nObj, dbpSVal, dbpOVal);
+		DBWrapper.updateOIEPostFxd(nSub, pred, clusterName, nObj, dbpSVal,
+				dbpOVal);
 
 	}
 }
