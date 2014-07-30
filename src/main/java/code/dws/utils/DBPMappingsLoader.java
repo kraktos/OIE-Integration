@@ -41,8 +41,7 @@ public class DBPMappingsLoader {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		ExperimentAutomation.loadConfigParameters(new String[] { "",
-				"src/main/resources/input/CONFIG.cfg" });
+		ExperimentAutomation.loadConfigParameters(new String[] { "", args[0] });
 
 		String clusterName = null;
 
