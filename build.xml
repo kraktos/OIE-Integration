@@ -13,6 +13,13 @@
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/thirdPartyJar/ws4j-1.0.1.jar"/>
             <fileset dir="/home/adutta/git/hierarchical-clustering-java/target/classes"/>
             <fileset dir="/home/adutta/git/hierarchical-clustering-java/target/test-classes"/>
+	<fileset dir="/home/adutta/git/OIE-Integration/src/main/resources/executables/" >
+	  <exclude name="**/*.jar"/>
+	</fileset>
+	<fileset dir="/home/adutta/git/OIE-Integration/src/main/resources/output/" >
+	  <exclude name="**/*.*"/>
+	</fileset>
+pip
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/junit/junit/4.11/junit-4.11.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/thirdPartyJar/javaml-0.1.7.jar"/>
@@ -84,6 +91,12 @@
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/thirdPartyJar/ws4j-1.0.1.jar"/>
             <fileset dir="/home/adutta/git/hierarchical-clustering-java/target/classes"/>
             <fileset dir="/home/adutta/git/hierarchical-clustering-java/target/test-classes"/>
+<fileset dir="/home/adutta/git/OIE-Integration/src/main/resources/executables/" >
+	  <exclude name="**/*.jar"/>
+	</fileset>
+	<fileset dir="/home/adutta/git/OIE-Integration/src/main/resources/output/" >
+	  <exclude name="**/*.*"/>
+	</fileset>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/junit/junit/4.11/junit-4.11.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/adutta/thirdPartyJar/javaml-0.1.7.jar"/>
