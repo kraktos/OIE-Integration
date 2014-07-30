@@ -62,7 +62,7 @@ public class GenerateNewProperties {
 	// graph exploratory search modes.
 	private static boolean multiHop = false;
 
-	private static boolean refinedMode = false;
+	private static boolean refinedMode = true;
 
 	/**
 	 * @param args
