@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 import code.dws.dbConnectivity.DBWrapper;
+import code.dws.experiment.ExperimentAutomation;
 import code.dws.reverb.ReverbPropertyReNaming;
 
 /**
@@ -39,6 +40,9 @@ public class DBPMappingsLoader {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
+
+		ExperimentAutomation.loadConfigParameters(new String[] { "",
+				"src/main/resources/input/CONFIG.cfg" });
 
 		String clusterName = null;
 
@@ -74,9 +78,12 @@ public class DBPMappingsLoader {
 							.replaceAll("ds_", "");
 
 					PREDICATE = clusterName;
+
 					for (String reverbProp : ReverbPropertyReNaming
 							.getReNamedProperties().get(clusterName)) {
 
+						System.out.println("Flushing Cluster => " + PREDICATE
+								+ ", property => " + reverbProp);
 						readOutputFiles();
 					}
 
@@ -141,7 +148,8 @@ public class DBPMappingsLoader {
 
 				if (arr.length == 7) {
 					nSub = arr[3].replaceAll("NELL#Instance/", "");
-					nProp = arr[1].replaceAll("NELL#Predicate/", "");
+					nProp = arr[1].replaceAll("NELL#Predicate/", "")
+							.replaceAll("_", " ");
 					nObj = arr[5].replaceAll("NELL#Instance/", "");
 
 					if (SAMEAS.containsKey(nSub))
