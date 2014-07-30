@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import code.dws.dbConnectivity.DBWrapper;
 import code.dws.reverb.ReverbPropertyReNaming;
@@ -90,6 +89,11 @@ public class DBPMappingsLoader {
 		}
 	}
 
+	/**
+	 * reads the particular output file defined by the PREDICATE variable
+	 * 
+	 * @throws IOException
+	 */
 	private static void readOutputFiles() throws IOException {
 		String path = Constants.sample_dumps + PREDICATE + "/out.db";
 
@@ -160,7 +164,7 @@ public class DBPMappingsLoader {
 							.replaceAll("\\[", "\\(").replaceAll("\\]", "\\)")
 							: dbpSVal);
 
-					updateDB(nSub, nProp, PREDICATE, nObj, dbpSVal, dbpOVal);
+					updateDB(nSub, nProp, nObj, dbpSVal, dbpOVal);
 
 				}
 			}
@@ -171,11 +175,10 @@ public class DBPMappingsLoader {
 
 	}
 
-	private static void updateDB(String nSub, String pred, String clusterName,
-			String nObj, String dbpSVal, String dbpOVal) {
+	private static void updateDB(String nSub, String pred, String nObj,
+			String dbpSVal, String dbpOVal) {
 
-		DBWrapper.updateOIEPostFxd(nSub, pred, clusterName, nObj, dbpSVal,
-				dbpOVal);
+		DBWrapper.updateOIEPostFxd(nSub, pred, nObj, dbpSVal, dbpOVal);
 
 	}
 }

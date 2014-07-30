@@ -191,7 +191,7 @@ public class EvidenceBuilder {
 
 		// flush residuals
 		DBWrapper.saveResidualDBPTypes();
-
+		DBWrapper.saveResidualOIERefined();
 		// shutdown DB
 		DBWrapper.shutDown();
 
@@ -238,6 +238,9 @@ public class EvidenceBuilder {
 		nellObjPFxd = generateUniqueURI(nellObj.replaceAll("\\s+", "_"));
 
 		// create a list of local mapping pair and return it
+		// save to DB these post fixed mappings, needed later for property
+		// discovery
+		saveToDB(nellSub, nellPred, nellObj, nellSubPFxd, nellObjPFxd);
 
 		/**
 		 * create the property assertions
@@ -432,6 +435,12 @@ public class EvidenceBuilder {
 			System.err.println("Exception in generateDBPediaTypeMLN() "
 					+ e.getMessage());
 		}
+	}
+
+	private void saveToDB(String oieSub, String oiePred, String oieObj,
+			String oieSubPfxd, String oieObjPfxd) {
+		DBWrapper.saveToOIEPostFxd(oieSub, oiePred, oieObj, oieSubPfxd,
+				oieObjPfxd);
 	}
 
 	/**

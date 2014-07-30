@@ -69,6 +69,7 @@ public class DBWrapper {
 	static PreparedStatement getOccurancePredicatesPrepStmnt = null;
 
 	static PreparedStatement updateOIEPFxdPrepstmnt = null;
+	static PreparedStatement insertOIEPFxdPrepstmnt = null;
 
 	// For precision values
 	static PreparedStatement getAllPredPrepStmnt = null;
@@ -170,6 +171,9 @@ public class DBWrapper {
 
 			updateOIEPFxdPrepstmnt = connection
 					.prepareStatement(Constants.UPDT_OIE_POSTFIXED);
+
+			insertOIEPFxdPrepstmnt = connection
+					.prepareStatement(Constants.OIE_POSTFIXED);
 
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -660,6 +664,20 @@ public class DBWrapper {
 		if (pstmt != null) {
 			try {
 				pstmt.close();
+			} catch (Exception excp) {
+			}
+		}
+
+		if (updateOIEPFxdPrepstmnt != null) {
+			try {
+				updateOIEPFxdPrepstmnt.close();
+			} catch (Exception excp) {
+			}
+		}
+
+		if (insertOIEPFxdPrepstmnt != null) {
+			try {
+				insertOIEPFxdPrepstmnt.close();
 			} catch (Exception excp) {
 			}
 		}
@@ -1512,16 +1530,16 @@ public class DBWrapper {
 	}
 
 	public static void updateOIEPostFxd(String oieSub, String oiePred,
-			String clusterName, String oieObj, String dbpS, String dbpO) {
+			String oieObj, String dbpS, String dbpO) {
 
 		try {
 
-			updateOIEPFxdPrepstmnt.setString(1, oieSub);
-			updateOIEPFxdPrepstmnt.setString(2, oiePred);
-			updateOIEPFxdPrepstmnt.setString(3, clusterName);
+			updateOIEPFxdPrepstmnt.setString(1, dbpS);
+			updateOIEPFxdPrepstmnt.setString(2, dbpO);
+
+			updateOIEPFxdPrepstmnt.setString(3, oieSub);
 			updateOIEPFxdPrepstmnt.setString(4, oieObj);
-			updateOIEPFxdPrepstmnt.setString(5, dbpS);
-			updateOIEPFxdPrepstmnt.setString(6, dbpO);
+			updateOIEPFxdPrepstmnt.setString(5, oiePred);
 
 			updateOIEPFxdPrepstmnt.addBatch();
 			updateOIEPFxdPrepstmnt.clearParameters();
@@ -1543,6 +1561,53 @@ public class DBWrapper {
 					+ e.getMessage());
 		}
 
+	}
+
+	public static void saveToOIEPostFxd(String oieSub, String oiePred,
+			String oieObj, String oieSubPfxd, String oieObjPfxd) {
+
+		try {
+
+			insertOIEPFxdPrepstmnt.setString(1, oieSub);
+			insertOIEPFxdPrepstmnt.setString(2, oiePred);
+			insertOIEPFxdPrepstmnt.setString(3, oieObj);
+			insertOIEPFxdPrepstmnt.setString(4, oieSubPfxd);
+			insertOIEPFxdPrepstmnt.setString(5, oieObjPfxd);
+			insertOIEPFxdPrepstmnt.setString(6, "X");
+			insertOIEPFxdPrepstmnt.setString(7, "X");
+
+			insertOIEPFxdPrepstmnt.addBatch();
+			insertOIEPFxdPrepstmnt.clearParameters();
+
+			batchCounter++;
+			if (batchCounter % Constants.BATCH_SIZE == 0) { // batches are
+															// flushed at
+															// a time
+				// execute batch update
+				insertOIEPFxdPrepstmnt.executeBatch();
+
+				logger.info("FLUSHED TO OIE_REFINED...");
+
+				connection.commit();
+				insertOIEPFxdPrepstmnt.clearBatch();
+			}
+
+		} catch (SQLException e) {
+			logger.error("Error with batch insertion of OIE_REFINED .."
+					+ e.getMessage());
+		}
+
+	}
+
+	public static void saveResidualOIERefined() {
+		try {
+			if (batchCounter % Constants.BATCH_SIZE != 0) {
+				insertOIEPFxdPrepstmnt.executeBatch();
+				logger.info("FLUSHED TO OIE_REFINED...");
+				connection.commit();
+			}
+		} catch (SQLException e) {
+		}
 	}
 
 }
