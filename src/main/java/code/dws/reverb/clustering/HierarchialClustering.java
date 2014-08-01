@@ -3,6 +3,7 @@
  */
 package code.dws.reverb.clustering;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Map;
 
@@ -30,8 +31,9 @@ public class HierarchialClustering {
 
 	/**
 	 * @param args
+	 * @throws FileNotFoundException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 
 		createDataMatrix();
 
@@ -99,8 +101,9 @@ public class HierarchialClustering {
 	/**
 	 * creates a data matrix with a[] vs b[] values and corresponding pairwise
 	 * scores
+	 * @throws FileNotFoundException 
 	 */
-	private static void createDataMatrix() {
+	private static void createDataMatrix() throws FileNotFoundException {
 
 		KMediodCluster.loadScores();
 		props = KMediodCluster.getReverbProperties();

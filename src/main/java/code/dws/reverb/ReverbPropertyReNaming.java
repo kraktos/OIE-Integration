@@ -41,7 +41,7 @@ public class ReverbPropertyReNaming {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		double optimalInflation = readClusterIndexFile();
+		double optimalInflation = getOptimalInflation();
 
 		// use the inflation factor to regenerate the clusters
 		// perform a Markov Cluster
@@ -60,8 +60,15 @@ public class ReverbPropertyReNaming {
 		return CLUSTERED_REVERB_PROPERTIES;
 	}
 
+	/**
+	 * read the file for different inflation parameter and use it to find the
+	 * inflation giving max number of clusters
+	 * 
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	@SuppressWarnings("resource")
-	private static double readClusterIndexFile() throws FileNotFoundException {
+	private static double getOptimalInflation() throws FileNotFoundException {
 		Scanner scan;
 		String[] elem = null;
 		String sCurrentLine = null;

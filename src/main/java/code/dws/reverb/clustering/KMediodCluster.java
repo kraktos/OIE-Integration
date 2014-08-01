@@ -4,6 +4,8 @@
 package code.dws.reverb.clustering;
 
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,8 +32,8 @@ import code.dws.utils.Constants;
  */
 public class KMediodCluster {
 
-	private static final String WORDNET_SCORES = "/input/CLUSTERS_WORDNET_";
-	private static final String JACCARD_SCORES = "/input/CLUSTERS_OVERLAP_";
+	private static final String WORDNET_SCORES = "src/main/resources/input/CLUSTERS_WORDNET_";
+	private static final String JACCARD_SCORES = "src/main/resources/input/CLUSTERS_OVERLAP_";
 	private static final int TOPK_REVERB_PROPERTIES = 500;
 
 	private static final String ALL_SCORES = "COMBINED_SCORE.tsv";
@@ -48,9 +50,10 @@ public class KMediodCluster {
 	private static Map<String, List<String>> K_CLUSTER_MAP2 = new HashMap<String, List<String>>();
 
 	/**
+	 * @throws FileNotFoundException 
 	 * 
 	 */
-	public static void loadScores() {
+	public static void loadScores() throws FileNotFoundException {
 		// feed seedc count and generate K-random cluster points
 		// seedReverbProperties = generateKRandomSeed();
 
@@ -147,16 +150,16 @@ public class KMediodCluster {
 	 * 
 	 * @param file
 	 * @param arg
+	 * @throws FileNotFoundException 
 	 */
 	@SuppressWarnings("resource")
-	private static void loadScores(String file, String arg) {
+	private static void loadScores(String file, String arg) throws FileNotFoundException {
 
 		String sCurrentLine;
 		double score;
 
 		Scanner scan;
-		scan = new Scanner(KMediodCluster.class.getResourceAsStream(file),
-				"UTF-8");
+		scan = new Scanner(new File(file), "UTF-8");
 
 		Pair<String, String> pair = null;
 

@@ -57,7 +57,7 @@ public class CompareClusters {
 		DecimalFormat df = new DecimalFormat("##.##");
 
 		writer.write("ITERATION\tCLUSTER_SIZE\tKCL_SCORE\tMCL_SCORE\n");
-		for (double p = 2; p < 21;) {
+		for (double p = 22.9; p < 25;) {
 
 			double tempIndex = 0;
 

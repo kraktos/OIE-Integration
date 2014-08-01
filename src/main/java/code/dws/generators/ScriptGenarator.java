@@ -32,9 +32,9 @@ public class ScriptGenarator {
 
 	static List<String> PROPS = new ArrayList<String>();
 
-	private static final String SHELL_SCRIPT = "FULL_SCRIPT.sh";
+	private static final String SHELL_SCRIPT = "src/main/resources/script/FULL_SCRIPT.sh";
 
-	private static final int MAX_BOOT_ITER = 6;
+	private static final int MAX_BOOT_ITER = 3;
 
 	private static final String PIPELINE_NAME = (Constants.OIE_IS_NELL) ? "PIPELINE_ALL_NELL.sh "
 			: "PIPELINE_ALL_REVERB.sh ";
