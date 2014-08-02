@@ -7,7 +7,7 @@ if [ ! -d 'src/main/resources/output/ds_'$1'' ]; then
 	mkdir 'src/main/resources/output/ds_'$1''
 fi
 
-echo " ======= RUNNING FULL REASONING FOR " $1 " ========"
+echo "\n\n ======= RUNNING FULL REASONING FOR " $1 " ========"
 
 
 # running full pipeline
@@ -16,7 +16,7 @@ java -jar src/main/resources/executables/PIPE_ALLREVERB.jar $1 src/main/resource
 
 #DYNAMICALLY CREATE THE MODEL FILE
 
-cat '/home/adutta/rockit/modelBasic.mln' '/src/main/resources/output/ds_'$1'/domRanEvidence.db'  > '/home/adutta/rockit/model.mln'
+cat '/home/adutta/rockit/modelBasic.mln' 'src/main/resources/output/ds_'$1'/domRanEvidence.db'  > '/home/adutta/rockit/model.mln'
 
 #CHANGE TO ROCKIT DIRECTORY
 cd /home/adutta/rockit

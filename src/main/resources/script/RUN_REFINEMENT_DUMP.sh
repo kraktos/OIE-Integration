@@ -4,7 +4,6 @@
 cd /home/adutta/git/OIE-Integration/
 
 
-#echo "\n\n ======= RUNNING FULL REASONING FOR " $1 " ========"
 
 
 # running full pipeline

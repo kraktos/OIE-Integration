@@ -3,11 +3,11 @@
 #cd /home/arnab/Workspaces/SchemaMapping/linking-IE
 cd /home/adutta/git/OIE-Integration/
 
-echo " ========== RUNNING BOOTSTRAP FOR  " $1 " ITERATION " $2 " ============ "
+echo " \n\n ========== RUNNING BOOTSTRAP FOR  " $1 " ITERATION " $2 " ============ "
 
 java -jar src/main/resources/executables/BOOTSTRAP_B.jar $1 src/main/resources/input/CONFIG.cfg
 
-cat '/home/adutta/rockit/modelBasic.mln' '/home/adutta/git/OIE-Integration/src/main/resources/output/ds_'$1'/domRanEvidenceBS.db'  > '/home/adutta/rockit/model.mln'
+cat '/home/adutta/rockit/modelBasic.mln' 'src/main/resources/output/ds_'$1'/domRanEvidenceBS.db'  > '/home/adutta/rockit/model.mln'
 
 cd /home/adutta/rockit
 
