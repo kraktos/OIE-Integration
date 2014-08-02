@@ -45,6 +45,8 @@ public class DBPMappingsLoader {
 
 		String clusterName = null;
 
+		DBWrapper.init(Constants.UPDT_OIE_POSTFIXED);
+
 		if (Constants.OIE_IS_NELL) {
 			PREDICATE = args[0];
 			readOutputFiles();
@@ -78,20 +80,14 @@ public class DBPMappingsLoader {
 
 					PREDICATE = clusterName;
 
-					for (String reverbProp : ReverbPropertyReNaming
-							.getReNamedProperties().get(clusterName)) {
-
-						System.out.println("Flushing Cluster => " + PREDICATE
-								+ ", property => " + reverbProp);
-						readOutputFiles();
-					}
-
+					readOutputFiles();
 				}
-
 			} catch (IOException e) {
 				e.printStackTrace();
+			} finally {
+				DBWrapper.updateResidualOIERefined();
+				DBWrapper.shutDown();
 			}
-
 		}
 	}
 
@@ -103,6 +99,9 @@ public class DBPMappingsLoader {
 	private static void readOutputFiles() throws IOException {
 		String path = Constants.sample_dumps + PREDICATE + "/out.db";
 
+		long t1 = System.currentTimeMillis();
+
+		@SuppressWarnings("resource")
 		BufferedReader mappingsReader = new BufferedReader(
 				new InputStreamReader(new FileInputStream(path)));
 
@@ -118,8 +117,6 @@ public class DBPMappingsLoader {
 		String dbpOVal;
 
 		String[] arr;
-
-		DBWrapper.init(Constants.UPDT_OIE_POSTFIXED);
 
 		while ((triple = mappingsReader.readLine()) != null) {
 			if (triple.startsWith("sameAs")) {
@@ -137,6 +134,8 @@ public class DBPMappingsLoader {
 			}
 		}
 
+		long t2 = System.currentTimeMillis();
+		System.out.println("done with same as = " + (t2 - t1));
 		mappingsReader = new BufferedReader(new InputStreamReader(
 				new FileInputStream(path)));
 
@@ -146,9 +145,11 @@ public class DBPMappingsLoader {
 				arr = triple.split("\"");
 
 				if (arr.length == 7) {
-					nSub = arr[3].replaceAll("NELL#Instance/", "");
+
 					nProp = arr[1].replaceAll("NELL#Predicate/", "")
 							.replaceAll("_", " ");
+
+					nSub = arr[3].replaceAll("NELL#Instance/", "");
 					nObj = arr[5].replaceAll("NELL#Instance/", "");
 
 					if (SAMEAS.containsKey(nSub))
@@ -171,15 +172,15 @@ public class DBPMappingsLoader {
 							.replaceAll("\\[", "\\(").replaceAll("\\]", "\\)")
 							: dbpSVal);
 
-					updateDB(nSub, nProp, nObj, dbpSVal, dbpOVal);
+					if (dbpSVal != null || dbpOVal != null)
+						updateDB(nSub, nProp, nObj, dbpSVal, dbpOVal);
 
 				}
 			}
 		}
 
-		DBWrapper.updateResidualOIERefined();
-		DBWrapper.shutDown();
-
+		System.out.println("one read takes = "
+				+ (System.currentTimeMillis() - t1));
 	}
 
 	private static void updateDB(String nSub, String pred, String nObj,

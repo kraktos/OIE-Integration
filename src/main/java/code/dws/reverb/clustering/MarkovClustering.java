@@ -109,14 +109,14 @@ public class MarkovClustering {
 				list.add(s);
 
 
-//			if (list.size() > 10 && lastSize != 5) {
-//				lastSize++;
-//				reCluster(list, cnt, inflation);
-//			} else {
-//				lastSize = 0;
+			if (list.size() > 10 && lastSize != 5) {
+				lastSize++;
+				reCluster(list, cnt, inflation);
+			} else {
+				lastSize = 0;
 				System.out.println("putting " + list);
 				CLUSTER.put("C" + cnt++, list);
-//			}
+			}
 
 			// for cluster sizes larger than threshold, re cluster them
 

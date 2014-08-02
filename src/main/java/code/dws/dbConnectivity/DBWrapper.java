@@ -1545,6 +1545,7 @@ public class DBWrapper {
 			updateOIEPFxdPrepstmnt.clearParameters();
 
 			batchCounter++;
+
 			if (batchCounter % Constants.BATCH_SIZE == 0) { // batches are
 															// flushed at
 															// a time
