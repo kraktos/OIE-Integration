@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import org.slf4j.LoggerFactory;
 
 import code.dws.dbConnectivity.DBWrapper;
 import code.dws.query.SPARQLEndPointQueryAPI;
+import code.dws.reverb.ReverbPropertyReNaming;
 import code.dws.utils.Constants;
 import code.dws.utils.Utilities;
 
@@ -64,11 +66,28 @@ public class GenerateNewProperties {
 
 	private static boolean refinedMode = true;
 
+	private static Map<String, List<String>> propertyClusterNames;
+	private static List<String> propertyNames = new ArrayList<String>();
+
 	/**
 	 * @param args
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
+		init();
+
+		if (Constants.OIE_IS_NELL)
+			readFiles(NELL_FILE_PATH);
+		else
+			readFiles(Constants.REVERB_DATA_PATH);
+
+	}
+
+	/**
+	 * @throws IOException
+	 * 
+	 */
+	public static void init() throws IOException {
 		// initiate different files depending on the condition
 		if (multiHop) {
 			INVERSE_PROP_LOG = "INVERSE_PROP_MULTI.log";
@@ -80,11 +99,10 @@ public class GenerateNewProperties {
 					: "REVERB_DIRECT_PROP.log";
 		}
 
-		if (Constants.OIE_IS_NELL)
-			readFiles(NELL_FILE_PATH);
-		else
-			readFiles(Constants.REVERB_DATA_PATH);
+		ReverbPropertyReNaming.main(new String[] { "" });
 
+		propertyClusterNames = ReverbPropertyReNaming.getReNamedProperties();
+		System.out.println(propertyClusterNames.size());
 	}
 
 	/**
@@ -98,9 +116,9 @@ public class GenerateNewProperties {
 		int lineCounter = 0;
 
 		String line = null;
-		String nellRawSubj = null;
-		String nellRawProp = null;
-		String nellRawObj = null;
+		String oieRawSubj = null;
+		String oieRawProp = null;
+		String oieRawObj = null;
 
 		String[] elems = null;
 
@@ -141,49 +159,57 @@ public class GenerateNewProperties {
 				log.debug(elems[0] + "\t" + elems[1] + "\t" + elems[2] + "\n");
 
 				// get the nell subjects and objects
-				nellRawSubj = elems[0];
-				nellRawProp = elems[1];
-				nellRawObj = elems[2];
+				oieRawSubj = elems[0];
+				oieRawProp = elems[1];
+				oieRawObj = elems[2];
 
-				if (!refinedMode) {
-					// get the top-k concepts for the subject
-					candidateSubjs = DBWrapper.fetchTopKLinksWikiPrepProb(
-							Utilities.cleanse(nellRawSubj)
-									.replaceAll("\\_+", " ").trim(),
-							SAMEAS_TOPK);
-					// get the top-k concepts for the object
-					candidateObjs = DBWrapper.fetchTopKLinksWikiPrepProb(
-							Utilities.cleanse(nellRawObj)
-									.replaceAll("\\_+", " ").trim(),
-							SAMEAS_TOPK);
-				} else {
+				if (isRelevantProperty(oieRawProp)) {
 
-					candidates = DBWrapper.fetchRefinedMapping(Utilities
-							.cleanse(nellRawSubj).trim(), nellRawProp.trim()
-							.replaceAll("\\s+", "_"),
-							Utilities.cleanse(nellRawObj).trim());
+					if (!refinedMode) {
+						// get the top-k concepts for the subject
+						candidateSubjs = DBWrapper.fetchTopKLinksWikiPrepProb(
+								Utilities.cleanse(oieRawSubj)
+										.replaceAll("\\_+", " ").trim(),
+								SAMEAS_TOPK);
+						// get the top-k concepts for the object
+						candidateObjs = DBWrapper.fetchTopKLinksWikiPrepProb(
+								Utilities.cleanse(oieRawObj)
+										.replaceAll("\\_+", " ").trim(),
+								SAMEAS_TOPK);
+					} else {
 
-					try {
-						candidateSubjs = new ArrayList<String>();
-						candidateSubjs.add(candidates.get(0));
+						candidates = DBWrapper.fetchRefinedMapping(
+								Utilities.cleanse(oieRawSubj).trim(),
+								(Constants.OIE_IS_NELL) ? oieRawProp.trim()
+										.replaceAll("\\s+", "_") : oieRawProp
+										.trim(), Utilities.cleanse(oieRawObj)
+										.trim());
 
-						candidateObjs = new ArrayList<String>();
-						candidateObjs.add(candidates.get(1));
+						try {
+							candidateSubjs = new ArrayList<String>();
+							candidateSubjs.add(candidates.get(0));
 
-					} catch (IndexOutOfBoundsException e) {
+							candidateObjs = new ArrayList<String>();
+							candidateObjs.add(candidates.get(1));
 
+						} catch (IndexOutOfBoundsException e) {
+
+						}
 					}
+
+					if (oieRawSubj.equals("abraham ortelius"))
+						System.out.println();
+
+					// use the SPARQL endpoint for querying the direct and
+					// inverse
+					// relation betwen the sub-obj pairs
+					findDirectIndirectProps(elems, candidateSubjs,
+							candidateObjs, directPropWriter, inversePropWriter);
+
+					// update GLOBAL_PROPERTY_MAPPINGS with the possible values
+					// updateTheCollection(nellRawPred, directProperties);
 				}
-
-				// use the SPARQL endpoint for querying the direct and inverse
-				// relation betwen the sub-obj pairs
-				findDirectIndirectProps(elems, candidateSubjs, candidateObjs,
-						directPropWriter, inversePropWriter);
-
-				// update GLOBAL_PROPERTY_MAPPINGS with the possible values
-				// updateTheCollection(nellRawPred, directProperties);
-
-				if (lineCounter++ % 1000 == 0)
+				if (lineCounter++ % 10000 == 0)
 					log.info("Completed " + lineCounter + " lines ");
 
 			} catch (Exception e) {
@@ -197,6 +223,39 @@ public class GenerateNewProperties {
 		directPropWriter.close();
 		inversePropWriter.close();
 
+	}
+
+	/**
+	 * often no need to look for every property in the data set..for reverb we
+	 * are dealing with top-k properties..so makes it time efficient
+	 * 
+	 * @param oieRawProp
+	 * @return
+	 */
+	private static boolean isRelevantProperty(String oieRawProp) {
+		boolean flag = false;
+
+		if (Constants.OIE_IS_NELL)
+			flag = true;
+		else {
+			if (propertyNames.contains(oieRawProp)) {
+				flag = true;
+			} else {
+				for (Entry<String, List<String>> e : propertyClusterNames
+						.entrySet()) {
+					for (String s : e.getValue()) {
+						if (!propertyNames.contains(s)) {
+							propertyNames.add(s);
+
+							if (s.equals(oieRawProp))
+								flag = true;
+						}
+					}
+				}
+			}
+		}
+
+		return flag;
 	}
 
 	/**
@@ -226,29 +285,35 @@ public class GenerateNewProperties {
 
 		// for the current NELL predicate get the possible db:properties from
 		// SPARQL endpoint
+
 		for (String candSubj : candidateSubj) {
-			for (String candObj : candidateObj) {
+			if (!candSubj.equals("X")) {
+				for (String candObj : candidateObj) {
 
-				// DIRECT PROPERTIES
-				String directProperties = getPredsFromEndpoint(
-						candSubj.split("\t")[0], candObj.split("\t")[0]);
+					if (!candObj.equals("X")) {
+						// DIRECT PROPERTIES
+						String directProperties = getPredsFromEndpoint(
+								candSubj.split("\t")[0], candObj.split("\t")[0]);
+						if (directProperties.length() > 0) {
+							directPropList.add(directProperties);
 
-				if (directProperties.length() > 0) {
-					directPropList.add(directProperties);
+							// find domain type
+							domainType = getTypeInfo(candSubj.split("\t")[0]);
+							domainType = (domainType.length() == 0) ? "null"
+									: domainType;
+						}
+						// INDIRECT PROPERTIES
+						String inverseProps = getPredsFromEndpoint(
+								candObj.split("\t")[0], candSubj.split("\t")[0]);
+						if (inverseProps.length() > 0) {
+							inversePropList.add(inverseProps);
 
-					// find domain type
-					domainType = getTypeInfo(candSubj.split("\t")[0]);
-				}
-
-				// INDIRECT PROPERTIES
-				String inverseProps = getPredsFromEndpoint(
-						candObj.split("\t")[0], candSubj.split("\t")[0]);
-
-				if (inverseProps.length() > 0) {
-					inversePropList.add(inverseProps);
-
-					// find range type
-					rangeType = getTypeInfo(candObj.split("\t")[0]);
+							// find range type
+							rangeType = getTypeInfo(candObj.split("\t")[0]);
+							rangeType = (rangeType.length() == 0) ? "null"
+									: rangeType;
+						}
+					}
 				}
 			}
 		}
@@ -318,7 +383,8 @@ public class GenerateNewProperties {
 					.get(0);
 		} catch (IndexOutOfBoundsException e) {
 		} finally {
-			return mostSpecificVal + "\t" + mostGeneralVal;
+			// return mostSpecificVal + "\t" + mostGeneralVal;
+			return mostSpecificVal;
 		}
 	}
 
@@ -354,6 +420,12 @@ public class GenerateNewProperties {
 		// remove all utf-8 characters and convert them to characters
 		candSubj = Utilities.utf8ToCharacter(candSubj);
 		candObj = Utilities.utf8ToCharacter(candObj);
+
+		if (candSubj.endsWith("%"))
+			candSubj = candSubj.replaceAll("%", "");
+
+		if (candObj.endsWith("%"))
+			candObj = candObj.replaceAll("%", "");
 
 		if (multiHop) {
 
