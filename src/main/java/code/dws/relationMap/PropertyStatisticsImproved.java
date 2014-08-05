@@ -25,7 +25,6 @@ import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
 import code.dws.utils.Utilities;
-import code.dws.relationMap.GenerateNewProperties;
 
 import com.hp.hpl.jena.query.QuerySolution;
 
@@ -61,7 +60,7 @@ public class PropertyStatisticsImproved {
 	// threshold to consider mappable predicates. It means consider NELL
 	// predicates
 	// which are atleast x % map-able
-	private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 35;
+	private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 5;
 
 	private static final String PROP_STATS = "PROP_STATISTICS.tsv"; // "PROP_STATISTICS_TOP5.tsv";
 
@@ -125,6 +124,13 @@ public class PropertyStatisticsImproved {
 		}
 	}
 
+	/**
+	 * USE THE MAPPED PROPERTY, AND MAPPED INSTANCES TO GENERATE NEW-TRIPLES
+	 * FROM THE NON-MAPPED CASES
+	 * 
+	 * @param filePath
+	 * @throws IOException
+	 */
 	private static void createNewTriples(String filePath) throws IOException {
 		int cnt = 0;
 		// nell property in concern
@@ -142,7 +148,12 @@ public class PropertyStatisticsImproved {
 						PATH_SEPERATOR, false);
 
 		// init DB for getting the most frequebt URI for the NELL terms
-		DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
+
+		// MOST FREQUENT CASE
+		// DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
+
+		// REFINED CASE
+		DBWrapper.init(Constants.GET_REFINED_MAPPINGS_SQL);
 
 		// iterate through them
 		for (ArrayList<String> line : directPropsFile) {
@@ -151,7 +162,6 @@ public class PropertyStatisticsImproved {
 			if (line.size() == 3)
 				if (FINAL_MAPPINGS.containsKey(nellProp)) {
 					cnt++;
-					// log.info("Non mapped triples = " + line);
 
 					List<String> dbProps = FINAL_MAPPINGS.get(nellProp);
 
@@ -159,8 +169,6 @@ public class PropertyStatisticsImproved {
 							statStriplesWriter);
 				}
 		}
-
-		log.info("" + cnt);
 
 		triplesWriter.close();
 		statStriplesWriter.close();
@@ -173,49 +181,80 @@ public class PropertyStatisticsImproved {
 		String rangeType = null;
 
 		String nellRawSubj = null;
+		String oieRawProp = null;
 		String nellRawObj = null;
 
 		List<String> candidateSubjs = null;
 		List<String> candidateObjs = null;
+		List<String> candidates = null;
 
 		// get the nell subjects and objects
 		nellRawSubj = line.get(0);
+		oieRawProp = line.get(1);
 		nellRawObj = line.get(2);
 
 		// get the top-k concepts for the subject
-		candidateSubjs = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
-				.cleanse(nellRawSubj).replaceAll("\\_+", " ").trim(),
-				SAMEAS_TOPK);
+		// candidateSubjs = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
+		// .cleanse(nellRawSubj).replaceAll("\\_+", " ").trim(),
+		// SAMEAS_TOPK);
+		//
+		// // get the top-k concepts for the object
+		// candidateObjs = DBWrapper.fetchTopKLinksWikiPrepProb(
+		// Utilities.cleanse(nellRawObj).replaceAll("\\_+", " ").trim(),
+		// SAMEAS_TOPK);
 
-		// get the top-k concepts for the object
-		candidateObjs = DBWrapper.fetchTopKLinksWikiPrepProb(
-				Utilities.cleanse(nellRawObj).replaceAll("\\_+", " ").trim(),
-				SAMEAS_TOPK);
-		try {
-			// find domain type
-			domainType = getTypeInfo(candidateSubjs.get(0).split("\t")[0]);
-
-		} catch (Exception e) {
-		}
-		try {
-			// find range type
-			rangeType = getTypeInfo(candidateObjs.get(0).split("\t")[0]);
-
-		} catch (Exception e) {
-		}
+		candidates = DBWrapper.fetchRefinedMapping(
+				Utilities.cleanse(nellRawSubj).trim(),
+				(Constants.OIE_IS_NELL) ? oieRawProp.trim().replaceAll("\\s+",
+						"_") : oieRawProp.trim(), Utilities.cleanse(nellRawObj)
+						.trim());
 
 		try {
-			if (!INVERSE)
-				shoudBeIn(dbProps, domainType, rangeType, line, triplesWriter,
-						statStriplesWriter,
-						candidateSubjs.get(0).split("\t")[0], candidateObjs
-								.get(0).split("\t")[0]);
+			candidateSubjs = new ArrayList<String>();
+			if (candidates.size() > 0 && candidates.get(0) != null)
+				candidateSubjs.add(candidates.get(0));
 			else
-				shoudBeIn(dbProps, rangeType, domainType, line, triplesWriter,
-						statStriplesWriter,
-						candidateObjs.get(0).split("\t")[0], candidateSubjs
-								.get(0).split("\t")[0]);
+				candidateSubjs.add("X");
+
+			candidateObjs = new ArrayList<String>();
+			if (candidates.size() > 1 && candidates.get(1) != null)
+				candidateObjs.add(candidates.get(1));
+			else
+				candidateObjs.add("X");
+
+		} catch (IndexOutOfBoundsException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			if ((candidateSubjs.get(0) != null && !candidateSubjs.get(0)
+					.equals("X"))
+					&& (candidateObjs.get(0) != null && !candidateObjs.get(0)
+							.equals("X"))) {
+
+				try {
+					// find domain type
+					domainType = getTypeInfo(candidateSubjs.get(0).split("\t")[0]);
+
+					// find range type
+					rangeType = getTypeInfo(candidateObjs.get(0).split("\t")[0]);
+
+					if (!INVERSE)
+						shoudBeIn(dbProps, domainType, rangeType, line,
+								triplesWriter, statStriplesWriter,
+								candidateSubjs.get(0).split("\t")[0],
+								candidateObjs.get(0).split("\t")[0]);
+					else
+						shoudBeIn(dbProps, rangeType, domainType, line,
+								triplesWriter, statStriplesWriter,
+								candidateObjs.get(0).split("\t")[0],
+								candidateSubjs.get(0).split("\t")[0]);
+
+				} catch (Exception e) {
+				}
+			}
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -361,8 +400,6 @@ public class PropertyStatisticsImproved {
 					possibleTypes = new ArrayList<String>();
 
 					nonBlankMapCntr++;
-					if (line.get(0).equals("abraham ortelius"))
-						System.out.println();
 
 					for (int cnt = 3; cnt < line.size(); cnt++) {
 						if (line.get(cnt)
@@ -396,6 +433,10 @@ public class PropertyStatisticsImproved {
 		}
 
 		loadPropDistributionInCollection();
+
+		// read the transactions and create the tau vlaues for each
+		// association..
+		// this prepares the regression model
 
 		// DEBUG POINT, print the distribution
 		for (Map.Entry<String, Map<String, Map<Pair<String, String>, Long>>> entry : GLOBAL_TRANSCS_MAP
@@ -469,10 +510,7 @@ public class PropertyStatisticsImproved {
 						Double.valueOf(twoDForm.format(percentageMapped)),
 						Double.valueOf(twoDForm.format(tau)));
 
-				// propStatsWriter.write(probMax + "\t" +
-				// Double.valueOf(twoDForm.format(percentageMapped)) + "\t"
-				// + Double.valueOf(twoDForm.format(tau)) + "\n");
-
+				// THIS IS A FILE WHICH WRITES OUT THE k VS TAU VALUES
 				propStatsWriter.write(Double.valueOf(twoDForm
 						.format(percentageMapped))
 						+ "\t"
@@ -484,6 +522,8 @@ public class PropertyStatisticsImproved {
 		propStatsWriter.write("100\t0");
 
 		// apply selection based on the underlying regression line
+		// THIS NOW USES THE TRAINED REGRESSION MODEL TO FILTER PROPERTIES
+		// FALLING BEYOND THE ALLOWABLE PREDICTED REGRESSION VALUES
 		performPredicateBasedAnalysis();
 
 		// some stats
@@ -505,8 +545,6 @@ public class PropertyStatisticsImproved {
 				+ 100 * (double) newTriples / blankMapCntr + "%)\n\n");
 
 		log.info("TOTAL PROPERTIES = " + MAP_OIE_IE_PROP_COUNTS.size() + "\n\n");
-
-		// filterGeneralMostProperties();
 
 		for (Entry<String, List<String>> entry : FINAL_MAPPINGS.entrySet()) {
 			log.debug(entry.getKey() + "\t" + entry.getValue());
@@ -618,8 +656,6 @@ public class PropertyStatisticsImproved {
 			percentageMapped = 100 * (1 - ((double) MAP_OIE_IE_PROP_COUNTS.get(
 					entry.getKey()).get("NA") / nellPredCount));
 
-			System.out.println(percentageMapped);
-
 			// iterate over dbpedia properties
 			for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry
 					.getValue().entrySet()) {
@@ -642,7 +678,7 @@ public class PropertyStatisticsImproved {
 					tau = (double) MAP_OIE_IE_PROP_COUNTS.get(entry.getKey())
 							.get("NA") / (nellPredCount * jointProb);
 
-					log.info(entry.getKey()
+					log.debug(entry.getKey()
 							+ "("
 							+ nellPredCount
 							+ ")\t"
@@ -663,6 +699,7 @@ public class PropertyStatisticsImproved {
 							+ Math.round(percentageMapped) + "%\t"
 							+ regression.predict(percentageMapped));
 
+					// FINALLY SELECTED PROPERTIES
 					if (tau <= ERROR_TOLERANCE
 							* Math.abs(regression.predict(percentageMapped))) {
 						// store in memory
@@ -672,7 +709,7 @@ public class PropertyStatisticsImproved {
 			}
 
 			if (FINAL_MAPPINGS.containsKey(entry.getKey())) {
-				log.info("GENERATING " + percentageMapped + " cases for "
+				log.debug("GENERATING " + percentageMapped + " cases for "
 						+ entry.getKey() + " with "
 						+ MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA"));
 

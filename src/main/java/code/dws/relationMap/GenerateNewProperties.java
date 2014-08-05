@@ -197,9 +197,6 @@ public class GenerateNewProperties {
 						}
 					}
 
-					if (oieRawSubj.equals("abraham ortelius"))
-						System.out.println();
-
 					// use the SPARQL endpoint for querying the direct and
 					// inverse
 					// relation betwen the sub-obj pairs
