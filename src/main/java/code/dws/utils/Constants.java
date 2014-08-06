@@ -667,6 +667,8 @@ public class Constants {
 
 	public static final String UPDT_OIE_POSTFIXED = "UPDATE OIE_REFINED SET DBP_SUB=?, DBP_OBJ=? WHERE OIE_PFX_SUB=? AND OIE_PFX_OBJ=? AND OIE_PRED=?";
 
+	public static final boolean INCLUDE_YAGO_TYPES = true;
+
 	// public static final String UPDT_OIE_POSTFIXED =
 	// "INSERT INTO OIE_REFINED (OIE_SUB, OIE_PRED, CLUSTER_NAME, OIE_OBJ, DBP_SUB, DBP_OBJ) VALUES (?, ?, ?, ?, ?, ?);";
 

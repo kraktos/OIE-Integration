@@ -77,8 +77,8 @@ public class YagoDbpediaMapping {
 			parseOutputFile();
 
 			// final exposed api for getting the dbp mappings
-			System.out
-					.println(getDBPClass("http://dbpedia.org/class/yago/Municipality108626283"));
+			// System.out
+			// .println(getDBPClass("http://dbpedia.org/class/yago/Municipality108626283"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -124,9 +124,11 @@ public class YagoDbpediaMapping {
 
 		writeOutEvidences(eviWriter);
 
-		System.out.println(dbpYagoClassEquiv.size());
-		System.out.println(wordnetYagoClassEquiv.size());
-		System.out.println(wordnetSubClasses.size());
+		log.info("DBPedia - YAGO Class equivalence = "
+				+ dbpYagoClassEquiv.size());
+		log.info("Wordnet - YAGO Class equivalence = "
+				+ wordnetYagoClassEquiv.size());
+		log.info("Wordnet Subclass assertions = " + wordnetSubClasses.size());
 
 	}
 

@@ -333,6 +333,13 @@ public class Utilities {
 		// replaceAll(":_", "__")
 	}
 
+	public static String cleanYagoURI(String arg) {
+		return arg.replaceAll(Constants.YAGO_HEADER + "/", "")
+				.replaceAll(Constants.DBPEDIA_INSTANCE_NS, "")
+				.replaceAll("\"", ""); // TODO
+		// replaceAll(":_", "__")
+	}
+
 	public static String cleanForMLNPresentation(String arg) {
 		arg = arg.replaceAll("(", "[");
 		arg = arg.replaceAll(")", "]");

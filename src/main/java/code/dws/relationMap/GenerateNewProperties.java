@@ -20,6 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import code.dws.dbConnectivity.DBWrapper;
+import code.dws.markovLogic.YagoDbpediaMapping;
 import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.reverb.ReverbPropertyReNaming;
 import code.dws.utils.Constants;
@@ -74,6 +75,7 @@ public class GenerateNewProperties {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
+
 		init();
 
 		if (Constants.OIE_IS_NELL)
@@ -98,6 +100,10 @@ public class GenerateNewProperties {
 			DIRECT_PROP_LOG = (Constants.OIE_IS_NELL) ? "DIRECT_PROP.log"
 					: "REVERB_DIRECT_PROP.log";
 		}
+
+		// inititate yago info
+		if (Constants.INCLUDE_YAGO_TYPES)
+			YagoDbpediaMapping.main(new String[] { "" });
 
 		ReverbPropertyReNaming.main(new String[] { "" });
 
@@ -162,6 +168,9 @@ public class GenerateNewProperties {
 				oieRawSubj = elems[0];
 				oieRawProp = elems[1];
 				oieRawObj = elems[2];
+
+				if (oieRawSubj.indexOf("albany law school") != -1)
+					System.out.println();
 
 				if (isRelevantProperty(oieRawProp)) {
 
@@ -277,6 +286,9 @@ public class GenerateNewProperties {
 		String domainType = null;
 		String rangeType = null;
 
+		String domainTypeInv = null;
+		String rangeTypeInv = null;
+
 		List<String> directPropList = new ArrayList<String>();
 		List<String> inversePropList = new ArrayList<String>();
 
@@ -298,6 +310,12 @@ public class GenerateNewProperties {
 							domainType = getTypeInfo(candSubj.split("\t")[0]);
 							domainType = (domainType.length() == 0) ? "null"
 									: domainType;
+
+							// find range type
+							rangeType = getTypeInfo(candObj.split("\t")[0]);
+							rangeType = (rangeType.length() == 0) ? "null"
+									: rangeType;
+
 						}
 						// INDIRECT PROPERTIES
 						String inverseProps = getPredsFromEndpoint(
@@ -305,10 +323,24 @@ public class GenerateNewProperties {
 						if (inverseProps.length() > 0) {
 							inversePropList.add(inverseProps);
 
+							// find domain type
+							if (rangeType != null) {
+								domainTypeInv = rangeType;
+							} else {
+								domainTypeInv = getTypeInfo(candObj.split("\t")[0]);
+								domainTypeInv = (domainTypeInv.length() == 0) ? "null"
+										: domainTypeInv;
+							}
+
 							// find range type
-							rangeType = getTypeInfo(candObj.split("\t")[0]);
-							rangeType = (rangeType.length() == 0) ? "null"
-									: rangeType;
+							if (domainType != null) {
+								rangeTypeInv = domainType;
+							} else {
+								rangeTypeInv = getTypeInfo(candSubj.split("\t")[0]);
+								rangeTypeInv = (rangeTypeInv.length() == 0) ? "null"
+										: rangeTypeInv;
+
+							}
 						}
 					}
 				}
@@ -343,7 +375,7 @@ public class GenerateNewProperties {
 				inversePropWriter.write(elem + "\t");
 				log.debug(elem + "\t");
 			}
-			inversePropWriter.write(domainType + "\t" + rangeType);
+			inversePropWriter.write(domainTypeInv + "\t" + rangeTypeInv);
 			inversePropWriter.write("\n");
 			log.debug("\n");
 			inversePropWriter.flush();
@@ -376,8 +408,8 @@ public class GenerateNewProperties {
 		try {
 			mostSpecificVal = SPARQLEndPointQueryAPI.getLowestType(types)
 					.get(0);
-			mostGeneralVal = SPARQLEndPointQueryAPI.getHighestType(types)
-					.get(0);
+			// mostGeneralVal = SPARQLEndPointQueryAPI.getHighestType(types)
+			// .get(0);
 		} catch (IndexOutOfBoundsException e) {
 		} finally {
 			// return mostSpecificVal + "\t" + mostGeneralVal;
