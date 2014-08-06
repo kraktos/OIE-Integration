@@ -18,4 +18,3 @@ subClassOf(class, class)
 //equiv(w1,y1) and subClass(w1,w2) and equiv(w2, y2) => subClass(y1, y2)
 !equivWY(w1,y1) v !subClass(w1,w2) v !equivWY(w2, y2) v subClassOf(y1, y2).
 
-

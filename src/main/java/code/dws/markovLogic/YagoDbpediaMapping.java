@@ -78,7 +78,7 @@ public class YagoDbpediaMapping {
 
 			// final exposed api for getting the dbp mappings
 			System.out
-					.println(getDBPClass("http://dbpedia.org/class/yago/Country108544813"));
+					.println(getDBPClass("http://dbpedia.org/class/yago/Municipality108626283"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
