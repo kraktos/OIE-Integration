@@ -192,6 +192,7 @@ public class EvidenceBuilder {
 		// flush residuals
 		DBWrapper.saveResidualDBPTypes();
 		DBWrapper.saveResidualOIERefined();
+
 		// shutdown DB
 		DBWrapper.shutDown();
 
@@ -296,8 +297,6 @@ public class EvidenceBuilder {
 		List<String> sameAsConfidences;
 		String conc;
 
-		if (nellInst.indexOf("99 percent") != -1)
-			System.out.println();
 		// get the top-k concepts, confidence pairs
 		// UTF-8 at this stage
 		sameAsConfidences = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
@@ -401,6 +400,7 @@ public class EvidenceBuilder {
 						+ "\", "
 						+ MLNFileGenerator.removeTags("DBP#resource/"
 								+ Utilities.characterToUTF8(tempInst)) + ")\n");
+
 				if (Constants.RELOAD_DBPEDIA_TYPES)
 					DBWrapper.saveToDBPediaTypes(
 							Utilities.characterToUTF8(tempInst),

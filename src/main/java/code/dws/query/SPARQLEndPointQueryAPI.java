@@ -33,7 +33,8 @@ import com.hp.hpl.jena.query.ResultSetFormatter;
  */
 public class SPARQLEndPointQueryAPI {
 
-	Logger logger = Logger.getLogger(SPARQLEndPointQueryAPI.class.getName());
+	public final static Logger logger = Logger
+			.getLogger(SPARQLEndPointQueryAPI.class.getName());
 
 	// map of class and its subclasses
 	private static Map<String, Set<String>> classAndSubClassesMap = new HashMap<String, Set<String>>();
@@ -143,6 +144,10 @@ public class SPARQLEndPointQueryAPI {
 		List<String> result = new ArrayList<String>();
 		String sparqlQuery = null;
 		String yagoclass = null;
+
+		boolean hasDBPType = false;
+		boolean hasYAGOType = false;
+
 		try {
 			sparqlQuery = "select ?val where{ <http://dbpedia.org/resource/"
 					+ inst
@@ -157,9 +162,11 @@ public class SPARQLEndPointQueryAPI {
 				if (querySol.get("val").toString()
 						.indexOf(Constants.DBPEDIA_CONCEPT_NS) != -1) {
 					if (!result.contains(Utilities.cleanDBpediaURI(querySol
-							.get("val").toString())))
+							.get("val").toString()))) {
 						result.add(Utilities.cleanDBpediaURI(querySol
 								.get("val").toString()));
+						hasDBPType = true;
+					}
 				}
 			}
 
@@ -173,17 +180,20 @@ public class SPARQLEndPointQueryAPI {
 								.get("val").toString());
 						if (yagoclass != null) {
 							if (!result.contains(yagoclass.replaceAll("DBP:",
-									"")))
+									""))) {
 								result.add(yagoclass.replaceAll("DBP:", ""));
+								hasYAGOType = true;
+							}
 						}
 					}
 				}
 			}
 
+			if (!hasDBPType && hasYAGOType)
+				logger.info("found for " + inst + "\t" + result);
+
 		} catch (Exception e) {
-			// e.printStackTrace();
-			// GenericConverter.logger.info("problem with " + sparqlQuery + " "
-			// + e.getMessage());
+			logger.error("Problem with type fetching of instance  " + inst);
 		}
 		return result;
 	}

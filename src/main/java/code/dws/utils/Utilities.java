@@ -353,4 +353,12 @@ public class Utilities {
 		arg = arg.replaceAll("http://dbpedia.org/resource/", "");
 		return arg;
 	}
+
+	public static String cleanseInstances(String dbpInst) {
+	    dbpInst = dbpInst.replaceAll("~", "%");
+	    dbpInst = dbpInst.replaceAll("\\[", "(");
+	    dbpInst = dbpInst.replaceAll("\\]", ")");
+	    dbpInst = dbpInst.replaceAll("\\*", "'");
+	    return utf8ToCharacter(dbpInst);
+	}
 }

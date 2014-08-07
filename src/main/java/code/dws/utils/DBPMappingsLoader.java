@@ -173,7 +173,9 @@ public class DBPMappingsLoader {
 							: dbpSVal);
 
 					if (dbpSVal != null || dbpOVal != null)
-						updateDB(nSub, nProp, nObj, dbpSVal, dbpOVal);
+						updateDB(nSub, nProp, nObj,
+								Utilities.characterToUTF8(dbpSVal),
+								Utilities.characterToUTF8(dbpOVal));
 
 				}
 			}

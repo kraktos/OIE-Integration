@@ -141,7 +141,7 @@ public class DistantSupervised {
 	public void processTripleFromOutputFiles() throws IOException {
 
 		// here create the domain and range class map in a different fashion
-		this.bootStrap(OIE.NELL);
+		this.bootStrap();
 
 		// the maps should have been updated
 		domainClassMap = sortByValue(domainClassMap);
@@ -158,10 +158,10 @@ public class DistantSupervised {
 	 * @param oieType
 	 * @throws IOException
 	 */
-	private void bootStrap(OIE oieType) throws IOException {
+	private void bootStrap() throws IOException {
 
 		List<String> candidates = new ArrayList<String>();
-//		List<String> entityTypes = null;
+		// List<String> entityTypes = null;
 
 		boolean isSubject = false;
 
@@ -173,7 +173,7 @@ public class DistantSupervised {
 		for (Pair<String, String> sameAsPair : BootStrapMethod.SAME_AS_LIST) {
 
 			isSubject = BootStrapMethod.isSubject(sameAsPair.getSecond());
-			dbpinst = PropertyCluster.cleanseInstances(sameAsPair.getFirst()
+			dbpinst = Utilities.cleanseInstances(sameAsPair.getFirst()
 					.replaceAll("DBP#resource/", "").replaceAll("\"", ""));
 
 			candidates.add(dbpinst);
@@ -318,7 +318,6 @@ public class DistantSupervised {
 		List<String> entityTypes = null;
 
 		double value = 0;
-		Map<String, Double> classMap = new HashMap<String, Double>();
 
 		// iterate over the subject entities
 		for (String dbpEntity : entities) {
@@ -332,7 +331,7 @@ public class DistantSupervised {
 						.getInstanceTypes(dbpEntity);
 				entityTypes = SPARQLEndPointQueryAPI.getLowestType(entityTypes);
 			} else {
-				
+
 				entityTypes = DBWrapper.getDBPInstanceType(Utilities
 						.characterToUTF8(dbpEntity));
 			}
@@ -359,7 +358,9 @@ public class DistantSupervised {
 				// System.out.println("UNTYPED FOR " + dbpEntity);
 
 				if (Constants.RELOAD_DBPEDIA_TYPES)
-					DBWrapper.saveToDBPediaTypes(dbpEntity, Constants.UNTYPED);
+					DBWrapper.saveToDBPediaTypes(
+							Utilities.characterToUTF8(dbpEntity),
+							Constants.UNTYPED);
 
 			} else { // normal processing
 
@@ -382,7 +383,9 @@ public class DistantSupervised {
 					}
 
 					if (Constants.RELOAD_DBPEDIA_TYPES)
-						DBWrapper.saveToDBPediaTypes(dbpEntity, entityType);
+						DBWrapper.saveToDBPediaTypes(
+								Utilities.characterToUTF8(dbpEntity),
+								entityType);
 				}
 			}
 		}
@@ -406,7 +409,6 @@ public class DistantSupervised {
 		for (String dbpEntity : subEntities) {
 			dbpEntity = dbpEntity.replaceAll("\\s+", "_");
 
-			// entityTypes = SPARQLEndPointQueryAPI.getInstanceTypes(dbpEntity);
 			if (Constants.RELOAD_DBPEDIA_TYPES) {
 				entityTypes = SPARQLEndPointQueryAPI
 						.getInstanceTypes(dbpEntity);
@@ -427,7 +429,9 @@ public class DistantSupervised {
 				}
 
 				if (Constants.RELOAD_DBPEDIA_TYPES)
-					DBWrapper.saveToDBPediaTypes(dbpEntity, Constants.UNTYPED);
+					DBWrapper.saveToDBPediaTypes(
+							Utilities.characterToUTF8(dbpEntity),
+							Constants.UNTYPED);
 
 			} else {
 
@@ -440,7 +444,9 @@ public class DistantSupervised {
 					}
 
 					if (Constants.RELOAD_DBPEDIA_TYPES)
-						DBWrapper.saveToDBPediaTypes(dbpEntity, entityType);
+						DBWrapper.saveToDBPediaTypes(
+								Utilities.characterToUTF8(dbpEntity),
+								entityType);
 				}
 			}
 		}
@@ -456,13 +462,6 @@ public class DistantSupervised {
 						.getInstanceTypes(dbpEntity);
 				entityTypes = SPARQLEndPointQueryAPI.getLowestType(entityTypes);
 			} else { // load cached copy from DB
-				if (dbpEntity.indexOf("Rebecca") != -1
-						|| dbpEntity.indexOf("Signs") != -1
-						|| dbpEntity.indexOf("Contact") != -1
-						|| dbpEntity.indexOf("Alien") != -1
-						|| dbpEntity.indexOf("Shine") != -1
-						|| dbpEntity.indexOf("Modern_Times") != -1)
-					System.out.println();
 
 				entityTypes = DBWrapper.getDBPInstanceType(Utilities
 						.characterToUTF8(dbpEntity));
@@ -478,7 +477,9 @@ public class DistantSupervised {
 				}
 
 				if (Constants.RELOAD_DBPEDIA_TYPES)
-					DBWrapper.saveToDBPediaTypes(dbpEntity, Constants.UNTYPED);
+					DBWrapper.saveToDBPediaTypes(
+							Utilities.characterToUTF8(dbpEntity),
+							Constants.UNTYPED);
 
 			} else {
 				for (String entityType : entityTypes) {
@@ -490,7 +491,9 @@ public class DistantSupervised {
 					}
 
 					if (Constants.RELOAD_DBPEDIA_TYPES)
-						DBWrapper.saveToDBPediaTypes(dbpEntity, entityType);
+						DBWrapper.saveToDBPediaTypes(
+								Utilities.characterToUTF8(dbpEntity),
+								entityType);
 
 				}
 			}

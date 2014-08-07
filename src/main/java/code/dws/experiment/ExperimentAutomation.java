@@ -51,6 +51,8 @@ public class ExperimentAutomation {
 
 	public static int TOP_K_NUMERIC_PROPERTIES;
 
+	public static boolean INCLUDE_YAGO_TYPES = true;
+
 	/**
 	 * @param args
 	 * @throws Exception
@@ -85,6 +87,10 @@ public class ExperimentAutomation {
 					.getProperty("USE_LOGIT"));
 			ExperimentAutomation.IS_NELL = Boolean.valueOf(prop
 					.getProperty("IS_NELL"));
+
+			ExperimentAutomation.INCLUDE_YAGO_TYPES = Boolean.valueOf(prop
+					.getProperty("INCLUDE_YAGO_TYPES"));
+
 			ExperimentAutomation.RELOAD_TYPE = Boolean.valueOf(prop
 					.getProperty("RELOAD_TYPE"));
 			ExperimentAutomation.BATCH_SIZE = Integer.parseInt(prop
