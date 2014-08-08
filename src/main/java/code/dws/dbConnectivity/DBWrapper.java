@@ -56,8 +56,6 @@ public class DBWrapper {
 
 	static PreparedStatement insertBaseLine = null;
 
-	static PreparedStatement getReverbProperties = null;
-
 	static PreparedStatement getReverbPropSubTypes = null;
 
 	static PreparedStatement getReverbPropObjTypes = null;
@@ -157,8 +155,6 @@ public class DBWrapper {
 			insertBaseLine = connection
 					.prepareStatement(Constants.INSERT_BASE_LINE);
 
-			getReverbProperties = connection
-					.prepareStatement(Constants.GET_DISTINCT_REVERB_PROP_FOR_A_DOM_RAN);
 			getReverbPropSubTypes = connection
 					.prepareStatement(Constants.GET_REVERB_PROP_SUB_TYPE_COUNTS);
 			getReverbPropObjTypes = connection
@@ -678,13 +674,6 @@ public class DBWrapper {
 		if (insertOIEPFxdPrepstmnt != null) {
 			try {
 				insertOIEPFxdPrepstmnt.close();
-			} catch (Exception excp) {
-			}
-		}
-
-		if (getReverbProperties != null) {
-			try {
-				getReverbProperties.close();
 			} catch (Exception excp) {
 			}
 		}
@@ -1238,25 +1227,6 @@ public class DBWrapper {
 		}
 		return null;
 
-	}
-
-	public static List<String> getDistinctReverbProperties(String arg1,
-			String arg2) {
-		List<String> distinctProps = new ArrayList<String>();
-
-		try {
-			getReverbProperties.setString(1, arg1);
-			getReverbProperties.setString(2, arg2);
-
-			ResultSet rs = getReverbProperties.executeQuery();
-
-			while (rs.next()) {
-				distinctProps.add(rs.getString(1));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return distinctProps;
 	}
 
 	public static List<String> getDisjClasses(String arg) {

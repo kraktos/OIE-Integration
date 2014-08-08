@@ -39,9 +39,9 @@ public class MarkovClustering {
 	/**
 	 * mcl output file
 	 */
-	private static final String OUTPUT = "/home/adutta/git/OIE-Integration/src/main/resources/input/mcl.output";
+	private static final String OUTPUT = "src/main/resources/input/mcl.output";
 
-	private static final String OUTPUT_TEMP = "/home/adutta/git/OIE-Integration/src/main/resources/input/mcl.output.temp";
+	private static final String OUTPUT_TEMP = "src/main/resources/input/mcl.output.temp";
 
 	private static Map<Pair<String, String>, Double> map = new HashMap<Pair<String, String>, Double>();
 
@@ -79,8 +79,7 @@ public class MarkovClustering {
 		loadAllPairwiseScores();
 
 		// make mcl call to perform clustering
-		systemRoutine(inflation,
-				"/home/adutta/git/OIE-Integration/COMBINED_SCORE.tsv", OUTPUT);
+		systemRoutine(inflation, KMediodCluster.ALL_SCORES, OUTPUT);
 
 		CLUSTER.clear();
 		// read the output to load in memory
@@ -107,7 +106,6 @@ public class MarkovClustering {
 			elem = sCurrentLine.split("\t");
 			for (String s : elem)
 				list.add(s);
-
 
 			if (list.size() > 10 && lastSize != 5) {
 				lastSize++;
@@ -214,9 +212,7 @@ public class MarkovClustering {
 
 		Scanner scan;
 		try {
-			scan = new Scanner(new File(
-					("/home/adutta/git/OIE-Integration/COMBINED_SCORE.tsv")),
-					"UTF-8");
+			scan = new Scanner(new File((KMediodCluster.ALL_SCORES)), "UTF-8");
 
 			Pair<String, String> pair = null;
 			while (scan.hasNextLine()) {

@@ -315,11 +315,7 @@ public class Constants {
 
 	// "select distinct(PROP) from REVERB_WEIGHTED_TYPES";
 
-	public static String GET_DISTINCT_REVERB_PROP_CLUSTERS = "select SUB_TYPE, OBJ_TYPE, GROUP_CONCAT(DISTINCT PROP SEPARATOR '~') prop from REVERB_WEIGHTED_TYPES group by SUB_TYPE, OBJ_TYPE having SUB_TYPE <> 'NULL' and OBJ_TYPE <> 'NULL'";
-
 	// "select distinct SUB_TYPE, OBJ_TYPE from REVERB_WEIGHTED_TYPES where SUB_TYPE <> 'NULL' and OBJ_TYPE <> 'NULL'";
-
-	public static final String GET_DISTINCT_REVERB_PROP_FOR_A_DOM_RAN = "select distinct PROP from REVERB_WEIGHTED_TYPES where SUB_TYPE = ? and OBJ_TYPE =  ?";
 
 	public static final String GET_TOP_PROPERTIES_REVERB = "select distinct PROP, count(*) as c from REVERB_WEIGHTED_TYPES group by PROP order by c desc limit ?";
 

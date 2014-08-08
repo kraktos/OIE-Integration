@@ -14,14 +14,16 @@ import org.slf4j.LoggerFactory;
 
 import code.dws.core.AutomatedNodeScoringWrapper;
 import code.dws.markovLogic.EvidenceBuilder;
+import code.dws.markovLogic.YagoDbpediaMapping;
 import code.dws.reverb.ReverbPropertyReNaming;
+import code.dws.utils.Constants;
 
 /**
  * @author Arnab Dutta
  */
 public class ExperimentAutomation {
 
-	public static int BATCH_SIZE = 0;
+	public static int BATCH_SIZE = 5000;
 
 	public static String PREDICATE = null;
 
@@ -118,6 +120,10 @@ public class ExperimentAutomation {
 	 */
 	private static void runAll() throws IOException,
 			OWLOntologyCreationException, Exception {
+
+		// inititate yago info
+		if (INCLUDE_YAGO_TYPES)
+			YagoDbpediaMapping.main(new String[] { "" });
 
 		EvidenceBuilder.main(new String[] { PREDICATE });
 

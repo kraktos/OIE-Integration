@@ -24,7 +24,7 @@ import code.dws.reverb.clustering.MarkovClustering;
  */
 public class CompareClusters {
 
-	public static final String CLUSTER_INDICES = "KCL_MCL_CL2";
+	public static final String CLUSTER_INDICES = "src/main/resources/input/KCL_MCL_CL2";
 
 	/**
 	 * 
@@ -57,7 +57,7 @@ public class CompareClusters {
 		DecimalFormat df = new DecimalFormat("##.##");
 
 		writer.write("ITERATION\tCLUSTER_SIZE\tKCL_SCORE\tMCL_SCORE\n");
-		for (double p = 22.9; p < 25;) {
+		for (double p = 22; p < 24;) {
 
 			double tempIndex = 0;
 
@@ -93,7 +93,7 @@ public class CompareClusters {
 					+ "\t" + mclIndex + "\n");
 
 			writer.flush();
-			p = p + 0.2;
+			p = p + 0.45;
 		}
 		writer.close();
 	}
@@ -145,7 +145,7 @@ public class CompareClusters {
 			// + minCompactness);
 
 			clusterGoodness = clusterGoodness + (double) minCompactness
-					/ maxIsolation;
+					/ ((maxIsolation == 0) ? Math.pow(10, -8) : maxIsolation);
 
 			// System.out.println(clusterGoodness);
 

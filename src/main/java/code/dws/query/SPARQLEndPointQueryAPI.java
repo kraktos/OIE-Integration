@@ -148,6 +148,12 @@ public class SPARQLEndPointQueryAPI {
 		boolean hasDBPType = false;
 		boolean hasYAGOType = false;
 
+		if (inst.indexOf("\"") != -1)
+			inst = inst.replaceAll("\"", "%22");
+
+		if (inst.indexOf("\'") != -1)
+			inst = inst.replaceAll("\'", "%27");
+
 		try {
 			sparqlQuery = "select ?val where{ <http://dbpedia.org/resource/"
 					+ inst
@@ -190,7 +196,7 @@ public class SPARQLEndPointQueryAPI {
 			}
 
 			if (!hasDBPType && hasYAGOType)
-				logger.info("found for " + inst + "\t" + result);
+				logger.debug("found for " + inst + "\t" + result);
 
 		} catch (Exception e) {
 			logger.error("Problem with type fetching of instance  " + inst);

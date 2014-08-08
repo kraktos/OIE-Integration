@@ -36,7 +36,7 @@ public class KMediodCluster {
 	private static final String JACCARD_SCORES = "src/main/resources/input/CLUSTERS_OVERLAP_";
 	private static final int TOPK_REVERB_PROPERTIES = 500;
 
-	private static final String ALL_SCORES = "COMBINED_SCORE.tsv";
+	public static final String ALL_SCORES = "src/main/resources/input/COMBINED_SCORE.tsv";
 
 	// private static int SEED_CLUSTERS = (int) (0.2 * TOPK_REVERB_PROPERTIES);
 
@@ -50,7 +50,7 @@ public class KMediodCluster {
 	private static Map<String, List<String>> K_CLUSTER_MAP2 = new HashMap<String, List<String>>();
 
 	/**
-	 * @throws FileNotFoundException 
+	 * @throws FileNotFoundException
 	 * 
 	 */
 	public static void loadScores() throws FileNotFoundException {
@@ -150,10 +150,11 @@ public class KMediodCluster {
 	 * 
 	 * @param file
 	 * @param arg
-	 * @throws FileNotFoundException 
+	 * @throws FileNotFoundException
 	 */
 	@SuppressWarnings("resource")
-	private static void loadScores(String file, String arg) throws FileNotFoundException {
+	private static void loadScores(String file, String arg)
+			throws FileNotFoundException {
 
 		String sCurrentLine;
 		double score;

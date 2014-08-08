@@ -104,11 +104,11 @@ public class ReverbClusterProperty {
 							writerOverlap);
 
 					cnt++;
-					System.out.println("Completed " + (double) 200 * cnt
-							/ (properties.size() * (properties.size() - 1))
-							+ " %");
 
 				}
+				System.out.println("Completed " + (double) 200 * cnt
+						/ (properties.size() * (properties.size() - 1)) + " %");
+
 				writerOverlap.flush();
 				writerWordNet.flush();
 

@@ -79,10 +79,7 @@ public class ReverbPropertyReNaming {
 		double minMclIndex = Integer.MAX_VALUE;
 		double tIndex = 0;
 
-		scan = new Scanner(
-				new File(
-						("/home/adutta/git/OIE-Integration/" + CompareClusters.CLUSTER_INDICES)),
-				"UTF-8");
+		scan = new Scanner(new File((CompareClusters.CLUSTER_INDICES)), "UTF-8");
 		scan.nextLine();
 		while (scan.hasNextLine()) {
 			sCurrentLine = scan.nextLine();
@@ -97,10 +94,7 @@ public class ReverbPropertyReNaming {
 
 		// System.out.println(clusterSize);
 
-		scan = new Scanner(
-				new File(
-						("/home/adutta/git/OIE-Integration/" + CompareClusters.CLUSTER_INDICES)),
-				"UTF-8");
+		scan = new Scanner(new File((CompareClusters.CLUSTER_INDICES)), "UTF-8");
 		scan.nextLine();
 		while (scan.hasNextLine()) {
 			sCurrentLine = scan.nextLine();
