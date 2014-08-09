@@ -104,6 +104,7 @@ public class ReverbClusterProperty {
 							writerOverlap);
 
 					cnt++;
+//					System.out.println(cnt);
 
 				}
 				System.out.println("Completed " + (double) 200 * cnt
