@@ -24,13 +24,13 @@ import code.dws.reverb.clustering.MarkovClustering;
  */
 public class CompareClusters {
 
-	public static final String CLUSTER_INDICES = "src/main/resources/input/KCL_MCL_CL2";
+	public static final String CLUSTER_INDICES = "src/main/resources/input/KCL_MCL_CL";
 
 	/**
 	 * 
 	 */
 	public CompareClusters() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class CompareClusters {
 		DecimalFormat df = new DecimalFormat("##.##");
 
 		writer.write("ITERATION\tCLUSTER_SIZE\tKCL_SCORE\tMCL_SCORE\n");
-		for (double p = 22; p < 24;) {
+		for (double p = 22.3; p < 23;) {
 
 			double tempIndex = 0;
 
@@ -93,7 +93,7 @@ public class CompareClusters {
 					+ "\t" + mclIndex + "\n");
 
 			writer.flush();
-			p = p + 0.45;
+			p = p + 0.2;
 		}
 		writer.close();
 	}

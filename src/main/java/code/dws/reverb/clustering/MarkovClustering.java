@@ -40,8 +40,12 @@ public class MarkovClustering {
 	 * mcl output file
 	 */
 	private static final String OUTPUT = "src/main/resources/input/mcl.output";
+	// private static final String OUTPUT =
+	// "/home/adutta/Work/mcl/mcl-14-137/output/";
 
 	private static final String OUTPUT_TEMP = "src/main/resources/input/mcl.output.temp";
+	// private static final String OUTPUT_TEMP =
+	// "/home/adutta/Work/mcl/mcl-14-137/output/";
 
 	private static Map<Pair<String, String>, Double> map = new HashMap<Pair<String, String>, Double>();
 
@@ -83,7 +87,8 @@ public class MarkovClustering {
 
 		CLUSTER.clear();
 		// read the output to load in memory
-		readMarkovClusters(inflation, OUTPUT);
+		readMarkovClusters(inflation, OUTPUT);// + "mcl." + inflation +
+												// ".output");
 
 	}
 
@@ -112,7 +117,6 @@ public class MarkovClustering {
 				reCluster(list, cnt, inflation);
 			} else {
 				lastSize = 0;
-				System.out.println("putting " + list);
 				CLUSTER.put("C" + cnt++, list);
 			}
 
@@ -160,10 +164,10 @@ public class MarkovClustering {
 		// make mcl call to perform clustering
 		systemRoutine(inflation,
 				"/home/adutta/git/OIE-Integration/COMBINED_SCORE_TEMP.tsv",
-				OUTPUT_TEMP);
+				OUTPUT_TEMP);// + "mcl.output.temp");
 
 		// read the output to load in memory
-		readMarkovClusters(inflation, OUTPUT_TEMP);
+		readMarkovClusters(inflation, OUTPUT_TEMP);// + "mcl.output.temp");
 
 	}
 
@@ -181,15 +185,10 @@ public class MarkovClustering {
 					new InputStreamReader(new BufferedInputStream(
 							p.getInputStream())));
 
-			// String line;
-			// while ((line = bufferedreader.readLine()) != null) {
-			// System.out.println(line);
-			// }
 			try {
 				if (p.waitFor() != 0)
 					System.err.println("exit value = " + p.exitValue());
-				// else
-				// System.out.println("running...");
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {

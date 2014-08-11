@@ -3,12 +3,16 @@
  */
 package code.dws.reverb;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 import code.dws.reverb.clustering.MarkovClustering;
@@ -22,6 +26,7 @@ import code.dws.reverb.clustering.analysis.CompareClusters;
  */
 public class ReverbPropertyReNaming {
 
+	private static final String CLUSTER_NAMES = "src/main/resources/input/cluster.names.out";
 	/**
 	 * the mega collection for reverb, holding the mapping from new propery name
 	 * to the list of actual properties it represents
@@ -51,6 +56,20 @@ public class ReverbPropertyReNaming {
 		// get the clusters in memory
 		CLUSTERED_REVERB_PROPERTIES = MarkovClustering.getAllClusters();
 
+		BufferedWriter writer = new BufferedWriter(
+				new FileWriter(CLUSTER_NAMES));
+
+		for (Entry<String, List<String>> e : CLUSTERED_REVERB_PROPERTIES
+				.entrySet()) {
+			writer.write(e.getKey() + "\t[");
+			for (String val : e.getValue()) {
+				writer.write(val + "\t");
+			}
+			writer.write("]\n");
+		}
+
+		writer.flush();
+		writer.close();
 	}
 
 	/**
