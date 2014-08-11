@@ -37,7 +37,6 @@ public class ReverbPropertyReNaming {
 	 * 
 	 */
 	public ReverbPropertyReNaming() {
-
 	}
 
 	/**

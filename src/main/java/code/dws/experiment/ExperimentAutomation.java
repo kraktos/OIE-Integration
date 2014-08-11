@@ -23,7 +23,7 @@ import code.dws.utils.Constants;
  */
 public class ExperimentAutomation {
 
-	public static int BATCH_SIZE = 5000;
+	public static int BATCH_SIZE = 2000;
 
 	public static String PREDICATE = null;
 
