@@ -187,7 +187,7 @@ public class Constants {
 	/**
 	 * location of the output file generated the IE Engine ReVerb
 	 */
-	public static final String REVERB_DATA_PATH = "src/main/resources/input/highConfidenceReverbData.csv";
+	public static final String REVERB_DATA_PATH = ExperimentAutomation.OIE_DATA_PATH;
 
 	/**
 	 * Delimiter used to parse the ReVerb extracted tuples

@@ -21,6 +21,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import code.dws.reverb.ReverbClusterProperty;
+import code.dws.reverb.clustering.analysis.CompareClusters;
 import code.dws.utils.Constants;
 
 /**
@@ -34,6 +35,7 @@ public class KMediodCluster {
 
 	private static final String WORDNET_SCORES = "src/main/resources/input/CLUSTERS_WORDNET_";
 	private static final String JACCARD_SCORES = "src/main/resources/input/CLUSTERS_OVERLAP_";
+
 	private static final int TOPK_REVERB_PROPERTIES = 500;
 
 	public static final String ALL_SCORES = "src/main/resources/input/COMBINED_SCORE.tsv";
@@ -113,8 +115,10 @@ public class KMediodCluster {
 	public static void ioRoutine() throws IOException {
 		BufferedWriter ioWriter = new BufferedWriter(new FileWriter(ALL_SCORES));
 		for (Entry<Pair<String, String>, Double> e : SCORE_MAP.entrySet()) {
-			ioWriter.write(e.getKey().getLeft() + "\t" + e.getKey().getRight()
-					+ "\t" + Constants.formatter.format(e.getValue()) + "\n");
+			if (e.getValue() > CompareClusters.SIM_SCORE_THRESHOLD)
+				ioWriter.write(e.getKey().getLeft() + "\t"
+						+ e.getKey().getRight() + "\t"
+						+ Constants.formatter.format(e.getValue()) + "\n");
 		}
 
 		ioWriter.flush();
@@ -276,7 +280,9 @@ public class KMediodCluster {
 
 		ReverbClusterProperty.TOPK_REV_PROPS = TOPK_REVERB_PROPERTIES;
 		// call DBand retrieve a set of TOPK properties
-		reverbProperties = ReverbClusterProperty.getReverbProperties();
+		reverbProperties = ReverbClusterProperty.getReverbProperties(
+				Constants.REVERB_DATA_PATH,
+				ReverbClusterProperty.TOPK_REV_PROPS);
 
 		List<String> temp = getRandomProps((seedCluster < TOPK_REVERB_PROPERTIES) ? seedCluster
 				: TOPK_REVERB_PROPERTIES);

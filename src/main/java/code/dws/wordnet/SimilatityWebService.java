@@ -1,5 +1,6 @@
 package code.dws.wordnet;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -17,56 +18,75 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-public class SimilatityWebService
-{
-    public static void main(String[] args) throws Exception
-    {
-        System.out.println(getSimScore("be in", "turn to"));
+import code.dws.utils.Constants;
 
-    }
+public class SimilatityWebService {
+	public static void main(String[] args) throws Exception {
+		System.out.println(getSimScore("be in", "turn to"));
 
-    public static double getSimScore(String arg1, String arg2) throws Exception
-    {
-        String response = null;
-        double score = 0;
+	}
 
-        String uri = "http://swoogle.umbc.edu/SimService/GetSimilarity?operation=api";
+	public static double getSimScore(String arg1, String arg2) throws Exception {
+		String response = null;
+		double score = 0;
 
-        HttpClient httpclient = new DefaultHttpClient();
-        HttpPost httppost = new HttpPost(uri);
+		String uri = "http://swoogle.umbc.edu/SimService/GetSimilarity?operation=api";
 
-        try {
-            // Add your data
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-            nameValuePairs.add(new BasicNameValuePair("phrase1", arg1));
-            nameValuePairs.add(new BasicNameValuePair("phrase2", arg2));
+		HttpClient httpclient = new DefaultHttpClient();
+		HttpPost httppost = new HttpPost(uri);
 
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+		try {
+			// Add your data
+			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+			nameValuePairs.add(new BasicNameValuePair("phrase1", arg1));
+			nameValuePairs.add(new BasicNameValuePair("phrase2", arg2));
 
-            // Execute HTTP Post Request
-            HttpResponse httpResponse = httpclient.execute(httppost);
+			httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
-            HttpEntity httpResponseEntity = httpResponse.getEntity();
+			// Execute HTTP Post Request
+			HttpResponse httpResponse = httpclient.execute(httppost);
 
-            if (httpResponseEntity != null) {
-                response = EntityUtils.toString(httpResponseEntity);
-            }
+			HttpEntity httpResponseEntity = httpResponse.getEntity();
 
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+			if (httpResponseEntity != null) {
+				response = EntityUtils.toString(httpResponseEntity);
+			}
 
-        try {
-            if (response.trim().equals("-Infinity"))
-                throw new Exception();
-            score = Double.valueOf(response.trim());
-        } catch (Exception e) {
-            score = 0;
-        }
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
-        return score;
+		try {
+			if (response.trim().equals("-Infinity"))
+				throw new Exception();
+			score = Double.valueOf(response.trim());
+		} catch (Exception e) {
+			score = 0;
+		}
 
-    }
+		return score;
+
+	}
+
+	/**
+	 * call the web service to compute the inter phrase similarity
+	 * 
+	 * @param properties
+	 * 
+	 * @param properties
+	 * @param id2
+	 * @param id
+	 * @throws Exception
+	 */
+	public static void getWordNetSimilarityScores(String key1, String key2,
+			BufferedWriter writerWordNet) throws Exception {
+
+		double score = getSimScore(key1, key2);
+
+		if (score >= 0.5)
+			writerWordNet.write(key1 + "\t" + key2 + "\t"
+					+ Constants.formatter.format(score) + "\n");
+	}
 }

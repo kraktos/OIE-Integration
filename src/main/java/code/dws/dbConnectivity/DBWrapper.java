@@ -598,6 +598,7 @@ public class DBWrapper {
 			}
 
 		} catch (Exception e) {
+			
 			logger.error(" exception while fetching " + arg + " "
 					+ e.getMessage());
 		}

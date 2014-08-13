@@ -12,8 +12,12 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -26,7 +30,10 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import sun.awt.geom.AreaOp.IntOp;
 import code.dws.relationMap.Discover;
+import code.dws.relationMap.workflow2.ClusteringWithDbpedia;
+import code.dws.wordnet.SimilatityWebService;
 
 /**
  * All different kinds of utility methods are placed here
@@ -236,6 +243,19 @@ public class Utilities {
 		return arg.toLowerCase();
 	}
 
+	/**
+	 * oie instance cleaning
+	 * 
+	 * @param arg
+	 * @return
+	 */
+	public static String clean(String arg) {
+		if (arg.indexOf(":") != -1)
+			arg = arg.substring(arg.indexOf(":") + 1, arg.length());
+
+		return arg.replaceAll("\\_+", " ");
+	}
+
 	public static String removeStopWords(String originalWord) {
 		StringBuffer retVal = new StringBuffer();
 		String[] arrWords = originalWord.split(" ");
@@ -355,10 +375,131 @@ public class Utilities {
 	}
 
 	public static String cleanseInstances(String dbpInst) {
-	    dbpInst = dbpInst.replaceAll("~", "%");
-	    dbpInst = dbpInst.replaceAll("\\[", "(");
-	    dbpInst = dbpInst.replaceAll("\\]", ")");
-	    dbpInst = dbpInst.replaceAll("\\*", "'");
-	    return utf8ToCharacter(dbpInst);
+		dbpInst = dbpInst.replaceAll("~", "%");
+		dbpInst = dbpInst.replaceAll("\\[", "(");
+		dbpInst = dbpInst.replaceAll("\\]", ")");
+		dbpInst = dbpInst.replaceAll("\\*", "'");
+		return utf8ToCharacter(dbpInst);
+	}
+
+	/**
+	 * sort a map by value descending
+	 * 
+	 * @param map
+	 * @param totalScore
+	 * @param tripleCounter
+	 * @return
+	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static Map<String, Long> sortByValue(Map map) {
+		List list = new LinkedList(map.entrySet());
+		Collections.sort(list, new Comparator() {
+			public int compare(Object o2, Object o1) {
+				return ((Comparable) ((Map.Entry) (o1)).getValue())
+						.compareTo(((Map.Entry) (o2)).getValue());
+			}
+		});
+
+		Map result = new LinkedHashMap();
+		for (Iterator it = list.iterator(); it.hasNext();) {
+			Map.Entry entry = (Map.Entry) it.next();
+			result.put(entry.getKey(), entry.getValue());
+		}
+		return result;
+	}
+
+	/**
+	 * overloaded function to compute pairwise similarity of contents of two
+	 * collections
+	 * 
+	 * @param feedDBPediaProperties3
+	 * @param arg2Map
+	 * @param writer
+	 * @param check
+	 * @throws IOException
+	 */
+	public static void getPairwiseSimScore(Map<String, String> arg1Map,
+			Map<String, String> arg2Map, BufferedWriter writer, boolean check)
+			throws IOException {
+
+		ClusteringWithDbpedia.logger.info("Size of Arg1 = " + arg1Map.size());
+		ClusteringWithDbpedia.logger.info("Size of Arg2 = " + arg2Map.size());
+
+		for (Entry<String, String> eOuter : arg1Map.entrySet()) {
+			for (Entry<String, String> eInner : arg2Map.entrySet()) {
+				if (check) {
+					if (eOuter.getKey().hashCode() > eInner.getKey().hashCode()) {
+						try {
+							// based on Wordnet scores
+							SimilatityWebService.getWordNetSimilarityScores(
+									eOuter.getKey(), eInner.getKey(), writer);
+						} catch (Exception e) {
+							ClusteringWithDbpedia.logger.error(e.getMessage());
+						}
+					}
+				} else {
+					try {
+						// based on Wordnet scores
+						SimilatityWebService.getWordNetSimilarityScores(
+								eOuter.getKey(), eInner.getKey(), writer);
+					} catch (Exception e) {
+						ClusteringWithDbpedia.logger.error(e.getMessage());
+					}
+				}
+			}
+			writer.flush();
+		}
+	}
+
+	/**
+	 * overloaded
+	 * 
+	 * @param arg1
+	 * @param arg2
+	 * @param writer
+	 * @param check
+	 * @throws IOException
+	 */
+	public static void getPairwiseSimScore(List<String> arg1,
+			List<String> arg2, BufferedWriter writer, boolean check)
+			throws IOException {
+
+		ClusteringWithDbpedia.logger.info("Size of Arg1 = " + arg1.size());
+		ClusteringWithDbpedia.logger.info("Size of Arg2 = " + arg2.size());
+
+		long cnt = 0;
+		long val = (check) ? (arg1.size() * (arg2.size() - 1) / 2) : (arg1
+				.size() * arg2.size());
+
+		for (int outer = 0; outer < arg1.size(); outer++) {
+
+			for (int inner = 0; inner < arg2.size(); inner++) {
+				cnt++;
+
+				if (check) {
+					if (outer < inner) {
+						try {
+							// based on Wordnet scores
+							SimilatityWebService.getWordNetSimilarityScores(
+									arg1.get(outer), arg2.get(inner), writer);
+						} catch (Exception e) {
+							ClusteringWithDbpedia.logger.error(e.getMessage());
+						}
+					}
+				} else {
+					try {
+						// based on Wordnet scores
+						SimilatityWebService.getWordNetSimilarityScores(
+								arg1.get(outer), arg2.get(inner), writer);
+					} catch (Exception e) {
+						ClusteringWithDbpedia.logger.error(e.getMessage());
+					}
+				}
+			}
+
+			System.out.println("Completed " + (double) 100 * cnt / val + " %");
+
+			writer.flush();
+		}
 	}
 }

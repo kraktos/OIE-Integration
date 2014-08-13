@@ -15,8 +15,6 @@ import org.slf4j.LoggerFactory;
 import code.dws.core.AutomatedNodeScoringWrapper;
 import code.dws.markovLogic.EvidenceBuilder;
 import code.dws.markovLogic.YagoDbpediaMapping;
-import code.dws.reverb.ReverbPropertyReNaming;
-import code.dws.utils.Constants;
 
 /**
  * @author Arnab Dutta
@@ -38,6 +36,8 @@ public class ExperimentAutomation {
 	 */
 	public final static Logger logger = LoggerFactory
 			.getLogger(ExperimentAutomation.class);
+
+	public static String OIE_DATA_PATH = "src/main/resources/input/noDigitHighAll.csv";
 
 	public static boolean IS_NELL = false;
 
@@ -106,6 +106,9 @@ public class ExperimentAutomation {
 
 			ExperimentAutomation.TOP_K_NUMERIC_PROPERTIES = Integer
 					.parseInt(prop.getProperty("TOP_K_NUMERIC_PROPERTIES"));
+
+			ExperimentAutomation.OIE_DATA_PATH = prop
+					.getProperty("OIE_DATA_PATH");
 
 		} catch (IOException ex) {
 			ex.printStackTrace();

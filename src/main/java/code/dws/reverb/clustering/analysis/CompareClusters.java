@@ -26,6 +26,8 @@ public class CompareClusters {
 
 	public static final String CLUSTER_INDICES = "src/main/resources/input/KCL_MCL_CL";
 
+	public static final double SIM_SCORE_THRESHOLD = 0.01;
+
 	/**
 	 * 
 	 */
@@ -57,7 +59,7 @@ public class CompareClusters {
 		DecimalFormat df = new DecimalFormat("##.##");
 
 		writer.write("ITERATION\tCLUSTER_SIZE\tKCL_SCORE\tMCL_SCORE\n");
-		for (double p = 22.3; p < 23;) {
+		for (double p = 21.7; p < 23;) {
 
 			double tempIndex = 0;
 

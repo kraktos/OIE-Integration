@@ -4,6 +4,8 @@
 package code.dws.reverb;
 
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,8 +21,8 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import code.dws.dbConnectivity.DBWrapper;
 import code.dws.utils.Constants;
+import code.dws.utils.Utilities;
 import code.dws.wordnet.SimilatityWebService;
-import code.dws.wordnet.WordNetAPI;
 
 /**
  * this class clubs together properties with similar domain, range distribution
@@ -35,6 +37,7 @@ public class ReverbClusterProperty {
 	 * top K most frequent Reverb properties
 	 */
 	public static int TOPK_REV_PROPS = 500;
+	public static String OIE_FILE = "src/main/resources/input/noDigitHighAll.csv";
 
 	private static final String DELIMIT = "\t";
 
@@ -62,11 +65,13 @@ public class ReverbClusterProperty {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		if (args.length > 0) {
-			TOPK_REV_PROPS = Integer.parseInt(args[0]);
+		if (args.length == 2) {
+			OIE_FILE = args[0];
+			TOPK_REV_PROPS = Integer.parseInt(args[1]);
 		}
+
 		// call DBand retrieve a set of TOPK properties
-		revbProps = getReverbProperties();
+		revbProps = getReverbProperties(OIE_FILE, TOPK_REV_PROPS);
 
 		// enable scoring mechanism
 		doScoring(revbProps);
@@ -104,7 +109,7 @@ public class ReverbClusterProperty {
 							writerOverlap);
 
 					cnt++;
-//					System.out.println(cnt);
+					// System.out.println(cnt);
 
 				}
 				System.out.println("Completed " + (double) 200 * cnt
@@ -128,22 +133,61 @@ public class ReverbClusterProperty {
 	/**
 	 * get the list of Reverb properties
 	 * 
+	 * @param OIE_FILE
+	 * @param TOPK_REV_PROPS
+	 * 
 	 * @return List of properties
 	 */
-	public static List<String> getReverbProperties() {
+	public static List<String> getReverbProperties(String OIE_FILE,
+			int TOPK_REV_PROPS) {
+
+		Map<String, Long> counts = new HashMap<String, Long>();
+
+		String line = null;
+		String[] arr = null;
+		long val = 0;
+		int c = 0;
+		List<String> ret = new ArrayList<String>();
 
 		try {
-			// init DB
-			DBWrapper.init(Constants.GET_DISTINCT_REVERB_PROPERTIES);
+			Scanner scan = new Scanner(new File(OIE_FILE));
 
-			List<String> results = DBWrapper
-					.fetchDistinctReverbProperties(TOPK_REV_PROPS);
-
-			return (results != null) ? results : new ArrayList<String>();
-		} finally {
-			DBWrapper.shutDown();
-
+			while (scan.hasNextLine()) {
+				line = scan.nextLine();
+				arr = line.split(";");
+				if (counts.containsKey(arr[1])) {
+					val = counts.get(arr[1]);
+					val++;
+				} else {
+					val = 1;
+				}
+				counts.put(arr[1], val);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		}
+		counts = Utilities.sortByValue(counts);
+
+		for (Entry<String, Long> e : counts.entrySet()) {
+			ret.add(e.getKey());
+			c++;
+			if (c == TOPK_REV_PROPS)
+				return ret;
+		}
+
+		return ret;
+		// try {
+		// // init DB
+		// DBWrapper.init(Constants.GET_DISTINCT_REVERB_PROPERTIES);
+		//
+		// List<String> results = DBWrapper
+		// .fetchDistinctReverbProperties(TOPK_REV_PROPS);
+		//
+		// return (results != null) ? results : new ArrayList<String>();
+		// } finally {
+		// DBWrapper.shutDown();
+		//
+		// }
 
 	}
 
