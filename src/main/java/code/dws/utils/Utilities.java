@@ -474,10 +474,10 @@ public class Utilities {
 		for (int outer = 0; outer < arg1.size(); outer++) {
 
 			for (int inner = 0; inner < arg2.size(); inner++) {
-				cnt++;
 
 				if (check) {
 					if (outer < inner) {
+						cnt++;
 						try {
 							// based on Wordnet scores
 							SimilatityWebService.getWordNetSimilarityScores(
@@ -487,6 +487,7 @@ public class Utilities {
 						}
 					}
 				} else {
+					cnt++;
 					try {
 						// based on Wordnet scores
 						SimilatityWebService.getWordNetSimilarityScores(

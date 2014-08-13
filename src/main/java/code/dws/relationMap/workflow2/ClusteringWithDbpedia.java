@@ -8,7 +8,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
 
@@ -31,6 +34,8 @@ import com.hp.hpl.jena.query.QuerySolution;
 public class ClusteringWithDbpedia {
 
 	private static final String QUERY = "select distinct ?val where {?val <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty>} ";
+	private static final String COUNT_QUERY = "select COUNT(*)  where {?a ?b ?c} ";
+
 	/**
 	 * logger
 	 */
@@ -84,10 +89,10 @@ public class ClusteringWithDbpedia {
 		revbProps = ReverbClusterProperty.getReverbProperties(
 				Constants.REVERB_DATA_PATH,
 				ReverbClusterProperty.TOPK_REV_PROPS);
-		logger.info("Loaded " + revbProps.size() + " DBpedia properties");
+		logger.info("Loaded " + revbProps.size() + " Reverb properties");
 
 		// call to retrieve DBPedia owl object property
-		dbpProps = loadDbpediaProperties();
+		dbpProps = loadDbpediaProperties(3);
 		logger.info("Loaded " + dbpProps.size() + " DBpedia properties");
 
 		logger.info("Writing sim scores to "
@@ -113,13 +118,21 @@ public class ClusteringWithDbpedia {
 	/**
 	 * load DBP properties from SPARQL endpoint
 	 * 
+	 * @param TOPK_REV_PROPS
+	 * 
 	 * @return
 	 */
-	private static List<String> loadDbpediaProperties() {
+	private static List<String> loadDbpediaProperties(long TOPK_REV_PROPS) {
 
 		String prop = null;
+		String cnt = "0";
+		int c = 0;
 
-		List<String> props = new ArrayList<String>();
+		List<String> retS = new ArrayList<String>();
+
+		Map<String, Long> props = new HashMap<String, Long>();
+
+		List<QuerySolution> count = null;
 
 		List<QuerySolution> dbpObjProps = SPARQLEndPointQueryAPI
 				.queryDBPediaEndPoint(QUERY);
@@ -128,10 +141,31 @@ public class ClusteringWithDbpedia {
 			prop = querySol.get("val").toString();
 
 			if ((prop.indexOf("wikiPage") == -1)
-					&& (prop.toLowerCase().indexOf("thumbnail") == -1))
-				props.add(prop.replaceAll(Constants.DBPEDIA_PREDICATE_NS, ""));
+					&& (prop.toLowerCase().indexOf("thumbnail") == -1)) {
+
+				count = SPARQLEndPointQueryAPI
+						.queryDBPediaEndPoint("select (count(*)  as ?val)  where {?a <"
+								+ prop + "> ?c} ");
+
+				for (QuerySolution sol : count) {
+					cnt = sol.get("val").toString();
+				}
+				cnt = cnt.substring(0, cnt.indexOf("^"));
+				props.put(prop.replaceAll(Constants.DBPEDIA_PREDICATE_NS, ""),
+						Long.parseLong(cnt));
+			}
 		}
 
-		return props;
+		props = Utilities.sortByValue(props);
+
+		for (Entry<String, Long> e : props.entrySet()) {
+			retS.add(e.getKey());
+
+			c++;
+			if (c == TOPK_REV_PROPS)
+				return retS;
+		}
+
+		return retS;
 	}
 }
