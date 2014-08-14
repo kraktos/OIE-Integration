@@ -19,6 +19,7 @@ import code.dws.reverb.clustering.MarkovClustering;
  * 
  */
 public class ClusterClient {
+	String file = null;
 
 	// define Logger
 	public static Logger logger = Logger.getLogger(ClusterClient.class
@@ -27,30 +28,28 @@ public class ClusterClient {
 	/**
 	 * 
 	 */
-	public ClusterClient() {
-
+	public ClusterClient(String file) {
+		this.file = file;
 	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String file = null;
 
-		if (args.length == 1)
-			file = args[0];
-
-		getClusterIndex(file);
+		System.out.println(new ClusterClient(args[0]).getClusterIndex());
 	}
 
 	/**
 	 * find the best cluster setting for a given pairwise score file
 	 * 
 	 * @param file
+	 * @return
 	 */
-	private static void getClusterIndex(String file) {
+	public double getClusterIndex() {
 
 		double minMclIndex = Integer.MAX_VALUE;
+		double bestInflation = 0;
 		double tempIndex = 0;
 
 		Map<String, List<String>> markovCluster = null;
@@ -65,7 +64,7 @@ public class ClusterClient {
 			for (double p = 2; p < 27; p++) {
 
 				// perform a Markov Cluster
-				MarkovClustering.main(new String[] { file,
+				MarkovClustering.main(new String[] { this.file,
 						String.valueOf(df.format(p)) });
 
 				// get the clusters in memory
@@ -80,29 +79,28 @@ public class ClusterClient {
 					bestCluster = null;
 					minMclIndex = tempIndex;
 					bestCluster = markovCluster;
-
+					bestInflation = p;
 				}
 
 				// create a map of cluster key and its highest isolation value
-				logger.info(markovCluster.size() + " clusters with "
+				logger.debug(markovCluster.size() + " clusters with "
 						+ " Score = " + tempIndex + " for i = " + p);
 
 				// p = p + 0.2;
 			}
 
-			logger.info("Best score is at " + minMclIndex);
-			for (Entry<String, List<String>> e : bestCluster.entrySet()) {
-				System.out.print(e.getKey() + "\t[");
-				for (String s : e.getValue()) {
-					System.out.print(s + "\t");
-				}
-				System.out.print("]\n");
-			}
+			logger.debug("Best score is at " + minMclIndex);
+			// for (Entry<String, List<String>> e : bestCluster.entrySet()) {
+			// System.out.print(e.getKey() + "\t[");
+			// for (String s : e.getValue()) {
+			// System.out.print(s + "\t");
+			// }
+			// System.out.print("]\n");
+			// }
 		} catch (IOException e) {
 			logger.error(e.getMessage());
 		}
 
-		MarkovClustering.loadAllPairwiseScores(file);
-
+		return bestInflation;
 	}
 }

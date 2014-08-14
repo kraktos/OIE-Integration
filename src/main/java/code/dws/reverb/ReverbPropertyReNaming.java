@@ -14,8 +14,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
+import code.dws.experiment.ExperimentAutomation;
 import code.dws.reverb.clustering.KMediodCluster;
 import code.dws.reverb.clustering.MarkovClustering;
+import code.dws.reverb.clustering.analysis.ClusterClient;
 import code.dws.reverb.clustering.analysis.CompareClusters;
 
 /**
@@ -44,12 +46,21 @@ public class ReverbPropertyReNaming {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
+		double optimalInflation = 0;
+		String simScoreFile = null;
 
-		double optimalInflation = getOptimalInflation();
+		if (ExperimentAutomation.WORKFLOW_NORMAL) {
+			simScoreFile = KMediodCluster.ALL_SCORES;
+			optimalInflation = getOptimalInflation();
+		} else {
+			simScoreFile = "/home/adutta/git/OIE-Integration/src/main/resources/input/All5.csv";
+			optimalInflation = new ClusterClient(simScoreFile)
+					.getClusterIndex();
+		}
 
 		// use the inflation factor to regenerate the clusters
 		// perform a Markov Cluster
-		MarkovClustering.main(new String[] { KMediodCluster.ALL_SCORES,
+		MarkovClustering.main(new String[] { simScoreFile,
 				String.valueOf(optimalInflation) });
 
 		// get the clusters in memory
@@ -106,11 +117,8 @@ public class ReverbPropertyReNaming {
 			if (tIndex <= minMclIndex) {
 				minMclIndex = tIndex;
 				clusterSize = Integer.parseInt(elem[1]);
-				// System.out.println(minMclIndex + "\t" + clusterSize);
 			}
 		}
-
-		// System.out.println(clusterSize);
 
 		scan = new Scanner(new File((CompareClusters.CLUSTER_INDICES)), "UTF-8");
 		scan.nextLine();
