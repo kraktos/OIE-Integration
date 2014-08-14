@@ -129,6 +129,9 @@ public class KMediodCluster {
 	 * @return the sCORE_MAP
 	 */
 	public static Map<Pair<String, String>, Double> getScoreMap() {
+
+		if (SCORE_MAP.size() == 0)
+			return MarkovClustering.PAIR_SCORE_MAP;
 		return SCORE_MAP;
 	}
 
@@ -216,12 +219,12 @@ public class KMediodCluster {
 					try {
 						score = SCORE_MAP
 								.get(new ImmutablePair<String, String>(
-										reverbProp, seedProp));
+										reverbProp.trim(), seedProp.trim()));
 					} catch (NullPointerException e) {
 						try {
 							score = SCORE_MAP
 									.get(new ImmutablePair<String, String>(
-											seedProp, reverbProp));
+											seedProp.trim(), reverbProp.trim()));
 						} catch (Exception e1) {
 							System.out.println("problem with " + seedProp
 									+ ", " + reverbProp);

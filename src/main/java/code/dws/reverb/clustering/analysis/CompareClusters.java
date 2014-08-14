@@ -59,13 +59,13 @@ public class CompareClusters {
 		DecimalFormat df = new DecimalFormat("##.##");
 
 		writer.write("ITERATION\tCLUSTER_SIZE\tKCL_SCORE\tMCL_SCORE\n");
-		for (double p = 21.7; p < 23;) {
+		for (double p = 2; p < 21;) {
 
 			double tempIndex = 0;
 
 			// perform a Markov Cluster
-			MarkovClustering
-					.main(new String[] { String.valueOf(df.format(p)) });
+			MarkovClustering.main(new String[] { KMediodCluster.ALL_SCORES,
+					String.valueOf(df.format(p)) });
 
 			// get the clusters in memory
 			mCl = MarkovClustering.getAllClusters();
@@ -80,7 +80,7 @@ public class CompareClusters {
 				// perform k-mediod cluster
 				KMediodCluster.doKClustering(mCl.size());
 
-				// get the cluster in memory		
+				// get the cluster in memory
 				kmCl = KMediodCluster.getAllClusters();
 
 				// create a map of cluster key and its highest isolation value
@@ -108,7 +108,7 @@ public class CompareClusters {
 	 * @return
 	 * @return
 	 */
-	private static double computeClusterIndex(Map<String, List<String>> mCl,
+	public static double computeClusterIndex(Map<String, List<String>> mCl,
 			Map<String, Double> isoMcl) {
 
 		double minCompactness = 0;
@@ -147,7 +147,7 @@ public class CompareClusters {
 			// + minCompactness);
 
 			clusterGoodness = clusterGoodness + (double) minCompactness
-					/ ((maxIsolation == 0) ? Math.pow(10, -8) : maxIsolation);
+					/ ((maxIsolation == 0) ? Math.pow(10, -1) : maxIsolation);
 
 			// System.out.println(clusterGoodness);
 
@@ -180,16 +180,16 @@ public class CompareClusters {
 			for (int list2Id = 0; list2Id < arg2.size(); list2Id++) {
 
 				// create a pair
-				pair = new ImmutablePair<String, String>(arg1.get(list1Id),
-						arg2.get(list2Id));
+				pair = new ImmutablePair<String, String>(arg1.get(list1Id)
+						.trim(), arg2.get(list2Id).trim());
 
 				try {
 					// retrieve the key from the collection
 					tempScore = KMediodCluster.getScoreMap().get(pair);
 				} catch (Exception e) {
 					try {
-						pair = new ImmutablePair<String, String>(
-								arg2.get(list2Id), arg1.get(list1Id));
+						pair = new ImmutablePair<String, String>(arg2.get(
+								list2Id).trim(), arg1.get(list1Id).trim());
 						tempScore = KMediodCluster.getScoreMap().get(pair);
 
 					} catch (Exception e1) {
@@ -226,20 +226,19 @@ public class CompareClusters {
 		for (int outer = 0; outer < cluster.size(); outer++) {
 			for (int inner = outer + 1; inner < cluster.size(); inner++) {
 				// create a pair
-				pair = new ImmutablePair<String, String>(cluster.get(outer),
-						cluster.get(inner));
+				pair = new ImmutablePair<String, String>(cluster.get(outer)
+						.trim(), cluster.get(inner).trim());
 
 				try {
 					// retrieve the key from the collection
 					tempScore = KMediodCluster.getScoreMap().get(pair);
 				} catch (Exception e) {
 					try {
-						pair = new ImmutablePair<String, String>(
-								cluster.get(inner), cluster.get(outer));
+						pair = new ImmutablePair<String, String>(cluster.get(
+								inner).trim(), cluster.get(outer).trim());
 						tempScore = KMediodCluster.getScoreMap().get(pair);
 
 					} catch (Exception e1) {
-						e1.printStackTrace();
 						tempScore = 0;
 					}
 				}
@@ -251,9 +250,6 @@ public class CompareClusters {
 				score = (score >= tempScore) ? tempScore : score;
 			}
 		}
-
-		// System.out.println("Inter Cluster sum = " + score);
-		// System.out.println("Cluster size = " + cluster.size());
 		return score;
 	}
 }

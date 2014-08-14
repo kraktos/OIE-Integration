@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Scanner;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
@@ -47,7 +46,7 @@ public class MarkovClustering {
 	// private static final String OUTPUT_TEMP =
 	// "/home/adutta/Work/mcl/mcl-14-137/output/";
 
-	private static Map<Pair<String, String>, Double> map = new HashMap<Pair<String, String>, Double>();
+	public static Map<Pair<String, String>, Double> PAIR_SCORE_MAP = new HashMap<Pair<String, String>, Double>();
 
 	private static int cnt = 1;
 	private static int lastSize = 0;
@@ -75,15 +74,21 @@ public class MarkovClustering {
 	public static void main(String[] args) throws IOException {
 
 		String inflation = null;
-		if (args.length > 0)
-			inflation = args[0];
-		else
-			inflation = String.valueOf(df.format(21.20));
+		String pairScoreFile = null;
 
-		loadAllPairwiseScores();
+		if (args.length == 2) {
+			pairScoreFile = args[0];
+			inflation = args[1];
+		} else {
+			pairScoreFile = KMediodCluster.ALL_SCORES;
+			inflation = args[1];
+		}
+
+		cnt = 1;
+		loadAllPairwiseScores(pairScoreFile);
 
 		// make mcl call to perform clustering
-		systemRoutine(inflation, KMediodCluster.ALL_SCORES, OUTPUT);
+		systemRoutine(inflation, pairScoreFile, OUTPUT);
 
 		CLUSTER.clear();
 		// read the output to load in memory
@@ -123,9 +128,9 @@ public class MarkovClustering {
 			// for cluster sizes larger than threshold, re cluster them
 
 		}
-
-		System.out
-				.println("\nLoaded " + CLUSTER.size() + " markov clusters...");
+		//
+		// System.out
+		// .println("\nLoaded " + CLUSTER.size() + " markov clusters...");
 	}
 
 	private static void reCluster(List<String> list, int cnt, String inflation)
@@ -137,17 +142,17 @@ public class MarkovClustering {
 				"/home/adutta/git/OIE-Integration/COMBINED_SCORE_TEMP.tsv"));
 
 		for (int i = 0; i < list.size(); i++) {
-			for (int j = i; j < list.size(); j++) {
-				pair = new ImmutablePair<String, String>(list.get(i),
-						list.get(j));
+			for (int j = i+1; j < list.size(); j++) {
+				pair = new ImmutablePair<String, String>(list.get(i).trim(),
+						list.get(j).trim());
 
 				try {
-					val = map.get(pair);
+					val = PAIR_SCORE_MAP.get(pair);
 				} catch (Exception e) {
 					try {
-						pair = new ImmutablePair<String, String>(list.get(j),
-								list.get(i));
-						val = map.get(pair);
+						pair = new ImmutablePair<String, String>(list.get(j)
+								.trim(), list.get(i).trim());
+						val = PAIR_SCORE_MAP.get(pair);
 					} catch (Exception e1) {
 						val = 0;
 					}
@@ -175,7 +180,6 @@ public class MarkovClustering {
 			String output) {
 		Runtime r = Runtime.getRuntime();
 
-		System.out.println("Running Markov clustering for p = " + inflation);
 		try {
 
 			Process p = r.exec("/home/adutta/Work/mcl/mcl-14-137/bin/mcl "
@@ -203,21 +207,24 @@ public class MarkovClustering {
 
 	/**
 	 * load the pairwise values in memory
+	 * 
+	 * @param allScoreFile
 	 */
-	public static void loadAllPairwiseScores() {
+	public static void loadAllPairwiseScores(String allScoreFile) {
 		String elem = null;
 		String[] elems = null;
 
 		Scanner scan;
 		try {
-			scan = new Scanner(new File((KMediodCluster.ALL_SCORES)), "UTF-8");
+			scan = new Scanner(new File((allScoreFile)), "UTF-8");
 
 			Pair<String, String> pair = null;
 			while (scan.hasNextLine()) {
 				elem = scan.nextLine();
 				elems = elem.split("\t");
-				pair = new ImmutablePair<String, String>(elems[0], elems[1]);
-				map.put(pair, Double.valueOf(elems[2]));
+				pair = new ImmutablePair<String, String>(elems[0].trim(),
+						elems[1].trim());
+				PAIR_SCORE_MAP.put(pair, Double.valueOf(elems[2]));
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

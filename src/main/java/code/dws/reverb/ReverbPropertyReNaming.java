@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
+import code.dws.reverb.clustering.KMediodCluster;
 import code.dws.reverb.clustering.MarkovClustering;
 import code.dws.reverb.clustering.analysis.CompareClusters;
 
@@ -48,8 +49,8 @@ public class ReverbPropertyReNaming {
 
 		// use the inflation factor to regenerate the clusters
 		// perform a Markov Cluster
-		MarkovClustering
-				.main(new String[] { String.valueOf(optimalInflation) });
+		MarkovClustering.main(new String[] { KMediodCluster.ALL_SCORES,
+				String.valueOf(optimalInflation) });
 
 		// get the clusters in memory
 		CLUSTERED_REVERB_PROPERTIES = MarkovClustering.getAllClusters();

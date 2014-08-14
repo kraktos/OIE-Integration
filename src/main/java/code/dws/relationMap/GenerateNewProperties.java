@@ -16,8 +16,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 import code.dws.dbConnectivity.DBWrapper;
 import code.dws.markovLogic.YagoDbpediaMapping;
@@ -40,9 +39,9 @@ public class GenerateNewProperties {
 
 	public static String DIRECT_PROP_LOG = null;
 
-	// define class logger
-	public final static Logger log = LoggerFactory
-			.getLogger(GenerateNewProperties.class);
+	// define Logger
+	public static Logger log = Logger.getLogger(GenerateNewProperties.class
+			.getName());
 
 	private static final String PROPERTY_LOGS_PATH = "./src/main/resources/output";
 
