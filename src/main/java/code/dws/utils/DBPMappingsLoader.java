@@ -20,6 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 import code.dws.dbConnectivity.DBWrapper;
 import code.dws.experiment.ExperimentAutomation;
 import code.dws.reverb.ReverbPropertyReNaming;
@@ -31,6 +33,10 @@ import code.dws.reverb.ReverbPropertyReNaming;
  * @author arnab
  */
 public class DBPMappingsLoader {
+	// define Logger
+	public static Logger logger = Logger.getLogger(DBPMappingsLoader.class
+			.getName());
+
 	static String PREDICATE;
 
 	static Map<String, String> SAMEAS = new HashMap<String, String>();
@@ -57,6 +63,8 @@ public class DBPMappingsLoader {
 
 			Path filePath = Paths.get("src/main/resources/output/");
 
+			// VISIT THE FOLDER LOCATION AND ITERATE THROUGH ALL SUB FOLDERS FOR
+			// THE EXACT OUTPUT FILE
 			final List<Path> files = new ArrayList<Path>();
 			FileVisitor<Path> fv = new SimpleFileVisitor<Path>() {
 				@Override
@@ -80,6 +88,8 @@ public class DBPMappingsLoader {
 
 					PREDICATE = clusterName;
 
+					logger.info("Currently in Cluster " + clusterName
+							+ " .... ");
 					readOutputFiles();
 				}
 			} catch (IOException e) {
@@ -141,6 +151,8 @@ public class DBPMappingsLoader {
 
 		while ((triple = mappingsReader.readLine()) != null) {
 
+			if (triple.indexOf("dry_weather") != -1)
+				System.out.println();
 			if (triple.startsWith("propAsst")) {
 				arr = triple.split("\"");
 
@@ -172,17 +184,15 @@ public class DBPMappingsLoader {
 							.replaceAll("\\[", "\\(").replaceAll("\\]", "\\)")
 							: dbpSVal);
 
-					if (dbpSVal != null || dbpOVal != null)
-						updateDB(nSub, nProp, nObj,
-								Utilities.characterToUTF8(dbpSVal),
-								Utilities.characterToUTF8(dbpOVal));
+					updateDB(nSub, nProp, nObj,
+							Utilities.characterToUTF8(dbpSVal),
+							Utilities.characterToUTF8(dbpOVal));
 
 				}
 			}
 		}
 
-		System.out.println("one read takes = "
-				+ (System.currentTimeMillis() - t1));
+		logger.info("one read takes = " + (System.currentTimeMillis() - t1));
 	}
 
 	private static void updateDB(String nSub, String pred, String nObj,

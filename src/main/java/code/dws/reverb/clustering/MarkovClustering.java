@@ -193,7 +193,6 @@ public class MarkovClustering {
 				e.printStackTrace();
 			} finally {
 				bufferedreader.close();
-				System.out.println("Done...");
 			}
 
 		} catch (Exception e) {

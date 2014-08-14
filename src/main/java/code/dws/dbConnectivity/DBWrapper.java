@@ -598,7 +598,7 @@ public class DBWrapper {
 			}
 
 		} catch (Exception e) {
-			
+
 			logger.error(" exception while fetching " + arg + " "
 					+ e.getMessage());
 		}
@@ -1523,7 +1523,7 @@ public class DBWrapper {
 				// execute batch update
 				updateOIEPFxdPrepstmnt.executeBatch();
 
-				System.out.println("FLUSHED TO OIE_REFINED");
+				logger.info("FLUSHED TO OIE_REFINED");
 				connection.commit();
 				updateOIEPFxdPrepstmnt.clearBatch();
 			}

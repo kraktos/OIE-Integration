@@ -273,6 +273,8 @@ public class Utilities {
 	 */
 	public static String characterToUTF8(String arg) {
 		try {
+			if (arg == null)
+				return arg;
 			return URLEncoder.encode(arg, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			logger.info("Exception while encoding");
@@ -288,6 +290,8 @@ public class Utilities {
 	 */
 	public static String utf8ToCharacter(String arg) {
 		try {
+			if (arg == null)
+				return arg;
 			return URLDecoder.decode(arg, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			logger.info("Exception while dencoding");
