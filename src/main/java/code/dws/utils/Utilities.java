@@ -27,11 +27,8 @@ import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
-import sun.awt.geom.AreaOp.IntOp;
-import code.dws.relationMap.Discover;
 import code.dws.relationMap.workflow2.ClusteringWithDbpedia;
 import code.dws.wordnet.SimilatityWebService;
 
@@ -41,8 +38,8 @@ import code.dws.wordnet.SimilatityWebService;
  * @author Arnab Dutta
  */
 public class Utilities {
-	public final static Logger logger = LoggerFactory
-			.getLogger(Utilities.class);
+	// define Logger
+	public static Logger logger = Logger.getLogger(Utilities.class.getName());
 
 	public static HashSet<String> dict = new HashSet<String>();
 
@@ -464,8 +461,8 @@ public class Utilities {
 			List<String> arg2, BufferedWriter writer, boolean check)
 			throws IOException {
 
-		ClusteringWithDbpedia.logger.info("Size of Arg1 = " + arg1.size());
-		ClusteringWithDbpedia.logger.info("Size of Arg2 = " + arg2.size());
+		logger.info("Size of Arg1 = " + arg1.size());
+		logger.info("Size of Arg2 = " + arg2.size());
 
 		long cnt = 0;
 		long val = (check) ? (arg1.size() * (arg2.size() - 1) / 2) : (arg1
@@ -498,7 +495,7 @@ public class Utilities {
 				}
 			}
 
-			System.out.println("Completed " + (double) 100 * cnt / val + " %");
+			logger.info("Completed " + (double) 100 * cnt / val + " %");
 
 			writer.flush();
 		}

@@ -34,7 +34,6 @@ import com.hp.hpl.jena.query.QuerySolution;
 public class ClusteringWithDbpedia {
 
 	private static final String QUERY = "select distinct ?val where {?val <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty>} ";
-	private static final String COUNT_QUERY = "select COUNT(*)  where {?a ?b ?c} ";
 
 	/**
 	 * logger
@@ -92,7 +91,7 @@ public class ClusteringWithDbpedia {
 		logger.info("Loaded " + revbProps.size() + " Reverb properties");
 
 		// call to retrieve DBPedia owl object property
-		dbpProps = loadDbpediaProperties(3);
+		dbpProps = loadDbpediaProperties(100);
 		logger.info("Loaded " + dbpProps.size() + " DBpedia properties");
 
 		logger.info("Writing sim scores to "
@@ -104,7 +103,7 @@ public class ClusteringWithDbpedia {
 				+ new File(Constants.REVERB_DATA_PATH).getParent()
 				+ "/trvb.dbp.pairwise.sim.csv");
 		Utilities.getPairwiseSimScore(dbpProps, revbProps, writerRevDbpSims,
-				true);
+				false);
 
 		try {
 			writerDbpSims.close();

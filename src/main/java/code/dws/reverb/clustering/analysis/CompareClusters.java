@@ -80,7 +80,7 @@ public class CompareClusters {
 				// perform k-mediod cluster
 				KMediodCluster.doKClustering(mCl.size());
 
-				// get the cluster in memory
+				// get the cluster in memory		
 				kmCl = KMediodCluster.getAllClusters();
 
 				// create a map of cluster key and its highest isolation value
