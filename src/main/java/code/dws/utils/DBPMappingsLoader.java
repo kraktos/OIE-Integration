@@ -167,12 +167,12 @@ public class DBPMappingsLoader {
 					if (SAMEAS.containsKey(nSub))
 						dbpSVal = SAMEAS.get(nSub);
 					else
-						dbpSVal = null;
+						dbpSVal = "X"; // dbpSVal = null;
 
 					if (SAMEAS.containsKey(nObj))
 						dbpOVal = SAMEAS.get(nObj);
 					else
-						dbpOVal = null;
+						dbpOVal = "X"; // dbpOVal = null;
 
 					dbpOVal = (dbpOVal != null ? Utilities
 							.utf8ToCharacter(dbpOVal.replaceAll("~", "%"))

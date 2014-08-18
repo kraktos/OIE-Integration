@@ -94,10 +94,10 @@ public class GenerateNewProperties {
 			INVERSE_PROP_LOG = "INVERSE_PROP_MULTI.log";
 			DIRECT_PROP_LOG = "DIRECT_PROP_MULTI.log";
 		} else {
-			INVERSE_PROP_LOG = (Constants.OIE_IS_NELL) ? "INVERSE_PROP.log"
-					: "REVERB_INVERSE_PROP.log";
-			DIRECT_PROP_LOG = (Constants.OIE_IS_NELL) ? "DIRECT_PROP.log"
-					: "REVERB_DIRECT_PROP.log";
+			INVERSE_PROP_LOG = (Constants.OIE_IS_NELL) ? "src/main/resources/input/INVERSE_PROP.log"
+					: "src/main/resources/input/REVERB_INVERSE_PROP.log";
+			DIRECT_PROP_LOG = (Constants.OIE_IS_NELL) ? "src/main/resources/input/DIRECT_PROP.log"
+					: "src/main/resources/input/REVERB_DIRECT_PROP.log";
 		}
 
 		// inititate yago info
@@ -107,7 +107,7 @@ public class GenerateNewProperties {
 		ReverbPropertyReNaming.main(new String[] { "" });
 
 		propertyClusterNames = ReverbPropertyReNaming.getReNamedProperties();
-		System.out.println(propertyClusterNames.size());
+		log.info(propertyClusterNames.size());
 	}
 
 	/**
@@ -144,14 +144,6 @@ public class GenerateNewProperties {
 		if (refinedMode)
 			DBWrapper.init(Constants.GET_REFINED_MAPPINGS_SQL);
 
-		// load the NELL file in memory as a collection
-		// ArrayList<ArrayList<String>> nellFile = FileUtil.genericFileReader(
-		// GenerateNewProperties.class.getResourceAsStream(oieFilePath),
-		// PATH_SEPERATOR, false);
-		//
-		// log.info("Raw NELL Input File Size = " + nellFile.size() +
-		// " tripeles");
-
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(new File(oieFilePath), "UTF-8");
 
@@ -167,9 +159,6 @@ public class GenerateNewProperties {
 				oieRawSubj = elems[0];
 				oieRawProp = elems[1];
 				oieRawObj = elems[2];
-
-				if (oieRawSubj.indexOf("albany law school") != -1)
-					System.out.println();
 
 				if (isRelevantProperty(oieRawProp)) {
 
@@ -195,13 +184,15 @@ public class GenerateNewProperties {
 
 						try {
 							candidateSubjs = new ArrayList<String>();
-							candidateSubjs.add(candidates.get(0));
+							if (candidates != null && candidates.size() > 0)
+								candidateSubjs.add(candidates.get(0));
 
 							candidateObjs = new ArrayList<String>();
-							candidateObjs.add(candidates.get(1));
+							if (candidates != null && candidates.size() > 0)
+								candidateObjs.add(candidates.get(1));
 
 						} catch (IndexOutOfBoundsException e) {
-
+							log.error(e.getMessage());
 						}
 					}
 
@@ -294,31 +285,34 @@ public class GenerateNewProperties {
 		// for the current NELL predicate get the possible db:properties from
 		// SPARQL endpoint
 
-		for (String candSubj : candidateSubj) {
-			if (!candSubj.equals("X")) {
-				for (String candObj : candidateObj) {
+		for (String subjCand : candidateSubj) {
+			if (!subjCand.equals("X")) {
+				for (String objCand : candidateObj) {
 
-					if (!candObj.equals("X")) {
+					if (!objCand.equals("X")) {
 						// DIRECT PROPERTIES
 						String directProperties = getPredsFromEndpoint(
-								candSubj.split("\t")[0], candObj.split("\t")[0]);
+								subjCand.split("\t")[0], objCand.split("\t")[0]);
 						if (directProperties.length() > 0) {
 							directPropList.add(directProperties);
 
 							// find domain type
-							domainType = getTypeInfo(candSubj.split("\t")[0]);
+							domainType = getTypeInfo(subjCand.split("\t")[0]);
 							domainType = (domainType.length() == 0) ? "null"
 									: domainType;
 
 							// find range type
-							rangeType = getTypeInfo(candObj.split("\t")[0]);
+							rangeType = getTypeInfo(objCand.split("\t")[0]);
 							rangeType = (rangeType.length() == 0) ? "null"
 									: rangeType;
 
 						}
+						
+						
 						// INDIRECT PROPERTIES
 						String inverseProps = getPredsFromEndpoint(
-								candObj.split("\t")[0], candSubj.split("\t")[0]);
+								objCand.split("\t")[0], subjCand.split("\t")[0]);
+						
 						if (inverseProps.length() > 0) {
 							inversePropList.add(inverseProps);
 
@@ -326,7 +320,7 @@ public class GenerateNewProperties {
 							if (rangeType != null) {
 								domainTypeInv = rangeType;
 							} else {
-								domainTypeInv = getTypeInfo(candObj.split("\t")[0]);
+								domainTypeInv = getTypeInfo(objCand.split("\t")[0]);
 								domainTypeInv = (domainTypeInv.length() == 0) ? "null"
 										: domainTypeInv;
 							}
@@ -335,7 +329,7 @@ public class GenerateNewProperties {
 							if (domainType != null) {
 								rangeTypeInv = domainType;
 							} else {
-								rangeTypeInv = getTypeInfo(candSubj.split("\t")[0]);
+								rangeTypeInv = getTypeInfo(subjCand.split("\t")[0]);
 								rangeTypeInv = (rangeTypeInv.length() == 0) ? "null"
 										: rangeTypeInv;
 
