@@ -4,6 +4,7 @@
 package code.dws.relationMap;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Map.Entry;
 
 import org.apache.commons.math3.stat.regression.SimpleRegression;
@@ -42,14 +44,6 @@ public class PropertyStatisticsImproved {
 		}
 	}
 
-	// read the mother mappings file, containing nell triples and possible
-	// mappings
-	public static final String INPUT_LOG = GenerateNewProperties.DIRECT_PROP_LOG; // "/input/REVERB_DIRECT_PROP.log";
-																					// //
-																					// sDIRECT_PROP.log"; // INVERSE_PROP.log";
-	// //
-	// DIRECT_PROP.log");
-
 	// define class logger
 	public final static Logger log = LoggerFactory
 			.getLogger(PropertyStatisticsImproved.class);
@@ -57,27 +51,31 @@ public class PropertyStatisticsImproved {
 	// path seperator for the output property files
 	public static final String PATH_SEPERATOR = "\t";
 
+	private static boolean INVERSE = false;
+
 	// threshold to consider mappable predicates. It means consider NELL
 	// predicates
 	// which are atleast x % map-able
-	private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 5;
+	private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 2;
 
-	private static final String PROP_STATS = "PROP_STATISTICS.tsv"; // "PROP_STATISTICS_TOP5.tsv";
+	private static final String PROP_STATS = "src/main/resources/input/PROP_STATISTICS_REVERB_"
+			+ (INVERSE ? "INVERSE_" : "DIRECT_")
+			+ +OIE_PROPERTY_MAPPED_THRESHOLD + "_.tsv";
 
-	private static final String ITEMS_RULES = "PROP_TRANSC_DIRECT.tsv";
+	private static final String ITEMS_RULES = "src/main/resources/input/PROP_TRANSC_DIRECT_REVERB.tsv";
 
-	private static final String NEW_TRIPLES = "NEW_TRIPLES.tsv";
+	private static final String NEW_TRIPLES = "src/main/resources/input/NEW_TRIPLES_REVERB_"
+			+ (INVERSE ? "INVERSE_" : "DIRECT_")
+			+ OIE_PROPERTY_MAPPED_THRESHOLD + "_.tsv";
 
-	private static final String DISTRIBUTION_NEW_TRIPLES = "NEW_TRIPLES_DOM_RAN.tsv";
+	private static final String DISTRIBUTION_NEW_TRIPLES = "src/main/resources/input/NEW_TRIPLES_REVERB_DOM_RAN_"
+			+ (INVERSE ? "INVERSE_" : "DIRECT_")
+			+ OIE_PROPERTY_MAPPED_THRESHOLD + "_.tsv";
 
 	private static Map<String, Map<String, Map<Pair<String, String>, Long>>> GLOBAL_TRANSCS_MAP = new HashMap<String, Map<String, Map<Pair<String, String>, Long>>>();
 
 	// tolerance of error, 1.1 means 10%
 	private static final double ERROR_TOLERANCE = 1.1;
-
-	private static final int SAMEAS_TOPK = 1;
-
-	private static final boolean INVERSE = false;
 
 	// total triples that can be reconstructed
 	private static int newTriples = 0;
@@ -107,16 +105,39 @@ public class PropertyStatisticsImproved {
 
 	private static Map<String, String> CACHED_SUBCLASSES = new HashMap<String, String>();
 
+	/**
+	 * entry point
+	 * 
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
+		String inputLog = null;
+		Map<String, String> clusterNames = new HashMap<String, String>();
 
+		System.out.println(Utilities.utf8ToCharacter("Lu%C3%ADs_Alberto_Urrea"));
+		
 		buildClassHierarchy();
+
+		GenerateNewProperties.init();
+
+		if (!INVERSE)
+			inputLog = GenerateNewProperties.DIRECT_PROP_LOG;
+		else
+			inputLog = GenerateNewProperties.INVERSE_PROP_LOG;
 
 		try {
 			newTriples = 0;
-			PropertyStatisticsImproved.run(INPUT_LOG);
-			// INVERSE_PROP.log
 
-			PropertyStatisticsImproved.createNewTriples(INPUT_LOG);
+			// for REverb, the property names will be cluster names
+			if (!Constants.OIE_IS_NELL)
+				clusterNames = getClusterNames(clusterNames);
+
+			PropertyStatisticsImproved.run(inputLog, clusterNames);
+
+			if (OIE_PROPERTY_MAPPED_THRESHOLD > 0)
+				PropertyStatisticsImproved.createNewTriples(inputLog,
+						clusterNames);
 		} finally {
 
 			MAP_PRED_COUNT.clear();
@@ -125,16 +146,52 @@ public class PropertyStatisticsImproved {
 	}
 
 	/**
+	 * map a given Reverb property phrase to its cluster name
+	 * 
+	 * @param clusterNames
+	 * @return
+	 */
+	private static Map<String, String> getClusterNames(
+			Map<String, String> clusterNames) {
+		String line = null;
+		String[] arr = null;
+		List<String> list = new ArrayList<String>();
+
+		try {
+			@SuppressWarnings("resource")
+			Scanner scan = new Scanner(new File(
+					"src/main/resources/input/cluster.names.out"), "UTF-8");
+
+			// iterate the file
+			while (scan.hasNextLine()) {
+				line = scan.nextLine();
+				line = line.replaceAll("\\[", "").replaceAll("\\]", "");
+				arr = line.split("\t");
+				list = new ArrayList<String>();
+				for (int i = 1; i < arr.length; i++) {
+					clusterNames.put(arr[i], arr[0]);
+				}
+			}
+		} catch (FileNotFoundException e) {
+			log.error(e.getMessage());
+		}
+
+		return clusterNames;
+	}
+
+	/**
 	 * USE THE MAPPED PROPERTY, AND MAPPED INSTANCES TO GENERATE NEW-TRIPLES
 	 * FROM THE NON-MAPPED CASES
 	 * 
 	 * @param filePath
+	 * @param clusterNames
 	 * @throws IOException
 	 */
-	private static void createNewTriples(String filePath) throws IOException {
+	private static void createNewTriples(String filePath,
+			Map<String, String> clusterNames) throws IOException {
 		int cnt = 0;
 		// nell property in concern
-		String nellProp = null;
+		String oieProp = null;
 
 		// write transactions to the file for analysis
 		BufferedWriter triplesWriter = new BufferedWriter(new FileWriter(
@@ -157,17 +214,22 @@ public class PropertyStatisticsImproved {
 
 		// iterate through them
 		for (ArrayList<String> line : directPropsFile) {
-			nellProp = line.get(1);
+			oieProp = line.get(1);
 
-			if (line.size() == 3)
-				if (FINAL_MAPPINGS.containsKey(nellProp)) {
+			if (!Constants.OIE_IS_NELL)
+				oieProp = clusterNames.get(oieProp);
+
+			if (line.size() == 3) {
+
+				if (FINAL_MAPPINGS.containsKey(oieProp)) {
 					cnt++;
 
-					List<String> dbProps = FINAL_MAPPINGS.get(nellProp);
+					List<String> dbProps = FINAL_MAPPINGS.get(oieProp);
 
 					reCreateTriples(dbProps, line, triplesWriter,
 							statStriplesWriter);
 				}
+			}
 		}
 
 		triplesWriter.close();
@@ -357,9 +419,12 @@ public class PropertyStatisticsImproved {
 	/**
 	 * method to read the property distribution files in memory
 	 * 
+	 * @param clusterNames
+	 * 
 	 * @throws IOException
 	 */
-	public static void run(String filePath) throws IOException {
+	public static void run(String filePath, Map<String, String> clusterNames)
+			throws IOException {
 
 		double percentageMapped = 0D;
 
@@ -390,6 +455,11 @@ public class PropertyStatisticsImproved {
 
 			oieProp = line.get(1);
 
+			if (!Constants.OIE_IS_NELL)
+				oieProp = clusterNames.get(oieProp);
+
+			// for the clustered scenario, the property names are the cluster
+			// names
 			if (oieProp != null) {
 
 				if (line.size() == 3) {
@@ -434,7 +504,7 @@ public class PropertyStatisticsImproved {
 
 		loadPropDistributionInCollection();
 
-		// read the transactions and create the tau vlaues for each
+		// read the transactions and create the tau values for each
 		// association..
 		// this prepares the regression model
 
@@ -443,11 +513,11 @@ public class PropertyStatisticsImproved {
 				.entrySet()) {
 			double probMax = 0D;
 
-			long nellPredCount = getNellPropCount(entry.getKey());
+			long oiePropCount = getOiePropCount(entry.getKey());
 
 			// compute the mappable ratio for this predicate
 			percentageMapped = 100 * (1 - ((double) MAP_OIE_IE_PROP_COUNTS.get(
-					entry.getKey()).get("NA") / nellPredCount));
+					entry.getKey()).get("NA") / oiePropCount));
 
 			for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry
 					.getValue().entrySet()) {
@@ -461,7 +531,7 @@ public class PropertyStatisticsImproved {
 					double support = (double) getNellAndBothDbpTypeCount(
 							entry.getKey(), pairs.getKey().getFirst(), pairs
 									.getKey().getSecond())
-							/ nellPredCount; // domProb * ranProb * countProb;
+							/ oiePropCount; // domProb * ranProb * countProb;
 
 					// look for the max probability of two classes occurring
 					// together
@@ -471,7 +541,7 @@ public class PropertyStatisticsImproved {
 
 					log.debug(entry.getKey()
 							+ "("
-							+ nellPredCount
+							+ oiePropCount
 							+ ")\t"
 							+ nellVal.getKey()
 							+ "("
@@ -491,9 +561,9 @@ public class PropertyStatisticsImproved {
 			}
 
 			double tau = (double) (MAP_OIE_IE_PROP_COUNTS.get(entry.getKey())
-					.get("NA")) / (nellPredCount * probMax);
+					.get("NA")) / (oiePropCount * probMax);
 
-			log.debug(entry.getKey() + "(" + getNellPropCount(entry.getKey())
+			log.debug(entry.getKey() + "(" + getOiePropCount(entry.getKey())
 					+ ")" + "\tNA\t"
 					+ MAP_OIE_IE_PROP_COUNTS.get(entry.getKey()).get("NA")
 					+ "\t" + probMax + "\t" + tau);
@@ -558,8 +628,8 @@ public class PropertyStatisticsImproved {
 	}
 
 	/**
-	 * loads the entire property distribution of nell over dbpedia in a
-	 * colelction
+	 * loads the entire property distribution of oie over dbpedia in a
+	 * collection
 	 * 
 	 * @throws FileNotFoundException
 	 */
@@ -570,7 +640,7 @@ public class PropertyStatisticsImproved {
 		ArrayList<ArrayList<String>> propRules = FileUtil.genericFileReader(
 				new FileInputStream(ITEMS_RULES), PATH_SEPERATOR, false);
 
-		String nellProp = null;
+		String oieProp = null;
 		String dbProp = null;
 
 		String dom = null;
@@ -578,21 +648,21 @@ public class PropertyStatisticsImproved {
 		long count = 0;
 
 		for (ArrayList<String> line : propRules) {
-			nellProp = line.get(0);
+			oieProp = line.get(0);
 			dbProp = line.get(1);
 			dom = line.get(2);
 			ran = line.get(3);
 
-			Map<String, Map<Pair<String, String>, Long>> nellPropMap = null;
+			Map<String, Map<Pair<String, String>, Long>> oiePropMap = null;
 			Map<Pair<String, String>, Long> dbpPropMap = null;
 
 			Pair<String, String> pair = new Pair<String, String>(dom, ran);
 
-			if (GLOBAL_TRANSCS_MAP.containsKey(nellProp)) {
-				nellPropMap = GLOBAL_TRANSCS_MAP.get(nellProp);
+			if (GLOBAL_TRANSCS_MAP.containsKey(oieProp)) {
+				oiePropMap = GLOBAL_TRANSCS_MAP.get(oieProp);
 
-				if (nellPropMap.containsKey(dbProp)) {
-					dbpPropMap = nellPropMap.get(dbProp);
+				if (oiePropMap.containsKey(dbProp)) {
+					dbpPropMap = oiePropMap.get(dbProp);
 
 					if (dbpPropMap.containsKey(pair)) {
 						count = dbpPropMap.get(pair);
@@ -606,13 +676,13 @@ public class PropertyStatisticsImproved {
 					dbpPropMap.put(pair, 1L);
 				}
 			} else {
-				nellPropMap = new HashMap<String, Map<Pair<String, String>, Long>>();
+				oiePropMap = new HashMap<String, Map<Pair<String, String>, Long>>();
 				dbpPropMap = new HashMap<Pair<String, String>, Long>();
 				dbpPropMap.put(new Pair<String, String>(dom, ran), 1L);
 			}
-			nellPropMap.put(dbProp, dbpPropMap);
+			oiePropMap.put(dbProp, dbpPropMap);
 
-			GLOBAL_TRANSCS_MAP.put(nellProp, nellPropMap);
+			GLOBAL_TRANSCS_MAP.put(oieProp, oiePropMap);
 		}
 
 	}
@@ -650,7 +720,7 @@ public class PropertyStatisticsImproved {
 		for (Map.Entry<String, Map<String, Map<Pair<String, String>, Long>>> entry : GLOBAL_TRANSCS_MAP
 				.entrySet()) {
 
-			long nellPredCount = getNellPropCount(entry.getKey());
+			long nellPredCount = getOiePropCount(entry.getKey());
 
 			// compute the mappable value for this predicate
 			percentageMapped = 100 * (1 - ((double) MAP_OIE_IE_PROP_COUNTS.get(
@@ -748,21 +818,21 @@ public class PropertyStatisticsImproved {
 	/*
 	 * update the prop counts
 	 */
-	private static void updateMapValues(String nellProp, String dbProp) {
+	private static void updateMapValues(String oieProp, String dbProp) {
 
 		Map<String, Integer> mapValues = null;
 		dbProp = dbProp.replaceAll(Constants.DBPEDIA_CONCEPT_NS, "dbo:");
 
-		if (!MAP_OIE_IE_PROP_COUNTS.containsKey(nellProp)) { // no key inserted
-																// for nell
-																// prop, create
-																// one entry
+		if (!MAP_OIE_IE_PROP_COUNTS.containsKey(oieProp)) { // no key inserted
+															// for nell
+															// prop, create
+															// one entry
 			mapValues = new HashMap<String, Integer>();
 			mapValues.put(dbProp, 1);
 		} else { // if nell prop key exists
 
 			// retrieve the existing collection first
-			mapValues = MAP_OIE_IE_PROP_COUNTS.get(nellProp);
+			mapValues = MAP_OIE_IE_PROP_COUNTS.get(oieProp);
 
 			// check and update the count of the dbprop values
 			if (!mapValues.containsKey(dbProp)) {
@@ -773,7 +843,7 @@ public class PropertyStatisticsImproved {
 			}
 		}
 
-		MAP_OIE_IE_PROP_COUNTS.put(nellProp, mapValues);
+		MAP_OIE_IE_PROP_COUNTS.put(oieProp, mapValues);
 	}
 
 	/**
@@ -808,16 +878,16 @@ public class PropertyStatisticsImproved {
 	/**
 	 * number of itemsets where the given nell prop occurs
 	 * 
-	 * @param nellProp
+	 * @param oieProp
 	 * @return
 	 */
-	private static long getNellPropCount(String nellProp) {
+	private static long getOiePropCount(String oieProp) {
 		long val = 0;
 
 		for (Map.Entry<String, Map<String, Map<Pair<String, String>, Long>>> entry : GLOBAL_TRANSCS_MAP
 				.entrySet()) {
 
-			if (entry.getKey().equals(nellProp)) {
+			if (entry.getKey().equals(oieProp)) {
 				for (Map.Entry<String, Map<Pair<String, String>, Long>> nellVal : entry
 						.getValue().entrySet()) {
 					for (Map.Entry<Pair<String, String>, Long> pairs : nellVal
@@ -828,7 +898,7 @@ public class PropertyStatisticsImproved {
 			}
 		}
 
-		return val + MAP_OIE_IE_PROP_COUNTS.get(nellProp).get("NA");
+		return val + MAP_OIE_IE_PROP_COUNTS.get(oieProp).get("NA");
 	}
 
 	/**
