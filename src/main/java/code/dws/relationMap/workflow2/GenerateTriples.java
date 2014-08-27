@@ -84,6 +84,12 @@ public class GenerateTriples {
 
 	}
 
+	/**
+	 * fetches the best cluster and returns it
+	 * 
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	@SuppressWarnings("resource")
 	private static Map<String, List<String>> readClusters()
 			throws FileNotFoundException {
@@ -106,7 +112,7 @@ public class GenerateTriples {
 		KMediodCluster.loadScores(PAIRWISE_SCORES_FILE, "", "\t");
 
 		// read the cluster information file
-		for (int i = 2; i <= 30; i++) {
+		for (int i = 3; i <= 30; i++) {
 
 			isoMcl = new HashMap<String, Double>();
 			map = new HashMap<String, List<String>>();
@@ -179,6 +185,9 @@ public class GenerateTriples {
 				.genericFileReader(new FileInputStream(filePath),
 						PATH_SEPERATOR, false);
 
+		// build the class hierarchy
+		PropertyStatisticsImproved.buildClassHierarchy();
+
 		// init DB for getting the most frequebt URI for the NELL terms
 
 		// MOST FREQUENT CASE
@@ -195,6 +204,7 @@ public class GenerateTriples {
 
 			if (line.size() == 3) { // non-mapped lines, thats where we can
 									// generate something
+
 				if (mappedProps.containsKey(oieProp)) {
 
 					dbProps = new ArrayList<String>();

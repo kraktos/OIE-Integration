@@ -115,8 +115,9 @@ public class PropertyStatisticsImproved {
 		String inputLog = null;
 		Map<String, String> clusterNames = new HashMap<String, String>();
 
-		System.out.println(Utilities.utf8ToCharacter("Lu%C3%ADs_Alberto_Urrea"));
-		
+		System.out
+				.println(Utilities.utf8ToCharacter("Lu%C3%ADs_Alberto_Urrea"));
+
 		buildClassHierarchy();
 
 		GenerateNewProperties.init();
@@ -1050,7 +1051,7 @@ public class PropertyStatisticsImproved {
 		return coll;
 	}
 
-	private static void buildClassHierarchy() {
+	public static void buildClassHierarchy() {
 		String getAll = "SELECT * WHERE  { ?subclass <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?superclass}";
 		List<QuerySolution> allPairs = SPARQLEndPointQueryAPI
 				.queryDBPediaEndPoint(getAll);
