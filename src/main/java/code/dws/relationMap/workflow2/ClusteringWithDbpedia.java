@@ -117,11 +117,11 @@ public class ClusteringWithDbpedia {
 	/**
 	 * load DBP properties from SPARQL endpoint
 	 * 
-	 * @param TOPK_REV_PROPS
+	 * @param topKDBPediaProperties
 	 * 
 	 * @return
 	 */
-	private static List<String> loadDbpediaProperties(long TOPK_REV_PROPS) {
+	private static List<String> loadDbpediaProperties(long topKDBPediaProperties) {
 
 		String prop = null;
 		String cnt = "0";
@@ -161,7 +161,7 @@ public class ClusteringWithDbpedia {
 			retS.add(e.getKey());
 
 			c++;
-			if (c == TOPK_REV_PROPS)
+			if (c == topKDBPediaProperties)
 				return retS;
 		}
 

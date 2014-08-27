@@ -236,24 +236,24 @@ public class PropertyStatisticsImproved {
 		statStriplesWriter.close();
 	}
 
-	private static void reCreateTriples(List<String> dbProps,
+	public static void reCreateTriples(List<String> dbProps,
 			ArrayList<String> line, BufferedWriter triplesWriter,
 			BufferedWriter statStriplesWriter) throws IOException {
 		String domainType = null;
 		String rangeType = null;
 
-		String nellRawSubj = null;
+		String oieRawSubj = null;
 		String oieRawProp = null;
-		String nellRawObj = null;
+		String oieRawObj = null;
 
 		List<String> candidateSubjs = null;
 		List<String> candidateObjs = null;
 		List<String> candidates = null;
 
 		// get the nell subjects and objects
-		nellRawSubj = line.get(0);
+		oieRawSubj = line.get(0);
 		oieRawProp = line.get(1);
-		nellRawObj = line.get(2);
+		oieRawObj = line.get(2);
 
 		// get the top-k concepts for the subject
 		// candidateSubjs = DBWrapper.fetchTopKLinksWikiPrepProb(Utilities
@@ -266,9 +266,9 @@ public class PropertyStatisticsImproved {
 		// SAMEAS_TOPK);
 
 		candidates = DBWrapper.fetchRefinedMapping(
-				Utilities.cleanse(nellRawSubj).trim(),
+				Utilities.cleanse(oieRawSubj).trim(),
 				(Constants.OIE_IS_NELL) ? oieRawProp.trim().replaceAll("\\s+",
-						"_") : oieRawProp.trim(), Utilities.cleanse(nellRawObj)
+						"_") : oieRawProp.trim(), Utilities.cleanse(oieRawObj)
 						.trim());
 
 		try {

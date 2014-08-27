@@ -121,7 +121,7 @@ public class CompareClusters {
 		double clusterGoodness = 0;
 		// long n = (mCl.size()) * (mCl.size() - 1) / 2;
 		for (Entry<String, List<String>> e1 : mCl.entrySet()) {
-
+			
 			maxIsolation = 0;
 
 			for (Entry<String, List<String>> e2 : mCl.entrySet()) {
