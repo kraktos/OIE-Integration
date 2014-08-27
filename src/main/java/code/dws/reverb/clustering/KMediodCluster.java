@@ -195,6 +195,47 @@ public class KMediodCluster {
 	}
 
 	/**
+	 * load in memory all the scores, Wordnet similarity and jaccard ones
+	 * 
+	 * @param file
+	 * @param arg
+	 * @param delimit
+	 * @throws FileNotFoundException
+	 */
+	@SuppressWarnings("resource")
+	public static void loadScores(String file, String arg, String delimit)
+			throws FileNotFoundException {
+
+		String sCurrentLine;
+		double score;
+
+		Scanner scan;
+		scan = new Scanner(new File(file), "UTF-8");
+
+		Pair<String, String> pair = null;
+
+		while (scan.hasNextLine()) {
+			sCurrentLine = scan.nextLine();
+			sCurrentLine = sCurrentLine.replaceAll("" + arg + "\\(", "")
+					.replaceAll("\\)", "").replaceAll("\"", "");
+
+			pair = new ImmutablePair<String, String>(
+					sCurrentLine.split(delimit)[0].trim(),
+					sCurrentLine.split(delimit)[1].trim());
+
+			if (SCORE_MAP.containsKey(pair)) {
+				score = (double) (SCORE_MAP.get(pair) + Double
+						.valueOf(sCurrentLine.split(delimit)[2])) / 2;
+
+			} else {
+				score = Double.valueOf(sCurrentLine.split(delimit)[2]);
+			}
+
+			SCORE_MAP.put(pair, score);
+		}
+	}
+
+	/**
 	 * actual clustering algo
 	 * 
 	 * @param seedReverbProperties

@@ -21,6 +21,8 @@ import org.apache.log4j.Logger;
 import code.dws.dbConnectivity.DBWrapper;
 import code.dws.relationMap.GenerateNewProperties;
 import code.dws.relationMap.PropertyStatisticsImproved;
+import code.dws.reverb.clustering.KMediodCluster;
+import code.dws.reverb.clustering.analysis.CompareClusters;
 import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
 
@@ -33,7 +35,9 @@ import code.dws.utils.FileUtil;
  */
 public class GenerateTriples {
 
-	private static final String DBPEDIA_CLUSTERED_FILE = "src/main/resources/input/DBPEDIA.cluster.11.out";
+	private static final String PAIRWISE_SCORES_FILE = "src/main/resources/input/All6.csv";
+
+	private static final String DBPEDIA_CLUSTERED_FILE = "src/main/resources/input/DBPEDIA.cluster.";
 
 	private static final String NEW_TRIPLES = "src/main/resources/input/NEW_TRIPLES_REVERB_WF2_.tsv";
 
@@ -64,10 +68,13 @@ public class GenerateTriples {
 		GenerateNewProperties.init();
 		String inputLog = GenerateNewProperties.DIRECT_PROP_LOG;
 
+		// read through all clusters to find the best, maximum clusters
+		// essentially is not best, have to compute cluster index
+		Map<String, List<String>> mCl = null;
+
 		// load the clusters in memory
 		Map<String, List<String>> map = readClusters();
-
-		// debug
+		// // debug
 		for (Entry<String, List<String>> e : map.entrySet()) {
 			logger.debug(e.getKey() + "\t" + e.getValue());
 		}
@@ -77,42 +84,69 @@ public class GenerateTriples {
 
 	}
 
-	private static Map<String, List<String>> readClusters() {
+	@SuppressWarnings("resource")
+	private static Map<String, List<String>> readClusters()
+			throws FileNotFoundException {
+
+		double mclIndex = 0;
+		double bestMclIndex = Double.MAX_VALUE;
+
+		Map<String, List<String>> bestClusterMap = new HashMap<String, List<String>>();
+
 		String line = null;
 		String[] arr = null;
 
 		String dbpProp = null;
 		List<String> dbpProps = null;
 
-		Map<String, List<String>> map = new HashMap<String, List<String>>();
+		Map<String, Double> isoMcl = null;
+		Map<String, List<String>> map = null;
+
+		Scanner scan = null;
+		KMediodCluster.loadScores(PAIRWISE_SCORES_FILE, "", "\t");
 
 		// read the cluster information file
-		try {
-			Scanner scan = new Scanner(new File(DBPEDIA_CLUSTERED_FILE),
-					"UTF-8");
+		for (int i = 2; i <= 30; i++) {
 
-			while (scan.hasNextLine()) {
-				line = scan.nextLine();
-				arr = line.split("\t");
+			isoMcl = new HashMap<String, Double>();
+			map = new HashMap<String, List<String>>();
 
-				dbpProps = new ArrayList<String>();
-				for (String elem : arr) {
-					if (elem.indexOf(" ") == -1)
-						dbpProps.add(Constants.DBPEDIA_CONCEPT_NS + elem);
-				}
+			try {
+				scan = new Scanner(
+						new File(DBPEDIA_CLUSTERED_FILE + i + ".out"), "UTF-8");
 
-				if (dbpProps.size() > 0)
+				while (scan.hasNextLine()) {
+					line = scan.nextLine();
+					arr = line.split("\t");
+
+					dbpProps = new ArrayList<String>();
 					for (String elem : arr) {
-						if (elem.indexOf(" ") != -1) {
-							map.put(elem, dbpProps);
-						}
+						if (elem.indexOf(" ") == -1)
+							dbpProps.add(elem);
 					}
-				dbpProps = null;
+
+					if (dbpProps.size() > 0)
+						for (String elem : arr) {
+							if (elem.indexOf(" ") != -1) {
+								map.put(elem, dbpProps);
+							}
+						}
+					dbpProps = null;
+				}
+			} catch (FileNotFoundException e) {
+				logger.error(e.getMessage());
 			}
-		} catch (FileNotFoundException e) {
-			logger.error(e.getMessage());
+
+			mclIndex = CompareClusters.computeClusterIndex(map, isoMcl);
+
+			if (mclIndex < bestMclIndex) {
+				bestMclIndex = mclIndex;
+				bestClusterMap = map;
+				logger.info("best clustering at inflation = " + i);
+			}
 		}
-		return map;
+
+		return bestClusterMap;
 	}
 
 	/**
@@ -126,9 +160,13 @@ public class GenerateTriples {
 	 */
 	private static void createNewTriples(String filePath,
 			Map<String, List<String>> mappedProps) throws IOException {
+
 		int cnt = 0;
+
 		// oie property in concern
 		String oieProp = null;
+
+		List<String> dbProps = null;
 
 		// write transactions to the file for analysis
 		BufferedWriter triplesWriter = new BufferedWriter(new FileWriter(
@@ -159,7 +197,10 @@ public class GenerateTriples {
 									// generate something
 				if (mappedProps.containsKey(oieProp)) {
 
-					List<String> dbProps = mappedProps.get(oieProp);
+					dbProps = new ArrayList<String>();
+					for (String p : mappedProps.get(oieProp)) {
+						dbProps.add(Constants.DBPEDIA_CONCEPT_NS + p);
+					}
 
 					PropertyStatisticsImproved.reCreateTriples(dbProps, line,
 							triplesWriter, statStriplesWriter);
