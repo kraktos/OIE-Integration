@@ -115,8 +115,6 @@ public class PropertyStatisticsImproved {
 		String inputLog = null;
 		Map<String, String> clusterNames = new HashMap<String, String>();
 
-		System.out
-				.println(Utilities.utf8ToCharacter("Lu%C3%ADs_Alberto_Urrea"));
 
 		buildClassHierarchy();
 

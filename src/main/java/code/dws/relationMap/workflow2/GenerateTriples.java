@@ -35,7 +35,7 @@ import code.dws.utils.FileUtil;
  */
 public class GenerateTriples {
 
-	private static final String PAIRWISE_SCORES_FILE = "src/main/resources/input/All6.csv";
+	public static final String PAIRWISE_SCORES_FILE = "src/main/resources/input/All6.csv";
 
 	private static final String DBPEDIA_CLUSTERED_FILE = "src/main/resources/input/DBPEDIA.cluster.";
 
@@ -91,7 +91,7 @@ public class GenerateTriples {
 	 * @throws FileNotFoundException
 	 */
 	@SuppressWarnings("resource")
-	private static Map<String, List<String>> readClusters()
+	public static Map<String, List<String>> readClusters()
 			throws FileNotFoundException {
 
 		double mclIndex = 0;
@@ -153,6 +153,72 @@ public class GenerateTriples {
 		}
 
 		return bestClusterMap;
+	}
+
+	public static int readClusters(String s) throws FileNotFoundException {
+
+		int bestInflation = 0;
+		double mclIndex = 0;
+		double bestMclIndex = Double.MAX_VALUE;
+
+		// Map<String, List<String>> bestClusterMap = new HashMap<String,
+		// List<String>>();
+
+		String line = null;
+		String[] arr = null;
+
+		String dbpProp = null;
+		List<String> dbpProps = null;
+
+		Map<String, Double> isoMcl = null;
+		Map<String, List<String>> map = null;
+
+		Scanner scan = null;
+		KMediodCluster.loadScores(PAIRWISE_SCORES_FILE, "", "\t");
+
+		// read the cluster information file
+		for (int i = 3; i <= 30; i++) {
+
+			isoMcl = new HashMap<String, Double>();
+			map = new HashMap<String, List<String>>();
+
+			try {
+				scan = new Scanner(
+						new File(DBPEDIA_CLUSTERED_FILE + i + ".out"), "UTF-8");
+
+				while (scan.hasNextLine()) {
+					line = scan.nextLine();
+					arr = line.split("\t");
+
+					dbpProps = new ArrayList<String>();
+					for (String elem : arr) {
+						if (elem.indexOf(" ") == -1)
+							dbpProps.add(elem);
+					}
+
+					if (dbpProps.size() > 0)
+						for (String elem : arr) {
+							if (elem.indexOf(" ") != -1) {
+								map.put(elem, dbpProps);
+							}
+						}
+					dbpProps = null;
+				}
+			} catch (FileNotFoundException e) {
+				logger.error(e.getMessage());
+			}
+
+			mclIndex = CompareClusters.computeClusterIndex(map, isoMcl);
+
+			if (mclIndex < bestMclIndex) {
+				bestMclIndex = mclIndex;
+				// bestClusterMap = map;
+				bestInflation = i;
+				logger.info("best clustering at inflation = " + i);
+			}
+		}
+
+		return bestInflation;
 	}
 
 	/**

@@ -15,6 +15,7 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 
 import code.dws.experiment.ExperimentAutomation;
+import code.dws.relationMap.workflow2.GenerateTriples;
 import code.dws.reverb.clustering.KMediodCluster;
 import code.dws.reverb.clustering.MarkovClustering;
 import code.dws.reverb.clustering.analysis.ClusterClient;
@@ -52,18 +53,23 @@ public class ReverbPropertyReNaming {
 		if (ExperimentAutomation.WORKFLOW_NORMAL) {
 			simScoreFile = KMediodCluster.ALL_SCORES;
 			optimalInflation = getOptimalInflation();
+
 		} else {
-			simScoreFile = "/home/adutta/git/OIE-Integration/src/main/resources/input/All5.csv";
-			optimalInflation = new ClusterClient(simScoreFile)
-					.getClusterIndex();
+			simScoreFile = GenerateTriples.PAIRWISE_SCORES_FILE;
+			optimalInflation = GenerateTriples.readClusters("");
+
+			// simScoreFile =
+			// "/home/adutta/git/OIE-Integration/src/main/resources/input/All5.csv";
+			// optimalInflation = new ClusterClient(simScoreFile)
+			// .getClusterIndex();
 		}
 
 		// use the inflation factor to regenerate the clusters
 		// perform a Markov Cluster
 		MarkovClustering.main(new String[] { simScoreFile,
 				String.valueOf(optimalInflation) });
-
-		// get the clusters in memory
+		//
+		// // get the clusters in memory
 		CLUSTERED_REVERB_PROPERTIES = MarkovClustering.getAllClusters();
 
 		BufferedWriter writer = new BufferedWriter(

@@ -55,7 +55,7 @@ public class ExperimentAutomation {
 
 	public static boolean INCLUDE_YAGO_TYPES = true;
 
-	public static boolean WORKFLOW_NORMAL = true;
+	public static boolean WORKFLOW_NORMAL = false;
 
 	/**
 	 * @param args

@@ -13,6 +13,7 @@ import java.util.Map.Entry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import code.dws.experiment.ExperimentAutomation;
 import code.dws.relationMap.GenerateNewProperties;
 import code.dws.reverb.ReverbPropertyReNaming;
 import code.dws.utils.Constants;
@@ -61,6 +62,7 @@ public class ScriptGenarator {
 
 		for (String oieProp : PROPS) {
 			int bootIter = 2;
+
 			scriptWriter.write("sh ./" + PIPELINE_NAME + oieProp + "\n");
 			while (bootIter != MAX_BOOT_ITER + 2) {
 				scriptWriter.write("sh ./" + BOOTSTRAP_NAME + oieProp + " "
@@ -68,13 +70,10 @@ public class ScriptGenarator {
 			}
 			scriptWriter.write("echo \"Done with complete reasoning of "
 					+ oieProp + "\"\n\n");
-
-			// System.out
-			// .println("java -jar /home/arnab/Workspaces/UPDATE_REFINED.jar " +
-			// oieProp);
-			System.out.println("echo \"Done with " + oieProp + "\"\n");
+//			System.out.println("echo \"Done with " + oieProp + "\"\n");
 		}
 
+		System.out.println("echo \"Done with " + PROPS.size() + " clusters\n");
 		scriptWriter.flush();
 		scriptWriter.close();
 	}
@@ -87,6 +86,7 @@ public class ScriptGenarator {
 	 */
 	private static void loadOIEProps(String oieFilePath) {
 		String oieProp = null;
+		boolean flag = false;
 
 		if (Constants.OIE_IS_NELL) {
 			// load the NELL file in memory as a collection
@@ -112,8 +112,27 @@ public class ScriptGenarator {
 
 				for (Entry<String, List<String>> e : ReverbPropertyReNaming
 						.getReNamedProperties().entrySet()) {
-					PROPS.add(e.getKey());
+
+					if (ExperimentAutomation.WORKFLOW_NORMAL) {
+						PROPS.add(e.getKey());
+					} else {
+
+						// routine to selectively add only those clusters having
+						// atleast one Reverb property
+						flag = false;
+						for (String elem : e.getValue()) {
+							if (elem.indexOf(" ") != -1) {
+								flag = true;
+							}
+						}
+						if (flag)
+							PROPS.add(e.getKey());
+						else
+							System.out.println("Skipping " + e.getKey());
+					}
+
 				}
+
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
