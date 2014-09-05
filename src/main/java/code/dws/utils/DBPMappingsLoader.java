@@ -59,7 +59,7 @@ public class DBPMappingsLoader {
 		} else {
 
 			// load the cluster names and reverb properties
-			ReverbPropertyReNaming.main(new String[] { "" });
+//			ReverbPropertyReNaming.main(new String[] { "" });
 
 			Path filePath = Paths.get("src/main/resources/output/");
 

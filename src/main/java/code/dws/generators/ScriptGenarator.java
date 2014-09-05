@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import code.dws.experiment.ExperimentAutomation;
 import code.dws.relationMap.GenerateNewProperties;
+import code.dws.reverb.ReverbClusterProperty;
 import code.dws.reverb.ReverbPropertyReNaming;
 import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
@@ -61,6 +62,7 @@ public class ScriptGenarator {
 		scriptWriter.write("#!/bin/bash\n\n");
 
 		for (String oieProp : PROPS) {
+			
 			int bootIter = 2;
 
 			scriptWriter.write("sh ./" + PIPELINE_NAME + oieProp + "\n");
@@ -70,7 +72,7 @@ public class ScriptGenarator {
 			}
 			scriptWriter.write("echo \"Done with complete reasoning of "
 					+ oieProp + "\"\n\n");
-//			System.out.println("echo \"Done with " + oieProp + "\"\n");
+			// System.out.println("echo \"Done with " + oieProp + "\"\n");
 		}
 
 		System.out.println("echo \"Done with " + PROPS.size() + " clusters\n");
@@ -108,29 +110,37 @@ public class ScriptGenarator {
 
 		} else {
 			try {
-				ReverbPropertyReNaming.main(new String[] { "" });
+				if (!ExperimentAutomation.WORKFLOW_NORMAL) {
+					ReverbPropertyReNaming.main(new String[] { "" });
+					for (Entry<String, List<String>> e : ReverbPropertyReNaming
+							.getReNamedProperties().entrySet()) {
 
-				for (Entry<String, List<String>> e : ReverbPropertyReNaming
-						.getReNamedProperties().entrySet()) {
-
-					if (ExperimentAutomation.WORKFLOW_NORMAL) {
-						PROPS.add(e.getKey());
-					} else {
-
-						// routine to selectively add only those clusters having
-						// atleast one Reverb property
-						flag = false;
-						for (String elem : e.getValue()) {
-							if (elem.indexOf(" ") != -1) {
-								flag = true;
-							}
-						}
-						if (flag)
+						if (ExperimentAutomation.WORKFLOW_NORMAL) {
 							PROPS.add(e.getKey());
-						else
-							System.out.println("Skipping " + e.getKey());
-					}
+						} else {
 
+							// routine to selectively add only those clusters
+							// having
+							// atleast one Reverb property
+							flag = false;
+							for (String elem : e.getValue()) {
+								if (elem.indexOf(" ") != -1) {
+									flag = true;
+								}
+							}
+							if (flag)
+								PROPS.add(e.getKey());
+							else
+								System.out.println("Skipping " + e.getKey());
+						}
+					}
+				} else {
+					List<String> props = ReverbClusterProperty
+							.getReverbProperties(Constants.REVERB_DATA_PATH,
+									ReverbClusterProperty.TOPK_REV_PROPS);
+					for (String s : props) {
+						PROPS.add(s.replaceAll("\\s+", "-"));
+					}
 				}
 
 			} catch (IOException e1) {

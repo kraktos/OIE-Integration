@@ -66,7 +66,7 @@ public class GenerateTriples {
 	public static void main(String[] args) throws IOException {
 
 		GenerateNewProperties.init();
-		String inputLog = GenerateNewProperties.DIRECT_PROP_LOG;
+		String inputLog = GenerateNewProperties.INVERSE_PROP_LOG;//GenerateNewProperties.DIRECT_PROP_LOG;
 
 		// read through all clusters to find the best, maximum clusters
 		// essentially is not best, have to compute cluster index

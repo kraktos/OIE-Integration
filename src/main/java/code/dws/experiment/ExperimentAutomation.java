@@ -55,7 +55,7 @@ public class ExperimentAutomation {
 
 	public static boolean INCLUDE_YAGO_TYPES = true;
 
-	public static boolean WORKFLOW_NORMAL = false;
+	public static boolean WORKFLOW_NORMAL = true;
 
 	/**
 	 * @param args
@@ -129,6 +129,7 @@ public class ExperimentAutomation {
 	private static void runAll() throws IOException,
 			OWLOntologyCreationException, Exception {
 
+		//PREDICATE = PREDICATE.replaceAll("_", " ");
 		// inititate yago info
 		if (INCLUDE_YAGO_TYPES)
 			YagoDbpediaMapping.main(new String[] { "" });

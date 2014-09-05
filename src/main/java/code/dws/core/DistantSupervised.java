@@ -22,6 +22,7 @@ import java.util.Map;
 import code.dws.bootstrap.BootStrapMethod;
 import code.dws.dao.Pair;
 import code.dws.dbConnectivity.DBWrapper;
+import code.dws.experiment.ExperimentAutomation;
 import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.reverb.ReverbPropertyReNaming;
 import code.dws.utils.Constants;
@@ -65,8 +66,14 @@ public class DistantSupervised {
 			this.propertyName = args[0];
 			oieFile = new File(Constants.NELL_DATA_PATH);
 		} else {
-			this.propertyNames = ReverbPropertyReNaming.getReNamedProperties()
-					.get(args[0]);
+			if (!ExperimentAutomation.WORKFLOW_NORMAL) {
+				this.propertyNames = ReverbPropertyReNaming
+						.getReNamedProperties().get(args[0]);
+			} else {
+				this.propertyNames = new ArrayList<String>();
+				this.propertyNames.add(ExperimentAutomation.PREDICATE
+						.replaceAll("-", " "));
+			}
 			oieFile = new File(Constants.REVERB_DATA_PATH);
 		}
 		Constants.TOP_ANCHORS = Integer.parseInt(args[1]);

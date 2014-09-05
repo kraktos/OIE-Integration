@@ -51,7 +51,7 @@ public class PropertyStatisticsImproved {
 	// path seperator for the output property files
 	public static final String PATH_SEPERATOR = "\t";
 
-	private static boolean INVERSE = false;
+	private static boolean INVERSE = true;
 
 	// threshold to consider mappable predicates. It means consider NELL
 	// predicates

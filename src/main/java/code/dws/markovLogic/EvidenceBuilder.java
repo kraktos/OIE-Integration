@@ -21,8 +21,10 @@ import java.util.Set;
 
 import code.dws.dao.Pair;
 import code.dws.dbConnectivity.DBWrapper;
+import code.dws.experiment.ExperimentAutomation;
 import code.dws.ontology.GenericConverter;
 import code.dws.query.SPARQLEndPointQueryAPI;
+import code.dws.reverb.ReverbClusterProperty;
 import code.dws.reverb.ReverbPropertyReNaming;
 import code.dws.utils.Constants;
 import code.dws.utils.Constants.OIE;
@@ -54,10 +56,18 @@ public class EvidenceBuilder {
 			this.processTriple(oieFile, OIE.NELL, ",");
 
 		} else {
-			ReverbPropertyReNaming.main(new String[] { "" });
+			if (!ExperimentAutomation.WORKFLOW_NORMAL) {
+				ReverbPropertyReNaming.main(new String[] { "" });
 
-			this.propertyNames = ReverbPropertyReNaming.getReNamedProperties()
-					.get(args[0]);
+				//retrieve only the properties relavant to the given cluster name 
+				this.propertyNames = ReverbPropertyReNaming
+						.getReNamedProperties().get(args[0]);
+			} else {
+				
+				this.propertyNames = new ArrayList<String>();
+				this.propertyNames.add(ExperimentAutomation.PREDICATE
+						.replaceAll("-", " "));
+			}
 
 			oieFile = new File(Constants.REVERB_DATA_PATH);
 
