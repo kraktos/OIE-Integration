@@ -19,6 +19,7 @@ import java.util.Scanner;
 import org.apache.log4j.Logger;
 
 import code.dws.dbConnectivity.DBWrapper;
+import code.dws.experiment.ExperimentAutomation;
 import code.dws.markovLogic.YagoDbpediaMapping;
 import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.reverb.ReverbPropertyReNaming;
@@ -104,10 +105,13 @@ public class GenerateNewProperties {
 		if (Constants.INCLUDE_YAGO_TYPES)
 			YagoDbpediaMapping.main(new String[] { "" });
 
-		ReverbPropertyReNaming.main(new String[] { "" });
+		if (!ExperimentAutomation.WORKFLOW_NORMAL) {
+			ReverbPropertyReNaming.main(new String[] { "" });
+			propertyClusterNames = ReverbPropertyReNaming
+					.getReNamedProperties();
+			log.info(propertyClusterNames.size());
 
-		propertyClusterNames = ReverbPropertyReNaming.getReNamedProperties();
-		log.info(propertyClusterNames.size());
+		}
 	}
 
 	/**
@@ -237,16 +241,20 @@ public class GenerateNewProperties {
 			if (propertyNames.contains(oieRawProp)) {
 				flag = true;
 			} else {
-				for (Entry<String, List<String>> e : propertyClusterNames
-						.entrySet()) {
-					for (String s : e.getValue()) {
-						if (!propertyNames.contains(s)) {
-							propertyNames.add(s);
+				if (!ExperimentAutomation.WORKFLOW_NORMAL) {
+					for (Entry<String, List<String>> e : propertyClusterNames
+							.entrySet()) {
+						for (String s : e.getValue()) {
+							if (!propertyNames.contains(s)) {
+								propertyNames.add(s);
 
-							if (s.equals(oieRawProp))
-								flag = true;
+								if (s.equals(oieRawProp))
+									flag = true;
+							}
 						}
 					}
+				}else{
+					flag = true;
 				}
 			}
 		}

@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 
 import code.dws.dao.Pair;
 import code.dws.dbConnectivity.DBWrapper;
+import code.dws.experiment.ExperimentAutomation;
 import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.utils.Constants;
 import code.dws.utils.FileUtil;
@@ -51,12 +52,12 @@ public class PropertyStatisticsImproved {
 	// path seperator for the output property files
 	public static final String PATH_SEPERATOR = "\t";
 
-	private static boolean INVERSE = true;
+	private static boolean INVERSE = false;
 
 	// threshold to consider mappable predicates. It means consider NELL
 	// predicates
 	// which are atleast x % map-able
-	private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 2;
+	private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 35;
 
 	private static final String PROP_STATS = "src/main/resources/input/PROP_STATISTICS_REVERB_"
 			+ (INVERSE ? "INVERSE_" : "DIRECT_")
@@ -115,7 +116,6 @@ public class PropertyStatisticsImproved {
 		String inputLog = null;
 		Map<String, String> clusterNames = new HashMap<String, String>();
 
-
 		buildClassHierarchy();
 
 		GenerateNewProperties.init();
@@ -129,7 +129,7 @@ public class PropertyStatisticsImproved {
 			newTriples = 0;
 
 			// for REverb, the property names will be cluster names
-			if (!Constants.OIE_IS_NELL)
+			if (!Constants.OIE_IS_NELL && !ExperimentAutomation.WORKFLOW_NORMAL)
 				clusterNames = getClusterNames(clusterNames);
 
 			PropertyStatisticsImproved.run(inputLog, clusterNames);
@@ -454,7 +454,7 @@ public class PropertyStatisticsImproved {
 
 			oieProp = line.get(1);
 
-			if (!Constants.OIE_IS_NELL)
+			if (!Constants.OIE_IS_NELL && !ExperimentAutomation.WORKFLOW_NORMAL)
 				oieProp = clusterNames.get(oieProp);
 
 			// for the clustered scenario, the property names are the cluster
