@@ -39,7 +39,7 @@ public class GenerateTriples {
 
 	private static final String DBPEDIA_CLUSTERED_FILE = "src/main/resources/input/DBPEDIA.cluster.";
 
-	private static final String NEW_TRIPLES = "src/main/resources/input/NEW_TRIPLES_REVERB_WF2_.tsv";
+	private static final String NEW_TRIPLES = "src/main/resources/input/NEW_NEW_TRIPLES_REVERB_WF2_.tsv";
 
 	private static final String DISTRIBUTION_NEW_TRIPLES = "src/main/resources/input/NEW_TRIPLES_REVERB_DOM_RAN_WF2_.tsv";
 
@@ -66,7 +66,7 @@ public class GenerateTriples {
 	public static void main(String[] args) throws IOException {
 
 		GenerateNewProperties.init();
-		String inputLog = GenerateNewProperties.INVERSE_PROP_LOG;//GenerateNewProperties.DIRECT_PROP_LOG;
+		String inputLog = GenerateNewProperties.DIRECT_PROP_LOG;// GenerateNewProperties.DIRECT_PROP_LOG;
 
 		// read through all clusters to find the best, maximum clusters
 		// essentially is not best, have to compute cluster index
@@ -75,12 +75,15 @@ public class GenerateTriples {
 		// load the clusters in memory
 		Map<String, List<String>> map = readClusters();
 		// // debug
-		for (Entry<String, List<String>> e : map.entrySet()) {
-			logger.debug(e.getKey() + "\t" + e.getValue());
-		}
+		// int s = 0;
+		// for (Entry<String, List<String>> e : map.entrySet()) {
+		// logger.info(e.getKey() + "\t" + e.getValue());
+		// s = s + e.getValue().size();
+		// }
+		// logger.info((double) s / map.size());
 
 		// skim through the OIE input data file and try mapping
-		createNewTriples(inputLog, map);
+		// createNewTriples(inputLog, map);
 
 	}
 
@@ -111,6 +114,7 @@ public class GenerateTriples {
 		Scanner scan = null;
 		KMediodCluster.loadScores(PAIRWISE_SCORES_FILE, "", "\t");
 
+		int s = 0;
 		// read the cluster information file
 		for (int i = 3; i <= 30; i++) {
 
@@ -124,7 +128,7 @@ public class GenerateTriples {
 				while (scan.hasNextLine()) {
 					line = scan.nextLine();
 					arr = line.split("\t");
-
+					s = s + arr.length;
 					dbpProps = new ArrayList<String>();
 					for (String elem : arr) {
 						if (elem.indexOf(" ") == -1)
@@ -139,6 +143,8 @@ public class GenerateTriples {
 						}
 					dbpProps = null;
 				}
+
+				logger.info(i + " " + (double) s / 98);
 			} catch (FileNotFoundException e) {
 				logger.error(e.getMessage());
 			}
@@ -264,9 +270,20 @@ public class GenerateTriples {
 
 		logger.info("Generating New triples with DBPedia Clustering method...");
 		// iterate through them
+
+		// for (ArrayList<String> line : directPropsFile) {
+		// oieProp = line.get(1);
+		// if (mappedProps.containsKey(oieProp)) {
+		// cnt++;
+		// }
+		// }
+		// logger.info(cnt);
+
 		for (ArrayList<String> line : directPropsFile) {
 			cnt++;
 			oieProp = line.get(1);
+			if (line.get(0).indexOf("Amsterdam") != -1)
+				System.out.println();
 
 			if (line.size() == 3) { // non-mapped lines, thats where we can
 									// generate something

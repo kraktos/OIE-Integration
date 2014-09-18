@@ -57,7 +57,7 @@ public class PropertyStatisticsImproved {
 	// threshold to consider mappable predicates. It means consider NELL
 	// predicates
 	// which are atleast x % map-able
-	private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 35;
+	private static final double OIE_PROPERTY_MAPPED_THRESHOLD = 5;
 
 	private static final String PROP_STATS = "src/main/resources/input/PROP_STATISTICS_REVERB_"
 			+ (INVERSE ? "INVERSE_" : "DIRECT_")
@@ -215,7 +215,7 @@ public class PropertyStatisticsImproved {
 		for (ArrayList<String> line : directPropsFile) {
 			oieProp = line.get(1);
 
-			if (!Constants.OIE_IS_NELL)
+			if (!Constants.OIE_IS_NELL && !ExperimentAutomation.WORKFLOW_NORMAL)
 				oieProp = clusterNames.get(oieProp);
 
 			if (line.size() == 3) {
@@ -977,6 +977,10 @@ public class PropertyStatisticsImproved {
 
 	private static boolean isSuperClass3(String generalClass,
 			String particularClass) {
+
+		if (generalClass == null)
+			return true;
+
 		if (generalClass == null && particularClass == null)
 			return true;
 

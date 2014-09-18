@@ -403,8 +403,27 @@ public class Utilities {
 
 		Map result = new LinkedHashMap();
 		for (Iterator it = list.iterator(); it.hasNext();) {
-			Map.Entry entry = (Map.Entry) it.next();
+			Map.Entry<String, Long> entry = (Map.Entry) it.next();
 			result.put(entry.getKey(), entry.getValue());
+		}
+		return result;
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static Map<String, Long> sortByValue(Map map, Long cutOff) {
+		List list = new LinkedList(map.entrySet());
+		Collections.sort(list, new Comparator() {
+			public int compare(Object o2, Object o1) {
+				return ((Comparable) ((Map.Entry) (o1)).getValue())
+						.compareTo(((Map.Entry) (o2)).getValue());
+			}
+		});
+
+		Map result = new LinkedHashMap();
+		for (Iterator it = list.iterator(); it.hasNext();) {
+			Map.Entry<String, Long> entry = (Map.Entry) it.next();
+			if (entry.getValue() >= cutOff)
+				result.put(entry.getKey(), entry.getValue());
 		}
 		return result;
 	}

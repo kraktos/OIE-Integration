@@ -186,6 +186,7 @@ public class GenerateNewProperties {
 										.trim(), Utilities.cleanse(oieRawObj)
 										.trim());
 
+						
 						try {
 							candidateSubjs = new ArrayList<String>();
 							if (candidates != null && candidates.size() > 0)
@@ -253,7 +254,7 @@ public class GenerateNewProperties {
 							}
 						}
 					}
-				}else{
+				} else {
 					flag = true;
 				}
 			}
@@ -301,6 +302,7 @@ public class GenerateNewProperties {
 						// DIRECT PROPERTIES
 						String directProperties = getPredsFromEndpoint(
 								subjCand.split("\t")[0], objCand.split("\t")[0]);
+						
 						if (directProperties.length() > 0) {
 							directPropList.add(directProperties);
 
@@ -315,12 +317,11 @@ public class GenerateNewProperties {
 									: rangeType;
 
 						}
-						
-						
+
 						// INDIRECT PROPERTIES
 						String inverseProps = getPredsFromEndpoint(
 								objCand.split("\t")[0], subjCand.split("\t")[0]);
-						
+
 						if (inverseProps.length() > 0) {
 							inversePropList.add(inverseProps);
 
