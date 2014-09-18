@@ -11,10 +11,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,7 +50,7 @@ public class PropertyGoldStandard {
 	private static final int TOP_K = 5;
 
 	// number of gold standard facts
-	private static final int SIZE = 1000;
+	private static final int SIZE = 1500;
 
 	/**
 	 * 
@@ -269,52 +272,67 @@ public class PropertyGoldStandard {
 				+ ".csv"));
 
 		// Reading from
-		Scanner scan = null;
+		Scanner scan = new Scanner(new File(OIE_FILE_PATH));
 
 		// init DB
 		DBWrapper.init(Constants.GET_WIKI_LINKS_APRIORI_SQL);
 
 		// select the lines from input relevant
-		for (Entry<String, Long> e : counts.entrySet()) {
-			scan = new Scanner(new File(OIE_FILE_PATH));
-			while (scan.hasNextLine()) {
-				line = scan.nextLine();
-				arr = line.split(";");
-				oieProp = arr[1];
-				if (oieProp.equals(e.getKey()))
-					lines.add(line);
-			}
+		while (scan.hasNextLine()) {
+			line = scan.nextLine();
+			arr = line.split(";");
+			oieProp = arr[1];
+
+			// if this is the selected property, add it
+			if (counts.containsKey(oieProp))
+				lines.add(line);
+
 		}
 
 		// randomize the list so as to avoid one type of facts in contiguous
 		// locations
 		Collections.shuffle(lines);
 
-		for (int i = 0; i < SIZE; i++) {
-			int randomNum = 1 + (int) (Math.random() * (lines.size() - 1) + 1);
-			logger.info("Reading line " + randomNum);
-			line = lines.get(randomNum);
+		Random rand = new Random();
 
-			arr = line.split(";");
-			oieSub = Utilities.clean(arr[0]);
-			oieProp = arr[1];
-			oieObj = Utilities.clean(arr[2]);
+		Set<Integer> randomNumSet = new HashSet<Integer>();
 
-			// get top-k candidates of the subject
-			topkSubjects = DBWrapper.fetchTopKLinksWikiPrepProb(oieSub, TOP_K);
+		while (randomNumSet.size() < SIZE) {
 
-			// get the topk instances for oieObj
-			topkObjects = DBWrapper.fetchTopKLinksWikiPrepProb(oieObj, TOP_K);
+			Integer randomNum = rand.nextInt(lines.size()) + 1;
 
-			writer.write(oieSub + "\t" + oieProp + "\t" + oieObj + "\t" + "?"
-					+ "\t" + "?" + "\t" + "?" + "\t" + "IP\n");
+			if (!randomNumSet.contains(randomNum)) {
 
-			ioRoutine(oieProp, topkSubjects, topkObjects, writer);
+				randomNumSet.add(randomNum);
+				logger.info("Reading line " + randomNum);
 
-			writer.write("\n");
-			writer.flush();
+				line = lines.get(randomNum);
+
+				arr = line.split(";");
+				oieSub = Utilities.clean(arr[0]);
+				oieProp = arr[1];
+				oieObj = Utilities.clean(arr[2]);
+
+				// get top-k candidates of the subject
+				topkSubjects = DBWrapper.fetchTopKLinksWikiPrepProb(oieSub,
+						TOP_K);
+
+				// get the topk instances for oieObj
+				topkObjects = DBWrapper.fetchTopKLinksWikiPrepProb(oieObj,
+						TOP_K);
+
+				writer.write(oieSub + "\t" + oieProp + "\t" + oieObj + "\t"
+						+ "?" + "\t" + "?" + "\t" + "?" + "\t" + "IP\n");
+
+				ioRoutine(oieProp, topkSubjects, topkObjects, writer);
+
+				writer.write("\n");
+				writer.flush();
+			}
 		}
 
+		randomNumSet.clear();
+		counts.clear();
 		writer.close();
 		DBWrapper.shutDown();
 	}
