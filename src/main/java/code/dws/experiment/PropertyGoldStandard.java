@@ -69,7 +69,7 @@ public class PropertyGoldStandard {
 			OIE_FILE_PATH = args[0];
 
 		// READ THE INPUT RAW FILE AND FETCH THE TOP-K PROPERTIES
-		getReverbProperties(OIE_FILE_PATH, -1);
+		getReverbProperties(OIE_FILE_PATH, -1, 200L);
 
 		// writing annotation file to
 		BufferedWriter writer = new BufferedWriter(new FileWriter(new File(
@@ -94,13 +94,17 @@ public class PropertyGoldStandard {
 	/**
 	 * get the list of Reverb properties
 	 * 
+	 * CAn be used to get both top-k properties, or properties with atleast x
+	 * number of instances
+	 * 
 	 * @param OIE_FILE
 	 * @param TOPK_REV_PROPS
+	 * @param atLeastInstancesCount
 	 * 
 	 * @return List of properties
 	 */
 	public static List<String> getReverbProperties(String OIE_FILE,
-			int TOPK_REV_PROPS) {
+			int TOPK_REV_PROPS, Long atLeastInstancesCount) {
 
 		String line = null;
 		String[] arr = null;
@@ -126,7 +130,7 @@ public class PropertyGoldStandard {
 			e.printStackTrace();
 		}
 		// load the properties with atleast 500 instances each
-		counts = Utilities.sortByValue(counts, 500L);
+		counts = Utilities.sortByValue(counts, atLeastInstancesCount);
 
 		if (TOPK_REV_PROPS != -1) {
 			for (Entry<String, Long> e : counts.entrySet()) {
