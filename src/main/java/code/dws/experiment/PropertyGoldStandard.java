@@ -22,7 +22,10 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.hp.hpl.jena.query.QuerySolution;
+
 import code.dws.dbConnectivity.DBWrapper;
+import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.utils.Constants;
 import code.dws.utils.Utilities;
 
@@ -41,7 +44,9 @@ public class PropertyGoldStandard {
 	private static final String SAMPLE_OIE_FILE_PATH = "src/main/resources/input/sample.500.csv";
 	public static int TOPK_REV_PROPS = 500;
 	private static String OIE_FILE_PATH = null;
-	private static Map<String, Long> counts = new HashMap<String, Long>();
+	private static Map<String, Long> COUNT_PROPERTY_INST = new HashMap<String, Long>();
+	private static Map<Long, Long> COUNT_FREQUENY = new HashMap<Long, Long>();
+
 	private static Map<String, Long> revbProps = null;
 
 	private static final String HEADER = "http://dbpedia.org/resource/";
@@ -50,7 +55,7 @@ public class PropertyGoldStandard {
 	private static final int TOP_K = 5;
 
 	// number of gold standard facts
-	private static final int SIZE = 1500;
+	private static final int SIZE = 10000;
 
 	/**
 	 * 
@@ -69,7 +74,12 @@ public class PropertyGoldStandard {
 			OIE_FILE_PATH = args[0];
 
 		// READ THE INPUT RAW FILE AND FETCH THE TOP-K PROPERTIES
-		getReverbProperties(OIE_FILE_PATH, -1, 200L);
+		getReverbProperties(OIE_FILE_PATH, -1, 0L);
+
+		logger.info("Distinct Properties in data set = "
+				+ COUNT_PROPERTY_INST.size());
+
+		doFrequencyAnalysis();
 
 		// writing annotation file to
 		BufferedWriter writer = new BufferedWriter(new FileWriter(new File(
@@ -77,18 +87,49 @@ public class PropertyGoldStandard {
 				+ "/reverb.properties.distribution.out"));
 
 		int cnt = 1;
-		for (Entry<String, Long> e : counts.entrySet()) {
+		for (Entry<String, Long> e : COUNT_PROPERTY_INST.entrySet()) {
 			logger.info(e.getKey() + "\t" + e.getValue());
 			writer.write(cnt++ + "\t" + e.getValue() + "\n");
 		}
 		writer.flush();
 		writer.close();
-		logger.info("Loaded " + counts.size() + " properties");
+		logger.info("Loaded " + COUNT_PROPERTY_INST.size() + " properties");
 
 		// read the file again to randomly select from those finally filtered
 		// property
 		createGoldStandard();
 
+	}
+
+	private static void doFrequencyAnalysis() throws IOException {
+		BufferedWriter writer = new BufferedWriter(new FileWriter(new File(
+				OIE_FILE_PATH).getParent()
+				+ "/reverb.properties.instances.distribution.tsv"));
+
+		Long occCount;
+
+		long sum = 0;
+
+		for (Entry<String, Long> e : COUNT_PROPERTY_INST.entrySet()) {
+			sum = sum + e.getValue();
+
+			if (COUNT_FREQUENY.containsKey(e.getValue())) {
+				occCount = COUNT_FREQUENY.get(e.getValue());
+				occCount = occCount + 1;
+			} else {
+				occCount = 1L;
+			}
+
+			COUNT_FREQUENY.put(e.getValue(), occCount);
+		}
+
+		logger.info("Number of instances = " + sum);
+
+		for (Entry<Long, Long> e : COUNT_FREQUENY.entrySet()) {
+			writer.write(e.getKey() + "\t" + e.getValue() + "\n");
+		}
+		writer.flush();
+		writer.close();
 	}
 
 	/**
@@ -118,22 +159,23 @@ public class PropertyGoldStandard {
 			while (scan.hasNextLine()) {
 				line = scan.nextLine();
 				arr = line.split(";");
-				if (counts.containsKey(arr[1])) {
-					val = counts.get(arr[1]);
+				if (COUNT_PROPERTY_INST.containsKey(arr[1])) {
+					val = COUNT_PROPERTY_INST.get(arr[1]);
 					val++;
 				} else {
 					val = 1;
 				}
-				counts.put(arr[1], val);
+				COUNT_PROPERTY_INST.put(arr[1], val);
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		// load the properties with atleast 500 instances each
-		counts = Utilities.sortByValue(counts, atLeastInstancesCount);
+		COUNT_PROPERTY_INST = Utilities.sortByValue(COUNT_PROPERTY_INST,
+				atLeastInstancesCount);
 
 		if (TOPK_REV_PROPS != -1) {
-			for (Entry<String, Long> e : counts.entrySet()) {
+			for (Entry<String, Long> e : COUNT_PROPERTY_INST.entrySet()) {
 				ret.add(e.getKey());
 				c++;
 				if (c == TOPK_REV_PROPS)
@@ -229,21 +271,21 @@ public class PropertyGoldStandard {
 				line = scan.nextLine();
 				arr = line.split(";");
 
-				if (counts.containsKey(arr[1])) {
-					val = counts.get(arr[1]);
+				if (COUNT_PROPERTY_INST.containsKey(arr[1])) {
+					val = COUNT_PROPERTY_INST.get(arr[1]);
 					val++;
 				} else {
 					val = 1;
 				}
-				counts.put(arr[1], val);
+				COUNT_PROPERTY_INST.put(arr[1], val);
 
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		counts = Utilities.sortByValue(counts);
+		COUNT_PROPERTY_INST = Utilities.sortByValue(COUNT_PROPERTY_INST);
 
-		for (Entry<String, Long> e : counts.entrySet()) {
+		for (Entry<String, Long> e : COUNT_PROPERTY_INST.entrySet()) {
 			ret.put(e.getKey(), e.getValue());
 			c++;
 			if (c == TOPK_REV_PROPS)
@@ -288,9 +330,8 @@ public class PropertyGoldStandard {
 			oieProp = arr[1];
 
 			// if this is the selected property, add it
-			if (counts.containsKey(oieProp))
+			if (COUNT_PROPERTY_INST.containsKey(oieProp))
 				lines.add(line);
-
 		}
 
 		// randomize the list so as to avoid one type of facts in contiguous
@@ -307,8 +348,7 @@ public class PropertyGoldStandard {
 
 			if (!randomNumSet.contains(randomNum)) {
 
-				randomNumSet.add(randomNum);
-				logger.info("Reading line " + randomNum);
+				logger.debug("Reading line " + randomNum);
 
 				line = lines.get(randomNum);
 
@@ -325,10 +365,13 @@ public class PropertyGoldStandard {
 				topkObjects = DBWrapper.fetchTopKLinksWikiPrepProb(oieObj,
 						TOP_K);
 
-				writer.write(oieSub + "\t" + oieProp + "\t" + oieObj + "\t"
-						+ "?" + "\t" + "?" + "\t" + "?" + "\t" + "IP\n");
+				if (!linkExists(topkSubjects, topkObjects)) {
+					randomNumSet.add(randomNum);
 
-				ioRoutine(oieProp, topkSubjects, topkObjects, writer);
+					writer.write(oieSub + "\t" + oieProp + "\t" + oieObj + "\t"
+							+ "?" + "\t" + "?" + "\t" + "?" + "\t" + "IP\n");
+					ioRoutine(oieProp, topkSubjects, topkObjects, writer);
+				}
 
 				writer.write("\n");
 				writer.flush();
@@ -336,9 +379,56 @@ public class PropertyGoldStandard {
 		}
 
 		randomNumSet.clear();
-		counts.clear();
+		COUNT_PROPERTY_INST.clear();
 		writer.close();
 		DBWrapper.shutDown();
+	}
+
+	private static boolean linkExists(List<String> topkSubjects,
+			List<String> topkObjects) {
+
+		String candSubj = null;
+		String candObj = null;
+		String sparql = null;
+		List<QuerySolution> s = null;
+
+		if (topkSubjects == null || topkSubjects.size() == 0)
+			return true;
+
+		if (topkObjects == null || topkObjects.size() == 0)
+			return true;
+
+		for (String sub : topkSubjects) {
+			for (String obj : topkObjects) {
+
+				candSubj = Utilities.utf8ToCharacter(sub.split("\t")[0]);
+				candObj = Utilities.utf8ToCharacter(obj.split("\t")[0]);
+
+				try {
+					sparql = "select * where {<"
+							+ Constants.DBPEDIA_INSTANCE_NS
+							+ candSubj
+							+ "> ?val <"
+							+ Constants.DBPEDIA_INSTANCE_NS
+							+ candObj
+							+ ">. "
+							+ "?val <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty>."
+							+ "FILTER(!regex(str(?val), 'http://dbpedia.org/ontology/wikiPageWikiLink'))}";
+
+					s = SPARQLEndPointQueryAPI.queryDBPediaEndPoint(sparql);
+
+					if (s.size() > 0) {
+						// logger.info(candSubj + "\t"
+						// + s.get(0).get("val").toString() + "\t"
+						// + candObj);
+						return true;
+					}
+				} catch (Exception e) {
+					continue;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
