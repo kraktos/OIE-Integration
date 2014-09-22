@@ -18,6 +18,7 @@ import java.util.Scanner;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.log4j.Logger;
 
 import code.dws.dbConnectivity.DBWrapper;
 import code.dws.utils.Constants;
@@ -31,12 +32,18 @@ import code.dws.wordnet.SimilatityWebService;
  */
 public class ReverbClusterProperty {
 
+	/**
+	 * logger
+	 */
+	// define Logger
+	public static Logger logger = Logger.getLogger(ReverbClusterProperty.class
+			.getName());
 	// Reverb original triples file
 
 	/**
 	 * top K most frequent Reverb properties
 	 */
-	public static int TOPK_REV_PROPS = 500;
+	public static int TOPK_REV_PROPS = -1;
 	public static String OIE_FILE = "src/main/resources/input/noDigitHighAll.csv";
 
 	private static final String DELIMIT = "\t";
@@ -49,6 +56,8 @@ public class ReverbClusterProperty {
 	private static final String CLUSTERS_NAME = "src/main/resources/input/CLUSTERS_";
 
 	private static List<String> revbProps = null;
+
+	private static Map<String, List<ImmutablePair<String, String>>> ALL_PROPS = new HashMap<String, List<ImmutablePair<String, String>>>();
 
 	/**
      * 
@@ -72,9 +81,10 @@ public class ReverbClusterProperty {
 
 		// call DBand retrieve a set of TOPK properties
 		revbProps = getReverbProperties(OIE_FILE, TOPK_REV_PROPS);
-
+		logger.info("Loaded " + revbProps.size() + " OIE properties");
+		logger.info("Loaded " + ALL_PROPS.size() + " OIE properties");
 		// enable scoring mechanism
-		doScoring(revbProps);
+		doScoring(revbProps);	
 
 		// dumpPropCluster();
 
@@ -100,8 +110,8 @@ public class ReverbClusterProperty {
 				for (int innerIdx = outerIdx + 1; innerIdx < properties.size(); innerIdx++) {
 
 					// based on Wordnet scores
-					getWordNetSimilarityScores(outerIdx, innerIdx,
-							writerWordNet);
+					// getWordNetSimilarityScores(outerIdx, innerIdx,
+					// writerWordNet);
 
 					// based on number of common instance pairs for each
 					// property
@@ -110,12 +120,13 @@ public class ReverbClusterProperty {
 
 					cnt++;
 					// System.out.println(cnt);
+					writerOverlap.flush();
 
 				}
 				System.out.println("Completed " + (double) 200 * cnt
 						/ (properties.size() * (properties.size() - 1)) + " %");
 
-				writerOverlap.flush();
+				// writerOverlap.flush();
 				writerWordNet.flush();
 
 			}
@@ -148,6 +159,7 @@ public class ReverbClusterProperty {
 		long val = 0;
 		int c = 0;
 		List<String> ret = new ArrayList<String>();
+		List<ImmutablePair<String, String>> list = null;
 
 		try {
 			Scanner scan = new Scanner(new File(OIE_FILE));
@@ -162,11 +174,21 @@ public class ReverbClusterProperty {
 					val = 1;
 				}
 				counts.put(arr[1], val);
+
+				if (ALL_PROPS.containsKey(arr[1])) {
+					list = ALL_PROPS.get(arr[1]);
+				} else {
+					list = new ArrayList<ImmutablePair<String, String>>();
+				}
+				list.add(new ImmutablePair<String, String>(arr[0], arr[2]));
+				ALL_PROPS.put(arr[1], list);
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		counts = Utilities.sortByValue(counts);
+
+		if (TOPK_REV_PROPS != -1)
+			counts = Utilities.sortByValue(counts);
 
 		for (Entry<String, Long> e : counts.entrySet()) {
 			ret.add(e.getKey());
@@ -207,18 +229,31 @@ public class ReverbClusterProperty {
 		String propArg1 = revbProps.get(outerIdx);
 		String propArg2 = revbProps.get(innerIdx);
 
-		List<ImmutablePair<String, String>> revbSubObj1 = DBWrapper
-				.getReverbInstances(propArg1);
-		List<ImmutablePair<String, String>> revbSubObj2 = DBWrapper
-				.getReverbInstances(propArg2);
+		// List<ImmutablePair<String, String>> revbSubObj1 =
+		// DBWrapper.getReverbInstances(propArg1);
+		// List<ImmutablePair<String, String>> revbSubObj2 =
+		// DBWrapper.getReverbInstances(propArg2);
 
-		double score = (double) CollectionUtils.intersection(revbSubObj1,
-				revbSubObj2).size()
+		List<ImmutablePair<String, String>> revbSubObj1 = ALL_PROPS
+				.get(propArg1);
+		List<ImmutablePair<String, String>> revbSubObj2 = ALL_PROPS
+				.get(propArg2);
+
+		double scoreJaccard = (double) CollectionUtils.intersection(
+				revbSubObj1, revbSubObj2).size()
 				/ (revbSubObj1.size() + revbSubObj2.size());
 
-		writerOverlap
-				.write("sameAsPropJacConf(\"" + propArg1 + "\", \"" + propArg2
-						+ "\", " + Constants.formatter.format(score) + ")\n");
+		double scoreOverlap = (double) CollectionUtils.intersection(
+				revbSubObj1, revbSubObj2).size()
+				/ Math.min(revbSubObj1.size(), revbSubObj2.size());
+
+		// writerOverlap.write("sameAsPropJacConf(\"" + propArg1 + "\", \""
+		// + propArg2 + "\", " + Constants.formatter.format(scoreOverlap)
+		// + ")\n");
+
+		if (scoreOverlap > 0.002)
+			writerOverlap.write(propArg1 + "\t" + propArg2 + "\t"
+					+ Constants.formatter.format(scoreOverlap) + "\n");
 
 	}
 
