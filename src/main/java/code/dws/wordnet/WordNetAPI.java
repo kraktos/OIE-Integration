@@ -38,23 +38,27 @@ public class WordNetAPI {
 	 */
 	public static void main(String[] args) {
 
-		System.out.println(scoreWordNet("single to".split(" "),
-				"hit for".split(" ")));
+		String wordForm = null;
 
 		if (args.length > 0) {
+			System.out.println(scoreWordNet("single to".split(" "),
+					"hit for".split(" ")));
+
 			// Concatenate the command-line arguments
 			StringBuffer buffer = new StringBuffer();
 			for (int i = 0; i < args.length; i++) {
 				buffer.append((i > 0 ? " " : "") + args[i]);
 			}
-			String wordForm = buffer.toString();
-			wordForm = "is a member of";
+			wordForm = buffer.toString();
+			wordForm = "ball";
 
-			getSynonyms(wordForm);
+			System.out.println(getSynonyms(wordForm));
 
 		} else {
-			// System.err.println("You must specify " +
-			// "a word form for which to retrieve synsets.");
+			wordForm = "February";
+
+			System.out.println(getSynonyms(wordForm));
+
 		}
 	}
 

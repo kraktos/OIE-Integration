@@ -500,8 +500,8 @@ public class Utilities {
 						cnt++;
 						try {
 							// based on Wordnet scores
-							SimilatityWebService.getWordNetSimilarityScores(
-									arg1.get(outer), arg2.get(inner), writer);
+//							SimilatityWebService.getWordNetSimilarityScores(
+//									arg1.get(outer), arg2.get(inner), writer);
 						} catch (Exception e) {
 							ClusteringWithDbpedia.logger.error(e.getMessage());
 						}
@@ -510,8 +510,8 @@ public class Utilities {
 					cnt++;
 					try {
 						// based on Wordnet scores
-						SimilatityWebService.getWordNetSimilarityScores(
-								arg1.get(outer), arg2.get(inner), writer);
+//						SimilatityWebService.getWordNetSimilarityScores(
+//								arg1.get(outer), arg2.get(inner), writer);
 					} catch (Exception e) {
 						ClusteringWithDbpedia.logger.error(e.getMessage());
 					}

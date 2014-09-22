@@ -12,6 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import org.apache.log4j.Logger;
 
@@ -19,6 +21,7 @@ import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.reverb.ReverbClusterProperty;
 import code.dws.utils.Constants;
 import code.dws.utils.Utilities;
+import code.dws.utils.Worker;
 
 import com.hp.hpl.jena.query.QuerySolution;
 
@@ -42,8 +45,11 @@ public class ClusteringWithDbpedia {
 	public static Logger logger = Logger.getLogger(ClusteringWithDbpedia.class
 			.getName());
 
+	static BufferedWriter writerDbpProps = null;
 	static BufferedWriter writerDbpSims = null;
 	static BufferedWriter writerRevDbpSims = null;
+
+	static int k = -1; // ReverbClusterProperty.TOPK_REV_PROPS;
 
 	/**
 	 * initialize writers.
@@ -52,11 +58,21 @@ public class ClusteringWithDbpedia {
 		try {
 			writerDbpSims = new BufferedWriter(new FileWriter(new File(
 					Constants.REVERB_DATA_PATH).getParent()
-					+ "/tdbp.pairwise.sim.csv"));
+					+ "/tdbp."
+					+ k
+					+ ".pairwise.sim.csv"));
 
 			writerRevDbpSims = new BufferedWriter(new FileWriter(new File(
 					Constants.REVERB_DATA_PATH).getParent()
-					+ "/trvb.dbp.pairwise.sim.csv"));
+					+ "/trvb.dbp."
+					+ k
+					+ ".pairwise.sim.csv"));
+
+			writerDbpProps = new BufferedWriter(new FileWriter(new File(
+					Constants.REVERB_DATA_PATH).getParent()
+					+ "/dbp."
+					+ k
+					+ ".object.properties.csv"));
 
 		} catch (IOException e) {
 			logger.error(e.getMessage());
@@ -76,46 +92,62 @@ public class ClusteringWithDbpedia {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		List<String> revbProps = null;
-		List<String> dbpProps = null;
 
 		init();
 
-		logger.info("Getting top-" + ReverbClusterProperty.TOPK_REV_PROPS
-				+ " properties from " + Constants.REVERB_DATA_PATH);
+		List<String> revbProps = null;
+		List<String> dbpProps = null;
 
+		logger.info("Getting top-" + k + " properties from "
+				+ Constants.REVERB_DATA_PATH);
 		// call TO RETRIEVE of TOPK reverb properties
 		revbProps = ReverbClusterProperty.getReverbProperties(
-				Constants.REVERB_DATA_PATH,
-				ReverbClusterProperty.TOPK_REV_PROPS);
+				Constants.REVERB_DATA_PATH, k);
 		logger.info("Loaded " + revbProps.size() + " Reverb properties");
 
 		// call to retrieve DBPedia owl object property
-		dbpProps = loadDbpediaProperties(100);
+		dbpProps = loadDbpediaProperties(k);
 		logger.info("Loaded " + dbpProps.size() + " DBpedia properties");
-
-		logger.info("Writing sim scores to "
-				+ new File(Constants.REVERB_DATA_PATH).getParent()
-				+ "/tdbp.pairwise.sim.csv");
-		Utilities.getPairwiseSimScore(dbpProps, dbpProps, writerDbpSims, true);
-
-		logger.info("Writing sim scores to "
-				+ new File(Constants.REVERB_DATA_PATH).getParent()
-				+ "/trvb.dbp.pairwise.sim.csv");
-		Utilities.getPairwiseSimScore(dbpProps, revbProps, writerRevDbpSims,
-				false);
-
-		try {
-			writerDbpSims.close();
-			writerRevDbpSims.close();
-
-		} catch (IOException e) {
-			logger.error(e.getMessage());
+		for (String prop : dbpProps) {
+			writerDbpProps.write(prop + "\n");
 		}
+		writerDbpProps.flush();
+
+		ExecutorService executor = Executors.newFixedThreadPool(2);
+
+		logger.info("Writing sim scores to "
+				+ new File(Constants.REVERB_DATA_PATH).getParent() + "/tdbp."
+				+ k + ".pairwise.sim.csv");
+		executor.execute(new Worker(dbpProps, dbpProps, writerDbpSims, true));
+
+		logger.info("Writing sim scores to "
+				+ new File(Constants.REVERB_DATA_PATH).getParent()
+				+ "/trvb.dbp." + k + ".pairwise.sim.csv");
+		executor.execute(new Worker(dbpProps, revbProps, writerRevDbpSims,
+				false));
+
+		executor.shutdown();
+		while (!executor.isTerminated()) {
+		}
+
+		// Utilities.getPairwiseSimScore(dbpProps, dbpProps, writerDbpSims,
+		// true);
+
+		// Utilities.getPairwiseSimScore(dbpProps, revbProps, writerRevDbpSims,
+		// false);
+
+		// try {
+		// writerDbpSims.close();
+		// writerRevDbpSims.close();
+		// writerDbpProps.close();
+		//
+		// } catch (IOException e) {
+		// logger.error(e.getMessage());
+		// }
 	}
 
 	/**
-	 * load DBP properties from SPARQL endpoint
+	 * load DBP properties from SPARQL endpoint, -1 means all properties
 	 * 
 	 * @param topKDBPediaProperties
 	 * 
@@ -139,8 +171,13 @@ public class ClusteringWithDbpedia {
 		for (QuerySolution querySol : dbpObjProps) {
 			prop = querySol.get("val").toString();
 
-			if ((prop.indexOf("wikiPage") == -1)
-					&& (prop.toLowerCase().indexOf("thumbnail") == -1)) {
+			if ((prop.indexOf(Constants.DBPEDIA_PREDICATE_NS) != -1)
+					&& (prop.indexOf("wikiPageWikiLink") == -1)
+					&& (prop.indexOf("wikiPageExternalLink") == -1)
+					&& (prop.indexOf("wikiPageRedirects") == -1)
+					&& (prop.indexOf("thumbnail") == -1)
+					&& (prop.indexOf("wikiPageDisambiguates") == -1)
+					&& (prop.indexOf("wikiPageInterLanguageLink") == -1)) {
 
 				count = SPARQLEndPointQueryAPI
 						.queryDBPediaEndPoint("select (count(*)  as ?val)  where {?a <"
@@ -155,7 +192,9 @@ public class ClusteringWithDbpedia {
 			}
 		}
 
-		props = Utilities.sortByValue(props);
+		// sort only when interested in top-k, else makes no sense
+		if (topKDBPediaProperties != -1)
+			props = Utilities.sortByValue(props);
 
 		for (Entry<String, Long> e : props.entrySet()) {
 			retS.add(e.getKey());

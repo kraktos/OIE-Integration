@@ -171,7 +171,7 @@ public class ReverbClusterProperty {
 		for (Entry<String, Long> e : counts.entrySet()) {
 			ret.add(e.getKey());
 			c++;
-			if (c == TOPK_REV_PROPS)
+			if (TOPK_REV_PROPS != -1 && c == TOPK_REV_PROPS)
 				return ret;
 		}
 
