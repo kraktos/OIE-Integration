@@ -42,14 +42,15 @@ public class Worker implements Runnable {
 		logger.info("Size of Arg1 = " + arg1.size());
 		logger.info("Size of Arg2 = " + arg2.size());
 
+		long arg1Size = arg1.size();
+		long arg2Size = arg2.size();
+
 		long cnt = 0;
-		long val = (check) ? (arg1.size() * (arg2.size() - 1) / 2) : (arg1
-				.size() * arg2.size());
+		long val = (check) ? (arg1Size * (arg2Size - 1) / 2)
+				: (arg1Size * arg2Size);
 
 		for (int outer = 0; outer < arg1.size(); outer++) {
-
 			for (int inner = 0; inner < arg2.size(); inner++) {
-
 				if (check) {
 					if (outer < inner) {
 						cnt++;
@@ -74,7 +75,6 @@ public class Worker implements Runnable {
 			}
 
 			logger.info("Completed " + (double) 100 * cnt / val + " %");
-
 			writer.flush();
 		}
 

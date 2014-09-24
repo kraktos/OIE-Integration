@@ -10,20 +10,40 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.log4j.Logger;
 
+import com.google.common.collect.Sets;
+
 import code.dws.dbConnectivity.DBWrapper;
+import code.dws.relationMap.workflow2.ClusteringWithDbpedia;
 import code.dws.utils.Constants;
 import code.dws.utils.Utilities;
 import code.dws.wordnet.SimilatityWebService;
+import code.dws.wordnet.WordNetAPI;
+import edu.cmu.lti.lexical_db.ILexicalDatabase;
+import edu.cmu.lti.lexical_db.NictWordNet;
+import edu.cmu.lti.ws4j.RelatednessCalculator;
+import edu.cmu.lti.ws4j.impl.HirstStOnge;
+import edu.cmu.lti.ws4j.impl.JiangConrath;
+import edu.cmu.lti.ws4j.impl.LeacockChodorow;
+import edu.cmu.lti.ws4j.impl.Lesk;
+import edu.cmu.lti.ws4j.impl.Lin;
+import edu.cmu.lti.ws4j.impl.Path;
+import edu.cmu.lti.ws4j.impl.Resnik;
+import edu.cmu.lti.ws4j.impl.WuPalmer;
+import edu.cmu.lti.ws4j.util.WS4JConfiguration;
+import gnu.trove.set.hash.THashSet;
+import gnu.trove.set.hash.TLinkedHashSet;
 
 /**
  * this class clubs together properties with similar domain, range distribution
@@ -31,6 +51,8 @@ import code.dws.wordnet.SimilatityWebService;
  * @author arnab
  */
 public class ReverbClusterProperty {
+
+	private static final long INST_COUNT_THRESHOLD = 50L;
 
 	/**
 	 * logger
@@ -57,7 +79,7 @@ public class ReverbClusterProperty {
 
 	private static List<String> revbProps = null;
 
-	private static Map<String, List<ImmutablePair<String, String>>> ALL_PROPS = new HashMap<String, List<ImmutablePair<String, String>>>();
+	private static Map<String, THashSet<ImmutablePair<String, String>>> ALL_PROPS = new HashMap<String, THashSet<ImmutablePair<String, String>>>();
 
 	/**
      * 
@@ -80,11 +102,13 @@ public class ReverbClusterProperty {
 		}
 
 		// call DBand retrieve a set of TOPK properties
-		revbProps = getReverbProperties(OIE_FILE, TOPK_REV_PROPS);
+		revbProps = getReverbProperties(OIE_FILE, TOPK_REV_PROPS,
+				INST_COUNT_THRESHOLD);
 		logger.info("Loaded " + revbProps.size() + " OIE properties");
 		logger.info("Loaded " + ALL_PROPS.size() + " OIE properties");
+
 		// enable scoring mechanism
-		doScoring(revbProps);	
+		doScoring(revbProps);
 
 		// dumpPropCluster();
 
@@ -92,53 +116,144 @@ public class ReverbClusterProperty {
 
 	private static void doScoring(List<String> properties) throws IOException {
 
-		int cnt = 0;
+		long cnt = 0;
+		double ovlapScore = 0;
+		double wnScore = 0;
 
-		BufferedWriter writerWordNet = new BufferedWriter(new FileWriter(
-				CLUSTERS_NAME + "WORDNET_" + TOPK_REV_PROPS));
+		BufferedWriter writerRevWordnetSims = new BufferedWriter(
+				new FileWriter(new File(Constants.REVERB_DATA_PATH).getParent()
+						+ "/all.trvb.wordnet.sim.csv"));
 
-		BufferedWriter writerOverlap = new BufferedWriter(new FileWriter(
-				CLUSTERS_NAME + "OVERLAP_" + TOPK_REV_PROPS));
+		BufferedWriter writerRevOverlapSims = new BufferedWriter(
+				new FileWriter(new File(Constants.REVERB_DATA_PATH).getParent()
+						+ "/all.trvb.overlap.sim.csv"));
 
-		// init DB
+		// BufferedWriter writerRevDbpWordnetSims = new BufferedWriter(
+		// new FileWriter(new File(Constants.REVERB_DATA_PATH).getParent()
+		// + "/all.trvb.dbp.wordnet.sim.csv"));
 
-		DBWrapper.init(Constants.GET_MOST_FREQUENT_SENSE);
+		long s = properties.size();
 
 		try {
+			System.setProperty("wordnet.database.dir",
+					"/home/adutta/WordNet-3.0/dict/");
+			WS4JConfiguration.getInstance().setMFS(true);
+
+			ILexicalDatabase db = new NictWordNet();
+
+			RelatednessCalculator[] rcs = { new WuPalmer(db),
+					new LeacockChodorow(db), new Resnik(db),
+					new JiangConrath(db), new Lin(db), new Path(db) };
+
+			long start = System.currentTimeMillis();
 			// iterate the list of size n, n(n-1)/2 comparison !! :D
 			for (int outerIdx = 0; outerIdx < properties.size(); outerIdx++) {
 				for (int innerIdx = outerIdx + 1; innerIdx < properties.size(); innerIdx++) {
 
-					// based on Wordnet scores
-					// getWordNetSimilarityScores(outerIdx, innerIdx,
-					// writerWordNet);
-
 					// based on number of common instance pairs for each
 					// property
-					getInstanceOverlapSimilarityScores(outerIdx, innerIdx,
-							writerOverlap);
+					ovlapScore = getInstanceOverlapSimilarityScores(outerIdx,
+							innerIdx);
 
 					cnt++;
-					// System.out.println(cnt);
-					writerOverlap.flush();
+//					System.out.println(cnt + "\t"
+//							+ (System.currentTimeMillis() - start));
+
+					if (ovlapScore != 0) {
+						writerRevOverlapSims.write(revbProps.get(outerIdx)
+								+ "\t" + revbProps.get(innerIdx) + "\t"
+								+ ovlapScore + "\n");
+
+						// wnScore = getWordNetSimilarityScores(outerIdx,
+						// innerIdx);
+						wnScore = WordNetAPI.scoreWordNet(rcs,
+								revbProps.get(outerIdx).split(" "), revbProps
+										.get(innerIdx).split(" "));
+						if (wnScore > 0)
+							writerRevWordnetSims.write(revbProps.get(outerIdx)
+									+ "\t" + revbProps.get(innerIdx) + "\t"
+									+ wnScore + "\n");
+					}
+
+					// writerRevOverlapSims.flush();
+					// writerRevWordnetSims.flush();
 
 				}
-				System.out.println("Completed " + (double) 200 * cnt
-						/ (properties.size() * (properties.size() - 1)) + " %");
 
-				// writerOverlap.flush();
-				writerWordNet.flush();
+				long s2 = s * (s - 1);
+				logger.info("Completed " + 200 * ((double) cnt / s2) + " %");
+
+				writerRevOverlapSims.flush();
+				writerRevWordnetSims.flush();
 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			writerOverlap.close();
-			writerWordNet.close();
+			writerRevOverlapSims.close();
+			writerRevWordnetSims.close();
 
-			DBWrapper.shutDown();
 		}
 
+	}
+
+	/**
+	 * get the list of Reverb properties
+	 * 
+	 * CAn be used to get both top-k properties, or properties with atleast x
+	 * number of instances
+	 * 
+	 * @param OIE_FILE
+	 * @param TOPK_REV_PROPS
+	 * @param atLeastInstancesCount
+	 * 
+	 * @return List of properties
+	 */
+	public static List<String> getReverbProperties(String OIE_FILE,
+			int TOPK_REV_PROPS, Long atLeastInstancesCount) {
+
+		String line = null;
+		String[] arr = null;
+		long val = 0;
+		int c = 0;
+		List<String> ret = new ArrayList<String>();
+		THashSet<ImmutablePair<String, String>> list = null;
+		Map<String, Long> COUNT_PROPERTY_INST = new HashMap<String, Long>();
+
+		try {
+			Scanner scan = new Scanner(new File(OIE_FILE));
+
+			while (scan.hasNextLine()) {
+				line = scan.nextLine();
+				arr = line.split(";");
+				if (COUNT_PROPERTY_INST.containsKey(arr[1])) {
+					val = COUNT_PROPERTY_INST.get(arr[1]);
+					val++;
+				} else {
+					val = 1;
+				}
+				COUNT_PROPERTY_INST.put(arr[1], val);
+
+				if (ALL_PROPS.containsKey(arr[1])) {
+					list = ALL_PROPS.get(arr[1]);
+				} else {
+					list = new TLinkedHashSet<ImmutablePair<String, String>>();
+				}
+				list.add(new ImmutablePair<String, String>(arr[0], arr[2]));
+				ALL_PROPS.put(arr[1], list);
+
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		// load the properties with atleast 500 instances each
+		COUNT_PROPERTY_INST = Utilities.sortByValue(COUNT_PROPERTY_INST,
+				atLeastInstancesCount);
+
+		for (Entry<String, Long> e : COUNT_PROPERTY_INST.entrySet())
+			ret.add(e.getKey());
+
+		return ret;
 	}
 
 	/**
@@ -159,7 +274,7 @@ public class ReverbClusterProperty {
 		long val = 0;
 		int c = 0;
 		List<String> ret = new ArrayList<String>();
-		List<ImmutablePair<String, String>> list = null;
+		THashSet<ImmutablePair<String, String>> list = null;
 
 		try {
 			Scanner scan = new Scanner(new File(OIE_FILE));
@@ -178,7 +293,7 @@ public class ReverbClusterProperty {
 				if (ALL_PROPS.containsKey(arr[1])) {
 					list = ALL_PROPS.get(arr[1]);
 				} else {
-					list = new ArrayList<ImmutablePair<String, String>>();
+					list = new TLinkedHashSet<ImmutablePair<String, String>>();
 				}
 				list.add(new ImmutablePair<String, String>(arr[0], arr[2]));
 				ALL_PROPS.put(arr[1], list);
@@ -221,40 +336,40 @@ public class ReverbClusterProperty {
 	 * 
 	 * @param writerOverlap
 	 * @return
-	 * @throws IOException
+	 * @return
+	 * @throws Exception
 	 */
-	private static void getInstanceOverlapSimilarityScores(int outerIdx,
-			int innerIdx, BufferedWriter writerOverlap) throws IOException {
+	private static double getInstanceOverlapSimilarityScores(int outerIdx,
+			int innerIdx) throws Exception {
 
 		String propArg1 = revbProps.get(outerIdx);
 		String propArg2 = revbProps.get(innerIdx);
 
-		// List<ImmutablePair<String, String>> revbSubObj1 =
-		// DBWrapper.getReverbInstances(propArg1);
-		// List<ImmutablePair<String, String>> revbSubObj2 =
-		// DBWrapper.getReverbInstances(propArg2);
-
-		List<ImmutablePair<String, String>> revbSubObj1 = ALL_PROPS
+		THashSet<ImmutablePair<String, String>> revbSubObj1 = ALL_PROPS
 				.get(propArg1);
-		List<ImmutablePair<String, String>> revbSubObj2 = ALL_PROPS
+
+		THashSet<ImmutablePair<String, String>> revbSubObj2 = ALL_PROPS
 				.get(propArg2);
 
-		double scoreJaccard = (double) CollectionUtils.intersection(
-				revbSubObj1, revbSubObj2).size()
-				/ (revbSubObj1.size() + revbSubObj2.size());
+		long min = Math.min(revbSubObj1.size(), revbSubObj2.size());
 
-		double scoreOverlap = (double) CollectionUtils.intersection(
-				revbSubObj1, revbSubObj2).size()
-				/ Math.min(revbSubObj1.size(), revbSubObj2.size());
+		double scoreOverlap = 0;
 
-		// writerOverlap.write("sameAsPropJacConf(\"" + propArg1 + "\", \""
-		// + propArg2 + "\", " + Constants.formatter.format(scoreOverlap)
-		// + ")\n");
+		THashSet<ImmutablePair<String, String>> s1 = (THashSet<ImmutablePair<String, String>>) revbSubObj1;
+		THashSet<ImmutablePair<String, String>> s2 = (THashSet<ImmutablePair<String, String>>) revbSubObj1;
 
-		if (scoreOverlap > 0.002)
-			writerOverlap.write(propArg1 + "\t" + propArg2 + "\t"
-					+ Constants.formatter.format(scoreOverlap) + "\n");
+		;
 
+		// scoreOverlap = (double) CollectionUtils.intersection(revbSubObj1,
+		// revbSubObj2)
+		// .size() / min;
+
+		scoreOverlap = (double) Sets.intersection(s1, s2).size() / min;
+
+		if (scoreOverlap > 0.002 && min >= INST_COUNT_THRESHOLD)
+			return scoreOverlap;
+
+		return 0;
 	}
 
 	/**
@@ -265,25 +380,16 @@ public class ReverbClusterProperty {
 	 * @param properties
 	 * @param id2
 	 * @param id
+	 * @return
 	 * @throws Exception
 	 */
-	private static void getWordNetSimilarityScores(int id, int id2,
-			BufferedWriter writerWordNet) throws Exception {
-
-		// outputWriter.write(results.get(id) + "\t" +
-		// results.get(id2) + " ==> "
-		// + WordNetAPI.scoreWordNet(results.get(id).split(" "),
-		// results.get(id2).split(" ")) + "\n");
-
-		String propArg1 = revbProps.get(id);
-		String propArg2 = revbProps.get(id2);
+	private static double getWordNetSimilarityScores(int id, int id2)
+			throws Exception {
 
 		double score = SimilatityWebService.getSimScore(revbProps.get(id),
 				revbProps.get(id2));
 
-		writerWordNet
-				.write("sameAsPropWNConf(\"" + propArg1 + "\", \"" + propArg2
-						+ "\", " + Constants.formatter.format(score) + ")\n");
+		return score;
 
 	}
 

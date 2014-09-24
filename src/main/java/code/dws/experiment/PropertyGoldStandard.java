@@ -74,25 +74,13 @@ public class PropertyGoldStandard {
 			OIE_FILE_PATH = args[0];
 
 		// READ THE INPUT RAW FILE AND FETCH THE TOP-K PROPERTIES
-		getReverbProperties(OIE_FILE_PATH, -1, 0L);
+		getReverbProperties(OIE_FILE_PATH, -1, 10L);
 
 		logger.info("Distinct Properties in data set = "
 				+ COUNT_PROPERTY_INST.size());
 
 		doFrequencyAnalysis();
 
-		// writing annotation file to
-		BufferedWriter writer = new BufferedWriter(new FileWriter(new File(
-				OIE_FILE_PATH).getParent()
-				+ "/reverb.properties.distribution.out"));
-
-		int cnt = 1;
-		for (Entry<String, Long> e : COUNT_PROPERTY_INST.entrySet()) {
-			logger.info(e.getKey() + "\t" + e.getValue());
-			writer.write(cnt++ + "\t" + e.getValue() + "\n");
-		}
-		writer.flush();
-		writer.close();
 		logger.info("Loaded " + COUNT_PROPERTY_INST.size() + " properties");
 
 		// read the file again to randomly select from those finally filtered
@@ -152,6 +140,7 @@ public class PropertyGoldStandard {
 		long val = 0;
 		int c = 0;
 		List<String> ret = new ArrayList<String>();
+		COUNT_PROPERTY_INST = new HashMap<String, Long>();
 
 		try {
 			Scanner scan = new Scanner(new File(OIE_FILE));
@@ -376,6 +365,10 @@ public class PropertyGoldStandard {
 				writer.write("\n");
 				writer.flush();
 			}
+
+			if (randomNumSet.size() % 1000 == 0)
+				logger.info("Completed " + 100
+						* ((double) randomNumSet.size() / SIZE) + "%");
 		}
 
 		randomNumSet.clear();

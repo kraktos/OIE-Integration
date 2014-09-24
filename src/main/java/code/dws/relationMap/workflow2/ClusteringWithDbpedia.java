@@ -5,18 +5,21 @@ package code.dws.relationMap.workflow2;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Map.Entry;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import org.apache.log4j.Logger;
 
+import code.dws.experiment.PropertyGoldStandard;
 import code.dws.query.SPARQLEndPointQueryAPI;
 import code.dws.reverb.ReverbClusterProperty;
 import code.dws.utils.Constants;
@@ -46,8 +49,9 @@ public class ClusteringWithDbpedia {
 			.getName());
 
 	static BufferedWriter writerDbpProps = null;
-	static BufferedWriter writerDbpSims = null;
+	// static BufferedWriter writerDbpSims = null;
 	static BufferedWriter writerRevDbpSims = null;
+	static BufferedWriter writerRevRevSims = null;
 
 	static int k = -1; // ReverbClusterProperty.TOPK_REV_PROPS;
 
@@ -56,9 +60,15 @@ public class ClusteringWithDbpedia {
 	 */
 	private static void init() {
 		try {
-			writerDbpSims = new BufferedWriter(new FileWriter(new File(
+			// writerDbpSims = new BufferedWriter(new FileWriter(new File(
+			// Constants.REVERB_DATA_PATH).getParent()
+			// + "/tdbp."
+			// + k
+			// + ".pairwise.sim.csv"));
+
+			writerRevRevSims = new BufferedWriter(new FileWriter(new File(
 					Constants.REVERB_DATA_PATH).getParent()
-					+ "/tdbp."
+					+ "/trvb."
 					+ k
 					+ ".pairwise.sim.csv"));
 
@@ -100,9 +110,10 @@ public class ClusteringWithDbpedia {
 
 		logger.info("Getting top-" + k + " properties from "
 				+ Constants.REVERB_DATA_PATH);
+
 		// call TO RETRIEVE of TOPK reverb properties
-		revbProps = ReverbClusterProperty.getReverbProperties(
-				Constants.REVERB_DATA_PATH, k);
+		revbProps = getReverbProperties(Constants.REVERB_DATA_PATH, k, 10L);
+
 		logger.info("Loaded " + revbProps.size() + " Reverb properties");
 
 		// call to retrieve DBPedia owl object property
@@ -113,37 +124,71 @@ public class ClusteringWithDbpedia {
 		}
 		writerDbpProps.flush();
 
-		ExecutorService executor = Executors.newFixedThreadPool(2);
+		ExecutorService executor = Executors.newFixedThreadPool(3);
 
 		logger.info("Writing sim scores to "
-				+ new File(Constants.REVERB_DATA_PATH).getParent() + "/tdbp."
+				+ new File(Constants.REVERB_DATA_PATH).getParent() + "/trvb."
 				+ k + ".pairwise.sim.csv");
-		executor.execute(new Worker(dbpProps, dbpProps, writerDbpSims, true));
+		executor.submit(new Worker(revbProps, revbProps, writerRevRevSims, true));
 
 		logger.info("Writing sim scores to "
 				+ new File(Constants.REVERB_DATA_PATH).getParent()
 				+ "/trvb.dbp." + k + ".pairwise.sim.csv");
-		executor.execute(new Worker(dbpProps, revbProps, writerRevDbpSims,
-				false));
+		executor.submit(new Worker(dbpProps, revbProps, writerRevDbpSims, false));
 
 		executor.shutdown();
 		while (!executor.isTerminated()) {
 		}
 
-		// Utilities.getPairwiseSimScore(dbpProps, dbpProps, writerDbpSims,
-		// true);
+	}
 
-		// Utilities.getPairwiseSimScore(dbpProps, revbProps, writerRevDbpSims,
-		// false);
+	/**
+	 * get the list of Reverb properties
+	 * 
+	 * CAn be used to get both top-k properties, or properties with atleast x
+	 * number of instances
+	 * 
+	 * @param OIE_FILE
+	 * @param TOPK_REV_PROPS
+	 * @param atLeastInstancesCount
+	 * 
+	 * @return List of properties
+	 */
+	public static List<String> getReverbProperties(String OIE_FILE,
+			int TOPK_REV_PROPS, Long atLeastInstancesCount) {
 
-		// try {
-		// writerDbpSims.close();
-		// writerRevDbpSims.close();
-		// writerDbpProps.close();
-		//
-		// } catch (IOException e) {
-		// logger.error(e.getMessage());
-		// }
+		String line = null;
+		String[] arr = null;
+		long val = 0;
+		int c = 0;
+		List<String> ret = new ArrayList<String>();
+		Map<String, Long> COUNT_PROPERTY_INST = new HashMap<String, Long>();
+
+		try {
+			Scanner scan = new Scanner(new File(OIE_FILE));
+
+			while (scan.hasNextLine()) {
+				line = scan.nextLine();
+				arr = line.split(";");
+				if (COUNT_PROPERTY_INST.containsKey(arr[1])) {
+					val = COUNT_PROPERTY_INST.get(arr[1]);
+					val++;
+				} else {
+					val = 1;
+				}
+				COUNT_PROPERTY_INST.put(arr[1], val);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		// load the properties with atleast 500 instances each
+		COUNT_PROPERTY_INST = Utilities.sortByValue(COUNT_PROPERTY_INST,
+				atLeastInstancesCount);
+
+		for (Entry<String, Long> e : COUNT_PROPERTY_INST.entrySet())
+			ret.add(e.getKey());
+
+		return ret;
 	}
 
 	/**
@@ -153,7 +198,7 @@ public class ClusteringWithDbpedia {
 	 * 
 	 * @return
 	 */
-	private static List<String> loadDbpediaProperties(long topKDBPediaProperties) {
+	public static List<String> loadDbpediaProperties(long topKDBPediaProperties) {
 
 		String prop = null;
 		String cnt = "0";
